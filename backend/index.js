@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const port = 3001;
 const uri =
-  "mongodb+srv://niklas:boolnumlist@cluster0.yffxj.mongodb.net/acl-intro-lektion?retryWrites=true&w=majority";
+  "mongodb+srv://kyd:1234@cluster0.qpr92.mongodb.net/MoviesApp?retryWrites=true&w=majority";
 
 const userRoutes = require("./routes/userRoutes");
 const testRoutes = require("./routes/testRoutes");
