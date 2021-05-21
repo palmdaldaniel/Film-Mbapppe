@@ -20,6 +20,10 @@ const showingSchema = new Schema({
   time: {
     type: String,
     required: true
+  }, 
+  price: {
+    type: Number, 
+    required: true
   }
 });
 
