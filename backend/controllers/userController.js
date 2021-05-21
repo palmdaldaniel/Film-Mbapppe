@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const Encrypt = require("../Encrypt");
+const utils = require("../core/utilities");
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -26,14 +27,25 @@ const loginUser = async (req, res) => {
     return res.status(401).json({ error: "Wrong email or password" });
   }
   return res.status(401).json({ error: "Wrong email or password" });
-
 };
-
 
 const createUser = async (req, res) => {
   // destructure req.body object
-  const { email } = req.body;
+  const { email, password } = req.body;
 
+  // check if password is strong.
+  const passwordIsStrong = utils.passwordValidator(password);
+
+  // check if email is valid.
+  const validemail = utils.emailValidator(email);
+
+  if (!passwordIsStrong) {
+    return res.status(400).json({ err: "Put in a stronger password " });
+  } else if (!validemail) {
+    return res.status(400).json({ err: "Put in a valid email" });
+  }
+
+  // check if user already exists with that email
   let userExists = await User.exists({ email: email });
 
   if (userExists) {
@@ -41,7 +53,6 @@ const createUser = async (req, res) => {
       .status(400)
       .json({ error: "An user with that email already exists" });
   }
-
   let user = await User.create(req.body);
   user.password = undefined;
   res.json(user);
@@ -52,7 +63,6 @@ const editUser = async (req, res) => {
   let user;
 
   User.findById(req.params.userId).exec(async (err, result) => {
-
     // checks for errors
     if (err) {
       res.status(400).json({ error: "Something went wrong" });
@@ -77,23 +87,18 @@ const editUser = async (req, res) => {
   });
 
   res.send("Ok");
-}
+};
 
 // log out
 const logout = (req, res) => {
-  console.log(
-    "Logged out:",
-    req.session.user.name,
-  );
+  console.log("Logged out:", req.session.user.name);
   delete req.session.user;
   res.json({ success: "Logged out successfully" });
 };
-
 
 module.exports = {
   logout,
   editUser,
   createUser,
-  loginUser
+  loginUser,
 };
-
