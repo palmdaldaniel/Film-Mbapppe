@@ -98,7 +98,7 @@ module.exports = {
   logout,
   editUser,
   createUser,
-  loginUser
+  loginUser,
   whoami
 };
 
