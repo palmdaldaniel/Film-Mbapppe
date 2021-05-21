@@ -60,9 +60,14 @@ const logout = (req, res) => {
   res.json({ success: "Logged out successfully" });
 };
 
+const whoami = async (req, res) => {
+  // in postman res.json will say null if no user is logged in
+  return res.json(req.session.user || null);
+}
 
 module.exports = {
   logout,
   editUser,
-  createUser
+  createUser,
+  whoami
 };
