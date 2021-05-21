@@ -2,8 +2,8 @@ const User = require("../models/User");
 const Encrypt = require("../Encrypt");
 
 const createUser = async (req, res) => {
-
-    const { email } = req.body
+  // destructure req.body object
+  const { email } = req.body;
 
   let userExists = await User.exists({ email: email });
 
