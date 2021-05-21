@@ -11,6 +11,7 @@ const testRoutes = require("./routes/testRoutes");
 const saloonRoutes = require("./routes/saloonRoutes");
 const movieRoutes = require("./routes/movieRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
+const showingRoutes = require("./routes/showingRoutes"); 
 
 // Server Setup
 const app = express();
@@ -47,6 +48,7 @@ app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/saloons", saloonRoutes);
 app.use("/api/v1/movies", movieRoutes);
 app.use("/api/v1/bookings", bookingRoutes);
+app.use("/api/v1/showings", showingRoutes);
 
 // Start Server
 app.listen(port, (err) => {
