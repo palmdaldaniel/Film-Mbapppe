@@ -53,4 +53,7 @@ const logout = (req, res) => {
   };
 
 
-module.exports = {logout};
+module.exports = {
+  logout,
+  editUser
+};
