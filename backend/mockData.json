@@ -1,0 +1,340 @@
+[
+  {
+    "Title": "Spiral",
+    "Year": "2021",
+    "Rated": "R",
+    "Runtime": "93 min",
+    "Genre": ["Crime", "Horror", "Mystery", "Thriller"],
+    "Director": "Darren Lynn Bousman",
+    "Actors": [
+      "Morgan David Jones",
+      "Samuel L. Jackson",
+      "Ali Johnson",
+      "Dan Petronijevic"
+    ],
+    "Plot": "A criminal mastermind unleashes a twisted form of justice in Spiral, the terrifying new chapter from the book of Saw.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjI4ZWQwYzctMGJlMi00OTE1LWFkNjMtY2VlOGQxZmVhNDYyXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=gzy6ORqE9IY"
+  },
+  {
+    "Title": "Cruella",
+    "Year": "2021",
+    "Rated": "PG-13",
+    "Runtime": "134 min",
+    "Genre": ["Comedy", "Crime"],
+    "Director": "Craig Gillespie",
+    "Actors": [
+      "Emma Stone",
+      "Emma Thompson",
+      "Mark Strong",
+      "Paul Walter Hauser"
+    ],
+    "Plot": "A live-action prequel feature film following a young Cruella de Vil.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOWI5YTUxOWEtZmRiZS00ZmQxLWE2NzctYTRiODA2NzE1ZjczXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=gmRKv7n2If8"
+  },
+
+  {
+    "Title": "Godzilla vs. Kong",
+    "Year": "2021",
+    "Rated": "PG-13",
+    "Runtime": "113 min",
+    "Genre": ["Action", "Sci-Fi", "Thriller"],
+    "Director": "Adam Wingard",
+    "Actors": [
+      "Alexander Skarsgård",
+      "Millie Bobby Brown",
+      "Rebecca Hall",
+      "Brian Tyree Henry"
+    ],
+    "Plot": "The epic next chapter in the cinematic Monsterverse pits two of the greatest icons in motion picture history against one another - the fearsome Godzilla and the mighty Kong - with humanity caught in the balance.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZmYzMzU4NjctNDI0Mi00MGExLWI3ZDQtYzQzYThmYzc2ZmNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=odM92ap8_c0"
+  },
+  {
+    "Title": "Nomadland",
+    "Year": "2020",
+    "Rated": "R",
+    "Runtime": "107 min",
+    "Genre": "Drama",
+    "Director": "Chloé Zhao",
+    "Actors": [
+      "Frances McDormand",
+      "Gay DeForest",
+      "Patricia Grier",
+      "Linda May"
+    ],
+    "Plot": "A woman in her sixties, after losing everything in the Great Recession, embarks on a journey through the American West, living as a van-dwelling modern-day nomad.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMDRiZWUxNmItNDU5Yy00ODNmLTk0M2ItZjQzZTA5OTJkZjkyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=6sxCFZ8_d84"
+  },
+  {
+    "Title": "Peter Rabbit 2: the Runaway",
+    "Year": "2021",
+    "Rated": "PG",
+    "Runtime": "93 min",
+    "Genre": ["Animation", "Adventure", "Comedy", "Family", "Fantasy"],
+    "Director": "Will Gluck",
+    "Actors": [
+      "James Corden",
+      "Elizabeth Debicki",
+      "Lennie James",
+      "Margot Robbie"
+    ],
+    "Plot": "Thomas and Bea are now married and living with Peter and his rabbit family. Bored of life in the garden, Peter goes to the big city, where he meets shady characters and ends up creating chaos for the whole family.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNTQwOThjZTEtNDNhZS00YmYzLWFkNWMtNWRjN2RmOWI5ZmU1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=PWBcqCz7l_c"
+  },
+  {
+    "Title": "Raya and the Last Dragon",
+    "Year": "2021",
+    "Rated": "PG",
+    "Runtime": "107 min",
+    "Genre": [
+      "Animation",
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Family",
+      "Fantasy"
+    ],
+    "Director": "Don Hall",
+    "Actors": ["Kelly Marie Tran", "Awkwafina", "Izaac Wang", "Gemma Chan"],
+    "Plot": "In a realm known as Kumandra, a re-imagined Earth inhabited by an ancient civilization, a warrior named Raya is determined to find the last dragon.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZWNiOTc4NGItNGY4YS00ZGNkLThkOWEtMDE2ODcxODEwNjkwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=1VIZ89FEjYI"
+  },
+  {
+    "Title": "The Unholy",
+    "Year": "2021",
+    "Rated": "PG-13",
+    "Runtime": "99 min",
+    "Genre": "Horror",
+    "Director": "Evan Spiliotopoulos",
+    "Actors": [
+      "Jeffrey Dean Morgan",
+      "Cary Elwes",
+      "William Sadler",
+      "Katie Aselton"
+    ],
+    "Plot": "A hearing-impaired girl is visited by the Virgin Mary and can suddenly hear, speak, and heal the sick. As people flock to witness her miracles, terrifying events unfold. Are they the work of the Virgin Mary or something much more sinister?",
+    "Language": "Ukrainian",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BY2VhOTgxZGEtNGRiZi00NzVkLWE3MGEtZTRjNWEwY2MwZTI0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=1Uog4AeVdIk"
+  },
+  {
+    "Title": "Another Round",
+    "Year": "2020",
+    "Rated": "Not Rated",
+    "Runtime": "117 min",
+    "Genre": ["Comedy", "Drama"],
+    "Director": "Thomas Vinterberg",
+    "Actors": [
+      "Mads Mikkelsen",
+      "Thomas Bo Larsen",
+      "Magnus Millang",
+      "Lars Ranthe"
+    ],
+    "Plot": "Four friends, all high school teachers, test a theory that they will improve their lives by maintaining a constant level of alcohol in their blood.",
+    "Language": "Danish",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTNjM2Y2ZjgtMDc5NS00MDQ1LTgyNGYtYzYwMTAyNWQwYTMyXkEyXkFqcGdeQXVyMjE4NzUxNDA@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=bj8Jmz_srDg"
+  },
+  {
+    "Title": "Nobody",
+    "Year": "2021",
+    "Rated": "R",
+    "Runtime": "92 min",
+    "Genre": ["Action", "Crime", "Drama", "Thriller"],
+    "Director": "Ilya Naishuller",
+    "Actors": [
+      "Bob Odenkirk",
+      "Aleksey Serebryakov",
+      "Connie Nielsen",
+      "Christopher Lloyd"
+    ],
+    "Plot": "A bystander who intervenes to help a woman being harassed by a group of men becomes the target of a vengeful drug lord.",
+    "Language": "Spanish",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMjM5YTRlZmUtZGVmYi00ZjE2LWIyNzAtOWVhMDk1MDdkYzhjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=wZti8QKBWPo"
+  },
+  {
+    "Title": "Supernova",
+    "Year": "2000",
+    "Rated": "PG-13",
+    "Runtime": "90 min",
+    "Genre": ["Horror", "Sci-Fi", "Thriller"],
+    "Director": "Walter Hill",
+    "Actors": [
+      "James Spader",
+      "Angela Bassett",
+      "Robert Forster",
+      "Lou Diamond Phillips"
+    ],
+    "Plot": "A deep space rescue and recovery spaceship with a crew of 6 receives a distress call from a mining operation 3432 light years away. A rescue operation via dimension jump is made. Bad idea.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTgwMjI4OTU4MF5BMl5BanBnXkFtZTcwOTk3MTE3NA@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=bRz2hY6ykGE"
+  },
+  {
+    "Title": "Black Widow",
+    "Year": "1987",
+    "Rated": "R",
+    "Runtime": "102 min",
+    "Genre": ["Crime", "Drama", "Thriller"],
+    "Director": "Bob Rafelson",
+    "Actors": ["Debra Winger", "Theresa Russell", "Sami Frey", "Dennis Hopper"],
+    "Plot": "A federal investigator tracks down a gold-digging woman who moves from husband to husband to kill them and collect the inheritance.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BN2EyMDIyYWItNWI0MC00ODZmLWJlYTAtNDhmOTU0YWZmNWJlXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=Fp9pNPdNwjI"
+  },
+  {
+    "Title": "Minari",
+    "Year": "2020",
+    "Rated": "PG-13",
+    "Runtime": "115 min",
+    "Genre": "Drama",
+    "Director": "Lee Isaac Chung",
+    "Actors": ["Alan S. Kim", "Yeri Han", "Noel Cho", "Steven Yeun"],
+    "Plot": "A Korean family starts a farm in 1980s Arkansas.",
+    "Language": "Korean",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNWEzOTNjNDgtZDhhYS00ODAxLWIzNGMtYjU3OGZhYmI3ZDU4XkEyXkFqcGdeQXVyMTAzNjk5MDI4._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=KQ0gFidlro8"
+  },
+  {
+    "Title": "The Little Things",
+    "Year": "2021",
+    "Rated": "R",
+    "Runtime": "128 min",
+    "Genre": ["Crime", "Drama", "Thriller"],
+    "Director": "John Lee Hancock",
+    "Actors": ["Denzel Washington", "Rami Malek", "Jared Leto", "Chris Bauer"],
+    "Plot": "Kern County Deputy Sheriff Joe Deacon is sent to Los Angeles for what should have been a quick evidence-gathering assignment. Instead, he becomes embroiled in the search for a serial killer who is terrorizing the city.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOGFlNTdmYWQtM2IzMi00YTY3LTlmMDQtZDI5NGQ5MjYzZmEwXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=1HZAnkxdYuA"
+  },
+  {
+    "Title": "In the Earth",
+    "Year": "2021",
+    "Rated": "R",
+    "Runtime": "107 min",
+    "Genre": ["Horror", "Sci-Fi", "Thriller"],
+    "Director": "Ben Wheatley",
+    "Actors": [
+      "Joel Fry",
+      "Reece Shearsmith",
+      "Hayley Squires",
+      "Ellora Torchia"
+    ],
+    "Plot": "As the world searches for a cure to a disastrous virus, a scientist and park scout venture deep in the forest for a routine equipment run.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMWU0NjMxZGMtMjg5OC00Y2RiLThiMmEtYzYzMmFiNTgyMjM5XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=2YYnSJF0fcY"
+  },
+  {
+    "Title": "First Cow",
+    "Year": "2019",
+    "Rated": "PG-13",
+    "Runtime": "122 min",
+    "Genre": ["Drama", "Western"],
+    "Director": "Kelly Reichardt",
+    "Actors": ["Alia Shawkat", "John Magaro", "Dylan Smith", "Ryan Findley"],
+    "Plot": "A skilled cook has traveled west and joined a group of fur trappers in Oregon, though he only finds true connection with a Chinese immigrant also seeking his fortune. Soon the two collaborate on a successful business.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMGUzMGEzM2UtMDg2Ny00Yjk1LTgxMTctMWI1ZGM0ZDBiYjgxXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=SRUWVT87mt8"
+  },
+  {
+    "Title": "Paw Patrol: The Movie",
+    "Year": "2021",
+    "Rated": "G",
+    "Runtime": "60 min",
+    "Genre": ["Animation", "Adventure", "Comedy", "Family"],
+    "Director": "Cal Brunker",
+    "Actors": ["Dax Shepard", "Iain Armitage", "Randall Park", "Yara Shahidi"],
+    "Plot": "Ryder and the pups are called to Adventure City to stop Mayor Humdinger from turning the bustling metropolis into a state of chaos.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNzY2NmQ1ZTgtMGJkOC00YTA0LWE5NjctZjM2ZjFiMWNhYzEzXkEyXkFqcGdeQXVyNjQ4NjY2MzE@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=aywh1D8L0FY"
+  },
+  {
+    "Title": "Riders of Justice",
+    "Year": "2020",
+    "Rated": "Not Rated",
+    "Runtime": "116 min",
+    "Genre": ["Action", "Comedy", "Drama"],
+    "Director": "Anders Thomas Jensen",
+    "Actors": [
+      "Mads Mikkelsen",
+      "Nikolaj Lie Kaas",
+      "Andrea Heick Gadeberg",
+      "Lars Brygmann"
+    ],
+    "Plot": "Markus, who has to go home to his teenage daughter, Mathilde, when his wife dies in a tragic train accident. It seems like an accident until a mathematics geek, who was also a fellow passenger on the train, and his two colleagues show up.",
+    "Language": "Danish",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZWVkNTFmNTQtMGRiZC00NjAwLThjYTgtYmI3ZjA2Zjc1MTM1XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=j9Okx5teGBQ"
+  },
+  {
+    "Title": "The Conjuring",
+    "Year": "2013",
+    "Rated": "R",
+    "Runtime": "112 min",
+    "Genre": ["Horror", "Mystery", "Thriller"],
+    "Director": "James Wan",
+    "Actors": [
+      "Vera Farmiga",
+      "Patrick Wilson",
+      "Lili Taylor",
+      "Ron Livingston"
+    ],
+    "Plot": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BMTM3NjA1NDMyMV5BMl5BanBnXkFtZTcwMDQzNDMzOQ@@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=k10ETZ41q5o"
+  },
+  {
+    "Title": "Those Who Wish Me Dead",
+    "Year": "2021",
+    "Rated": "R",
+    "Runtime": "N/A",
+    "Genre": ["Action", "Drama", "Thriller"],
+    "Director": "Taylor Sheridan",
+    "Actors": [
+      "Angelina Jolie",
+      "Jon Bernthal",
+      "Nicholas Hoult",
+      "Aidan Gillen"
+    ],
+    "Plot": "A teenage murder witness finds himself pursued by twin assassins in the Montana wilderness with a survival expert tasked with protecting him -- and a forest fire threatening to consume them all.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTEyNDEzNjAtNjIyNy00ZGYxLWJjNDYtNTJhM2JhYjIxYTBmXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=sV6VNNjBkcE"
+  },
+  {
+    "Title": "Maya the Bee 3: The Golden Orb",
+    "Year": "2021",
+    "Rated": "N/A",
+    "Runtime": "88 min",
+    "Genre": ["Animation", "Adventure"],
+    "Director": "Noel Cleary",
+    "Actors": [
+      "Benson Jack Anthony",
+      "Frances Berry",
+      "Christian Charisiou",
+      "Justine Clarke"
+    ],
+    "Plot": "When Maya, a headstrong little bee, and her best friend Willi, rescue an ant princess they find themselves in the middle of an epic bug battle that will take them to strange new worlds and test their friendship to its limits.",
+    "Language": "English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYTQzMjllOGMtMGE2ZS00MjNlLTk3ZmUtMzJjMWJjYTY4MzcxXkEyXkFqcGdeQXVyNjk0ODAxMTk@._V1_SX300.jpg",
+    "Trailer": "https://www.youtube.com/watch?v=fNQawiJ6FR8"
+  }
+]
