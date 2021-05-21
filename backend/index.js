@@ -10,7 +10,7 @@ const userRoutes = require("./routes/userRoutes");
 const testRoutes = require("./routes/testRoutes");
 const saloonRoutes = require("./routes/saloonRoutes");
 const movieRoutes = require("./routes/movieRoutes");
-const showingRoutes = require("./routes/showingRoutes")
+const showingRoutes = require("./routes/showingRoutes"); 
 
 // Server Setup
 const app = express();
