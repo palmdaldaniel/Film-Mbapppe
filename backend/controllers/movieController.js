@@ -18,7 +18,8 @@ const getAllMovies = async (req, res) => {
   let movies = await Movie.find({ Title: queryTitle, Actors: queryActor }).exec()
 
   if (movies.length === 0) {
-    res.send('No movies matched the filter')
+    res.send('No movies matched the filter');
+    return;
   }
   res.json(movies)
 }
