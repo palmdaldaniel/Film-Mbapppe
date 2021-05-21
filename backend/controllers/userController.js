@@ -21,6 +21,8 @@ const getUserById = async (req, res) => {
       return;
     }
 
+    user.password = undefined;
+
     res.json(user);
   });
 };
