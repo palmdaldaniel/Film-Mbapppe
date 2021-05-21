@@ -25,7 +25,6 @@ const getSaloonById = async (req, res) => {
         .json({ error: `Saloon with id ${req.params.saloonId} does not exist` });
       return;
     }
-
     res.json(saloon);
   });
 };
