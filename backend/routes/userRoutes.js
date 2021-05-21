@@ -6,8 +6,10 @@ const userController = require("../controllers/userController");
 router.get('/whoami', userController.whoami)
 
 
-router.post('', userController.createUser)
+
 router.put("/:userId", userController.editUser); //Edit User
+router.post('/login', userController.loginUser)
+router.post('', userController.createUser)
 
 
 
