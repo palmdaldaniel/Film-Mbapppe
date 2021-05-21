@@ -51,5 +51,5 @@ module.exports = {
   addSaloon,
   getAllSaloons,
   removeSaloon,
-  getSaloonById
+  getSaloonById 
 }
