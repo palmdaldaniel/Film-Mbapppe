@@ -8,6 +8,7 @@ const uri =
 
 const userRoutes = require("./routes/userRoutes");
 const testRoutes = require("./routes/testRoutes");
+const saloonRoutes = require("./routes/saloonRoutes");
 const movieRoutes = require("./routes/movieRoutes");
 
 // Server Setup
@@ -42,6 +43,7 @@ mongoose
 // Routes setup
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/test", testRoutes);
+app.use("/api/v1/saloons", saloonRoutes);
 app.use("/api/v1/movies", movieRoutes);
 
 // Start Server
