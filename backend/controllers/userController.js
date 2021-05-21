@@ -3,15 +3,19 @@ const Encrypt = require("../Encrypt");
 
 const createUser = async (req, res) => {
 
-    let user = await User.create(req.body);
+    const { email } = req.body
 
-    console.log(req.body);
-    user.password = undefined;
+  let userExists = await User.exists({ email: email });
 
-    res.json(user);
+  if (userExists) {
+    return res
+      .status(400)
+      .json({ error: "An user with that email already exists" });
+  }
 
+  let user = await User.create(req.body);
+  user.password = undefined;
+  res.json(user);
+};
 
-}
-
-
-module.exports = {createUser};
+module.exports = { createUser };
