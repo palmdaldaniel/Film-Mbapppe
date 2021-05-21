@@ -3,10 +3,24 @@ const Schema = mongoose.Schema;
 
 
 const showingSchema = new Schema({
-  saloon: { type: Schema.Types.ObjectId, ref: "Saloon", required: true },
-  film: { type: Schema.Types.ObjectId, ref: "Movie", required: true },
-  date: [{ type: String, required: true }],
-  time: { type: String, required: true }
+  saloon: {
+    type: Schema.Types.ObjectId,
+    ref: "Saloon",
+    required: true
+  },
+  film: {
+    type: Schema.Types.ObjectId,
+    ref: "Movie",
+    required: true
+  },
+  date: [{
+    type: String,
+    required: true
+  }],
+  time: {
+    type: String,
+    required: true
+  }
 });
 
 
