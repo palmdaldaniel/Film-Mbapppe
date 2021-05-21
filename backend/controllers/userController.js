@@ -2,6 +2,13 @@ const User = require("../models/User");
 const Encrypt = require("../Encrypt");
 
 
+
+
+
+
+
+
+// Edit User
 const editUser = async (req, res) => {
     let user;
 
