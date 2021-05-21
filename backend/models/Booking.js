@@ -12,7 +12,6 @@ const bookingSchema = new Schema({
         seatingNumber: {type:Number},
     }
     ]
-
 });
 
 const Booking  = mongoose.model("Booking", bookingSchema);

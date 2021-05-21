@@ -10,6 +10,7 @@ const userRoutes = require("./routes/userRoutes");
 const testRoutes = require("./routes/testRoutes");
 const saloonRoutes = require("./routes/saloonRoutes");
 const movieRoutes = require("./routes/movieRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 
 // Server Setup
 const app = express();
@@ -45,6 +46,7 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/test", testRoutes);
 app.use("/api/v1/saloons", saloonRoutes);
 app.use("/api/v1/movies", movieRoutes);
+app.use("/api/v1/bookings", bookingRoutes);
 
 // Start Server
 app.listen(port, (err) => {
