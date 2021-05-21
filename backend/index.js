@@ -17,7 +17,7 @@ app.use(express.json());
 // Session Setup
 app.use(
   session({
-    secret: "The Phantom Menace",
+    secret: "The Phantom Menace", 
     resave: false,
     saveUninitialized: true,
     cookie: { secure: "auto" },
