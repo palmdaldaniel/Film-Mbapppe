@@ -10,6 +10,7 @@ const bookingSchema = new Schema({
         ticketId: {type:Number},
         price :{type:Number},
         seatingNumber: {type:Number},
+        rowNumber:{type:Number},
     }
     ]
 
