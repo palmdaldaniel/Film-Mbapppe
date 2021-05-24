@@ -9,7 +9,7 @@ const UserPage = () => {
           <h3>Name: <span>Johannes</span></h3>
           <h3>Email: <span>Joh@mail.com</span></h3>
         </div>
-        <div>
+        <div className={styles.buttonContainer}>
           <button className={styles.primaryButton}>Edit name</button>
           <button className={styles.primaryButton}>Logout</button>
         </div>
