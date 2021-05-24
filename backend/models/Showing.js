@@ -4,10 +4,14 @@ const Schema = mongoose.Schema;
 
 const showingSchema = new Schema({
   
+  // saloon: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Saloon",
+  //   required: true
+  // },
   saloon: {
-    type: Schema.Types.ObjectId,
-    ref: "Saloon",
-    required: true
+    type: Number, 
+    require: true
   },
   film: {
     type: Schema.Types.ObjectId,
