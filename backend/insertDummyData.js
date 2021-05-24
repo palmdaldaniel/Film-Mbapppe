@@ -23,10 +23,10 @@ mongoose
     console.log(err);
   });
 
-async function mockDataFunc() {
-  console.log("Data is being stored ... ");
-  await Showing.create(mockScreeningData);
-  console.log("Insertion completed.");
-  console.log("Shutting down");
-  mongoose.connection.close();
-}
+// async function mockDataFunc() {
+//   console.log("Data is being stored ... ");
+//   await Showing.create(mockScreeningData);
+//   console.log("Insertion completed.");
+//   console.log("Shutting down");
+//   mongoose.connection.close();
+// }
