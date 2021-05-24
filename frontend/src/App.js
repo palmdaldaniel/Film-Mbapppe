@@ -1,22 +1,30 @@
+import { BrowserRouter, Route } from "react-router-dom";
+import UserContextProvider from "./contexts/UserContext";
+import LoginPage from "./pages/LoginPage";
+import Showing from "./pages/ShowingPage";
 
 import './App.css';
 import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
 import LoginPage from './pages/LoginPage';
-import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
       <MovieContextProvider>
-        <UserContextProvider>
+      <UserContextProvider>
+        <BrowserRouter>
           <h1>Mbappe</h1>
-          <LoginPage />
-          <Home/>
-        </UserContextProvider>
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+          {/* add /:showingid for showing page */}
+          <Route exact path="/showing">
+            <Showing />
+          </Route>
+        </BrowserRouter>
+      </UserContextProvider>
       </MovieContextProvider>
-
-
     </div>
   );
 }
