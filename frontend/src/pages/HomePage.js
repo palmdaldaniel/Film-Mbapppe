@@ -1,39 +1,41 @@
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
-
+import Card from 'react-bootstrap/Card';
 
 const HomePage = () => {
-    const [movies, setMovies] = useState(null);
-    const { getAllMovies } = useContext(MovieContext);
+    const { showings, getShowingsById } = useContext(MovieContext);
+    console.log(showings)
 
-    useEffect(() => {
-        getAllMovies()
-            .then(result => {
-                setMovies(result)
-            })
-            .catch(err => console.log(`Some error here`, err))
-    }, getAllMovies)
-
-    useEffect(() => {
-
-    }, [movies])
+    const handleClick = (showingId) => {
+        getShowingsById(showingId)
+            .then(res => console.log(res))
+    }
 
     let content = ''
 
-    if (movies) {
+    if (showings) {
         content =
-            <div >
-                <h2>These Movie's titles are here for testing purpose</h2>
-                {movies.map((movie, i) => (
-                    <p key={i}>
-                        {movie.Title}
-
-                    </p>
-                ))}
+            <div>
+                <h2>Todays showings</h2>
+                <div className='d-flex flex-wrap'>
+                    {showings.map((showing, i) => (
+                        <Card key={i} onClick={() => handleClick(showing._id)} style={{ width: '15rem' }}>
+                            <Card.Img variant="top" src={showing.film.Poster} style={{ height: '20rem' }} />
+                            <Card.Body>
+                                <Card.Title>{showing.film.Title}</Card.Title>
+                                <Card.Text>
+                                    {showing.film.Genre[0]}
+                                    <span className='mx-2'>{showing.time}</span>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    ))}
+                </div>
             </div>
 
 
-    } else {
+    }
+    else {
         content = <div>Loading...</div>
     }
 
