@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 
 const showingSchema = new Schema({
-  
   saloon: {
     type: Schema.Types.ObjectId,
     ref: "Saloon",
@@ -20,10 +19,6 @@ const showingSchema = new Schema({
   }],
   time: {
     type: String,
-    required: true
-  }, 
-  price: {
-    type: Number, 
     required: true
   }
 });
