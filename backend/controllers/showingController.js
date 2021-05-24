@@ -1,12 +1,6 @@
 const Showing = require("../models/Showing");
 
 //only using createShowing function to test if getShowingById works
-
-const getAllShowings = async (req, res) => {
-  let showing = await Showing.find().exec();
-  res.json(showing);
-}
-
 const createShowing = async (req, res) => {
   console.log(req.body);
   let newShowing = await Showing.create(req.body); 
@@ -36,5 +30,4 @@ const getShowingById = async (req, res) => {
 module.exports = {
   createShowing, 
   getShowingById,
-  getAllShowings
 };
