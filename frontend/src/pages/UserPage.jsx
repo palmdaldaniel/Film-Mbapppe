@@ -14,9 +14,15 @@ const UserPage = () => {
       <div className={styles.showings}>
         <div className={styles.upcoming}>
           <h2>Upcoming movies</h2>
+          <div className={styles.movieGrid}>
+
+          </div>
         </div>
         <div className={styles.previous}>
           <h2>Previous movies</h2>
+          <div className={styles.movieGrid}>
+
+          </div>
         </div>
       </div>
 
