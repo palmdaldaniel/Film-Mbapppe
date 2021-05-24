@@ -1,36 +1,51 @@
 const User = require("../models/User");
 const Encrypt = require("../Encrypt");
+const utils = require("../core/utilities");
 
-const getAllUsers = async (req, res) => {
-  let users = await User.find().exec();
-  res.json(users);
-};
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
 
-const getUserById = async (req, res) => {
-  // with callback and exec()
-  User.findById(req.params.userId).exec((err, user) => {
-    if (err) {
-      res.status(400).json({ error: "Something went wrong" });
-      return;
+  // Check if a user exists with that email
+  let userExists = await User.exists({ email: email });
+
+  if (userExists) {
+    // Find user in db with findOne
+    let user = await User.findOne({ email: email }).exec();
+    // hash the password from the users input
+    let hashedPassword = Encrypt.encrypt(password);
+    // check password from user input agains the db
+    if (user.password === hashedPassword) {
+      // here will create a session, comes with the taks who am i
+
+       req.session.user = user;
+       req.session.user.password = undefined;
+
+      // set users pw to undefined
+      user.password = undefined;
+      return res.json({ message: "Login successfull", loggedInUser: user });
     }
-
-    if (!user) {
-      res
-        .status(404)
-        .json({ error: `User with id ${req.params.userId} does not exist` });
-      return;
-    }
-
-    user.password = undefined;
-
-    res.json(user);
-  });
+    return res.status(401).json({ error: "Wrong email or password" });
+  }
+  return res.status(401).json({ error: "Wrong email or password" });
 };
 
 const createUser = async (req, res) => {
   // destructure req.body object
-  const { email } = req.body;
+  const { email, password } = req.body;
 
+  // check if password is strong.
+  const passwordIsStrong = utils.passwordValidator(password);
+
+  // check if email is valid.
+  const validemail = utils.emailValidator(email);
+
+  if (!passwordIsStrong) {
+    return res.status(400).json({ err: "Put in a stronger password " });
+  } else if (!validemail) {
+    return res.status(400).json({ err: "Put in a valid email" });
+  }
+
+  // check if user already exists with that email
   let userExists = await User.exists({ email: email });
 
   if (userExists) {
@@ -38,7 +53,6 @@ const createUser = async (req, res) => {
       .status(400)
       .json({ error: "An user with that email already exists" });
   }
-
   let user = await User.create(req.body);
   user.password = undefined;
   res.json(user);
@@ -49,7 +63,6 @@ const editUser = async (req, res) => {
   let user;
 
   User.findById(req.params.userId).exec(async (err, result) => {
-
     // checks for errors
     if (err) {
       res.status(400).json({ error: "Something went wrong" });
@@ -74,57 +87,18 @@ const editUser = async (req, res) => {
   });
 
   res.send("Ok");
-}
-const loginUser = async (req, res) => {
-  const { email, password } = req.body;
-
-  // Check if a user exists with that email
-  let userExists = await User.exists({ email: email });
-
-  if (userExists) {
-    // Find user in db with findOne
-    let user = await User.findOne({ email: email }).exec();
-    // hash the password from the users input
-    let hashedPassword = Encrypt.encrypt(password);
-    // check password from user input agains the db
-    if (user.password === hashedPassword) {
-      // here will create a session, comes with the taks who am i
-
-      req.session.user = user;
-      req.session.user.password = undefined;
-
-      // set users pw to undefined
-      user.password = undefined;
-      return res.json({ message: "Login successfull", loggedInUser: user });
-    }
-    return res.status(401).json({ error: "Wrong email or password" });
-  }
-  return res.status(401).json({ error: "Wrong email or password" });
-
 };
 
 // log out
 const logout = (req, res) => {
-  console.log(
-    "Logged out:",
-    req.session.user.name,
-  );
+  console.log("Logged out:", req.session.user.name);
   delete req.session.user;
   res.json({ success: "Logged out successfully" });
 };
-
-const whoami = async (req, res) => {
-  // in postman res.json will say null if no user is logged in
-  return res.json(req.session.user || null);
-}
 
 module.exports = {
   logout,
   editUser,
   createUser,
   loginUser,
-  whoami,
-  getAllUsers,
-  getUserById
 };
-

@@ -19,8 +19,8 @@ mongoose
 }).catch((err) => {
   console.log(err);
 }); 
-
-/* async function mockDataFunc() {
+/* 
+async function mockDataFunc() {
   console.log("Data is being stored ... ");
   await Movie.create(mockData); 
   console.log("Insertion completed.");
