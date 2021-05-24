@@ -24,6 +24,18 @@ const getAllMovies = async (req, res) => {
   res.json(movies)
 }
 
+const getAllMoviesIds = async (req, res) => {
+  let movies = await Movie.find().exec()
+  
+  let moviesIds = []
+  movies.map(element => {
+    moviesIds.push(element._id)
+  })
+   res.json(moviesIds)
+}
+
+
+
 
 const getMovieById = async (req, res) => { 
   Movie.findById(req.params.movieid).exec((err, movie) => {
@@ -48,6 +60,7 @@ const getMovieById = async (req, res) => {
 
 module.exports = {
   getAllMovies,
-  getMovieById
+  getMovieById,
+  getAllMoviesIds
 };
 
