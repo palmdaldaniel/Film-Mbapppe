@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <UserContextProvider>
         <BrowserRouter>
-          <h1>Mbappe</h1>
           <Route exact path="/login">
             <LoginPage />
           </Route>

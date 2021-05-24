@@ -5,6 +5,7 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
+  const [showLogin, setShowLogin] = useState(true);
 
 
    useEffect(() => {
