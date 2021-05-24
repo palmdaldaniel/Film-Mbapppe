@@ -1,12 +1,9 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import UserContextProvider from "./contexts/UserContext";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
-
-import './App.css';
 import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
-import LoginPage from './pages/LoginPage';
+
 
 function App() {
   return (
