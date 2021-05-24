@@ -70,8 +70,8 @@ const ScreeningData = () => {
 
   const assignSaloon = () => {
     // pickTime();
-    randomShowings(1);
-    randomShowings(2);
+    randomShowings("60a7744ea7df53474ccee9c8");
+    randomShowings("60a77479a7df53474ccee9c9");
   };
 
   const getDatesInMonth = () => {

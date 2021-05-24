@@ -1,2564 +1,2564 @@
 [
   {
     "date": "2021-06-01",
-    "saloon": 1,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 100
-  },
-  {
-    "date": "2021-06-01",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe42",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe36",
     "price": 150
   },
   {
     "date": "2021-06-01",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 200
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 100
   },
   {
     "date": "2021-06-01",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 200
-  },
-  {
-    "date": "2021-06-01",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe37",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3e",
     "price": 150
   },
   {
     "date": "2021-06-01",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe3f",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 200
+  },
+  {
+    "date": "2021-06-01",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 150
+  },
+  {
+    "date": "2021-06-1",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe36",
     "price": 200
   },
   {
     "date": "2021-06-02",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-06-02",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe35",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3e",
     "price": 100
   },
   {
     "date": "2021-06-02",
-    "saloon": 1,
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 150
+  },
+  {
+    "date": "2021-06-02",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 100
+  },
+  {
+    "date": "2021-06-02",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe38",
+    "price": 200
+  },
+  {
+    "date": "2021-06-02",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 150
+  },
+  {
+    "date": "2021-06-02",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 200
+  },
+  {
+    "date": "2021-06-03",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 12,
     "film": "60a7866ff38ee6481eebbe3b",
     "price": 150
   },
   {
-    "date": "2021-06-02",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 200
-  },
-  {
-    "date": "2021-06-02",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 200
-  },
-  {
-    "date": "2021-06-02",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
     "date": "2021-06-03",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-06-03",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 200
-  },
-  {
-    "date": "2021-06-03",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-06-03",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 150
-  },
-  {
-    "date": "2021-06-03",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 200
-  },
-  {
-    "date": "2021-06-03",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-04",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-06-04",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 150
-  },
-  {
-    "date": "2021-06-04",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 100
-  },
-  {
-    "date": "2021-06-04",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 200
-  },
-  {
-    "date": "2021-06-04",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-06-04",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 150
-  },
-  {
-    "date": "2021-06-05",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-05",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 200
-  },
-  {
-    "date": "2021-06-05",
-    "saloon": 1,
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 21,
     "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
+    "price": 100
   },
   {
-    "date": "2021-06-05",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-06-05",
-    "saloon": 2,
-    "time": 12,
+    "date": "2021-06-03",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
     "film": "60a7866ff38ee6481eebbe38",
     "price": 150
   },
   {
-    "date": "2021-06-05",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 200
-  },
-  {
-    "date": "2021-06-06",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 100
-  },
-  {
-    "date": "2021-06-06",
-    "saloon": 1,
-    "time": 10,
+    "date": "2021-06-03",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
     "film": "60a7866ff38ee6481eebbe3c",
+    "price": 100
+  },
+  {
+    "date": "2021-06-03",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-06-03",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe38",
     "price": 200
   },
   {
-    "date": "2021-06-06",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
+    "date": "2021-06-04",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 100
   },
   {
-    "date": "2021-06-06",
-    "saloon": 2,
-    "time": 12,
+    "date": "2021-06-04",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
     "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-06-04",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-06-04",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 200
+  },
+  {
+    "date": "2021-06-04",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 200
+  },
+  {
+    "date": "2021-06-04",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 100
+  },
+  {
+    "date": "2021-06-05",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 100
+  },
+  {
+    "date": "2021-06-05",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 200
+  },
+  {
+    "date": "2021-06-05",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 200
+  },
+  {
+    "date": "2021-06-05",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-06-05",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 200
+  },
+  {
+    "date": "2021-06-05",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 150
+  },
+  {
+    "date": "2021-06-06",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 200
+  },
+  {
+    "date": "2021-06-06",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 100
   },
   {
     "date": "2021-06-06",
-    "saloon": 2,
-    "time": 13,
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
     "film": "60a7866ff38ee6481eebbe3d",
     "price": 100
   },
   {
     "date": "2021-06-06",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-06-07",
-    "saloon": 1,
-    "time": 10,
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
     "film": "60a7866ff38ee6481eebbe44",
-    "price": 200
+    "price": 100
   },
   {
-    "date": "2021-06-07",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-06-07",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 150
-  },
-  {
-    "date": "2021-06-07",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 150
-  },
-  {
-    "date": "2021-06-07",
-    "saloon": 2,
+    "date": "2021-06-06",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 15,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-06-07",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 150
-  },
-  {
-    "date": "2021-06-08",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 150
-  },
-  {
-    "date": "2021-06-08",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-06-08",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 100
-  },
-  {
-    "date": "2021-06-08",
-    "saloon": 2,
-    "time": 16,
     "film": "60a7866ff38ee6481eebbe37",
-    "price": 200
-  },
-  {
-    "date": "2021-06-08",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 200
-  },
-  {
-    "date": "2021-06-08",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe38",
     "price": 100
   },
   {
-    "date": "2021-06-09",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 150
-  },
-  {
-    "date": "2021-06-09",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 150
-  },
-  {
-    "date": "2021-06-09",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-06-09",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-06-09",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-06-09",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 100
-  },
-  {
-    "date": "2021-06-10",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 200
-  },
-  {
-    "date": "2021-06-10",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 100
-  },
-  {
-    "date": "2021-06-10",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-06-10",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-06-10",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-06-10",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 100
-  },
-  {
-    "date": "2021-06-11",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-06-11",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 100
-  },
-  {
-    "date": "2021-06-11",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 150
-  },
-  {
-    "date": "2021-06-11",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 150
-  },
-  {
-    "date": "2021-06-11",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 150
-  },
-  {
-    "date": "2021-06-11",
-    "saloon": 2,
+    "date": "2021-06-06",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 21,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 150
-  },
-  {
-    "date": "2021-06-12",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-06-12",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-06-12",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 150
-  },
-  {
-    "date": "2021-06-12",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-06-12",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-06-12",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 100
-  },
-  {
-    "date": "2021-06-13",
-    "saloon": 1,
-    "time": 18,
     "film": "60a7866ff38ee6481eebbe39",
     "price": 100
   },
   {
-    "date": "2021-06-13",
-    "saloon": 1,
-    "time": 19,
+    "date": "2021-06-07",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 12,
     "film": "60a7866ff38ee6481eebbe3a",
     "price": 100
   },
   {
-    "date": "2021-06-13",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 200
-  },
-  {
-    "date": "2021-06-13",
-    "saloon": 2,
+    "date": "2021-06-07",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 15,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 100
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 200
   },
   {
-    "date": "2021-06-13",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3c",
+    "date": "2021-06-07",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3e",
     "price": 150
   },
   {
-    "date": "2021-06-13",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 100
-  },
-  {
-    "date": "2021-06-14",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-06-14",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-06-14",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-06-14",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-14",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-06-14",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-06-15",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 100
-  },
-  {
-    "date": "2021-06-15",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-06-15",
-    "saloon": 1,
-    "time": 19,
+    "date": "2021-06-07",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
     "film": "60a7866ff38ee6481eebbe45",
     "price": 100
   },
   {
-    "date": "2021-06-15",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-06-15",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 150
-  },
-  {
-    "date": "2021-06-15",
-    "saloon": 2,
+    "date": "2021-06-07",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 17,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 100
-  },
-  {
-    "date": "2021-06-16",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-06-16",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 100
-  },
-  {
-    "date": "2021-06-16",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe37",
+    "film": "60a7866ff38ee6481eebbe42",
     "price": 200
   },
   {
-    "date": "2021-06-16",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-06-16",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 100
-  },
-  {
-    "date": "2021-06-16",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-06-17",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 150
-  },
-  {
-    "date": "2021-06-17",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-06-17",
-    "saloon": 1,
-    "time": 21,
+    "date": "2021-06-07",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
     "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-06-17",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 200
-  },
-  {
-    "date": "2021-06-17",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 150
-  },
-  {
-    "date": "2021-06-17",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe45",
     "price": 100
   },
   {
-    "date": "2021-06-18",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3e",
+    "date": "2021-06-08",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 100
+  },
+  {
+    "date": "2021-06-08",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 100
+  },
+  {
+    "date": "2021-06-08",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3d",
     "price": 150
   },
   {
-    "date": "2021-06-18",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe43",
+    "date": "2021-06-08",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe38",
     "price": 150
   },
   {
-    "date": "2021-06-18",
-    "saloon": 1,
+    "date": "2021-06-08",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 16,
-    "film": "60a7866ff38ee6481eebbe3b",
+    "film": "60a7866ff38ee6481eebbe3d",
     "price": 200
   },
   {
-    "date": "2021-06-18",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe3b",
+    "date": "2021-06-08",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe34",
     "price": 150
   },
   {
-    "date": "2021-06-18",
-    "saloon": 2,
+    "date": "2021-06-09",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 21,
-    "film": "60a7866ff38ee6481eebbe3e",
+    "film": "60a7866ff38ee6481eebbe34",
     "price": 200
   },
   {
-    "date": "2021-06-18",
-    "saloon": 2,
-    "time": 18,
+    "date": "2021-06-09",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-06-09",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 200
+  },
+  {
+    "date": "2021-06-09",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 200
+  },
+  {
+    "date": "2021-06-09",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 100
+  },
+  {
+    "date": "2021-06-09",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 150
+  },
+  {
+    "date": "2021-06-10",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
     "film": "60a7866ff38ee6481eebbe40",
     "price": 100
   },
   {
-    "date": "2021-06-19",
-    "saloon": 1,
+    "date": "2021-06-10",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 200
+  },
+  {
+    "date": "2021-06-10",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 100
+  },
+  {
+    "date": "2021-06-10",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-06-10",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 19,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 200
+  },
+  {
+    "date": "2021-06-10",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 150
+  },
+  {
+    "date": "2021-06-11",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 100
+  },
+  {
+    "date": "2021-06-11",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-06-11",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 100
+  },
+  {
+    "date": "2021-06-11",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-06-11",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 200
+  },
+  {
+    "date": "2021-06-11",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 150
+  },
+  {
+    "date": "2021-06-12",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-06-12",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 100
+  },
+  {
+    "date": "2021-06-12",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 100
+  },
+  {
+    "date": "2021-06-12",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 100
+  },
+  {
+    "date": "2021-06-12",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 150
+  },
+  {
+    "date": "2021-06-12",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 200
+  },
+  {
+    "date": "2021-06-13",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 150
+  },
+  {
+    "date": "2021-06-13",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 150
+  },
+  {
+    "date": "2021-06-13",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 200
+  },
+  {
+    "date": "2021-06-13",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-06-13",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe38",
+    "price": 100
+  },
+  {
+    "date": "2021-06-13",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-06-14",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 150
+  },
+  {
+    "date": "2021-06-14",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 200
+  },
+  {
+    "date": "2021-06-14",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 200
+  },
+  {
+    "date": "2021-06-14",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-06-14",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 150
+  },
+  {
+    "date": "2021-06-14",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 150
+  },
+  {
+    "date": "2021-06-15",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe38",
+    "price": 100
+  },
+  {
+    "date": "2021-06-15",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 200
+  },
+  {
+    "date": "2021-06-15",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 200
+  },
+  {
+    "date": "2021-06-15",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-06-15",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 200
+  },
+  {
+    "date": "2021-06-15",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 100
+  },
+  {
+    "date": "2021-06-16",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-06-16",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 200
+  },
+  {
+    "date": "2021-06-16",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-06-16",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 150
+  },
+  {
+    "date": "2021-06-16",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-06-16",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-06-17",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-06-17",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 150
+  },
+  {
+    "date": "2021-06-17",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 150
+  },
+  {
+    "date": "2021-06-17",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-06-17",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 200
+  },
+  {
+    "date": "2021-06-17",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 200
+  },
+  {
+    "date": "2021-06-18",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 200
+  },
+  {
+    "date": "2021-06-18",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
+  },
+  {
+    "date": "2021-06-18",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-06-18",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 200
+  },
+  {
+    "date": "2021-06-18",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 150
+  },
+  {
+    "date": "2021-06-18",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 200
+  },
+  {
+    "date": "2021-06-19",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
     "film": "60a7866ff38ee6481eebbe45",
     "price": 100
   },
   {
     "date": "2021-06-19",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 150
-  },
-  {
-    "date": "2021-06-19",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-19",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 150
-  },
-  {
-    "date": "2021-06-19",
-    "saloon": 2,
-    "time": 20,
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
     "film": "60a7866ff38ee6481eebbe3d",
     "price": 100
   },
   {
     "date": "2021-06-19",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 150
-  },
-  {
-    "date": "2021-06-20",
-    "saloon": 1,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-06-20",
-    "saloon": 1,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-06-20",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 100
-  },
-  {
-    "date": "2021-06-20",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 100
-  },
-  {
-    "date": "2021-06-20",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 100
-  },
-  {
-    "date": "2021-06-20",
-    "saloon": 2,
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 19,
-    "film": "60a7866ff38ee6481eebbe3e",
+    "film": "60a7866ff38ee6481eebbe3c",
     "price": 100
   },
   {
-    "date": "2021-06-21",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 150
-  },
-  {
-    "date": "2021-06-21",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 100
-  },
-  {
-    "date": "2021-06-21",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-06-21",
-    "saloon": 2,
+    "date": "2021-06-19",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 12,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 150
-  },
-  {
-    "date": "2021-06-21",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 150
-  },
-  {
-    "date": "2021-06-21",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 100
-  },
-  {
-    "date": "2021-06-22",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 200
-  },
-  {
-    "date": "2021-06-22",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 200
-  },
-  {
-    "date": "2021-06-22",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 150
-  },
-  {
-    "date": "2021-06-22",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 100
-  },
-  {
-    "date": "2021-06-22",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 150
-  },
-  {
-    "date": "2021-06-22",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 150
-  },
-  {
-    "date": "2021-06-23",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 150
-  },
-  {
-    "date": "2021-06-23",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 100
-  },
-  {
-    "date": "2021-06-23",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 100
-  },
-  {
-    "date": "2021-06-23",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 150
-  },
-  {
-    "date": "2021-06-23",
-    "saloon": 2,
-    "time": 16,
     "film": "60a7866ff38ee6481eebbe3c",
     "price": 200
   },
   {
+    "date": "2021-06-19",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
+  },
+  {
+    "date": "2021-06-19",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-06-20",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 100
+  },
+  {
+    "date": "2021-06-20",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 150
+  },
+  {
+    "date": "2021-06-20",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 200
+  },
+  {
+    "date": "2021-06-20",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 150
+  },
+  {
+    "date": "2021-06-20",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
+  },
+  {
+    "date": "2021-06-20",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 150
+  },
+  {
+    "date": "2021-06-21",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 100
+  },
+  {
+    "date": "2021-06-21",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 100
+  },
+  {
+    "date": "2021-06-21",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 200
+  },
+  {
+    "date": "2021-06-21",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 200
+  },
+  {
+    "date": "2021-06-21",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 200
+  },
+  {
+    "date": "2021-06-21",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 200
+  },
+  {
+    "date": "2021-06-22",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 150
+  },
+  {
+    "date": "2021-06-22",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 200
+  },
+  {
+    "date": "2021-06-22",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 150
+  },
+  {
+    "date": "2021-06-22",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 100
+  },
+  {
+    "date": "2021-06-22",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 100
+  },
+  {
+    "date": "2021-06-22",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 200
+  },
+  {
     "date": "2021-06-23",
-    "saloon": 2,
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 200
+  },
+  {
+    "date": "2021-06-23",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-06-23",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 150
+  },
+  {
+    "date": "2021-06-23",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-06-23",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe38",
+    "price": 200
+  },
+  {
+    "date": "2021-06-23",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 200
+  },
+  {
+    "date": "2021-06-24",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 150
+  },
+  {
+    "date": "2021-06-24",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 150
+  },
+  {
+    "date": "2021-06-24",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 20,
     "film": "60a7866ff38ee6481eebbe41",
     "price": 150
   },
   {
     "date": "2021-06-24",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-06-24",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe36",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe33",
     "price": 200
   },
   {
     "date": "2021-06-24",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 100
-  },
-  {
-    "date": "2021-06-24",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3e",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3a",
     "price": 150
   },
   {
     "date": "2021-06-24",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe44",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-06-25",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3b",
     "price": 200
   },
   {
-    "date": "2021-06-24",
-    "saloon": 2,
+    "date": "2021-06-25",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 100
+  },
+  {
+    "date": "2021-06-25",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 150
+  },
+  {
+    "date": "2021-06-25",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 100
+  },
+  {
+    "date": "2021-06-25",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-06-25",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 150
+  },
+  {
+    "date": "2021-06-26",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-06-26",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 100
+  },
+  {
+    "date": "2021-06-26",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-06-26",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 200
+  },
+  {
+    "date": "2021-06-26",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 100
+  },
+  {
+    "date": "2021-06-26",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 200
+  },
+  {
+    "date": "2021-06-27",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 150
+  },
+  {
+    "date": "2021-06-27",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 200
+  },
+  {
+    "date": "2021-06-27",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 200
+  },
+  {
+    "date": "2021-06-27",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 100
+  },
+  {
+    "date": "2021-06-27",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 100
+  },
+  {
+    "date": "2021-06-27",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 100
+  },
+  {
+    "date": "2021-06-28",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 100
+  },
+  {
+    "date": "2021-06-28",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-06-28",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 150
+  },
+  {
+    "date": "2021-06-28",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 150
+  },
+  {
+    "date": "2021-06-28",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 150
+  },
+  {
+    "date": "2021-06-28",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 200
+  },
+  {
+    "date": "2021-06-29",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 100
+  },
+  {
+    "date": "2021-06-29",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 100
+  },
+  {
+    "date": "2021-06-29",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 150
+  },
+  {
+    "date": "2021-06-29",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 150
+  },
+  {
+    "date": "2021-06-29",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 100
+  },
+  {
+    "date": "2021-06-29",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 200
+  },
+  {
+    "date": "2021-06-30",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-06-30",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-06-30",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 150
+  },
+  {
+    "date": "2021-06-30",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 150
+  },
+  {
+    "date": "2021-06-30",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-06-30",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 100
+  },
+  {
+    "date": "2021-07-01",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-01",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 150
+  },
+  {
+    "date": "2021-07-01",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 100
+  },
+  {
+    "date": "2021-07-01",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-07-01",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 100
+  },
+  {
+    "date": "2021-07-01",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 200
+  },
+  {
+    "date": "2021-07-02",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 100
+  },
+  {
+    "date": "2021-07-02",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 200
+  },
+  {
+    "date": "2021-07-02",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 100
+  },
+  {
+    "date": "2021-07-02",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-07-02",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 200
+  },
+  {
+    "date": "2021-07-02",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-07-03",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 100
+  },
+  {
+    "date": "2021-07-03",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 100
+  },
+  {
+    "date": "2021-07-03",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
+  },
+  {
+    "date": "2021-07-03",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 100
+  },
+  {
+    "date": "2021-07-03",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 150
+  },
+  {
+    "date": "2021-07-03",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-07-04",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 100
+  },
+  {
+    "date": "2021-07-04",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 200
+  },
+  {
+    "date": "2021-07-04",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 100
+  },
+  {
+    "date": "2021-07-04",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-04",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 20,
     "film": "60a7866ff38ee6481eebbe39",
     "price": 150
   },
   {
-    "date": "2021-06-25",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3f",
+    "date": "2021-07-04",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe32",
     "price": 200
   },
   {
-    "date": "2021-06-25",
-    "saloon": 1,
+    "date": "2021-07-05",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
+  },
+  {
+    "date": "2021-07-05",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 100
+  },
+  {
+    "date": "2021-07-05",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-07-05",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-05",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-07-05",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 17,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-07-06",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
     "film": "60a7866ff38ee6481eebbe3b",
     "price": 150
   },
   {
-    "date": "2021-06-25",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe42",
+    "date": "2021-07-06",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe36",
     "price": 150
   },
   {
-    "date": "2021-06-25",
-    "saloon": 2,
-    "time": 18,
+    "date": "2021-07-06",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 150
+  },
+  {
+    "date": "2021-07-06",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 100
+  },
+  {
+    "date": "2021-07-06",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
     "film": "60a7866ff38ee6481eebbe38",
     "price": 150
   },
   {
-    "date": "2021-06-25",
-    "saloon": 2,
+    "date": "2021-07-06",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 17,
-    "film": "60a7866ff38ee6481eebbe40",
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 150
   },
   {
-    "date": "2021-06-25",
-    "saloon": 2,
-    "time": 18,
+    "date": "2021-07-07",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-07-07",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
     "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-06-26",
-    "saloon": 1,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 200
-  },
-  {
-    "date": "2021-06-26",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe37",
     "price": 100
   },
   {
-    "date": "2021-06-26",
-    "saloon": 1,
+    "date": "2021-07-07",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 150
+  },
+  {
+    "date": "2021-07-07",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 16,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 150
+  },
+  {
+    "date": "2021-07-07",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-07",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-07-08",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 100
+  },
+  {
+    "date": "2021-07-08",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 200
+  },
+  {
+    "date": "2021-07-08",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 150
+  },
+  {
+    "date": "2021-07-08",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 100
+  },
+  {
+    "date": "2021-07-08",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 200
+  },
+  {
+    "date": "2021-07-08",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-07-09",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 200
+  },
+  {
+    "date": "2021-07-09",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 200
+  },
+  {
+    "date": "2021-07-09",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 200
+  },
+  {
+    "date": "2021-07-09",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 150
+  },
+  {
+    "date": "2021-07-09",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-09",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 100
+  },
+  {
+    "date": "2021-07-10",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 150
+  },
+  {
+    "date": "2021-07-10",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 150
+  },
+  {
+    "date": "2021-07-10",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 200
+  },
+  {
+    "date": "2021-07-10",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-10",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 150
+  },
+  {
+    "date": "2021-07-10",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-07-11",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-07-11",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe33",
+    "price": 100
+  },
+  {
+    "date": "2021-07-11",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-07-11",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 150
+  },
+  {
+    "date": "2021-07-11",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 100
+  },
+  {
+    "date": "2021-07-11",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 150
+  },
+  {
+    "date": "2021-07-12",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe41",
+    "price": 200
+  },
+  {
+    "date": "2021-07-12",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 100
+  },
+  {
+    "date": "2021-07-12",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 150
+  },
+  {
+    "date": "2021-07-12",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 150
+  },
+  {
+    "date": "2021-07-12",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
     "film": "60a7866ff38ee6481eebbe38",
     "price": 150
   },
   {
-    "date": "2021-06-26",
-    "saloon": 2,
-    "time": 10,
+    "date": "2021-07-12",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-07-13",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-13",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
     "film": "60a7866ff38ee6481eebbe3d",
     "price": 100
   },
   {
-    "date": "2021-06-26",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe36",
+    "date": "2021-07-13",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 100
+  },
+  {
+    "date": "2021-07-13",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 150
   },
   {
-    "date": "2021-06-26",
-    "saloon": 2,
+    "date": "2021-07-13",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 100
+  },
+  {
+    "date": "2021-07-13",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-07-14",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 100
+  },
+  {
+    "date": "2021-07-14",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 15,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 150
   },
   {
-    "date": "2021-06-27",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 100
-  },
-  {
-    "date": "2021-06-27",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-27",
-    "saloon": 1,
-    "time": 20,
+    "date": "2021-07-14",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
     "film": "60a7866ff38ee6481eebbe44",
-    "price": 100
+    "price": 150
   },
   {
-    "date": "2021-06-27",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 200
-  },
-  {
-    "date": "2021-06-27",
-    "saloon": 2,
-    "time": 11,
+    "date": "2021-07-14",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
     "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
+    "price": 150
   },
   {
-    "date": "2021-06-27",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-06-28",
-    "saloon": 1,
-    "time": 12,
+    "date": "2021-07-14",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
     "film": "60a7866ff38ee6481eebbe3e",
     "price": 150
   },
   {
-    "date": "2021-06-28",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 200
-  },
-  {
-    "date": "2021-06-28",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-28",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 100
-  },
-  {
-    "date": "2021-06-28",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 150
-  },
-  {
-    "date": "2021-06-28",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 100
-  },
-  {
-    "date": "2021-06-29",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-06-29",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 150
-  },
-  {
-    "date": "2021-06-29",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 200
-  },
-  {
-    "date": "2021-06-29",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-06-29",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 150
-  },
-  {
-    "date": "2021-06-29",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-06-30",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-06-30",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 200
-  },
-  {
-    "date": "2021-06-30",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 150
-  },
-  {
-    "date": "2021-06-30",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 200
-  },
-  {
-    "date": "2021-06-30",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 100
-  },
-  {
-    "date": "2021-06-30",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-07-01",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 100
-  },
-  {
-    "date": "2021-07-01",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 200
-  },
-  {
-    "date": "2021-07-01",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-07-01",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-07-01",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-07-01",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 100
-  },
-  {
-    "date": "2021-07-02",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-07-02",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-07-02",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 200
-  },
-  {
-    "date": "2021-07-02",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-07-02",
-    "saloon": 2,
+    "date": "2021-07-14",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 12,
-    "film": "60a7866ff38ee6481eebbe34",
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 200
+  },
+  {
+    "date": "2021-07-15",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3f",
     "price": 100
   },
   {
-    "date": "2021-07-02",
-    "saloon": 2,
+    "date": "2021-07-15",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 15,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-07-03",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-07-03",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-07-03",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 100
-  },
-  {
-    "date": "2021-07-03",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 100
-  },
-  {
-    "date": "2021-07-03",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 100
-  },
-  {
-    "date": "2021-07-03",
-    "saloon": 2,
-    "time": 16,
     "film": "60a7866ff38ee6481eebbe35",
-    "price": 200
-  },
-  {
-    "date": "2021-07-04",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-07-04",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-07-04",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-07-04",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe44",
     "price": 150
   },
   {
-    "date": "2021-07-04",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-07-04",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-07-05",
-    "saloon": 1,
+    "date": "2021-07-15",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 18,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 100
+  },
+  {
+    "date": "2021-07-15",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
     "film": "60a7866ff38ee6481eebbe3e",
     "price": 150
   },
   {
-    "date": "2021-07-05",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-07-05",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe42",
+    "date": "2021-07-15",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3b",
     "price": 100
   },
   {
-    "date": "2021-07-05",
-    "saloon": 2,
-    "time": 11,
+    "date": "2021-07-15",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 100
+  },
+  {
+    "date": "2021-07-16",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 200
+  },
+  {
+    "date": "2021-07-16",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
     "film": "60a7866ff38ee6481eebbe3c",
     "price": 200
   },
   {
-    "date": "2021-07-05",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-07-05",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-07-06",
-    "saloon": 1,
+    "date": "2021-07-16",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 18,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 150
-  },
-  {
-    "date": "2021-07-06",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe3f",
+    "film": "60a7866ff38ee6481eebbe44",
     "price": 100
   },
   {
-    "date": "2021-07-06",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 150
+    "date": "2021-07-16",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
   },
   {
-    "date": "2021-07-06",
-    "saloon": 2,
+    "date": "2021-07-16",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 15,
-    "film": "60a7866ff38ee6481eebbe41",
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 100
   },
   {
-    "date": "2021-07-06",
-    "saloon": 2,
+    "date": "2021-07-16",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-17",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-17",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 100
+  },
+  {
+    "date": "2021-07-17",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 200
+  },
+  {
+    "date": "2021-07-17",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-07-17",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 100
+  },
+  {
+    "date": "2021-07-17",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-07-18",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 100
+  },
+  {
+    "date": "2021-07-18",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 13,
     "film": "60a7866ff38ee6481eebbe43",
     "price": 100
   },
   {
-    "date": "2021-07-06",
-    "saloon": 2,
-    "time": 20,
+    "date": "2021-07-18",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 100
+  },
+  {
+    "date": "2021-07-18",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-18",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-07-18",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 200
+  },
+  {
+    "date": "2021-07-19",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 200
+  },
+  {
+    "date": "2021-07-19",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 100
+  },
+  {
+    "date": "2021-07-19",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 100
+  },
+  {
+    "date": "2021-07-19",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 150
+  },
+  {
+    "date": "2021-07-19",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 150
+  },
+  {
+    "date": "2021-07-19",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-07-20",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 200
+  },
+  {
+    "date": "2021-07-20",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
     "film": "60a7866ff38ee6481eebbe34",
     "price": 100
   },
   {
-    "date": "2021-07-07",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-07-07",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-07-07",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 100
-  },
-  {
-    "date": "2021-07-07",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 150
-  },
-  {
-    "date": "2021-07-07",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-07-07",
-    "saloon": 2,
+    "date": "2021-07-20",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 17,
-    "film": "60a7866ff38ee6481eebbe36",
+    "film": "60a7866ff38ee6481eebbe35",
     "price": 200
   },
   {
-    "date": "2021-07-08",
-    "saloon": 1,
-    "time": 14,
+    "date": "2021-07-20",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
     "film": "60a7866ff38ee6481eebbe38",
     "price": 200
   },
   {
-    "date": "2021-07-08",
-    "saloon": 1,
-    "time": 18,
+    "date": "2021-07-20",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 20,
     "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-07-08",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-07-08",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe41",
     "price": 200
   },
   {
-    "date": "2021-07-08",
-    "saloon": 2,
+    "date": "2021-07-20",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 100
+  },
+  {
+    "date": "2021-07-21",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 200
+  },
+  {
+    "date": "2021-07-21",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 150
+  },
+  {
+    "date": "2021-07-21",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-07-21",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 21,
     "film": "60a7866ff38ee6481eebbe38",
     "price": 100
   },
   {
-    "date": "2021-07-08",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-07-09",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 200
-  },
-  {
-    "date": "2021-07-09",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-07-09",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-07-09",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 150
-  },
-  {
-    "date": "2021-07-09",
-    "saloon": 2,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-07-09",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 150
-  },
-  {
-    "date": "2021-07-10",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 200
-  },
-  {
-    "date": "2021-07-10",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 200
-  },
-  {
-    "date": "2021-07-10",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 100
-  },
-  {
-    "date": "2021-07-10",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 100
-  },
-  {
-    "date": "2021-07-10",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 150
-  },
-  {
-    "date": "2021-07-10",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-07-11",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 100
-  },
-  {
-    "date": "2021-07-11",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 100
-  },
-  {
-    "date": "2021-07-11",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 200
-  },
-  {
-    "date": "2021-07-11",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 150
-  },
-  {
-    "date": "2021-07-11",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 150
-  },
-  {
-    "date": "2021-07-11",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-07-12",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 100
-  },
-  {
-    "date": "2021-07-12",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 150
-  },
-  {
-    "date": "2021-07-12",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 200
-  },
-  {
-    "date": "2021-07-12",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-07-12",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 150
-  },
-  {
-    "date": "2021-07-12",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-07-13",
-    "saloon": 1,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 150
-  },
-  {
-    "date": "2021-07-13",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 200
-  },
-  {
-    "date": "2021-07-13",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 200
-  },
-  {
-    "date": "2021-07-13",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 200
-  },
-  {
-    "date": "2021-07-13",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 150
-  },
-  {
-    "date": "2021-07-13",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 200
-  },
-  {
-    "date": "2021-07-14",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 100
-  },
-  {
-    "date": "2021-07-14",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-07-14",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 100
-  },
-  {
-    "date": "2021-07-14",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 150
-  },
-  {
-    "date": "2021-07-14",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 200
-  },
-  {
-    "date": "2021-07-14",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 150
-  },
-  {
-    "date": "2021-07-15",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 150
-  },
-  {
-    "date": "2021-07-15",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 150
-  },
-  {
-    "date": "2021-07-15",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-07-15",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 150
-  },
-  {
-    "date": "2021-07-15",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 100
-  },
-  {
-    "date": "2021-07-15",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-07-16",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 150
-  },
-  {
-    "date": "2021-07-16",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 150
-  },
-  {
-    "date": "2021-07-16",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 200
-  },
-  {
-    "date": "2021-07-16",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 100
-  },
-  {
-    "date": "2021-07-16",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 200
-  },
-  {
-    "date": "2021-07-16",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 200
-  },
-  {
-    "date": "2021-07-17",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-07-17",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 150
-  },
-  {
-    "date": "2021-07-17",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 150
-  },
-  {
-    "date": "2021-07-17",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe42",
-    "price": 200
-  },
-  {
-    "date": "2021-07-17",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 200
-  },
-  {
-    "date": "2021-07-17",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 100
-  },
-  {
-    "date": "2021-07-18",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 100
-  },
-  {
-    "date": "2021-07-18",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 100
-  },
-  {
-    "date": "2021-07-18",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
-    "date": "2021-07-18",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3b",
-    "price": 200
-  },
-  {
-    "date": "2021-07-18",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 150
-  },
-  {
-    "date": "2021-07-18",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 150
-  },
-  {
-    "date": "2021-07-19",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 200
-  },
-  {
-    "date": "2021-07-19",
-    "saloon": 1,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-07-19",
-    "saloon": 1,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 200
-  },
-  {
-    "date": "2021-07-19",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 200
-  },
-  {
-    "date": "2021-07-19",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 200
-  },
-  {
-    "date": "2021-07-19",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-07-20",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe3c",
-    "price": 150
-  },
-  {
-    "date": "2021-07-20",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 200
-  },
-  {
-    "date": "2021-07-20",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 100
-  },
-  {
-    "date": "2021-07-20",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 150
-  },
-  {
-    "date": "2021-07-20",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 100
-  },
-  {
-    "date": "2021-07-20",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 100
-  },
-  {
     "date": "2021-07-21",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe40",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 200
   },
   {
     "date": "2021-07-21",
-    "saloon": 1,
-    "time": 11,
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 100
+  },
+  {
+    "date": "2021-07-22",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-22",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 150
+  },
+  {
+    "date": "2021-07-22",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 200
+  },
+  {
+    "date": "2021-07-22",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 10,
     "film": "60a7866ff38ee6481eebbe32",
-    "price": 200
-  },
-  {
-    "date": "2021-07-21",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 200
-  },
-  {
-    "date": "2021-07-21",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-07-21",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 100
-  },
-  {
-    "date": "2021-07-21",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe3f",
     "price": 100
   },
   {
     "date": "2021-07-22",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 100
-  },
-  {
-    "date": "2021-07-22",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 100
-  },
-  {
-    "date": "2021-07-22",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 200
-  },
-  {
-    "date": "2021-07-22",
-    "saloon": 2,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
-  },
-  {
-    "date": "2021-07-22",
-    "saloon": 2,
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 20,
     "film": "60a7866ff38ee6481eebbe3a",
     "price": 100
   },
   {
     "date": "2021-07-22",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 150
-  },
-  {
-    "date": "2021-07-23",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 100
-  },
-  {
-    "date": "2021-07-23",
-    "saloon": 1,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 200
-  },
-  {
-    "date": "2021-07-23",
-    "saloon": 1,
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 12,
-    "film": "60a7866ff38ee6481eebbe41",
+    "film": "60a7866ff38ee6481eebbe36",
     "price": 150
   },
   {
     "date": "2021-07-23",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe39",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe38",
     "price": 100
   },
   {
     "date": "2021-07-23",
-    "saloon": 2,
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 17,
-    "film": "60a7866ff38ee6481eebbe3c",
+    "film": "60a7866ff38ee6481eebbe43",
+    "price": 100
+  },
+  {
+    "date": "2021-07-23",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe39",
     "price": 150
   },
   {
     "date": "2021-07-23",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3d",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 100
+  },
+  {
+    "date": "2021-07-23",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3f",
+    "price": 150
+  },
+  {
+    "date": "2021-07-23",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe36",
     "price": 200
   },
   {
     "date": "2021-07-24",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 100
-  },
-  {
-    "date": "2021-07-24",
-    "saloon": 1,
-    "time": 13,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 100
-  },
-  {
-    "date": "2021-07-24",
-    "saloon": 1,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 150
-  },
-  {
-    "date": "2021-07-24",
-    "saloon": 2,
-    "time": 18,
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
     "film": "60a7866ff38ee6481eebbe36",
     "price": 150
   },
   {
     "date": "2021-07-24",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe38",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 200
+  },
+  {
+    "date": "2021-07-24",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3d",
     "price": 100
   },
   {
     "date": "2021-07-24",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe3a",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-07-24",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 100
+  },
+  {
+    "date": "2021-07-24",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe35",
+    "price": 200
+  },
+  {
+    "date": "2021-07-25",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 200
+  },
+  {
+    "date": "2021-07-25",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe38",
     "price": 150
   },
   {
     "date": "2021-07-25",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3b",
+    "price": 150
   },
   {
     "date": "2021-07-25",
-    "saloon": 1,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe3a",
-    "price": 100
-  },
-  {
-    "date": "2021-07-25",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 200
-  },
-  {
-    "date": "2021-07-25",
-    "saloon": 2,
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 12,
-    "film": "60a7866ff38ee6481eebbe43",
-    "price": 200
-  },
-  {
-    "date": "2021-07-25",
-    "saloon": 2,
-    "time": 19,
     "film": "60a7866ff38ee6481eebbe41",
     "price": 150
   },
   {
     "date": "2021-07-25",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe37",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 20,
+    "film": "60a7866ff38ee6481eebbe3f",
     "price": 100
   },
   {
-    "date": "2021-07-26",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe33",
-    "price": 100
-  },
-  {
-    "date": "2021-07-26",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 150
-  },
-  {
-    "date": "2021-07-26",
-    "saloon": 1,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 150
-  },
-  {
-    "date": "2021-07-26",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 150
-  },
-  {
-    "date": "2021-07-26",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe3d",
-    "price": 200
-  },
-  {
-    "date": "2021-07-26",
-    "saloon": 2,
-    "time": 16,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 100
-  },
-  {
-    "date": "2021-07-27",
-    "saloon": 1,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 100
-  },
-  {
-    "date": "2021-07-27",
-    "saloon": 1,
+    "date": "2021-07-25",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 17,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 200
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 100
   },
   {
-    "date": "2021-07-27",
-    "saloon": 1,
-    "time": 12,
+    "date": "2021-07-26",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 150
+  },
+  {
+    "date": "2021-07-26",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
     "film": "60a7866ff38ee6481eebbe3b",
     "price": 100
   },
   {
-    "date": "2021-07-27",
-    "saloon": 2,
-    "time": 11,
-    "film": "60a7866ff38ee6481eebbe44",
-    "price": 100
-  },
-  {
-    "date": "2021-07-27",
-    "saloon": 2,
-    "time": 21,
-    "film": "60a7866ff38ee6481eebbe34",
-    "price": 150
-  },
-  {
-    "date": "2021-07-27",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 200
-  },
-  {
-    "date": "2021-07-28",
-    "saloon": 1,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe35",
-    "price": 150
-  },
-  {
-    "date": "2021-07-28",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 100
-  },
-  {
-    "date": "2021-07-28",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 100
-  },
-  {
-    "date": "2021-07-28",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe37",
-    "price": 200
-  },
-  {
-    "date": "2021-07-28",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe40",
-    "price": 200
-  },
-  {
-    "date": "2021-07-28",
-    "saloon": 2,
+    "date": "2021-07-26",
+    "saloon": "60a7744ea7df53474ccee9c8",
     "time": 17,
-    "film": "60a7866ff38ee6481eebbe39",
-    "price": 100
-  },
-  {
-    "date": "2021-07-29",
-    "saloon": 1,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe37",
+    "film": "60a7866ff38ee6481eebbe44",
     "price": 150
   },
   {
-    "date": "2021-07-29",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe40",
+    "date": "2021-07-26",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe36",
     "price": 200
   },
   {
-    "date": "2021-07-29",
-    "saloon": 1,
-    "time": 19,
+    "date": "2021-07-26",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 150
+  },
+  {
+    "date": "2021-07-26",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe44",
+    "price": 150
+  },
+  {
+    "date": "2021-07-27",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 13,
     "film": "60a7866ff38ee6481eebbe33",
     "price": 200
   },
   {
-    "date": "2021-07-29",
-    "saloon": 2,
-    "time": 18,
-    "film": "60a7866ff38ee6481eebbe32",
-    "price": 100
-  },
-  {
-    "date": "2021-07-29",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-07-29",
-    "saloon": 2,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3e",
-    "price": 100
-  },
-  {
-    "date": "2021-07-30",
-    "saloon": 1,
-    "time": 19,
-    "film": "60a7866ff38ee6481eebbe3e",
+    "date": "2021-07-27",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 150
   },
   {
-    "date": "2021-07-30",
-    "saloon": 1,
-    "time": 13,
+    "date": "2021-07-27",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 20,
     "film": "60a7866ff38ee6481eebbe3d",
     "price": 200
   },
   {
-    "date": "2021-07-30",
-    "saloon": 1,
-    "time": 18,
+    "date": "2021-07-27",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 200
+  },
+  {
+    "date": "2021-07-27",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 200
+  },
+  {
+    "date": "2021-07-27",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
     "film": "60a7866ff38ee6481eebbe45",
     "price": 100
   },
   {
-    "date": "2021-07-30",
-    "saloon": 2,
-    "time": 20,
-    "film": "60a7866ff38ee6481eebbe41",
-    "price": 150
-  },
-  {
-    "date": "2021-07-30",
-    "saloon": 2,
-    "time": 17,
-    "film": "60a7866ff38ee6481eebbe36",
-    "price": 150
-  },
-  {
-    "date": "2021-07-30",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe3f",
-    "price": 200
-  },
-  {
-    "date": "2021-07-31",
-    "saloon": 1,
-    "time": 12,
-    "film": "60a7866ff38ee6481eebbe40",
+    "date": "2021-07-28",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 10,
+    "film": "60a7866ff38ee6481eebbe37",
     "price": 100
   },
   {
-    "date": "2021-07-31",
-    "saloon": 1,
-    "time": 16,
+    "date": "2021-07-28",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-28",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe38",
+    "price": 200
+  },
+  {
+    "date": "2021-07-28",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 17,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-07-28",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 12,
+    "film": "60a7866ff38ee6481eebbe32",
+    "price": 150
+  },
+  {
+    "date": "2021-07-28",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe42",
+    "price": 150
+  },
+  {
+    "date": "2021-07-29",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 150
+  },
+  {
+    "date": "2021-07-29",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe3e",
+    "price": 150
+  },
+  {
+    "date": "2021-07-29",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3c",
+    "price": 200
+  },
+  {
+    "date": "2021-07-29",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 100
+  },
+  {
+    "date": "2021-07-29",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 21,
     "film": "60a7866ff38ee6481eebbe3c",
     "price": 100
   },
   {
-    "date": "2021-07-31",
-    "saloon": 1,
+    "date": "2021-07-29",
+    "saloon": "60a77479a7df53474ccee9c9",
     "time": 21,
-    "film": "60a7866ff38ee6481eebbe41",
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 100
+  },
+  {
+    "date": "2021-07-30",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 21,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 200
+  },
+  {
+    "date": "2021-07-30",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 100
+  },
+  {
+    "date": "2021-07-30",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe3a",
+    "price": 200
+  },
+  {
+    "date": "2021-07-30",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe34",
+    "price": 200
+  },
+  {
+    "date": "2021-07-30",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 13,
+    "film": "60a7866ff38ee6481eebbe45",
+    "price": 200
+  },
+  {
+    "date": "2021-07-30",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 14,
+    "film": "60a7866ff38ee6481eebbe34",
     "price": 100
   },
   {
     "date": "2021-07-31",
-    "saloon": 2,
-    "time": 10,
-    "film": "60a7866ff38ee6481eebbe45",
-    "price": 150
-  },
-  {
-    "date": "2021-07-31",
-    "saloon": 2,
-    "time": 14,
-    "film": "60a7866ff38ee6481eebbe38",
-    "price": 150
-  },
-  {
-    "date": "2021-07-31",
-    "saloon": 2,
-    "time": 15,
-    "film": "60a7866ff38ee6481eebbe3e",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe42",
     "price": 200
+  },
+  {
+    "date": "2021-07-31",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 11,
+    "film": "60a7866ff38ee6481eebbe40",
+    "price": 150
+  },
+  {
+    "date": "2021-07-31",
+    "saloon": "60a7744ea7df53474ccee9c8",
+    "time": 15,
+    "film": "60a7866ff38ee6481eebbe3d",
+    "price": 150
+  },
+  {
+    "date": "2021-07-31",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 18,
+    "film": "60a7866ff38ee6481eebbe39",
+    "price": 200
+  },
+  {
+    "date": "2021-07-31",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 16,
+    "film": "60a7866ff38ee6481eebbe37",
+    "price": 100
+  },
+  {
+    "date": "2021-07-31",
+    "saloon": "60a77479a7df53474ccee9c9",
+    "time": 19,
+    "film": "60a7866ff38ee6481eebbe36",
+    "price": 150
   }
 ]
