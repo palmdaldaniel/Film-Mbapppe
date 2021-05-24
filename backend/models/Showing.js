@@ -13,10 +13,10 @@ const showingSchema = new Schema({
     ref: "Movie",
     required: true
   },
-  date: [{
+  date: {
     type: String,
     required: true
-  }],
+  },
   time: {
     type: String,
     required: true
