@@ -10,9 +10,8 @@ function App() {
       <UserContextProvider>
         <h1>Mbappe</h1>
         <LoginPage />
-        <UserPage/>
+        <UserPage />
       </UserContextProvider>
-      
     </div>
   );
 }
