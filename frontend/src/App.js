@@ -1,15 +1,16 @@
-
-import UserContextProvider from './contexts/UserContext';
-import LoginPage from './pages/LoginPage';
+import { BrowserRouter, Route } from "react-router-dom";
+import UserContextProvider from "./contexts/UserContext";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
     <div className="App">
       <UserContextProvider>
-        <h1>Mbappe</h1>
-        <LoginPage />
+        <BrowserRouter>
+          <h1>Mbappe</h1>
+          <LoginPage />
+        </BrowserRouter>
       </UserContextProvider>
-      
     </div>
   );
 }
