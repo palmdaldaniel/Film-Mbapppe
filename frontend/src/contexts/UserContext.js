@@ -62,7 +62,9 @@ const logout = async ()=>{
     loginUser,
     createUser,
     logout,
-    getUser
+    getUser, 
+    showLogin, 
+    setShowLogin
 
   }
   return (
