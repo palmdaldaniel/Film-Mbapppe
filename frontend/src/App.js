@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <UserContextProvider>
         <h1>Mbappe</h1>
-        <LoginPage />
+        {/* <LoginPage /> */}
         <UserPage />
       </UserContextProvider>
     </div>
