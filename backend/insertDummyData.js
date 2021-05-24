@@ -1,0 +1,29 @@
+const mongoose = require("mongoose"); 
+const Movie = require("./models/Movie"); 
+
+const uri =
+  "mongodb+srv://kyd:1234@cluster0.qpr92.mongodb.net/MoviesApp?retryWrites=true&w=majority";
+
+  const mockData = require("./mockData.json"); 
+
+  // console.log(mockData);
+
+  //Database connection
+mongoose
+.connect(uri, {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true, 
+}).then(() => {
+  console.log("MongoDb connected...");
+  mockDataFunc(); 
+}).catch((err) => {
+  console.log(err);
+}); 
+
+/* async function mockDataFunc() {
+  console.log("Data is being stored ... ");
+  await Movie.create(mockData); 
+  console.log("Insertion completed.");
+  console.log("Shutting down");
+  mongoose.connection.close(); 
+} */
