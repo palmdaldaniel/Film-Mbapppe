@@ -5,10 +5,14 @@ const UserPage = () => {
     <div className={styles.container}>
       <h1>Userpage</h1>
       <div className={styles.info}>
-        <h3>Name: <span>Johannes</span></h3>
-        <h3>Email: <span>Joh@mail.com</span></h3>
-        <button>Edit name</button>
-        <button>Logout</button>
+        <div>
+          <h3>Name: <span>Johannes</span></h3>
+          <h3>Email: <span>Joh@mail.com</span></h3>
+        </div>
+        <div>
+          <button className={styles.primaryButton}>Edit name</button>
+          <button className={styles.primaryButton}>Logout</button>
+        </div>
       </div>
 
       <div className={styles.showings}>

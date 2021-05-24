@@ -1,7 +1,6 @@
 
-import './App.css';
 import UserContextProvider from './contexts/UserContext';
-import LoginPage from './pages/LoginPage';
+//import LoginPage from './pages/LoginPage';
 import UserPage from './pages/UserPage';
 
 function App() {
