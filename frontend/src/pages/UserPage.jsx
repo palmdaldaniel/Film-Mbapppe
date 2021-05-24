@@ -4,14 +4,15 @@ const UserPage = () => {
   return (
     <div className={styles.container}>
       <h1>Userpage</h1>
-      <div className={styles.info}>
-        <div>
-          <h3>Name: <span>Johannes</span></h3>
-          <h3>Email: <span>Joh@mail.com</span></h3>
+      <div className={styles.content}>
+        <div className={styles.info}>
+          <h2>Welcome <span>Johannes</span></h2>
+          <button className={styles.editNameButton}>Edit name</button>
         </div>
-        <div className={styles.buttonContainer}>
-          <button className={styles.primaryButton}>Edit name</button>
-          <button className={styles.primaryButton}>Logout</button>
+        <div className={styles.logout}>
+          <button className={styles.logoutButton}>
+            Logout
+          </button>
         </div>
       </div>
 

@@ -8,31 +8,68 @@
   margin: auto;
 }
 
-.info,
+.content,
 .showings{
   background: lightgray;
   width: 100%;
   padding: 1rem 0rem;
 }
 
-.info{
+.content{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.showings{
-  background: rgb(173, 173, 173);
+.info h2{
+  margin: 0rem;
 }
 
-.primaryButton{
+.editNameButton{
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 0rem auto 1rem;
+}
+
+.logoutButton{
   width: 7rem;
   height: 2rem;
   font-weight: bold;
   font-size: 1rem;
+  margin: 0.33rem;
 }
 
-.buttonContainer{
+.logout{
   display: flex;
+}
+
+.showings{
+  background: rgb(173, 173, 173);
+}
+
+@media (min-width: 576px) {
+  .info{
+    flex-direction: row;
+  }
+  
+  .logout{
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  .info{
+    width: 60%;
+  }
+
+  .info *{
+    flex-direction: row;
+  }
 }
