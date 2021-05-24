@@ -26,8 +26,29 @@ const getShowingById = async (req, res) => {
     res.json(result);
   });
 };
+const getShowingByDate = async (req, res) => {
+  
+  Showing.find({date: req.query.date}).exec(async (err, result) => {
+    if (err) {
+      res.status(400).json({ error: "Something went wrong" });
+      return;
+    }
+
+    if (!result) {
+      res
+        .stataus(404)
+        .json({
+          error: `There are no showings for ${req.query.date}`,
+        });
+      return;
+    }
+    res.json(result);
+  });
+
+};
 
 module.exports = {
   createShowing, 
   getShowingById,
+  getShowingByDate
 };
