@@ -15,33 +15,35 @@ const UserPage = () => {
         <div className={styles.upcoming}>
           <h2>Upcoming movies</h2>
           <div className={styles.movieGrid}>
-            <div className={styles.card}>
-              <p>title</p>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
             </div>
-            <div className={styles.card}>
-              <p>title</p>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
             </div>
-            <div className={styles.card}>
-              <p>title</p>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
             </div>
-            <div className={styles.card}>
-              <p>title</p>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
             </div>
-            <div className={styles.card}>
-              <p>title</p>
-            </div>
-            <div className={styles.card}>
-              <p>title</p>
-            </div>
-            <div className={styles.card}>
-              <p>title</p>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
             </div>
           </div>
         </div>
         <div className={styles.previous}>
           <h2>Previous movies</h2>
           <div className={styles.movieGrid}>
-            <p>Put previous moviecards here in grid</p>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
+            </div>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
+            </div>
+            <div className={styles.tempCard}>
+              <p>tempCard</p>
+            </div>
           </div>
         </div>
       </div>
