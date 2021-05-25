@@ -4,13 +4,13 @@ import { MovieContext } from "../contexts/MovieContext";
 
 const ShowingPage = (props) => {
   const { showingId } = props.match.params;
-  console.log(showingId);
 
-  const { getShowingsById } = useContext(MovieContext);
+  const { getShowingsById, getMovieById, showing } = useContext(MovieContext);
 
   useEffect(() => {
     getShowingsById(showingId);
   }, []);
+  console.log(showing.film.Title);
 
   return (
     <div>

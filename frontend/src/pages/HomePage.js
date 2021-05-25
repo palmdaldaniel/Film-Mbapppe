@@ -9,10 +9,7 @@ const HomePage = () => {
     console.log(showings)
 
     const handleClick = (showingId) => {
-        
-        
         history.push(`/showing/${showingId}`)
-        console.log(showingId);
     }
 
     let content = ''

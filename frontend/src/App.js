@@ -13,17 +13,15 @@ function App() {
       <MovieContextProvider>
       <UserContextProvider>
         <BrowserRouter>
-          <h1>Mbappe</h1>
           <Route exact path="/">
             <HomePage />
           </Route>
           <Route exact path="/login">
             <LoginPage />
           </Route>
-          {/* add /:showingid for showing page */}
+
           <Route exact path="/showing/:showingId" component={Showing}/>
-            {/* <Showing />
-          </Route> */}
+
         </BrowserRouter>
       </UserContextProvider>
       </MovieContextProvider>
