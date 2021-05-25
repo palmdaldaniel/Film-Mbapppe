@@ -30,3 +30,20 @@
 .bold {
   font-weight: 600;
 }
+
+@media only screen and (min-width: 1200px) 
+{
+  .movieinfocontainer{
+    flex-direction: row;
+    padding: 0 70px;
+  }
+
+  .descContainer {
+    font-size: 1.1rem;
+    padding: 0 50px;
+  }
+
+  .poster {
+    margin-top: 0px;
+  }
+}
