@@ -1,9 +1,24 @@
-const ShowingPage = () => {
+import { useContext, useEffect } from "react";
+
+import MovieInfo from "../components/MovieInfoOnShowingPage"
+import { MovieContext } from "../contexts/MovieContext";
+
+const ShowingPage = (props) => {
+  const { showingId } = props.match.params;
+
+  const { getShowingsById, getMovieById, showing } = useContext(MovieContext);
+
+  useEffect(() => {
+    getShowingsById(showingId);
+  }, []);
+
+  console.log(showing);
+
   return (
     <div>
-      <h1>Showing page with movie info, booking and seating chart to follow</h1>
+      <MovieInfo showing={showing} />
     </div>
   );
-}
- 
+};
+
 export default ShowingPage;
