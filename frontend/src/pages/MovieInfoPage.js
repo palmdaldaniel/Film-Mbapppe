@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./css/MovieInfoPage.module.css";
 
 const MovieIndoPage = () => {
   const [movie, setMovie] = useState({
@@ -24,36 +25,59 @@ const MovieIndoPage = () => {
   console.log(movie.Actors);
 
   return (
-    <section>
+      <div className={styles.sectionWrapper}>
+
+
+     
+    <section className={styles.section}>
       <h3>{movie.Title}</h3>
-      <figure>
+      <div className={styles.contentWrapper}>
+      <figure className={styles.figure}>
         <img src={movie.Poster} alt={`Poster of the movie ${movie.Title}`} />
       </figure>
-      <div className="content">
-        <p> <span className="label">Runtime </span>{movie.Runtime} </p>
 
-        <div className="genres">
-          <span className="label">Genre:</span>
+      <div className={styles.content}>
+        <p>
+          <span className={styles.label}>Runtime: </span>
+          {movie.Runtime}
+        </p>
+
+        <div className={styles.genres}>
+          <span className={styles.label}>Genre:</span>
           <ul>
             {movie.Genre.map((genre) => (
               <li>{genre}</li>
             ))}
           </ul>
         </div>
-        <p><span className="label">Rating: </span>{movie.Rated}</p>
-        <div className="actors">
-        <span className="label">Actors: </span>
+        <p>
+          <span className={styles.label}>Rating: </span>
+          {movie.Rated}
+        </p>
+        <div className={styles.actors}>
+          <span className={styles.label}>Actors: </span>
           <ul>
             {movie.Actors.map((actor) => (
               <li>{actor}</li>
             ))}
           </ul>
         </div>
-        <p><span className="label">Language: </span>{movie.Language}</p>
-        <p><span className="label">Director: </span>{movie.Director}</p>
-        <p><span className="label">Plot: </span>{movie.Plot}</p>
+        <p>
+          <span className={styles.label}>Language: </span>
+          {movie.Language}
+        </p>
+        <p>
+          <span className={styles.label}>Director: </span>
+          {movie.Director}
+        </p>
+        <p>
+          <span className={styles.label}>Plot: </span>
+          {movie.Plot}
+        </p>
+      </div>
       </div>
     </section>
+    </div>
   );
 };
 
