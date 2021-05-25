@@ -1,4 +1,4 @@
-.container{
+.container {
   background: rgb(235, 235, 235);
   display: flex;
   flex-direction: column;
@@ -7,30 +7,30 @@
   width: 100vw;
   margin: auto;
 }
-.content{
+
+.content {
   width: 100%;
 }
 
-.userInfo,
-.showings{
+.userInfo, .showings {
   background: lightgray;
   width: 90%;
   margin: 1rem auto;
 }
 
-.userInfo{
+.userInfo {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.userInfo h2{
+.userInfo h2 {
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.editNameButton{
+.editNameButton {
   background: none;
   border: none;
   cursor: pointer;
@@ -38,11 +38,12 @@
   margin: 0rem;
   padding: 0rem;
 }
-.editNameButton:hover{
+
+.editNameButton:hover {
   color: gray;
 }
 
-.showings{
+.showings {
   background: lightpink;
   display: flex;
   flex-direction: column;
@@ -50,7 +51,7 @@
   padding: 0;
 }
 
-.movieGrid{
+.movieGrid {
   background: lightseagreen;
   display: flex;
   flex-direction: column;
@@ -59,7 +60,7 @@
   gap: 1rem;
 }
 
-.tempCard{
+.tempCard {
   background: lightgreen;
   display: flex;
   justify-content: center;
@@ -67,18 +68,25 @@
   min-width: 15rem;
 }
 
-.tempCard p{
+.tempCard p {
   align-self: center;
 }
 
 @media (min-width: 576px) {
-
+  .movieGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 768px) {
-
+  .tempCard {
+    min-width: 13.7rem;
+  }
 }
 
 @media (min-width: 992px) {
-
+  .movieGrid {
+    justify-content: flex-start;
+  }
 }
