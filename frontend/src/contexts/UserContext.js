@@ -5,6 +5,9 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
+  const [loginResult, setLoginResult] = useState(null);
+
+  // toggle between loginForm and register in LoginPage
   const [showLogin, setShowLogin] = useState(true);
 
 
@@ -28,7 +31,15 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(loginInfo),
     });
     userLoggingIn = await userLoggingIn.json();
-    getUser();
+    if (userLoggingIn.succes) {
+      setActiveUser(userLoggingIn);
+      console.log("User logging in: ", activeUser);
+      setLoginResult(null);
+    }
+    else if (userLoggingIn.error) {
+      console.log(loginResult);
+      setLoginResult(userLoggingIn.error);
+    }
 
 
 
