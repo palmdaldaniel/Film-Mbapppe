@@ -31,12 +31,11 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(loginInfo),
     });
     userLoggingIn = await userLoggingIn.json();
-    if (userLoggingIn.succes) {
+    if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
       console.log("User logging in: ", activeUser);
       setLoginResult(null);
-    }
-    else if (userLoggingIn.error) {
+    } else {
       console.log(loginResult);
       setLoginResult(userLoggingIn.error);
     }

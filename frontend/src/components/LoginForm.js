@@ -27,8 +27,8 @@ export default function Login() {
             password,
         };
         let result = await loginUser(loginInfo);
-        if (result.success) {
-            console.log("result.success: ", result.success);
+        if (!result.error) {
+            console.log("You're logged in");
             history.push("/");
           } else {
             setError(result.error);
