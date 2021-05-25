@@ -7,21 +7,20 @@ const UserContextProvider = (props) => {
   const [bookings, setBookings] = useState([]);
 
 
-   useEffect(() => {
+  useEffect(() => {
     getUser();
-  }, []) 
+  }, [])
 
   const getUser = async () => {
-/*     let user = await fetch("/api/v1/users/whoami")
-    console.log(user);
-    user = await user.json();
-    setActiveUser(user) */
-    setActiveUser({name: "Bob", email: "boB@gmail.com"})
+    //let user = await fetch("/api/v1/users/whoami");
+    //user = await user.json();
+    let user = { name: "Bob", email: "joh@mail.com" };
+    setActiveUser(user)
     return
   }
 
-  const loginUser = async (loginInfo)=>{
-    let result = await fetch("/api/v1/users/login",{
+  const loginUser = async (loginInfo) => {
+    let result = await fetch("/api/v1/users/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,36 +28,36 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(loginInfo),
     });
     result = await result.json();
-    getUser();
+    await getUser();
     return result
-}
+  }
 
-const createUser = async(newUser)=>{
-  let result = await fetch("/api/v1/users", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(newUser),
-  });
-  result = await result.json();
-  getUser();
-  return result;
-}
+  const createUser = async (newUser) => {
+    let result = await fetch("/api/v1/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
+    result = await result.json();
+    await getUser();
+    return result;
+  }
 
-const logout = async ()=>{
-  await fetch("/api/v1/users/logout")
-   getUser()
-}
-
-
+  const logout = async () => {
+    await fetch("/api/v1/users/logout")
+    getUser()
+  }
 
 
-  
+
+
+
   const values =
   {
-    activeUser, 
-    setActiveUser, 
+    activeUser,
+    setActiveUser,
     bookings,
     setBookings,
     loginUser,
