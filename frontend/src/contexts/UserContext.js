@@ -51,10 +51,6 @@ const UserContextProvider = (props) => {
     getUser()
   }
 
-
-
-
-
   const values =
   {
     activeUser,
