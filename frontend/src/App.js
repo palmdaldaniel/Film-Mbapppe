@@ -14,7 +14,7 @@ function App() {
       <UserContextProvider>
         <BrowserRouter>
           <h1>Mbappe</h1>
-          <Route exact path="">
+          <Route exact path="/">
             <HomePage />
           </Route>
           <Route exact path="/login">
