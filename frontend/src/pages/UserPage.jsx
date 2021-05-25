@@ -9,7 +9,7 @@ const UserPage = () => {
   return (
     <div className={styles.container}>
       {activeUser ? (
-        <div className="content">
+        <div className={styles.content}>
           <div className={styles.userInfo}>
             <div className={styles.info}>
               <h2>Hi, <span>{activeUser.name}</span>!</h2>
