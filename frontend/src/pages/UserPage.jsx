@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 import styles from '../css/userPage.module.css'
@@ -67,8 +68,8 @@ const UserPage = () => {
         <div className="content">
           <h3>You must be logged in to use this page!</h3>
 
-          <a href="#">Login</a>
-          <a href="#">Registrer user</a>
+          <Link href="#">Login</Link>
+          <Link href="#">Registrer user</Link>
         </div>
       )}
     </div>
