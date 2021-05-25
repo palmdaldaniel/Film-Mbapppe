@@ -14,7 +14,7 @@ const UserContextProvider = (props) => {
   const getUser = async () => {
     //let user = await fetch("/api/v1/users/whoami");
     //user = await user.json();
-    let user = { name: "Johannes", email: "bob@mail.com" };
+    let user = { name: "Bob", email: "bob@mail.com" }; //delete after testing
     setActiveUser(user)
     return
   }
