@@ -16,8 +16,6 @@ const ShowingPage = (props) => {
 
   return (
     <div>
-      <h1>Showing page with movie info</h1>
-      <h2>booking and seating chart to follow</h2>
       <MovieInfo showing={showing} />
     </div>
   );
