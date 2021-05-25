@@ -28,21 +28,30 @@ const UserPage = () => {
                 <div className={styles.tempCard}>
                   <p>tempCard</p>
                 </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
               </div>
             </div>
             <div className={styles.previous}>
               <h2>Previous movies</h2>
               {/* Put list compoinent here */}
               <div className={styles.movieGrid}>
+                <div className={styles.tempCard}>
+                  <p>tempCard</p>
+                </div>
+                <div className={styles.tempCard}>
+                  <p>tempCard</p>
+                </div>
+                <div className={styles.tempCard}>
+                  <p>tempCard</p>
+                </div>
+                <div className={styles.tempCard}>
+                  <p>tempCard</p>
+                </div>
+                <div className={styles.tempCard}>
+                  <p>tempCard</p>
+                </div>
+                <div className={styles.tempCard}>
+                  <p>tempCard</p>
+                </div>
                 <div className={styles.tempCard}>
                   <p>tempCard</p>
                 </div>
