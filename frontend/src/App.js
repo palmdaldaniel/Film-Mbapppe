@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
 import HomePage from "./pages/HomePage";
+import MovieInfoPage from "./pages/MovieInfoPage"
 import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,6 +25,8 @@ function App() {
           <Route exact path="/showing">
             <Showing />
           </Route>
+          <Route exact path="/movies/movie/:movieId" component={MovieInfoPage}/>
+
         </BrowserRouter>
       </UserContextProvider>
       </MovieContextProvider>
