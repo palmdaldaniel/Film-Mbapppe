@@ -20,17 +20,24 @@ const UserContextProvider = (props) => {
   }
 
   const loginUser = async (loginInfo)=>{
-    let result = await fetch("/api/v1/users/login",{
+    let userLoggingIn = await fetch("/api/v1/users/login",{
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(loginInfo),
     });
-    result = await result.json();
+    userLoggingIn = await userLoggingIn.json();
     getUser();
-    return result
+
+
+
+    
+    return userLoggingIn;
 }
+
+
+
 
 const createUser = async(newUser)=>{
   let result = await fetch("/api/v1/users", {
