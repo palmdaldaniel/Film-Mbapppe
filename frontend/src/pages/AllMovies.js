@@ -9,7 +9,6 @@ const AllMovies = () => {
     const { getAllMovies } = useContext(MovieContext);
 
     useEffect(()=> {
-        
         const moviesGetting = async () => {
             let response = await getAllMovies()
             setAllMovies(response)
@@ -17,17 +16,13 @@ const AllMovies = () => {
         moviesGetting()
     },[getAllMovies])
 
-    useEffect(()=> {
-        console.log(`allMovies`, allMovies);
-    }, allMovies)
-    
     let content = ''
 
     if (allMovies) {
         content =
-            <div>
+            <div className='d-flex flex-wrap justify-content-center'>
                 {allMovies.map((movie, i) => (
-                    <MovieCard key={i} movie={movie} />
+                    <MovieCard key={i} movie={movie}/>
                 ))}
             </div>
     }
@@ -36,8 +31,7 @@ const AllMovies = () => {
     }
 
     return (
-        <div className="container">
-            <h1>AllMovies page</h1>
+        <div className='container mt-5' >
             {content}
         </div>
     );
