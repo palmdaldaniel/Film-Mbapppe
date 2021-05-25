@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    padding: 20px 20px 20px;
+    background-color: white;
+  }
+  
+  .link {
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: black;
+    border-bottom: 2px solid black;
+  }
+  
+  .linkLogIn {
+    margin-right: 0 !important;
+  }
+  
+  .logo {
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
