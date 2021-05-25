@@ -11,15 +11,16 @@ const UserPage = () => {
       {activeUser ? (
         <div className={styles.content}>
           <div className={styles.userInfo}>
-            <div className={styles.info}>
-              <h2>Hi, <span>{activeUser.name}</span>!</h2>
-              <button
-                className={styles.editNameButton}>Edit name</button>
-            </div>
+
+            <h2>Hi, <span>{activeUser.name}</span>!</h2>
+            <button
+              className={styles.editNameButton}>Edit name</button>
+
           </div>
           <div className={styles.showings}>
             <div className={styles.upcoming}>
               <h2>Upcoming movies</h2>
+              {/* Put list compoinent here */}
               <div className={styles.movieGrid}>
                 <div className={styles.tempCard}>
                   <p>tempCard</p>
@@ -40,6 +41,7 @@ const UserPage = () => {
             </div>
             <div className={styles.previous}>
               <h2>Previous movies</h2>
+              {/* Put list compoinent here */}
               <div className={styles.movieGrid}>
                 <div className={styles.tempCard}>
                   <p>tempCard</p>
