@@ -11,11 +11,9 @@ const UserPage = () => {
       {activeUser ? (
         <div className={styles.content}>
           <div className={styles.userInfo}>
-
             <h2>Hi, <span>{activeUser.name}</span>!</h2>
             <button
               className={styles.editNameButton}>Edit name</button>
-
           </div>
           <div className={styles.showings}>
             <div className={styles.upcoming}>
