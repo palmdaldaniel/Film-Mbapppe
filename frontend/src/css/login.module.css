@@ -4,9 +4,18 @@
   margin: auto;
 }
 
+.container {
+  justify-content: center;
+}
+
+.loginformtext {
+  display: flex;
+  justify-content: center;
+}
+
+
 .header {
   font-size: 10rem;
-  font-family: "Roboto", sans-serif;
 }
 
 .inputField {
@@ -37,7 +46,15 @@
 .containerStyle{
   min-height: 80vh;
 }
+
+.logincontainer {
+  display: grid;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #000000;
+}
 .toggleText{
+  margin-top: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: underline;

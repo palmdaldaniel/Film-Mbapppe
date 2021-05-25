@@ -10,7 +10,7 @@ export default function LoginPage() {
     setShowLogin(!showLogin)
   }
   return (
-    <div>
+    <div className={styles.logincontainer}>
       <h1 className={styles.header}>MOVIEPLUS</h1>
       <Container className={`${styles.containerStyle} py-0`} >
         {showLogin ? <LoginForm /> : <LoginForm />}
