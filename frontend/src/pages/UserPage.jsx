@@ -1,12 +1,22 @@
+import { useContext, useEffect } from 'react';
+import { UserContext } from '../contexts/UserContext';
+
 import styles from '../css/userPage.module.css'
 
 const UserPage = () => {
+  const { activeUser, getUser } = useContext(UserContext);
+
+  useEffect(() => {
+    getUser()
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.userInfo}>
         <div className={styles.info}>
-          <h2>Hi, <span>Johannes</span>!</h2>
-          <button className={styles.editNameButton}>Edit name</button>
+          <h2>Hi, <span>{activeUser.name}</span>!</h2>
+          <button
+          className={styles.editNameButton}>Edit name</button>
         </div>
       </div>
 

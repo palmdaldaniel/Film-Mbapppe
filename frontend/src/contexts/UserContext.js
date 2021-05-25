@@ -12,9 +12,11 @@ const UserContextProvider = (props) => {
   }, []) 
 
   const getUser = async () => {
-    let user = await fetch("/api/v1/users/whoami")
+/*     let user = await fetch("/api/v1/users/whoami")
+    console.log(user);
     user = await user.json();
-    setActiveUser(user)
+    setActiveUser(user) */
+    setActiveUser({name: "Bob", email: "boB@gmail.com"})
     return
   }
 
@@ -62,8 +64,7 @@ const logout = async ()=>{
     loginUser,
     createUser,
     logout,
-    getUser
-
+    getUser,
   }
   return (
     <UserContext.Provider value={values}>
