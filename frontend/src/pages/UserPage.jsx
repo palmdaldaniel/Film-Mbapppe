@@ -6,7 +6,6 @@ import styles from '../css/userPage.module.css'
 const UserPage = () => {
   let { activeUser } = useContext(UserContext);
 
-
   return (
     <div className={styles.container}>
       {activeUser ? (
