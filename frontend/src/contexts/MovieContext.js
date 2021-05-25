@@ -6,7 +6,7 @@ const MovieContextProvider = (props) => {
     const [showings, setShowing] = useState(null);
 
     useEffect(() => {
-        getShowingsByDate('2021-06-13')
+        getShowingsByDate('2021-06-13');
         
     }, []);
 

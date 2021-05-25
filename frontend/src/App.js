@@ -21,9 +21,9 @@ function App() {
             <LoginPage />
           </Route>
           {/* add /:showingid for showing page */}
-          <Route exact path="/showing">
-            <Showing />
-          </Route>
+          <Route exact path="/showing/:showingId" component={Showing}/>
+            {/* <Showing />
+          </Route> */}
         </BrowserRouter>
       </UserContextProvider>
       </MovieContextProvider>
