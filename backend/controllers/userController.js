@@ -17,8 +17,8 @@ const loginUser = async (req, res) => {
     if (user.password === hashedPassword) {
       // here will create a session, comes with the taks who am i
 
-       req.session.user = user;
-       req.session.user.password = undefined;
+      req.session.user = user;
+      req.session.user.password = undefined;
 
       // set users pw to undefined
       user.password = undefined;
