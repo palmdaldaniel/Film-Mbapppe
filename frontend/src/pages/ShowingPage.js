@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 
+import MovieInfo from "../components/MovieInfoOnShowingPage"
 import { MovieContext } from "../contexts/MovieContext";
 
 const ShowingPage = (props) => {
@@ -16,7 +17,8 @@ const ShowingPage = (props) => {
   return (
     <div>
       <h1>Showing page with movie info</h1>
-      <p>booking and seating chart to follow</p>
+      <h2>booking and seating chart to follow</h2>
+      <MovieInfo showing={showing} />
     </div>
   );
 };
