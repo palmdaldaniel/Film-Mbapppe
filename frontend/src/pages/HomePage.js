@@ -20,7 +20,7 @@ const HomePage = () => {
                 <div className='d-flex flex-wrap'>
                     {showings.map((showing, i) => (
                         <Card key={i} onClick={() => handleClick(showing._id)} style={{ width: '15rem' }}>
-                            <Card.Img variant="top" src={showing.film.Poster} style={{ height: '20rem' }} />
+                            <Card.Img variant="top" src={showing.film.Poster} style={{ height: '22rem' }} />
                             <Card.Body>
                                 <Card.Title>{showing.film.Title}</Card.Title>
                                 <Card.Text>
