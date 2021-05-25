@@ -10,7 +10,8 @@ const ShowingPage = (props) => {
   useEffect(() => {
     getShowingsById(showingId);
   }, []);
-  console.log(showing.film.Title);
+
+  console.log(showing);
 
   return (
     <div>
