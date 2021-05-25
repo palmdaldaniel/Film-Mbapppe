@@ -3,13 +3,13 @@ const Showing = require("../models/Showing");
 //only using createShowing function to test if getShowingById works
 const createShowing = async (req, res) => {
   console.log(req.body);
-  let newShowing = await Showing.create(req.body); 
-  await newShowing.save(); 
-  res.json(newShowing); 
+  let newShowing = await Showing.create(req.body);
+  await newShowing.save();
+  res.json(newShowing);
 }
 
 const getShowingById = async (req, res) => {
-  Showing.findById(req.params.showingId).exec(async (err, result) => {
+  Showing.findById(req.params.showingId).populate('film').exec(async (err, result) => {
     if (err) {
       res.status(400).json({ error: "Something went wrong" });
       return;
@@ -17,18 +17,27 @@ const getShowingById = async (req, res) => {
 
     if (!result) {
       res
-        .stataus(404)
+        .status(404)
         .json({
           error: `Showing with id ${req.params.showingId} does not exist`,
         });
       return;
     }
-    res.json(result);
+
+    let showingWithPrice = {
+      ...result.toObject(),
+      pricePensioner: result.price * 0.8,
+      priceChild: result.price * 0.7
+    }
+
+    res.json(showingWithPrice)
+
   });
+  
 };
 const getShowingByDate = async (req, res) => {
   
-  Showing.find({date: req.query.date}).exec(async (err, result) => {
+  Showing.find({date: req.query.date}).populate('film').exec(async (err, result) => {
     if (err) {
       res.status(400).json({ error: "Something went wrong" });
       return;
@@ -48,7 +57,7 @@ const getShowingByDate = async (req, res) => {
 };
 
 module.exports = {
-  createShowing, 
+  createShowing,
   getShowingById,
   getShowingByDate
 };
