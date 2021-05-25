@@ -1,14 +1,11 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 
 import styles from '../css/userPage.module.css'
 
 const UserPage = () => {
-  let { activeUser, getUser } = useContext(UserContext);
+  let { activeUser } = useContext(UserContext);
 
-  useEffect(() => {
-    getUser()
-  }, []);
 
   return (
     <div className={styles.container}>
