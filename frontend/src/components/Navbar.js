@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
+//import use context from react needs to be added later -----> Don't Delete!
 import { Link } from "react-router-dom";
-import { UserContext } from "../contexts/UserContext";
-
+//import { UserContext } from "../contexts/UserContext"; -----> Don't Delete!
 import styles from "../css/Navbar.module.css";
 
+
 const Navbar = () => {
-  const { loggedIn, logOut, deleteUser } = useContext(UserContext);
+  //const {  } = useContext(UserContext); // Don't elete!logout and logged in  needs to be added later on.
 
   return (
     <div>
@@ -15,24 +16,17 @@ const Navbar = () => {
         <Link to="/">
           <img
             className={styles.logo}
-            src="https://www.filmstaden.se/contentassets/abcfcecd76ac47a18718257ddc52e804/logo-32x.png"
-            width="100"
+            //src="../assets/whitepopcorn.svg" //the white logo mostly white
+            //src="../assets/popcorn.svg" // the black one
+            src="https://pic.onlinewebfonts.com/svg/img_63417.png"
+            width="20"
             height="30"
-            alt="logo"
+            alt="popcorn"
+            
           />
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+     
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup"> 
           <div className="nav-item nav-link w-100">
             <Link className={styles.link} to="/allmovies">
              All movies
@@ -42,17 +36,11 @@ const Navbar = () => {
                 </Link>
                 <Link className={styles.link} to="/profile">
                  Profile
-                </Link>
-            {loggedIn ? (
+                </Link> 
+                
+           {/*loggedIn ? (
               <React.Fragment>
-               
-                <Link
-                  className={`${styles.link} float-end`}
-                  onClick={() => deleteUser(localStorage.getItem("user"))}
-                  to="/"
-                >
-                 Delete Profile
-                </Link>
+              
                 <Link
                   onClick={logOut}
                   className={`${styles.link} float-end`}
@@ -61,11 +49,13 @@ const Navbar = () => {
                   Log out
                 </Link>
               </React.Fragment>
-            ) : (
+            ) : ( */ //---------------> Don't delete! needs to be added later on. 
+
               <Link to="/login" className={`${styles.link} float-end`}>
                 Log in
               </Link>
-            )}
+            //  ) // Don't delete! we are going to comment out this section later on.
+          }
           </div>
         </div>
       </nav>

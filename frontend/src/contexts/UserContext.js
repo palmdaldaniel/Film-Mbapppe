@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react"
 
 export const UserContext = createContext();
 
@@ -7,16 +7,16 @@ const UserContextProvider = (props) => {
   const [bookings, setBookings] = useState([]);
 
 
-   useEffect(() => {
-    getUser();
-  }, []) 
+   //useEffect(() => {
+    //getUser();
+  //}, []) 
 
   const getUser = async () => {
     let user = await fetch("/api/v1/users/whoami")
     user = await user.json();
-    setActiveUser(user)
+    //setUser(user)
     return
-  }
+  } 
 
   const loginUser = async (loginInfo)=>{
     let result = await fetch("/api/v1/users/login",{
