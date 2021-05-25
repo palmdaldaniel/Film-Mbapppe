@@ -3,7 +3,6 @@ import styles from '../css/userPage.module.css'
 const UserPage = () => {
   return (
     <div className={styles.container}>
-      <h1>Userpage</h1>
       <div className={styles.userInfo}>
         <div className={styles.info}>
           <h2>Hi, <span>Johannes</span>!</h2>
