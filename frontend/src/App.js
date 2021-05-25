@@ -1,5 +1,3 @@
-
-import UserContextProvider from './contexts/UserContext';
 //import LoginPage from './pages/LoginPage';
 import UserPage from './pages/UserPage';
 import { BrowserRouter, Route } from "react-router-dom";
