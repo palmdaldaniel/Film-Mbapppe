@@ -21,7 +21,7 @@ const HomePage = () => {
         content =
             <div>
                 <h2>Todays showings</h2>
-                <ShowingCard showings={showings}/>
+                <ShowingCard showings={showings} />
             </div>
 
 
@@ -34,7 +34,7 @@ const HomePage = () => {
         <div className="container">
             <h1>Home page</h1>
             {listData ? (content)
-            : ( <h2>No showings!</h2> )}
+                : (<h2>No showings!</h2>)}
         </div>
     );
 };

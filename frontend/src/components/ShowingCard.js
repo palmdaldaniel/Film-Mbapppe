@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 function ShowingCard({showings}) {
     const history = useHistory();
-    console.log(showings);
 
     const handleClick = (id) => {
         history.push(`/movie-info/${id}`);
