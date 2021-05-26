@@ -4,6 +4,7 @@ import Showing from "./pages/ShowingPage";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
+import UserPage from "./pages/UserPage";
 import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <LoginPage />
+            </Route>
+            <Route exact path="/profile">
+              <UserPage />
             </Route>
 
             <Route exact path="/showing/:showingId" component={Showing} />
