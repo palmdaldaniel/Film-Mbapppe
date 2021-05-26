@@ -32,6 +32,7 @@ const ScreeningData = () => {
   const [prices] = useState([100, 150, 200]);
 
   useEffect(() => {
+    // randomMovies(); 
     getDatesInMonth();
     randomShowings();
     // eslint-disable-next-line
@@ -50,16 +51,19 @@ const ScreeningData = () => {
 
   const pickTime = () => {
     time = Math.floor(Math.random() * (maxTime - minTime) + minTime);
+    // console.log("time", time);
   };
 
   const randomMovies = () => {
     let randomNumber = Math.floor(Math.random() * movies.length);
     // console.log(randomNumber);
     randomMovie = movies[randomNumber];
+    console.log("movies", randomMovie);
   };
 
   const randomShowings = (saloon) => {
     for (let i = 0; i < 3; i++) {
+      // console.log("loop", i);
       randomMovies();
       pickTime();
       randomPrice();
@@ -76,7 +80,11 @@ const ScreeningData = () => {
 
   const getDatesInMonth = () => {
     for (let date = 1; date < month; date++) {
+      if(date < 10){
+        date = "0" + date; 
+      }
       yymmdd = `2021-06-${date}`;
+      // console.log(yymmdd);
       assignSaloon();
     }
   };
@@ -102,6 +110,7 @@ const ScreeningData = () => {
     <div>
       <h1>Some json coming thru...!!!</h1>
       <h2>(test mockData for screenings collection)</h2>
+      
       {content}
     </div>
   );
