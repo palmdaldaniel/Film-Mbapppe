@@ -2,6 +2,7 @@
 import UserPage from './pages/UserPage';
 import { BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import AllMovies from "./pages/AllMovies";
 import UserContextProvider from './contexts/UserContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -23,6 +24,9 @@ function App() {
               <Route exact path="/about" />
               <Route exact path="/profile"  />
               <Route exact path="/login"  />
+          <Route exact path="/allmovies">
+            <AllMovies />
+          </Route>
         </BrowserRouter>
       </UserContextProvider>
 
