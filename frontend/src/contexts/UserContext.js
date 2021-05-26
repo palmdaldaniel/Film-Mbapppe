@@ -3,16 +3,22 @@ import { createContext, useState, useEffect } from "react"
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
+  //const history = useHistory();
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState(null);
-  
+
+  const [loginResult, setLoginResult] = useState(null);
+
+  // toggle between loginForm and register in LoginPage
+  //const [showLogin, setShowLogin] = useState(true);
+
   useEffect(() => {
-    getUser();
+    whoami();
   }, [])
 
-  const getUser = async () => {
+  const whoami = async () => {
     //uncomment bellow after testing
     //let user = await fetch("/api/v1/users/whoami");
     //user = await user.json();
@@ -36,9 +42,9 @@ const UserContextProvider = (props) => {
       }, 2000);
       return
     }
-    setActiveUser({name: newName});
+    setActiveUser({ name: newName });
     setIsEditing(false);
-    //Send to DB and change there when connected to DB and recall getUser()
+    //Send to DB and change there when connected to DB and recall whoami()
   }
 
   const loginUser = async (loginInfo) => {
@@ -49,9 +55,16 @@ const UserContextProvider = (props) => {
       },
       body: JSON.stringify(loginInfo),
     });
-    result = await result.json();
-    await getUser();
-    return result
+    userLoggingIn = await userLoggingIn.json();
+    if (!userLoggingIn.error) {
+      setActiveUser(userLoggingIn);
+      console.log("User logging in: ", activeUser);
+      setLoginResult(null);
+    } else {
+      console.log(loginResult);
+      setLoginResult(userLoggingIn.error);
+    }
+    return userLoggingIn;
   }
 
   const createUser = async (newUser) => {
@@ -63,14 +76,33 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(newUser),
     });
     result = await result.json();
-    await getUser();
+    whoami();
     return result;
   }
 
   const logout = async () => {
     await fetch("/api/v1/users/logout")
-    getUser()
+    whoami()
   }
+
+  //register user 
+  const register = async (userToRegister) => {
+    let userToAdd = await fetch('/api/v1/users/register', {
+      method: 'POST',
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(userToRegister)
+    });
+
+    userToAdd = await userToAdd.json();
+
+    if (userToAdd.success) {
+      console.log(userToAdd.success)
+    } else if (userToAdd.error) {
+      console.log(userToAdd.error)
+      //setCurrentUser(undefined);
+    }
+  };
+
 
   const values =
   {
@@ -81,16 +113,19 @@ const UserContextProvider = (props) => {
     loginUser,
     createUser,
     logout,
-    getUser,
+    whoami,
     editName,
     isEditing,
     setIsEditing,
-    message
+    message,
+    register
   }
+
   return (
     <UserContext.Provider value={values}>
       {props.children}
     </UserContext.Provider>
-  )
-}
-export default UserContextProvider
+  );
+};
+
+export default UserContextProvider;
