@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 
-import MovieInfo from "../components/MovieInfoOnShowingPage"
+import MovieInfo from "../components/MovieInfoOnShowingPage";
+import SeatingMap from "../components/SeatingMap";
 import { MovieContext } from "../contexts/MovieContext";
 
 const ShowingPage = (props) => {
@@ -12,11 +13,10 @@ const ShowingPage = (props) => {
     getShowingsById(showingId);
   }, []);
 
-  console.log(showing);
-
   return (
     <div>
       <MovieInfo showing={showing} />
+      <SeatingMap saloon={showing.saloon} />
     </div>
   );
 };
