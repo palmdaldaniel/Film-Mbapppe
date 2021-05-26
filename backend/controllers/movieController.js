@@ -62,6 +62,16 @@ const getAllMovies = async (req, res) => {
   res.json(movies)
 }
 
+const countMovieDocuments = async (req, res) => { 
+  Movie.count({}, function(err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
+}
+
 
 const getMovieById = async (req, res) => { 
   Movie.findById(req.params.movieid).exec((err, movie) => {
@@ -86,6 +96,7 @@ const getMovieById = async (req, res) => {
 
 module.exports = {
   getAllMovies,
-  getMovieById
+  getMovieById,
+  countMovieDocuments
 };
 
