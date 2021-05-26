@@ -29,9 +29,16 @@ const UserContextProvider = (props) => {
       }, 2000);
       return
     }
+    if (newName.length <= 1) {
+      setMessage("Name too short!");
+      setTimeout(() => {
+        setMessage(null)
+      }, 2000);
+      return
+    }
     setActiveUser({name: newName});
     setIsEditing(false);
-    //Send to DB and change there when connected to DB
+    //Send to DB and change there when connected to DB and recall getUser()
   }
 
   const loginUser = async (loginInfo) => {
