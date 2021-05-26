@@ -3,6 +3,7 @@ import styles from "./css/Seatingmap.module.css";
 
 const SeatingMap = ({ saloon }) => {
   const [seats, setSeats] = useState([]);
+  const [booked] = useState([{row:1, seatNumber: 2}, {row: 2, seatNumber: 5}, {row: 5, seatNumber: 50}])
 
   useEffect(() => {
     // create seats on component load
@@ -36,17 +37,24 @@ const SeatingMap = ({ saloon }) => {
     <div className={styles.seatingWrapper}>
       {seats &&
         seats.map((rows) => {
-          console.log(rows);
           return <div className={styles.rows}>
                    {/* Loop out every seat in each row */}
                    {rows.map(seat => {
-                       console.log(seat);
-                     return  <p className={styles.seat}> {seat.row}, {seat.seatNumber} </p>
+                       if(booked.find(b => b.seatNumber === seat.seatNumber)) {
+                           return ( <p className={styles.bookedSeat} style={{backroundColor: 'red' }}> {seat.row}, {seat.seatNumber} </p>
+                           
+                            )
+                        }
+                    else {
+                        return  <p className={styles.seat}> {seat.row}, {seat.seatNumber} </p>
+
+                    }
+                      
                    }) } 
 
           </div>;
         })}
-      ;
+      
     </div>
   );
 };
