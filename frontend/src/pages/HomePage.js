@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
 const HomePage = () => {
-    const history = useHistory(); 
+    const history = useHistory();
     const { showings, getShowingsById } = useContext(MovieContext);
     console.log(showings)
 
