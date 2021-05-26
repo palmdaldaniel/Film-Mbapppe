@@ -21,7 +21,8 @@ const UserContextProvider = (props) => {
   }
 
   const editName = (newName) => {
-    console.log(newName);
+    setActiveUser({name: newName});
+    setIsEditing(false);
   }
 
   const loginUser = async (loginInfo) => {

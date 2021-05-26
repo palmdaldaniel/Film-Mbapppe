@@ -1,11 +1,11 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 import styles from '../css/userPage.module.css'
 
 const UserPage = () => {
-  let { activeUser, isEditing, setIsEditing } = useContext(UserContext);
+  let { activeUser, isEditing, setIsEditing, editName } = useContext(UserContext);
 
   return (
     <div className={styles.container}>
@@ -19,7 +19,7 @@ const UserPage = () => {
               {isEditing ? (
                 <div>
                   <input type="text" />
-                  <button>Change name!</button>
+                  <button onClick={e => editName(e.target.previousSibling.value)}>Change name!</button>
                 </div>
               ) : (
                 <div></div>
