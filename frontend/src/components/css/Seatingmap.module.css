@@ -20,5 +20,12 @@
     font-size: 10px;
     background: red;
     margin: 10px;
-    
 }
+
+.reservedSeat {
+    font-size: 10px;
+    background: yellow;
+    margin: 10px;
+}
+
+

@@ -4,6 +4,7 @@ import styles from "./css/Seatingmap.module.css";
 const SeatingMap = ({ saloon }) => {
   const [seats, setSeats] = useState([]);
   const [booked] = useState([{row:1, seatNumber: 2}, {row: 2, seatNumber: 5}, {row: 5, seatNumber: 50}])
+  const [reserved, setReserved] = useState([{row:2, seatNumber: 11}, {row: 3, seatNumber: 22}])
 
   useEffect(() => {
     // create seats on component load
@@ -41,9 +42,12 @@ const SeatingMap = ({ saloon }) => {
                    {/* Loop out every seat in each row */}
                    {rows.map(seat => {
                        if(booked.find(b => b.seatNumber === seat.seatNumber)) {
-                           return ( <p className={styles.bookedSeat} style={{backroundColor: 'red' }}> {seat.row}, {seat.seatNumber} </p>
+                           return ( <p className={styles.bookedSeat}> {seat.row}, {seat.seatNumber} </p>
                            
                             )
+                        }
+                        else if (reserved.find(r => r.seatNumber === seat.seatNumber)) {
+                            return ( <p className={styles.reservedSeat}> {seat.row}, {seat.seatNumber} </p> )
                         }
                     else {
                         return  <p className={styles.seat}> {seat.row}, {seat.seatNumber} </p>

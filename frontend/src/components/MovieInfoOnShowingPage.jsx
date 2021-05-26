@@ -1,5 +1,4 @@
-import Booking from "../components/Booking"; 
-import Seating from "../components/Seating"; 
+
 import styles from "../css/MovieInfoOnShowingPage.module.css";
 
 const MovieInfo = ({ showing }) => {
