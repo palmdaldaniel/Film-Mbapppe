@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import styles from "./css/Seatingmap.module.css";
 
 const SeatingMap = ({ saloon }) => {
   const [seats, setSeats] = useState([]);
 
   useEffect(() => {
-      // create seats on component load
+    // create seats on component load
     makeSeatingMap(saloon.seatsPerRow);
   }, []);
 
@@ -31,7 +32,23 @@ const SeatingMap = ({ saloon }) => {
     setSeats(seatingMap);
   };
 
-  return <div>Here goes the seating map</div>;
+  return (
+    <div className={styles.seatingWrapper}>
+      {seats &&
+        seats.map((rows) => {
+          console.log(rows);
+          return <div className={styles.rows}>
+                   {/* Loop out every seat in each row */}
+                   {rows.map(seat => {
+                       console.log(seat);
+                     return  <p className={styles.seat}> {seat.row}, {seat.seatNumber} </p>
+                   }) } 
+
+          </div>;
+        })}
+      ;
+    </div>
+  );
 };
 
 export default SeatingMap;
