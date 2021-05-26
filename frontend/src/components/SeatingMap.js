@@ -68,7 +68,24 @@ const SeatingMap = ({ saloon }) => {
                          <p className={styles.rowNumber} >{i + 1}</p> 
           </div>;
         })}
+    <div className={styles.legend}>
+        <div className={styles.helper}>
+          <div  className={`${styles.open}`}></div>
+          <p>Open</p>
+        </div>
+        <div className={styles.helper}>
+         <div  className={` ${styles.booked}`}></div>
+         <p>Booked</p>
+         </div>
+         
+
+         <div className={styles.helper}>
+        <div  className={`${styles.reserved}`}></div>
+        <p>Reserve</p>
+        </div>
     </div>
+    </div>
+  
     
   );
 };
