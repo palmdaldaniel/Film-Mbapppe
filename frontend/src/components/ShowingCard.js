@@ -4,26 +4,29 @@ import styles from "../css/MovieCard.Module.css";
 import { useHistory } from "react-router-dom";
 
 
-function ShowingCard({show}) {
+function ShowingCard({showings}) {
     const history = useHistory();
-    console.log(show);
+    console.log(showings);
 
-    const handleClick = () => {
-        history.push(`/movie-info/${show._id}`);
+    const handleClick = (id) => {
+        history.push(`/movie-info/${id}`);
     };
 
     return (
-        <Card className={`${styles.movieCard} mx-1 mx-md-3`} style={{ width: '240px', background: 'none' }} onClick={handleClick}>
-            <Card.Img variant="top" src={show.film.Poster} style={{ height: '360px' }} />
-            <Card.Body>
-                <Card.Text className={`${styles.cardTitle} text-center mb-1`}>{show.Title}</Card.Text>
-                <Card.Text className={`${styles.cardText} text-center`}>
-                    <span>{show.time}</span>
-                    <br />
-                    <span>{show.film.Title}</span>
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <div className='d-flex flex-wrap'>
+        {showings.map((show, i) => (
+              <Card key={i} onClick={() => handleClick(show._id)} style={{ width: '15rem' }}>
+                  <Card.Img variant="top" src={show.film.Poster} style={{ height: '22rem' }} />
+                  <Card.Body>
+                      <Card.Title>{show.film.Title}</Card.Title>
+                      <Card.Text>
+                          {show.film.Genre[0]}
+                          <span className='mx-2'>{show.time}</span>
+                      </Card.Text>
+                  </Card.Body>
+              </Card>
+          ))}
+      </div>
 
     )
 }
