@@ -5,7 +5,7 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
-
+  const [isEditing, setIsEditing] = useState(false)
 
   useEffect(() => {
     getUser();
@@ -18,7 +18,11 @@ const UserContextProvider = (props) => {
     let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user)
     return
-  } 
+  }
+
+  const editName = (newName) => {
+    console.log(newName);
+  }
 
   const loginUser = async (loginInfo) => {
     let result = await fetch("/api/v1/users/login", {
@@ -61,6 +65,9 @@ const UserContextProvider = (props) => {
     createUser,
     logout,
     getUser,
+    editName,
+    isEditing,
+    setIsEditing
   }
   return (
     <UserContext.Provider value={values}>

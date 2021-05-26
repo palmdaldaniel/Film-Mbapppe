@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 
 import styles from '../css/userPage.module.css'
 
 const UserPage = () => {
-  let { activeUser } = useContext(UserContext);
+  let { activeUser, isEditing, setIsEditing } = useContext(UserContext);
 
   return (
     <div className={styles.container}>
@@ -14,7 +14,16 @@ const UserPage = () => {
           <div className={styles.userInfo}>
             <h2>Hi, <span>{activeUser.name}</span>!</h2>
             <button
-              className={styles.editNameButton}>Edit name</button>
+              className={styles.editNameButton}
+              onClick={() => setIsEditing(!isEditing)}>Edit name</button>
+              {isEditing ? (
+                <div>
+                  <input type="text" />
+                  <button>Change name!</button>
+                </div>
+              ) : (
+                <div></div>
+              )}
           </div>
           <div className={styles.showings}>
             <div className={styles.upcoming}>
