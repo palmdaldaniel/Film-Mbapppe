@@ -1,11 +1,11 @@
 import ShowingCard from "./ShowingCard";
 
-const List = ({showings}) => {
+const List = ({list}) => {
   console.log(showings);
   return (
     <div>
-      {showings.map(show => (
-        <ShowingCard show={show}/>
+      {list.map(item => (
+        <ShowingCard item={item}/>
       ))}
     </div>
   );

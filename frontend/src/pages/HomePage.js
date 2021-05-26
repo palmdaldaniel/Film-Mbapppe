@@ -20,7 +20,7 @@ const HomePage = () => {
             <div>
                 <h2>Todays showings</h2>
                 <div className='d-flex flex-wrap'>
-                    <List showings={showings}/>
+                    <List listData={listData}/>
                   {/*   {showings.map((showing, i) => (
                         <Card key={i} onClick={() => handleClick(showing._id)} style={{ width: '15rem' }}>
                             <Card.Img variant="top" src={showing.film.Poster} style={{ height: '22rem' }} />
