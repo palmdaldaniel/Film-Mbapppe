@@ -1,11 +1,15 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
+import { MovieContext } from "../contexts/MovieContext";
+import { Link } from 'react-router-dom';
+
+import ShowingCard from "../components/ShowingCard";
 
 import styles from '../css/userPage.module.css'
 
 const UserPage = () => {
-  let { activeUser, isEditing, setIsEditing, editName, message } = useContext(UserContext);
+  const { activeUser, isEditing, setIsEditing, editName, message } = useContext(UserContext);
+  const { showings } = useContext(MovieContext); //Get upcoming bookings and previous bookings on user by filtering on showing date in future or past, instead of showings here
 
   return (
     <div className={styles.container}>
@@ -16,65 +20,31 @@ const UserPage = () => {
             <button
               className={styles.editNameButton}
               onClick={() => setIsEditing(!isEditing)}>Edit name</button>
-              {isEditing ? (
-                <div>
-                  <input type="text"/>
-                  <button onClick={e => editName(e.target.previousSibling.value)}>Submit!</button>
-                  {message ? (
-                    <p>{message}</p>
-                  ):(
-                    <div></div>
-                  )}
-                </div>
-              ) : (
-                <div></div>
-              )}
+            {isEditing ? (
+              <div>
+                <input type="text" />
+                <button onClick={e => editName(e.target.previousSibling.value)}>Submit!</button>
+                {message ? (
+                  <p>{message}</p>
+                ) : (
+                  <div></div>
+                )}
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
+
           <div className={styles.showings}>
             <div className={styles.upcoming}>
               <h2>Upcoming movies</h2>
-              {/* Put list compoinent here */}
-              <div className={styles.movieGrid}>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-              </div>
+              {/* Change showings for upcoming bookings on user when bookings are ready*/}
+              {showings ? (<ShowingCard showings={showings} />) : (<h3>No upcoming showings!</h3>)}
             </div>
             <div className={styles.previous}>
               <h2>Previous movies</h2>
-              {/* Put list compoinent here */}
-              <div className={styles.movieGrid}>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-                <div className={styles.tempCard}>
-                  <p>tempCard</p>
-                </div>
-              </div>
+              {/* Change showings for previous bookings on user when bookings are ready*/}
+              {showings ? (<ShowingCard showings={showings} />) : (<h3>No previous showings!</h3>)}
             </div>
           </div>
         </div>
