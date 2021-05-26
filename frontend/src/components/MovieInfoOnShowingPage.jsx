@@ -28,8 +28,6 @@ const MovieInfo = ({ showing }) => {
   return (
   <div>
     {content}
-    <Booking />
-    <Seating />
     </div>);
 };
 

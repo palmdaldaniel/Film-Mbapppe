@@ -8,8 +8,8 @@ const SeatingMap = ({ saloon }) => {
     makeSeatingMap(saloon.seatsPerRow);
   }, []);
 
+  // function wich creates the actual data for the rows
   const makeSeatingMap = (rows) => {
-    console.log(rows);
     let seatingMap = [];
     let currentSeatnumber = 1;
 
