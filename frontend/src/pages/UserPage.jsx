@@ -8,7 +8,7 @@ const UserPage = () => {
   let { activeUser, isEditing, setIsEditing, editName, message } = useContext(UserContext);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container}> 
       {activeUser ? (
         <div className={styles.content}>
           <div className={styles.userInfo}>
