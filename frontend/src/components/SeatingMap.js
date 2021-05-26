@@ -46,20 +46,23 @@ const SeatingMap = ({ saloon }) => {
   return (
     <div className={styles.seatingWrapper}>
       {seats &&
-        seats.map((rows) => {
+        seats.map((rows, i) => {
           return <div className={styles.rows}>
+              <p>{i + 1}</p>
                    {/* Loop out every seat in each row */}
-                   {rows.map(seat => {
+                   {rows.map((seat) => {
                        if(booked.find(b => b.seatNumber === seat.seatNumber)) {
-                            return ( <p className={styles.bookedSeat}> {seat.row}, {seat.seatNumber} </p>)
+                           return ( <div className={`${styles.seat} ${styles.bookedSeat}`}></div>)
                         }
                         else if (reserved.find(r => r.seatNumber === seat.seatNumber)) {
-                            return ( <p className={styles.reservedSeat} onClick={() => deselectSeat(seat)}> {seat.row}, {seat.seatNumber} </p> )
+                            return ( <div className={`${styles.seat} ${styles.reservedSeat}`} onClick={() => deselectSeat(seat)}></div> )
                         }
                         else {
-                            return  (<p className={styles.seat} onClick={() => reserveSeat(seat)}> {seat.row}, {seat.seatNumber} </p> )
+                            return  ( 
+                            <div className={`${styles.seat} ${styles.openSeat}`} onClick={() => reserveSeat(seat)}></div> )
                         } 
                    })} 
+                         <p>{i + 1}</p> 
           </div>;
         })}
     </div>
