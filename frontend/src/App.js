@@ -1,7 +1,7 @@
 //import LoginPage from './pages/LoginPage';
 import UserPage from './pages/UserPage';
 import { BrowserRouter, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
+//import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -22,9 +22,6 @@ function App() {
           </Route>
           <Route exact path="/">
             <HomePage />
-          </Route>
-          <Route exact path="/login">
-            <LoginPage />
           </Route>
 
           <Route exact path="/showing/:showingId" component={Showing}/>
