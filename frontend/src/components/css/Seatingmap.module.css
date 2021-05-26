@@ -16,6 +16,11 @@
   margin: 10px;
 }
 
+.seat:hover {
+    cursor: pointer;
+    background: grey;
+}
+
 .bookedSeat {
     font-size: 10px;
     background: red;
@@ -26,6 +31,9 @@
     font-size: 10px;
     background: yellow;
     margin: 10px;
+}
+.reservedSeat:hover {
+    cursor: pointer;
 }
 
 

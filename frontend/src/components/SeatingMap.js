@@ -34,6 +34,15 @@ const SeatingMap = ({ saloon }) => {
     setSeats(seatingMap);
   };
 
+  const reserveSeat = (seat) => {
+    setReserved([...reserved, seat])
+  }
+
+  const deselectSeat = (seat) => {
+    // use filter to return the seats that was not deselected
+    setReserved([...reserved.filter(r => r.seatNumber !== seat.seatNumber)])
+  }
+
   return (
     <div className={styles.seatingWrapper}>
       {seats &&
@@ -42,23 +51,17 @@ const SeatingMap = ({ saloon }) => {
                    {/* Loop out every seat in each row */}
                    {rows.map(seat => {
                        if(booked.find(b => b.seatNumber === seat.seatNumber)) {
-                           return ( <p className={styles.bookedSeat}> {seat.row}, {seat.seatNumber} </p>
-                           
-                            )
+                            return ( <p className={styles.bookedSeat}> {seat.row}, {seat.seatNumber} </p>)
                         }
                         else if (reserved.find(r => r.seatNumber === seat.seatNumber)) {
-                            return ( <p className={styles.reservedSeat}> {seat.row}, {seat.seatNumber} </p> )
+                            return ( <p className={styles.reservedSeat} onClick={() => deselectSeat(seat)}> {seat.row}, {seat.seatNumber} </p> )
                         }
-                    else {
-                        return  <p className={styles.seat}> {seat.row}, {seat.seatNumber} </p>
-
-                    }
-                      
-                   }) } 
-
+                        else {
+                            return  (<p className={styles.seat} onClick={() => reserveSeat(seat)}> {seat.row}, {seat.seatNumber} </p> )
+                        } 
+                   })} 
           </div>;
         })}
-      
     </div>
   );
 };
