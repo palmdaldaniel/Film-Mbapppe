@@ -1,5 +1,7 @@
-
-import styles from "../css/MovieInfoOnShowingPage.module.css";
+import Booking from "../components/Booking"; 
+import Seating from "../components/Seating"; 
+import Video from "./Video"; 
+import styles from "../css/MovieInfo.module.css";
 
 const MovieInfo = ({ showing }) => {
   let content = "";
@@ -21,12 +23,17 @@ const MovieInfo = ({ showing }) => {
           <p><span className={styles.bold}>Director:</span> {showing.film.Director}</p>
           <p><span className={styles.bold}>Description:</span> {showing.film.Plot}</p>
         </div>
+        <div className={styles.iframe}>
+          <Video video={showing.film.Trailer}/>
+        </div>
       </div>
     );
   }
   return (
   <div>
     {content}
+    <Booking />
+    <Seating />
     </div>);
 };
 
