@@ -1,0 +1,13 @@
+
+.iframe {
+  width: 350px;
+}
+
+@media only screen and (min-width: 1200px) 
+{
+  .iframe {
+    min-width: 100% ;
+    width: 500px; 
+    height: 315px; 
+  }
+}
