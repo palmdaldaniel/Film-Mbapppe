@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./css/Seatingmap.module.css";
+import styles from "../css/Seatingmap.module.css";
 
 const SeatingMap = ({ saloon }) => {
   const [seats, setSeats] = useState([]);

@@ -1,5 +1,4 @@
 import Booking from "../components/Booking"; 
-import Seating from "../components/Seating"; 
 import Video from "./Video"; 
 import styles from "../css/MovieInfo.module.css";
 
@@ -33,7 +32,6 @@ const MovieInfo = ({ showing }) => {
   <div>
     {content}
     <Booking />
-    <Seating />
     </div>);
 };
 
