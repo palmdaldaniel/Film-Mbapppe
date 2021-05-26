@@ -16,3 +16,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Styling for pagination */
+.page-item.active .page-link  {
+  background-color: #e21b33 !important;
+  border-color: #e21b33 !important;
+  color: #fff !important;
+}
+
+.page-link {
+  color: #000 !important;
+}
