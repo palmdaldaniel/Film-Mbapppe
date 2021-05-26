@@ -11,7 +11,6 @@ const UserContextProvider = (props) => {
   // toggle between loginForm and register in LoginPage
   //const [showLogin, setShowLogin] = useState(true);
 
-
   useEffect(() => {
     getUser();
   }, [])
@@ -19,7 +18,7 @@ const UserContextProvider = (props) => {
   const getUser = async () => {
     let user = await fetch("/api/v1/users/whoami")
     user = await user.json();
-    //setUser(user)
+    //setActiveUser(user)
     return
   }
 
@@ -40,15 +39,8 @@ const UserContextProvider = (props) => {
       console.log(loginResult);
       setLoginResult(userLoggingIn.error);
     }
-
-
-
-
     return userLoggingIn;
   }
-
-
-
 
   const createUser = async (newUser) => {
     let result = await fetch("/api/v1/users", {
@@ -76,6 +68,7 @@ const UserContextProvider = (props) => {
     if (userlogin) {
       //setUser(userlogin);
     };
+  }
 
 
     //register user 
@@ -106,14 +99,16 @@ const UserContextProvider = (props) => {
       loginUser,
       createUser,
       logout,
-      getUser
-
+      getUser,
+      whoami,
+      register
     }
+
     return (
       <UserContext.Provider value={values}>
         {props.children}
       </UserContext.Provider>
     );
-  }
-};
-export default UserContextProvider;
+  };
+
+  export default UserContextProvider;
