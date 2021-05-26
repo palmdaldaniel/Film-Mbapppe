@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react"
 
 export const UserContext = createContext();
 
@@ -18,7 +18,7 @@ const UserContextProvider = (props) => {
     let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user)
     return
-  }
+  } 
 
   const loginUser = async (loginInfo) => {
     let result = await fetch("/api/v1/users/login", {
