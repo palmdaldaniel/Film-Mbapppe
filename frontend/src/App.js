@@ -1,6 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
+import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
@@ -13,6 +14,8 @@ function App() {
       <MovieContextProvider>
       <UserContextProvider>
         <BrowserRouter>
+        <Navbar />
+          <h1>Mbappe</h1>
           <Route exact path="/">
             <HomePage />
           </Route>
@@ -22,6 +25,11 @@ function App() {
 
           <Route exact path="/showing/:showingId" component={Showing}/>
 
+          {/* add /:showingid for showing page */}
+          <Route exact path="/allmovies"  />
+              <Route exact path="/about" />
+              <Route exact path="/profile"  />
+              <Route exact path="/login"  />
         </BrowserRouter>
       </UserContextProvider>
       </MovieContextProvider>

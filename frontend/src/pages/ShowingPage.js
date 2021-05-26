@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 
-import MovieInfo from "../components/MovieInfoOnShowingPage"
+import MovieInfo from "../components/MovieInfo"
 import { MovieContext } from "../contexts/MovieContext";
 
 const ShowingPage = (props) => {
