@@ -1,14 +1,15 @@
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 
 const HomePage = () => {
+    const history = useHistory(); 
     const { showings, getShowingsById } = useContext(MovieContext);
     console.log(showings)
 
     const handleClick = (showingId) => {
-        getShowingsById(showingId)
-            .then(res => console.log(res))
+        history.push(`/showing/${showingId}`)
     }
 
     let content = ''
