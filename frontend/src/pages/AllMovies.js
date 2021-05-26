@@ -5,25 +5,35 @@ import PaginationComponent from '../components/Pagination'
 
 
 const AllMovies = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
 
     const [allMovies, setAllMovies] = useState(null);
 
-    const { getAllMovies } = useContext(MovieContext);
+    const moviesGetting = async () => {
+        let response = await getAllMovies(currentPage)
+        setAllMovies(response)
+    }
 
-    useEffect(()=> {
-        const moviesGetting = async () => {
-            let response = await getAllMovies(currentPage)
-            setAllMovies(response)
-        }
+    //for pagination
+    const [currentPage, setCurrentPage] = useState(1)
+    const [pageTotal, setPageTotal] = useState(null)
+
+    const countPageTotal = async () => {
+        let response = await countMovieDocuments()
+        let pageTotal = Math.ceil(response / 9)
+        setPageTotal(pageTotal)
+    }
+
+    useEffect(() => {
         moviesGetting()
-    },[getAllMovies, currentPage])
+        countPageTotal()
+    }, [getAllMovies, currentPage, countMovieDocuments])
 
     let content = ''
 
     let values = {
         activPage: currentPage,
-        pageTotal: 10,
+        pageTotal: pageTotal,
         setCurrentPage
     }
 
@@ -32,7 +42,7 @@ const AllMovies = () => {
             <div>
                 <div className='d-flex flex-wrap justify-content-center'>
                     {allMovies.map((movie, i) => (
-                        <MovieCard key={i} movie={movie}/>
+                        <MovieCard key={i} movie={movie} />
                     ))}
                 </div>
                 <PaginationComponent values={values} />

@@ -11,6 +11,12 @@ const MovieContextProvider = (props) => {
         
     }, []);
 
+    const countMovieDocuments = async () => {
+        let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
+        amountOfDocuments = await amountOfDocuments.json();
+        return amountOfDocuments
+    }
+
     const getAllMovies = async (page) => {
         let movies = await fetch(`/api/v1/movies?page=${page}`);
         movies = await movies.json();
@@ -42,7 +48,8 @@ const MovieContextProvider = (props) => {
         getMovieById,
         showings,
         getShowingsById,
-        showing
+        showing,
+        countMovieDocuments
     }
 
     return (
