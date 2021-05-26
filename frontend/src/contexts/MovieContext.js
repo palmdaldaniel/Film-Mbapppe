@@ -3,10 +3,11 @@ import { createContext, useState, useEffect } from "react"
 export const MovieContext = createContext();
 
 const MovieContextProvider = (props) => {
-    const [showings, setShowing] = useState(null);
+    const [showings, setShowings] = useState(null);
+    const [showing, setShowing] = useState(null); 
 
     useEffect(() => {
-        getShowingsByDate('2021-06-13')
+        getShowingsByDate('2021-06-13');
         
     }, []);
 
@@ -25,12 +26,13 @@ const MovieContextProvider = (props) => {
     const getShowingsByDate = async (date) => {
         let showings = await fetch(`/api/v1/showings/?date=${date}`); //required date format 2021-06-13
         showings = await showings.json();
-        setShowing(showings)
+        setShowings(showings)
     }
     const getShowingsById = async (showingId) => {
         let showing = await fetch(`/api/v1/showings/${showingId}`);
         showing = await showing.json();
-        return showing
+        // return showing
+        setShowing(showing); 
     }
     
 
@@ -39,7 +41,8 @@ const MovieContextProvider = (props) => {
         getAllMovies,
         getMovieById,
         showings,
-        getShowingsById
+        getShowingsById,
+        showing
     }
 
     return (
