@@ -44,11 +44,14 @@ const SeatingMap = ({ saloon }) => {
   }
 
   return (
+    
+
+
     <div className={styles.seatingWrapper}>
       {seats &&
         seats.map((rows, i) => {
-          return <div className={styles.rows}>
-              <p>{i + 1}</p>
+            return <div className={styles.rows}>
+              <p className={styles.rowNumber}>{i + 1}</p>
                    {/* Loop out every seat in each row */}
                    {rows.map((seat) => {
                        if(booked.find(b => b.seatNumber === seat.seatNumber)) {
@@ -59,13 +62,14 @@ const SeatingMap = ({ saloon }) => {
                         }
                         else {
                             return  ( 
-                            <div className={`${styles.seat} ${styles.openSeat}`} onClick={() => reserveSeat(seat)}></div> )
-                        } 
-                   })} 
-                         <p>{i + 1}</p> 
+                                <div className={`${styles.seat} ${styles.openSeat}`} onClick={() => reserveSeat(seat)}></div> )
+                            } 
+                        })} 
+                         <p className={styles.rowNumber} >{i + 1}</p> 
           </div>;
         })}
     </div>
+    
   );
 };
 

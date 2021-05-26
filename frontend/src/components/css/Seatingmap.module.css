@@ -1,39 +1,65 @@
+/*
+grey #77818D
+red #E4263E ##4387FCe #FFFFF
+
+*/
+
+
+
 .seatingWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: black;
+  max-width: 740px;
+}
+
+.seatingWrapper:before{
+    content: ' ';
+    padding: 3px;
+    border-radius: 2px;
+    min-width: 60%;
+    margin: 1em 0 30px 0;
+    background:  #77818D;
 }
 
 .rows {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+
+.rowNumber {
+    color: white;
+    padding: 10px;
+    margin: 0px;
 }
 
 .seat {
-  border-bottom: 8px solid black;
-  border-left: 8px solid black;
-  border-right: 8px solid black;
+  border-bottom: 8px solid #77818D;
+  border-left: 8px solid #77818D;
+  border-right: 8px solid #77818D;
   padding: 10px;
   margin: 10px;
 }
 
 .bookedSeat {
-  border-bottom: 8px solid red;
-  border-left: 8px solid red;
-  border-right: 8px solid red;
+  border-bottom: 8px solid #E4263E;
+  border-left: 8px solid #E4263E;
+  border-right: 8px solid #E4263E;
 }
 
 .reservedSeat {
-  border-bottom: 8px solid yellow;
-  border-left: 8px solid yellow;
-  border-right: 8px solid yellow;
+  border-bottom: 8px solid #4387FC;
+  border-left: 8px solid #4387FC;
+  border-right: 8px solid #4387FC;
 }
 
 .openSeat:hover,
 .reservedSeat:hover {
   cursor: pointer;
-  border-bottom: 8px solid yellow;
-  border-left: 8px solid yellow;
-  border-right: 8px solid yellow;
+  border-bottom: 8px solid #4387FC;
+  border-left: 8px solid #4387FC;
+  border-right: 8px solid #4387FC;
 }
