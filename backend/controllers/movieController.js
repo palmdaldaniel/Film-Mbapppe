@@ -3,6 +3,9 @@ const Movie = require("../models/Movie");
 const getAllMovies = async (req, res) => {
   console.log(req.query);
 
+  //for pagination
+  const { page = req.query.page, limit = req.query.limit } = req.query;
+
   // year will come in as a string from user input so we need to convert in to a number to mathc schema.
   let yearToNumber = parseInt(req.query.year)
   
@@ -46,7 +49,10 @@ const getAllMovies = async (req, res) => {
     Runtime: queryRuntime,
     // if there is a query with year include that in the find method otherwise we run 0 to infintiy to make sure we get all movies in db.
     Year: yearToNumber ? yearToNumber : { $gt: 0, $lt: Infinity }
-    }).exec()
+    })
+    .limit(limit * 1) //for pagination
+    .skip((page - 1) * limit)//for pagination
+    .exec()
 
   if (movies.length === 0) {
     res.send('No movies matched the filter');
