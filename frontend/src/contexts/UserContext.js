@@ -6,13 +6,15 @@ const UserContextProvider = (props) => {
   const history = useHistory();
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
-  const [feedbackRegistration, setFeedbackRegistration] = useState(null);
-  const [userToRegister, setUserToRegister] = useState([]);
+  const [loginResult, setLoginResult] = useState(null);
+
+  // toggle between loginForm and register in LoginPage
+  const [showLogin, setShowLogin] = useState(true);
 
 
-   //useEffect(() => {
-    //getUser();
-  //}, []) 
+   useEffect(() => {
+    getUser();
+  }, []) 
 
   const getUser = async () => {
     let user = await fetch("/api/v1/users/whoami")
@@ -22,17 +24,31 @@ const UserContextProvider = (props) => {
   } 
 
   const loginUser = async (loginInfo)=>{
-    let result = await fetch("/api/v1/users/login",{
+    let userLoggingIn = await fetch("/api/v1/users/login",{
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(loginInfo),
     });
-    result = await result.json();
-    getUser();
-    return result
+    userLoggingIn = await userLoggingIn.json();
+    if (!userLoggingIn.error) {
+      setActiveUser(userLoggingIn);
+      console.log("User logging in: ", activeUser);
+      setLoginResult(null);
+    } else {
+      console.log(loginResult);
+      setLoginResult(userLoggingIn.error);
+    }
+
+
+
+    
+    return userLoggingIn;
 }
+
+
+
 
 const createUser = async(newUser)=>{
   let result = await fetch("/api/v1/users", {
@@ -90,13 +106,7 @@ const register = async (userToRegister) => {
     loginUser,
     createUser,
     logout,
-    getUser,
-    whoami,
-    userlogin,
-    register,
-    
-    setFeedbackRegistration,
-    feedbackRegistration,
+    getUser
 
   }
   return (
