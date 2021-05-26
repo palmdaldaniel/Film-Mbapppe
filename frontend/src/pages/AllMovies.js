@@ -1,5 +1,6 @@
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
+import Search from "../components/Search"; 
 import MovieCard from '../components/MovieCard'
 
 const AllMovies = () => {
@@ -32,6 +33,7 @@ const AllMovies = () => {
 
     return (
         <div className='container mt-5' >
+            <Search />
             {content}
         </div>
     );
