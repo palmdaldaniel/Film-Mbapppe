@@ -11,8 +11,8 @@ const MovieContextProvider = (props) => {
         
     }, []);
 
-    const getAllMovies = async () => {
-        let movies = await fetch(`/api/v1/movies`);
+    const getAllMovies = async (page) => {
+        let movies = await fetch(`/api/v1/movies?page=${page}`);
         movies = await movies.json();
         return movies
     }

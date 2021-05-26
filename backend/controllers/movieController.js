@@ -4,7 +4,8 @@ const getAllMovies = async (req, res) => {
   console.log(req.query);
 
   //for pagination
-  const { page = req.query.page, limit = req.query.limit } = req.query;
+  const { page = req.query.page } = req.query
+  const limit = 9 //how many documents that comes back from MongoDB per request
 
   // year will come in as a string from user input so we need to convert in to a number to mathc schema.
   let yearToNumber = parseInt(req.query.year)
