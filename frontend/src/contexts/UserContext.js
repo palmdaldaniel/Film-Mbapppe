@@ -5,8 +5,9 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
-  const [isEditing, setIsEditing] = useState(false)
-
+  const [isEditing, setIsEditing] = useState(false);
+  const [message, setMessage] = useState(null);
+  
   useEffect(() => {
     getUser();
   }, [])
@@ -21,8 +22,16 @@ const UserContextProvider = (props) => {
   }
 
   const editName = (newName) => {
+    if (newName.length > 12) {
+      setMessage("Name too long!");
+      setTimeout(() => {
+        setMessage(null)
+      }, 2000);
+      return
+    }
     setActiveUser({name: newName});
     setIsEditing(false);
+    //Send to DB and change there when connected to DB
   }
 
   const loginUser = async (loginInfo) => {
@@ -68,7 +77,8 @@ const UserContextProvider = (props) => {
     getUser,
     editName,
     isEditing,
-    setIsEditing
+    setIsEditing,
+    message
   }
   return (
     <UserContext.Provider value={values}>

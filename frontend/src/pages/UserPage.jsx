@@ -5,7 +5,7 @@ import { UserContext } from '../contexts/UserContext';
 import styles from '../css/userPage.module.css'
 
 const UserPage = () => {
-  let { activeUser, isEditing, setIsEditing, editName } = useContext(UserContext);
+  let { activeUser, isEditing, setIsEditing, editName, message } = useContext(UserContext);
 
   return (
     <div className={styles.container}>
@@ -18,8 +18,13 @@ const UserPage = () => {
               onClick={() => setIsEditing(!isEditing)}>Edit name</button>
               {isEditing ? (
                 <div>
-                  <input type="text" />
-                  <button onClick={e => editName(e.target.previousSibling.value)}>Change name!</button>
+                  <input type="text"/>
+                  <button onClick={e => editName(e.target.previousSibling.value)}>Submit!</button>
+                  {message ? (
+                    <p>{message}</p>
+                  ):(
+                    <div></div>
+                  )}
                 </div>
               ) : (
                 <div></div>
