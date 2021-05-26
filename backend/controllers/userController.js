@@ -118,6 +118,9 @@ const whoami = async (req, res) => {
   return res.json(req.session.user || null);
 }
 
+
+
+
 module.exports = {
   logout,
   editUser,
@@ -125,6 +128,7 @@ module.exports = {
   loginUser,
   whoami,
   getAllUsers,
-  getUserById
+  getUserById,
+ 
 };
 
