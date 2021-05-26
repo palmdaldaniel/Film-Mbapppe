@@ -59,7 +59,7 @@
 }
 
 .tempCard {
-  background: lightgreen;
+  background: darkgreen;
   display: flex;
   justify-content: center;
   height: 20rem;
