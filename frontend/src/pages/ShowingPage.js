@@ -12,8 +12,6 @@ const ShowingPage = (props) => {
     getShowingsById(showingId);
   }, []);
 
-  console.log(showing);
-
   return (
     <div>
       <MovieInfo showing={showing} />

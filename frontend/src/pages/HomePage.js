@@ -7,14 +7,12 @@ import ShowingCard from "../components/ShowingCard";
 const HomePage = () => {
     const history = useHistory();
     const { showings, getShowingsById } = useContext(MovieContext);
-    console.log(showings)
 
     const handleClick = (showingId) => {
         history.push(`/showing/${showingId}`)
     }
 
     let listData = showings;
-    console.log(listData)
     let content = ''
 
     if (showings) {
