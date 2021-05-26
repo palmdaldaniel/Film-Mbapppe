@@ -1,0 +1,65 @@
+
+.loginform {
+  width: 33%;
+  margin: auto;
+}
+
+.container {
+  justify-content: center;
+}
+
+.loginformtext {
+  display: flex;
+  justify-content: center;
+}
+
+
+.header {
+  font-size: 10rem;
+}
+
+.inputField {
+  border: 1px black;
+}
+
+
+.errorBox {
+  display: none;
+}
+
+.errorBox.active {
+  display: block;
+}
+
+.errorBox.inactive {
+  display: none
+}
+
+.singInButton {
+  background-color: #fd0000 ;
+  margin-top:2rem;
+  width: 70%;
+  border: none;
+}
+
+/* LoginPage.js style*/
+.containerStyle{
+  min-height: 80vh;
+}
+
+.logincontainer {
+  display: grid;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #000000;
+}
+.toggleText{
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.toggleText:hover{
+  color:#FE7F50
+}
