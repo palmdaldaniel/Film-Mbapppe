@@ -35,6 +35,8 @@ const SeatingMap = ({ saloon }) => {
   };
 
   const reserveSeat = (seat) => {
+    // for the tester
+    // the param should log out let an object with selected seatnumber and row.
     setReserved([...reserved, seat])
   }
 
@@ -44,9 +46,6 @@ const SeatingMap = ({ saloon }) => {
   }
 
   return (
-    
-
-
     <div className={styles.seatingWrapper}>
       {seats &&
         seats.map((rows, i) => {
