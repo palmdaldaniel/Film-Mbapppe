@@ -49,10 +49,6 @@ const logout = async ()=>{
    getUser()
 }
 
-
-
-
-  
   const values =
   {
     activeUser, 
