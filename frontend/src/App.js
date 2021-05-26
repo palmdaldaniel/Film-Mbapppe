@@ -17,7 +17,6 @@ function App() {
         <UserContextProvider>
           <BrowserRouter>
             <Navbar />
-            <h1>Mbappe</h1>
             <Route exact path="/">
               <HomePage />
             </Route>
