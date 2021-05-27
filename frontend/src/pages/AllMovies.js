@@ -9,13 +9,13 @@ const AllMovies = () => {
 
     const { getAllMovies } = useContext(MovieContext);
 
-    useEffect(()=> {
+    useEffect(() => {
         const moviesGetting = async () => {
             let response = await getAllMovies()
             setAllMovies(response)
         }
         moviesGetting()
-    },[getAllMovies])
+    }, [getAllMovies])
 
     let content = ''
 
@@ -23,7 +23,7 @@ const AllMovies = () => {
         content =
             <div className='d-flex flex-wrap justify-content-center'>
                 {allMovies.map((movie, i) => (
-                    <MovieCard key={i} movie={movie}/>
+                    <MovieCard key={i} movie={movie} />
                 ))}
             </div>
     }
