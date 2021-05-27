@@ -4,15 +4,14 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
   //const history = useHistory();
+  const [user, setUser] = useState(null);
+  const [showLogin, setShowLogin] = useState(false);// set this from true to false, that's why it wasn't working.
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState(null);
-
-  const [loginResult, setLoginResult] = useState(null);
-
-  // toggle between loginForm and register in LoginPage
-  const [showLogin, setShowLogin] = useState(true);
+  const [loginResult, setLoginResult] = useState(null); 
+ 
 
   useEffect(() => {
     whoami();
@@ -60,6 +59,7 @@ const UserContextProvider = (props) => {
       setActiveUser(userLoggingIn);
       setLoginResult(null);
     } else {
+   
       setLoginResult(userLoggingIn.error);
     }
     return userLoggingIn;
@@ -83,28 +83,13 @@ const UserContextProvider = (props) => {
     whoami()
   }
 
-  //register user 
-  const register = async (userToRegister) => {
-    let userToAdd = await fetch('/api/v1/users/register', {
-      method: 'POST',
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(userToRegister)
-    });
-
-    userToAdd = await userToAdd.json();
-
-    if (userToAdd.success) {
-      console.log(userToAdd.success)
-    } else if (userToAdd.error) {
-      console.log(userToAdd.error)
-      //setCurrentUser(undefined);
-    }
-  };
-
+ 
 
   const values =
   {
     activeUser,
+    user,
+    setUser,
     setActiveUser,
     bookings,
     setBookings,
@@ -115,11 +100,13 @@ const UserContextProvider = (props) => {
     editName,
     isEditing,
     setIsEditing,
-    message,
-    register,
-    showLogin,
     setShowLogin,
+    showLogin,
+    message,
+    setLoginResult,
     loginResult
+    
+    
   }
 
   return (
