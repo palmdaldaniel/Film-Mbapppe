@@ -1,28 +1,34 @@
 .navbar {
     display: flex;
     padding: 20px 20px 20px;
-    background-color: white;
+    align-items: flex-end;
+  }
+
+  .collapse {
+    color: red;
+    background-color: blue;
   }
   
   .link {
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 1.1rem;
     margin: 0 1rem;
-    text-decoration: none;
   }
   
   .link:hover {
-    color: black;
+    color: gray;
     border-bottom: 2px solid black;
+    text-decoration: none;
   }
   
-  .linkLogIn {
+  /* .linkLogIn {
     margin-right: 0 !important;
-  }
+  } */
   
   .logo {
     transition: transform 0.2s;
     cursor: pointer;
+    width: 40px;
   }
   
   .logo:hover {

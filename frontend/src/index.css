@@ -1,3 +1,7 @@
+html, body{
+  overflow-x: hidden;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap');
 * {
   background-color: #000;
@@ -9,6 +13,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
   
 }
 
