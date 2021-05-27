@@ -2,6 +2,7 @@ import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
+import DatePickerComponent from '../components/DatePicker'
 
 const HomePage = () => {
     const history = useHistory();
@@ -18,6 +19,8 @@ const HomePage = () => {
         content =
             <div>
                 <h2>Todays showings</h2>
+                <DatePickerComponent/>
+                
                 <div className='d-flex flex-wrap'>
                     {showings.map((showing, i) => (
                         <Card key={i} onClick={() => handleClick(showing._id)} style={{ width: '15rem' }}>

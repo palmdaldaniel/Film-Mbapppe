@@ -21,3 +21,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* DatePicker Styling  */
+.react-datepicker__input-container input,
+.react-datepicker__input-container input:focus {
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+    font-weight: 100;
+    border-bottom: 1px solid #fff;
+    color:#fff;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.react-datepicker-popper * {
+  font-size: 16px;
+  font-weight: 100;
+  background: rgb(41, 41, 41);
+  color: #fff !important;
+}
+.react-datepicker__month-container {
+  width: 260px;
+}
+.react-datepicker__day:hover, 
+.react-datepicker__month-text:hover, 
+.react-datepicker__quarter-text:hover, 
+.react-datepicker__year-text:hover {
+  color: #08233d !important;
+}
+.react-datepicker__day-names *{
+  font-weight: 700 !important;
+}
