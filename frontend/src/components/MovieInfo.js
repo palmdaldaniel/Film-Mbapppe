@@ -1,16 +1,15 @@
 import Booking from "../components/Booking";
 import Video from "./Video";
 import styles from "../css/MovieInfo.module.css";
-import { useLocation } from "react-router-dom";
 
 const MovieInfo = (props) => {
-  let location = useLocation();
 
-  let film
-  if (location.pathname.includes('movie-info')) {
-    film = props.movie
-  } else if (location.pathname.includes('showing')) {
+  let film = null
+  
+  if (props && props.showing ) {
     film = props.showing.film
+  } else if (props ){
+    film = props.movie
   }
 
   let content = "";
