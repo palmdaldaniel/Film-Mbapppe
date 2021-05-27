@@ -118,7 +118,8 @@ const UserContextProvider = (props) => {
     message,
     register,
     showLogin,
-    setShowLogin
+    setShowLogin,
+    loginResult
   }
 
   return (
