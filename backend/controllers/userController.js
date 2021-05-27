@@ -27,6 +27,8 @@ const getUserById = async (req, res) => {
   });
 };
 
+//create user
+
 const createUser = async (req, res) => {
   // destructure req.body object
   const { email } = req.body;
@@ -44,6 +46,9 @@ const createUser = async (req, res) => {
   res.json(user);
 };
 
+
+
+
 // Edit User
 const editUser = async (req, res) => {
   let user;
@@ -56,7 +61,7 @@ const editUser = async (req, res) => {
       return;
     }
 
-    // in case no matching are found in the DB.
+  // in case no matching are found in the DB.
     if (!result) {
       res
         .status(404)
@@ -118,6 +123,13 @@ const whoami = async (req, res) => {
   return res.json(req.session.user || null);
 }
 
+// register
+
+const register = async (req, res) => {
+  //check if user already exists
+  let userExists = await User.exists({ email: req.body.email });
+  if (userExists) return res.status(400).json({ error: "User with that email already exists." });
+  req.body.password = encrypt(req.body.password);
 
 
 
@@ -129,6 +141,8 @@ module.exports = {
   whoami,
   getAllUsers,
   getUserById,
- 
+  register,
+  
+}
 };
 

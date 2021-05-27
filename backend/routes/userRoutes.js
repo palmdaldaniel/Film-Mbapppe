@@ -10,7 +10,10 @@ router.post('/logout', userController.logout) //log out user
 router.get('/:userId', userController.getUserById)
 router.get('', userController.getAllUsers)
 router.post('', userController.createUser)
-router.post("/register", usersController.register);
+router.post("/register",userController.register);
+
+
+
 
 
 module.exports = router;

@@ -3,22 +3,15 @@ import { createContext, useState, useEffect } from "react"
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
-<<<<<<< Updated upstream
   //const history = useHistory();
-=======
->>>>>>> Stashed changes
+  const [user, setUser] = useState(null);
+  const [showLogin, setShowLogin] = useState(false);// set this from true to false, that's why it wasn't working.
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState(null);
-
-  const [loginResult, setLoginResult] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(undefined);
-  const [status, setStatus] = useState(404);
-
-<<<<<<< Updated upstream
-  // toggle between loginForm and register in LoginPage
-  //const [showLogin, setShowLogin] = useState(true);
+  const [loginResult, setLoginResult] = useState(null); 
+ 
 
   useEffect(() => {
     whoami();
@@ -30,20 +23,6 @@ const UserContextProvider = (props) => {
     //user = await user.json();
     let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user)
-=======
- 
-
-
-   useEffect(() => {
-    getUser();
-  }, []) 
-
-
-  const getUser = async () => {
-    let user = await fetch("/api/v1/users/whoami")
-    user = await user.json();
-    setUser(user)
->>>>>>> Stashed changes
     return
   }
 
@@ -81,7 +60,7 @@ const UserContextProvider = (props) => {
       console.log("User logging in: ", activeUser);
       setLoginResult(null);
     } else {
-      console.log(loginResult);
+   
       setLoginResult(userLoggingIn.error);
     }
     return userLoggingIn;
@@ -105,82 +84,30 @@ const UserContextProvider = (props) => {
     whoami()
   }
 
-  //register user 
-  const register = async (userToRegister) => {
-    let userToAdd = await fetch('/api/v1/users/register', {
-      method: 'POST',
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(userToRegister)
-    });
+ 
 
-    userToAdd = await userToAdd.json();
-
-<<<<<<< Updated upstream
-    if (userToAdd.success) {
-      console.log(userToAdd.success)
-    } else if (userToAdd.error) {
-      console.log(userToAdd.error)
-      //setCurrentUser(undefined);
-    }
-  };
-
-
-=======
-// whoami
-const whoami = async () => {
-  let userlogin = await fetch("/api/v1/users/whoami");
-  userlogin = await userlogin.json();
-  if (userlogin) {
-    setUser(userlogin);
-  }
-};
-
-
-//register user 
-const registerU = async (user) => {
-  let userRegi = await fetch("/api/v1/users/register", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(user),
-  });
-  if (userRegi.status === 404) {
-    userRegi = await userRegi.json();
-    setErrorMessage(userRegi.failed);
-  } else if (userRegi.status === 200) {
-    userRegi = await userRegi.json();
-    setStatus(200);
-  }
-};
-
-  
->>>>>>> Stashed changes
   const values =
   {
     activeUser,
+    user,
+    setUser,
     setActiveUser,
     bookings,
     setBookings,
     loginUser,
     createUser,
     logout,
-<<<<<<< Updated upstream
     whoami,
     editName,
     isEditing,
     setIsEditing,
+    setShowLogin,
+    showLogin,
     message,
-    register
-=======
-    getUser,
-    setErrorMessage,
-    errorMessage,
-    registerU,
-    whoami
-  
-
->>>>>>> Stashed changes
+    setLoginResult,
+    loginResult
+    
+    
   }
 
   return (
@@ -188,10 +115,6 @@ const registerU = async (user) => {
       {props.children}
     </UserContext.Provider>
   );
-<<<<<<< Updated upstream
 };
-=======
-  }
->>>>>>> Stashed changes
 
 export default UserContextProvider;
