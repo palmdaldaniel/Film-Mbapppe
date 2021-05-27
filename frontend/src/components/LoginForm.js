@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
-    const { loginUser ,showLogin,setShowLogin} = useContext(UserContext); //added 
+    const { loginUser } = useContext(UserContext); //added 
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
