@@ -10,7 +10,7 @@ const Filtermovies = ({ movies }) => {
   const [runtimes, setRuntimes] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
-  console.log(languages);
+
 
   useEffect(() => {
     // fire helperfunctions on pageload
@@ -71,6 +71,38 @@ const Filtermovies = ({ movies }) => {
         {years.map((year) => (
           <option value={year} key={year}>
             {year}
+          </option>
+        ))}
+      </select>
+      <select name="Rating" required>
+        <option value=""> Rating </option>
+        {ratings.map((rating) => (
+          <option value={rating} key={rating}>
+            {rating}
+          </option>
+        ))}
+      </select>
+      <select name="Runtime" required>
+        <option value=""> Runtime </option>
+        {runtimes.map((runtime) => (
+          <option value={runtime} key={runtime}>
+            {runtime}
+          </option>
+        ))}
+      </select>
+      <select name="Director" required>
+        <option value=""> Director </option>
+        {directors.map((director) => (
+          <option value={director} key={director}>
+            {director}
+          </option>
+        ))}
+      </select>
+      <select name="Language" required>
+        <option value=""> Language </option>
+        {languages.map((language) => (
+          <option value={language} key={language}>
+            {language}
           </option>
         ))}
       </select>
