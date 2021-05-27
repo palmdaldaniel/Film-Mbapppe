@@ -12,7 +12,7 @@ const UserContextProvider = (props) => {
   const [loginResult, setLoginResult] = useState(null);
 
   // toggle between loginForm and register in LoginPage
-  //const [showLogin, setShowLogin] = useState(true);
+  const [showLogin, setShowLogin] = useState(true);
 
   useEffect(() => {
     whoami();
@@ -48,14 +48,14 @@ const UserContextProvider = (props) => {
   }
 
   const loginUser = async (loginInfo) => {
-    let result = await fetch("/api/v1/users/login", {
+    let userLoggingIn = await fetch("/api/v1/users/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(loginInfo),
     });
-    let userLoggingIn = await userLoggingIn.json();
+     userLoggingIn = await userLoggingIn.json();
     if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
       console.log("User logging in: ", activeUser);
@@ -118,7 +118,9 @@ const UserContextProvider = (props) => {
     isEditing,
     setIsEditing,
     message,
-    register
+    register,
+    showLogin,
+    setShowLogin
   }
 
   return (
