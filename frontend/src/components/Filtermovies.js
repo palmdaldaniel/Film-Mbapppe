@@ -3,18 +3,15 @@ import { useEffect, useState } from "react";
 
 const Filtermovies = ({ movies }) => {
   const [labels, setLabels] = useState([]);
-  const [filter, setFilter] = useState([])
-
-
-  
-
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
   const [ratings, setRatings] = useState([]);
   const [runtimes, setRuntimes] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
-
+  const [filter, setFilter] = useState([])
+  console.log(filter);
+  
 
   useEffect(() => {
     // fire helperfunctions on pageload
