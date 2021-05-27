@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
-
-import MovieInfo from "../components/MovieInfo";
+import MovieInfo from "../components/MovieInfo"
 import { MovieContext } from "../contexts/MovieContext";
 
 const ShowingPage = (props) => {
@@ -10,6 +9,7 @@ const ShowingPage = (props) => {
 
   useEffect(() => {
     getShowingsById(showingId);
+    // eslint-disable-next-line
   }, []);
 
   return (
