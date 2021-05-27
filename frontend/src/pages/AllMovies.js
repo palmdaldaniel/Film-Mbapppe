@@ -2,12 +2,11 @@ import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
 import MovieCard from '../components/MovieCard'
 import PaginationComponent from '../components/Pagination'
-
-
 import { useHistory } from "react-router-dom";
+
 const AllMovies = () => {
-    const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
     const history = useHistory();
+    const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
 
     const [allMovies, setAllMovies] = useState(null);
 
@@ -27,18 +26,14 @@ const AllMovies = () => {
     }
 
     useEffect(() => {
-    useEffect(() => {
-        const moviesGetting = async () => {
-            let response = await getAllMovies()
-            setAllMovies(response)
-        }
         moviesGetting()
-    }, [getAllMovies])
+        countPageTotal()
+    }, [getAllMovies, currentPage, countMovieDocuments])
 
     const handleClick = (movie) => {
         history.push(`/movie-info/${movie._id}`);
     };
-    
+
     let content = ''
 
     let values = {
@@ -49,12 +44,15 @@ const AllMovies = () => {
 
     if (allMovies) {
         content =
-            <div className='d-flex flex-wrap justify-content-center'>
-                {allMovies.map((movie, i) => (
-                    <div onClick={()=>handleClick(movie)}>
+            <div>
+                <div className='d-flex flex-wrap justify-content-center'>
+                    {allMovies.map((movie, i) => (
+                        <div onClick={()=>handleClick(movie)}>
                         <MovieCard key={i} movie={movie} />
                     </div>
-                ))}
+                    ))}
+                </div>
+                <PaginationComponent values={values} />
             </div>
     }
     else {
