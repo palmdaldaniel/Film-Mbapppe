@@ -1,4 +1,3 @@
-import Booking from "../components/Booking";
 import Video from "./Video";
 import styles from "../css/MovieInfo.module.css";
 
