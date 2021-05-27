@@ -131,7 +131,7 @@ const register = async (req, res) => {
   if (userExists) return res.status(400).json({ error: "User with that email already exists." });
   req.body.password = encrypt(req.body.password);
 
-
+};
 
 module.exports = {
   logout,
@@ -144,5 +144,5 @@ module.exports = {
   register,
   
 }
-};
+
 
