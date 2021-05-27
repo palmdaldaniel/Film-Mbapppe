@@ -66,6 +66,14 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
+      <select name="Year" required>
+        <option value=""> Year </option>
+        {years.map((year) => (
+          <option value={year} key={year}>
+            {year}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
