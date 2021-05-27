@@ -1,8 +1,9 @@
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
 import MovieCard from '../components/MovieCard'
-
+import { useHistory } from "react-router-dom";
 const AllMovies = () => {
+    const history = useHistory();
 
     const [allMovies, setAllMovies] = useState(null);
 
@@ -16,13 +17,19 @@ const AllMovies = () => {
         moviesGetting()
     }, [getAllMovies])
 
+    const handleClick = (movie) => {
+        history.push(`/movie-info/${movie._id}`);
+    };
+    
     let content = ''
 
     if (allMovies) {
         content =
             <div className='d-flex flex-wrap justify-content-center'>
                 {allMovies.map((movie, i) => (
-                    <MovieCard key={i} movie={movie} />
+                    <div onClick={()=>handleClick(movie)}>
+                        <MovieCard key={i} movie={movie} />
+                    </div>
                 ))}
             </div>
     }
