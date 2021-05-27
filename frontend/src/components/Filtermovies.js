@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 
 const Filtermovies = ({ movies }) => {
   const [labels, setLabels] = useState([]);
+  console.log(labels);
 
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
+  const [ratings, setRatings] = useState([]);
+  const [runtimes, setRuntimes] = useState([]);
   
-
   useEffect(() => {
 
     // fire helperfunctions on pageload
@@ -34,12 +36,20 @@ const Filtermovies = ({ movies }) => {
   const makeValues = (movies) => {
     console.log('movies', movies);
     
-    // create values for label genres
+    // create values for label genre
     setGenres([...new Set(movies.map((value) => value.Genre).flat())])
 
-    //create values for year 
+    //create values for label year 
    const years = movies.map(value => value.Year).sort((a,b) => a - b)    
     setYears([...new Set(years)])
+
+    // create values for label rating
+    setRatings([...new Set(movies.map(value => value.Rated))])
+
+    // create value for runtime  - t
+    setRuntimes([...new Set(movies.map(value => value.Runtime))])
+  
+    
 
   }
 
