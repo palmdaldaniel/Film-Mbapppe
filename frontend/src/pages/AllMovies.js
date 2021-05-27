@@ -35,21 +35,22 @@ const AllMovies = () => {
     };
 
     let content = ''
-
+    
     let values = {
         activPage: currentPage,
         pageTotal: pageTotal,
         setCurrentPage
     }
 
+
     if (allMovies) {
         content =
             <div>
                 <div className='d-flex flex-wrap justify-content-center'>
                     {allMovies.map((movie, i) => (
-                        <div onClick={()=>handleClick(movie)}>
-                        <MovieCard key={i} movie={movie} />
-                    </div>
+                        <div onClick={() => handleClick(movie)}>
+                            <MovieCard key={i} movie={movie} />
+                        </div>
                     ))}
                 </div>
                 <PaginationComponent values={values} />
