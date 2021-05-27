@@ -28,11 +28,9 @@ export default function Login() {
         };
         let result = await loginUser(loginInfo);
         if (!result.error) {
-            console.log("You're logged in");
             history.push("/");
           } else {
             setError(result.error);
-            console.log(result.error)
           }
         };
 

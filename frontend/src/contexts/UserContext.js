@@ -58,10 +58,8 @@ const UserContextProvider = (props) => {
     let userLoggingIn = await userLoggingIn.json();
     if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
-      console.log("User logging in: ", activeUser);
       setLoginResult(null);
     } else {
-      console.log(loginResult);
       setLoginResult(userLoggingIn.error);
     }
     return userLoggingIn;
