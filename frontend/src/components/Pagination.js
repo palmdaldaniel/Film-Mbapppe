@@ -13,6 +13,7 @@ const PaginationComponent = (props) => {
     }
 
     const handleClick = (number) => {
+        window.scrollTo(0, 0);
         setCurrentPage(number)
     }
 
