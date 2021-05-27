@@ -1,7 +1,7 @@
 const Movie = require("../models/Movie");
 
 const getAllMovies = async (req, res) => {
-  console.log(req.query);
+  // console.log(req.query);
 
   // year will come in as a string from user input so we need to convert in to a number to mathc schema.
   let yearToNumber = parseInt(req.query.year)

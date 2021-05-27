@@ -5,6 +5,8 @@ export const MovieContext = createContext();
 const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
     const [showing, setShowing] = useState(null); 
+    const [filteredMovie, setFilteredMovie] = useState(null); 
+    const [filteredActor, setFilteredActor] = useState(null); 
 
     useEffect(() => {
         getShowingsByDate('2021-06-13');
@@ -35,6 +37,20 @@ const MovieContextProvider = (props) => {
         setShowing(showing); 
     }
     
+    const getMovieByTitle = async (title) => {
+        let t = await fetch(`/api/v1/movies/?title=${title}`); 
+        t = await t.json(); 
+        console.log("title", t);
+        setFilteredMovie(t); 
+        return;  
+    }
+
+    const getMovieByActor = async (actor) => {
+        let a = await fetch(`/api/v1/movies/?actor=${actor}`); 
+        a = await a.json(); 
+        console.log("actor", a);
+        return a; 
+    }
 
 
     const values = {
@@ -42,7 +58,11 @@ const MovieContextProvider = (props) => {
         getMovieById,
         showings,
         getShowingsById,
-        showing
+        showing, 
+        getMovieByTitle,
+        filteredMovie, 
+        getMovieByActor, 
+        filteredActor
     }
 
     return (
