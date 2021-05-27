@@ -49,7 +49,8 @@ const MovieContextProvider = (props) => {
         let a = await fetch(`/api/v1/movies/?actor=${actor}`); 
         a = await a.json(); 
         console.log("actor", a);
-        return a; 
+        setFilteredActor(a); 
+        return; 
     }
 
 
