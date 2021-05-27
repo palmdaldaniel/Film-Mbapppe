@@ -22,7 +22,7 @@ const AllMovies = () => {
     if (allMovies) {
         content =
             <div className='d-flex flex-wrap justify-content-center'>
-                {filteredActor.map((movie, i) => (
+                {allMovies.map((movie, i) => (
                     <MovieCard key={i} movie={movie} />
                 ))}
             </div>

@@ -14,8 +14,9 @@ const getAllMovies = async (req, res) => {
   }
 
   //url for testing http://localhost:3001/api/v1/movies?actor=morgan&title=spiral
-  let queryTitle = new RegExp(`^${req.query.title ? req.query.title : ''}\\w*`, 'gi')
-  let queryActor = new RegExp(`${req.query.actor ? req.query.actor : ''}\\w*`, 'gi')
+  let querySearch = new RegExp(`^${req.query.search ? req.query.search : ''}\\w*`, 'gi')
+  // let queryTitle = new RegExp(`^${req.query.title ? req.query.title : ''}\\w*`, 'gi')
+  // let queryActor = new RegExp(`${req.query.actor ? req.query.actor : ''}\\w*`, 'gi')
 
   // filter in movies
   // filter by rated
@@ -37,8 +38,9 @@ const getAllMovies = async (req, res) => {
   //if the find method dosen't have any arguments, all documents will be return
   // let movies = await Movie.find({ Title: queryTitle}).exec()   
   let movies = await Movie.find({
-    Title: queryTitle,
-    Actors: queryActor,
+
+    $or: [{Title: querySearch}, {Actors: querySearch}],
+    
     Genre: queryGenre,
     Rated: queryRated,
     Director: queryDirector,
@@ -46,6 +48,7 @@ const getAllMovies = async (req, res) => {
     Runtime: queryRuntime,
     // if there is a query with year include that in the find method otherwise we run 0 to infintiy to make sure we get all movies in db.
     Year: yearToNumber ? yearToNumber : { $gt: 0, $lt: Infinity }
+    
     }).exec()
 
   if (movies.length === 0) {

@@ -5,10 +5,9 @@ import styles from "../css/Search.module.css";
 const Search = () => {
   const {
     getAllMovies,
-    getMovieByTitle,
-    filteredMovie,
-    getMovieByActor,
-    filteredActor,
+    getMovieBySearch,
+    filteredSearch,
+   
   } = useContext(MovieContext);
   const [search, setSearch] = useState("");
 
@@ -22,11 +21,11 @@ const Search = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    getMovieByTitle(search);
-    getMovieByActor(search);
+    getMovieBySearch(search);
+    // getMovieByActor(search);
   };
 
-  // console.log("filteredMovie", filteredMovie);
+  // console.log("filteredSearch", filteredSearch);
   // console.log("filteredActor", filteredActor);
 
   return (
