@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
+
 const Filtermovies = ({ movies }) => {
   const [labels, setLabels] = useState([]);
-  console.log(labels);
+  const [filter, setFilter] = useState([])
+
+
+  
 
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
@@ -15,7 +19,6 @@ const Filtermovies = ({ movies }) => {
   useEffect(() => {
     // fire helperfunctions on pageload
     makeLabels(movies);
-
     makeValues(movies);
   }, []);
 
@@ -28,12 +31,6 @@ const Filtermovies = ({ movies }) => {
     labels = labels.filter((label) => !values.includes(label));
     setLabels(labels);
   };
-
-  /*  const makeValuesForGenres = (movies) => {
-    const values = movies.map((value) => value.Genre).flat();
-    const unique = [...new Set(values)];
-    setGenres(unique);
-  }; */
 
   const makeValues = (movies) => {
     // create values for label genre
@@ -56,9 +53,22 @@ const Filtermovies = ({ movies }) => {
     setLanguages([...new Set(movies.map((value) => value.Language))]);
   };
 
+
+  // create an object from the values of the selectfields. 
+  const handleChange = (e) => {
+
+    console.log(e.target.value, e.target.name);
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+
+    setFilter(f)
+  }
+
   return (
     <div className="FilterContainer">
-      <select name="Genre" required>
+      <select onChange={handleChange} name='Genre' required>
         <option value=""> Genre </option>
         {genres.map((genre) => (
           <option value={genre} key={genre}>
@@ -66,7 +76,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select name="Year" required>
+      <select onChange={handleChange} name="Year" required>
         <option value=""> Year </option>
         {years.map((year) => (
           <option value={year} key={year}>
@@ -74,7 +84,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select name="Rating" required>
+      <select onChange={handleChange} name="Rating" required>
         <option value=""> Rating </option>
         {ratings.map((rating) => (
           <option value={rating} key={rating}>
@@ -82,7 +92,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select name="Runtime" required>
+      <select onChange={handleChange} name="Runtime" required>
         <option value=""> Runtime </option>
         {runtimes.map((runtime) => (
           <option value={runtime} key={runtime}>
@@ -90,7 +100,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select name="Director" required>
+      <select onChange={handleChange} name="Director" required>
         <option value=""> Director </option>
         {directors.map((director) => (
           <option value={director} key={director}>
@@ -98,7 +108,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select name="Language" required>
+      <select onChange={handleChange} name="Language" required>
         <option value=""> Language </option>
         {languages.map((language) => (
           <option value={language} key={language}>
