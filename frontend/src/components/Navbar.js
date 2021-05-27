@@ -24,7 +24,7 @@ const Navbar = () => {
         </Link>
 
         {/* <div className={ `${styles.collapse} collapse navbar-collapse`}> id="navbarNavAltMarkup" */}
-        <div className={styles.collapse}>
+        <div className="">
           {" "}
           {/* <div className="nav-item nav-link w-100"> */}
           <div className="">
