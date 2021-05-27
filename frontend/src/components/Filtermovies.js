@@ -5,7 +5,6 @@ const Filtermovies = ({ movies }) => {
 
   console.log(labels);
 
-
   useEffect(() => {
     makeLabels(movies);
   }, []);
@@ -15,6 +14,7 @@ const Filtermovies = ({ movies }) => {
     let labels = Object.keys(movies[0]);
     let values = ["_id", "Poster", "Trailer", "Plot", "Actors", "Title", "__v"];
 
+    // take out the labels we don't want to filter on. Will use it to create select fields on
     labels = labels.filter((label) => !values.includes(label));
 
     setLabels(labels);
@@ -23,30 +23,13 @@ const Filtermovies = ({ movies }) => {
   return (
     <div className="FilterContainer">
       <h1 style={{ color: "white" }}> filter filter </h1>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
-      <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </select>
+      {labels.map((label, i) => {
+        return (
+          <select name={label} value={label} required key={i}>
+            <option value={label}> {label}</option>
+          </select>
+        );
+      })}
     </div>
   );
 };
