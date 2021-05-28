@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
-
 import MovieInfo from "../components/MovieInfo";
+import SeatingMap from "../components/SeatingMap";
 import { MovieContext } from "../contexts/MovieContext";
+import Booking from '../components/Booking'
 
 const ShowingPage = (props) => {
   const { showingId } = props.match.params;
@@ -10,11 +11,15 @@ const ShowingPage = (props) => {
 
   useEffect(() => {
     getShowingsById(showingId);
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div>
       <MovieInfo showing={showing} />
+      <Booking />
+      {showing && <SeatingMap saloon={showing.saloon} />     }
+
     </div>
   );
 };

@@ -57,3 +57,14 @@ code {
 .react-datepicker__day-names *{
   font-weight: 700 !important;
 }
+
+/* Styling for pagination */
+.page-item.active .page-link  {
+  background-color: #e21b33 !important;
+  border-color: #e21b33 !important;
+  color: #fff !important;
+}
+
+.page-link {
+  color: #000 !important;
+}

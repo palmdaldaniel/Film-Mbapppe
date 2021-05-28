@@ -5,15 +5,15 @@ const createBooking = async (req, res) => {
     let booking = await Booking.create({
         userId: req.body.userId,
         showingId: req.body.showingId,
-        tickets: req.body.tickets 
+        tickets: req.body.tickets
     });
-    
+
     res.send(booking);
 }
 
 
 const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc6595aa
-    
+
     Booking.findById(req.params.bookingid).exec((err, booking) => {
         // Checks for thrown errors from the method itself.
         if (err) {
@@ -25,7 +25,7 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
         if (!booking) {
             res
                 .status(404)
-                .json({ error: `Booking with id ${req.params.biikingid} does not exist` });
+                .json({ error: `Booking with id ${req.params.bookingid} does not exist` });
             return;
         }
 

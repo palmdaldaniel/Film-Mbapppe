@@ -20,9 +20,14 @@ const MovieContextProvider = (props) => {
         getShowingsByDate(dateToString(chosenDate));
     }, [chosenDate]);
 
+    const countMovieDocuments = async () => {
+        let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
+        amountOfDocuments = await amountOfDocuments.json();
+        return amountOfDocuments
+    }
 
-    const getAllMovies = async () => {
-        let movies = await fetch(`/api/v1/movies`);
+    const getAllMovies = async (page) => {
+        let movies = await fetch(`/api/v1/movies?page=${page}`);
         movies = await movies.json();
         return movies
     }
@@ -54,7 +59,8 @@ const MovieContextProvider = (props) => {
         getShowingsById,
         showing,
         chosenDate,
-        setChosenDate
+        setChosenDate,
+        countMovieDocuments
     }
 
     return (
