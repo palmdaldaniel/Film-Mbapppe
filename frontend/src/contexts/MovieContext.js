@@ -60,6 +60,7 @@ const MovieContextProvider = (props) => {
         showing, 
         getMovieBySearch,
         filteredSearch, 
+        countMovieDocuments,
     }
 
     return (
