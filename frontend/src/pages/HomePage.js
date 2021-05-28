@@ -1,9 +1,8 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import Card from 'react-bootstrap/Card';
+import { useContext } from "react";
 import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
+import PriceFilter from '../components/priceFilter'
 
 const HomePage = () => {
     const { showings } = useContext(MovieContext);
@@ -16,6 +15,7 @@ const HomePage = () => {
             <div>
                 <h2>Todays showings</h2>
                 <DatePickerComponent/>
+                <PriceFilter/>
                 <ShowingCard showings={showings} />
             </div>
     }
