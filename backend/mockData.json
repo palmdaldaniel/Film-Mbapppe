@@ -7,7 +7,7 @@
     "Genre": ["Crime", "Horror", "Mystery", "Thriller"],
     "Director": "Darren Lynn Bousman",
     "Actors": [
-      "Morgan David Jones",
+      "Chris Rock",
       "Samuel L. Jackson",
       "Ali Johnson",
       "Dan Petronijevic"
@@ -166,33 +166,28 @@
   },
   {
     "Title": "Supernova",
-    "Year": "2000",
-    "Rated": "PG-13",
-    "Runtime": "90 min",
-    "Genre": ["Horror", "Sci-Fi", "Thriller"],
-    "Director": "Walter Hill",
-    "Actors": [
-      "James Spader",
-      "Angela Bassett",
-      "Robert Forster",
-      "Lou Diamond Phillips"
-    ],
-    "Plot": "A deep space rescue and recovery spaceship with a crew of 6 receives a distress call from a mining operation 3432 light years away. A rescue operation via dimension jump is made. Bad idea.",
+    "Year": "2020",
+    "Rated": "R",
+    "Runtime": "95 min",
+    "Genre": "Drama, Romance",
+    "Director": "Harry Macqueen",
+    "Actors": "Colin Firth, Stanley Tucci, Pippa Haywood, Peter MacQueen",
+    "Plot": "Sam and Tusker are traveling across England in their old RV to visit friends, family and places from their past. Since Tusker was diagnosed with dementia two years ago, their time together is the most important thing they have.",
     "Language": "English",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTgwMjI4OTU4MF5BMl5BanBnXkFtZTcwOTk3MTE3NA@@._V1_SX300.jpg",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNDc0Y2FjZjgtOWNkYy00NjdjLWE3ZjYtZGYyNDdmYzZiZGYzXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
     "Trailer": "https://www.youtube.com/watch?v=bRz2hY6ykGE"
   },
   {
     "Title": "Black Widow",
-    "Year": "1987",
-    "Rated": "R",
-    "Runtime": "102 min",
-    "Genre": ["Crime", "Drama", "Thriller"],
-    "Director": "Bob Rafelson",
-    "Actors": ["Debra Winger", "Theresa Russell", "Sami Frey", "Dennis Hopper"],
-    "Plot": "A federal investigator tracks down a gold-digging woman who moves from husband to husband to kill them and collect the inheritance.",
+    "Year": "2021",
+    "Rated": "PG-13",
+    "Runtime": "133 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Cate Shortland",
+    "Actors": "Scarlett Johansson, Florence Pugh, Rachel Weisz, David Harbour",
+    "Plot": "A film about Natasha Romanoff in her quests between the films Civil War and Infinity War.",
     "Language": "English",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BN2EyMDIyYWItNWI0MC00ODZmLWJlYTAtNDhmOTU0YWZmNWJlXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYjdmODAzNTctNWU1NS00ZmRiLWFiM2YtMjAyNzgzZWJlZjhlXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
     "Trailer": "https://www.youtube.com/watch?v=Fp9pNPdNwjI"
   },
   {
@@ -262,7 +257,7 @@
     "Actors": ["Dax Shepard", "Iain Armitage", "Randall Park", "Yara Shahidi"],
     "Plot": "Ryder and the pups are called to Adventure City to stop Mayor Humdinger from turning the bustling metropolis into a state of chaos.",
     "Language": "English",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BNzY2NmQ1ZTgtMGJkOC00YTA0LWE5NjctZjM2ZjFiMWNhYzEzXkEyXkFqcGdeQXVyNjQ4NjY2MzE@._V1_SX300.jpg",
+    "Poster": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6494472f-fec7-438d-b6fb-5c5122ed065e/deaqovx-b2a2c5f5-1534-4575-87a9-06ade2d50365.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY0OTQ0NzJmLWZlYzctNDM4ZC1iNmZiLTVjNTEyMmVkMDY1ZVwvZGVhcW92eC1iMmEyYzVmNS0xNTM0LTQ1NzUtODdhOS0wNmFkZTJkNTAzNjUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.cWj8BazqyXWpQk41mQFxgc7TSvMF6ulHrFmWY37ugTY",
     "Trailer": "https://www.youtube.com/watch?v=aywh1D8L0FY"
   },
   {
@@ -284,21 +279,16 @@
     "Trailer": "https://www.youtube.com/watch?v=j9Okx5teGBQ"
   },
   {
-    "Title": "The Conjuring",
-    "Year": "2013",
+    "Title": "The Conjuring: The Devil Made Me Do It",
+    "Year": "2021",
     "Rated": "R",
     "Runtime": "112 min",
-    "Genre": ["Horror", "Mystery", "Thriller"],
-    "Director": "James Wan",
-    "Actors": [
-      "Vera Farmiga",
-      "Patrick Wilson",
-      "Lili Taylor",
-      "Ron Livingston"
-    ],
-    "Plot": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.",
-    "Language": "English",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BMTM3NjA1NDMyMV5BMl5BanBnXkFtZTcwMDQzNDMzOQ@@._V1_SX300.jpg",
+    "Genre": "Horror, Mystery, Thriller",
+    "Director": "Michael Chaves",
+    "Actors": "Patrick Wilson, Vera Farmiga, Ruairi O'Connor, Sarah Catherine Hook",
+    "Plot": "The Warrens investigate a murder that may be linked to a demonic possession.",
+    "Language": "Portuguese, English",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYzQxMjVkZjEtMDQxYy00MGIwLWE1NjYtYzZkZmU1NTFlZGFlXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_SX300.jpg",
     "Trailer": "https://www.youtube.com/watch?v=k10ETZ41q5o"
   },
   {
