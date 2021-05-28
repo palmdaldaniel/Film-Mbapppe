@@ -9,7 +9,7 @@ const createShowing = async (req, res) => {
 }
 
 const getShowingById = async (req, res) => {
-  Showing.findById(req.params.showingId).populate('film').exec(async (err, result) => {
+  Showing.findById(req.params.showingId).populate('film saloon').exec(async (err, result) => {
     if (err) {
       res.status(400).json({ error: "Something went wrong" });
       return;

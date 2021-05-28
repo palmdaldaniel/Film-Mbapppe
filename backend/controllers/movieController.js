@@ -3,6 +3,10 @@ const Movie = require("../models/Movie");
 const getAllMovies = async (req, res) => {
   // console.log(req.query);
 
+  //for pagination
+  const { page = req.query.page } = req.query
+  const limit = 9 //how many documents that comes back from MongoDB per request
+
   // year will come in as a string from user input so we need to convert in to a number to mathc schema.
   let yearToNumber = parseInt(req.query.year)
   
@@ -48,14 +52,26 @@ const getAllMovies = async (req, res) => {
     Runtime: queryRuntime,
     // if there is a query with year include that in the find method otherwise we run 0 to infintiy to make sure we get all movies in db.
     Year: yearToNumber ? yearToNumber : { $gt: 0, $lt: Infinity }
-    
-    }).exec()
+    })
+    .limit(limit * 1) //for pagination
+    .skip((page - 1) * limit)//for pagination
+    .exec()
 
   if (movies.length === 0) {
     res.send('No movies matched the filter');
     return;
   }
   res.json(movies)
+}
+
+const countMovieDocuments = async (req, res) => { 
+  Movie.count({}, function(err, result) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  });
 }
 
 
@@ -82,6 +98,7 @@ const getMovieById = async (req, res) => {
 
 module.exports = {
   getAllMovies,
-  getMovieById
+  getMovieById,
+  countMovieDocuments
 };
 
