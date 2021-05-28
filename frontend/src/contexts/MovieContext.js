@@ -5,11 +5,20 @@ export const MovieContext = createContext();
 const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
     const [showing, setShowing] = useState(null); 
+    const [chosenDate, setChosenDate] = useState(new Date()); //format Thu May 27 2021 09:52:34 GMT+0200 (Central European Summer Time)
+
+    const dateToString = (date) => {
+        let stringDate = [
+            date.getFullYear(),
+            ('0' + (date.getMonth() + 1)).slice(-2), // to delete 0 before 10,11,12. 
+            ('0' + date.getDate()).slice(-2)]
+            .join('-');
+        return stringDate // convert date format to '2021-05-21'
+    }
 
     useEffect(() => {
-        getShowingsByDate('2021-06-13');
-        
-    }, []);
+        getShowingsByDate(dateToString(chosenDate));
+    }, [chosenDate]);
 
     const countMovieDocuments = async () => {
         let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
@@ -49,6 +58,8 @@ const MovieContextProvider = (props) => {
         showings,
         getShowingsById,
         showing,
+        chosenDate,
+        setChosenDate,
         countMovieDocuments
     }
 

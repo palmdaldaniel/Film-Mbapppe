@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
 import Navbar from "./components/Navbar";
+import SignupPage from "./pages/SignupPage";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
 import UserPage from "./pages/UserPage";
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/showing/:showingId" component={Showing} />
             <Route exact path="/about" />
             <Route exact path="/profile" />
+            <Route exact path="/register" component ={SignupPage}/>
             <Route exact path="/login" />
             <Route exact path="/allmovies">
               <AllMovies />

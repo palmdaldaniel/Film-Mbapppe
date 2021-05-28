@@ -1,12 +1,15 @@
+
 import React from "react";
+import { useContext } from "react";
 //import use context from react needs to be added later -----> Don't Delete!
 import { Link } from "react-router-dom";
-//import { UserContext } from "../contexts/UserContext"; -----> Don't Delete!
+import { UserContext } from "../contexts/UserContext"; 
 import styles from "../css/Navbar.module.css";
 
 const Navbar = () => {
-  //const {  } = useContext(UserContext); // Don't elete!logout and logged in  needs to be added later on.
-
+  
+  const { logout, activeUser } = useContext(UserContext); // Don't elete!logout and logged in  needs to be added later on.
+console.log(activeUser)
   return (
     <div>
       <nav
@@ -39,23 +42,22 @@ const Navbar = () => {
             </Link>
 
             {
-              /*loggedIn ? (
+              activeUser ? (
               <React.Fragment>
-              
                 <Link
-                  onClick={logOut}
+                  onClick={logout}
                   className={`${styles.link} float-end`}
                   to="/"
                 >
                   Log out
                 </Link>
               </React.Fragment>
-            ) : ( */ //---------------> Don't delete! needs to be added later on.
+            ) : ( 
 
               <Link to="/login" className={styles.link}>
                 Log in
               </Link>
-              //  ) // Don't delete! we are going to comment out this section later on.
+              ) // Don't delete! we are going to comment out this section later on.
             }
           </div>
         </div>
