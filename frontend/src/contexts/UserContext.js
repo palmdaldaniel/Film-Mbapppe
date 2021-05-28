@@ -4,7 +4,6 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
   //const history = useHistory();
-  const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);// set this from true to false, that's why it wasn't working.
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
@@ -19,10 +18,10 @@ const UserContextProvider = (props) => {
 
   const whoami = async () => {
     //uncomment bellow after testing
-    let user = await fetch("/api/v1/users/whoami");
-    user = await user.json();
-    // let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
-    setActiveUser(user)
+    let activeUser = await fetch("/api/v1/users/whoami");
+    activeUser = await activeUser.json();
+    setActiveUser(activeUser)
+    console.log("active user:", activeUser);
     return
   }
 
@@ -89,8 +88,6 @@ const UserContextProvider = (props) => {
   const values =
   {
     activeUser,
-    user,
-    setUser,
     setActiveUser,
     bookings,
     setBookings,
