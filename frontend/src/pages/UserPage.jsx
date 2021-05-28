@@ -12,8 +12,11 @@ const UserPage = () => {
   const { activeUser, whoami } = useContext(UserContext);
   const { showings } = useContext(MovieContext); //Get upcoming bookings and previous bookings on user by filtering on showing date in future or past, instead of showings here
 
+
   useEffect(() => {
-    whoami();
+    if (activeUser) {
+      whoami();
+    }
   }, [])
 
   return (
