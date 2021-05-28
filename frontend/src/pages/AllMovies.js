@@ -51,7 +51,7 @@ const AllMovies = () => {
                         <div onClick={()=>handleClick(movie)}>
                         <MovieCard key={i} movie={movie} />
                     </div>
-                    ))}
+                    ))}''
                 </div>
                 <PaginationComponent values={values} />
             </div>
