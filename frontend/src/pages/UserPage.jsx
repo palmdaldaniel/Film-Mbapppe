@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { MovieContext } from "../contexts/MovieContext";
 import { Link } from 'react-router-dom';
@@ -9,8 +9,12 @@ import styles from '../css/userPage.module.css'
 import UserInfo from '../components/UserInfo';
 
 const UserPage = () => {
-  const { activeUser } = useContext(UserContext);
+  const { activeUser, whoami } = useContext(UserContext);
   const { showings } = useContext(MovieContext); //Get upcoming bookings and previous bookings on user by filtering on showing date in future or past, instead of showings here
+
+  useEffect(() => {
+    whoami();
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -35,8 +39,8 @@ const UserPage = () => {
         <div className="content">
           <h3>You must be logged in to use this page!</h3>
 
-          <Link to="#">Login</Link>
-          <Link to="#">Registrer user</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Registrer user</Link>
         </div>
       )}
     </div>
