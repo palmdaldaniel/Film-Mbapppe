@@ -35,8 +35,8 @@ const UserPage = () => {
         <div className="content">
           <h3>You must be logged in to use this page!</h3>
 
-          <Link to="#">Login</Link>
-          <Link to="#">Registrer user</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Registrer user</Link>
         </div>
       )}
     </div>
