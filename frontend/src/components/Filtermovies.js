@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import {MovieContext} from "../contexts/MovieContext"; 
 
 const Filtermovies = ({ movies }) => {
+  const { filter, setFilter } = useContext(MovieContext); 
   const [labels, setLabels] = useState([]);
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
@@ -8,7 +10,6 @@ const Filtermovies = ({ movies }) => {
   const [runtimes, setRuntimes] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
-  const [filter, setFilter] = useState({});
   
   useEffect(() => {
     // fire helperfunctions on pageload

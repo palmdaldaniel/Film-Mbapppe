@@ -8,14 +8,13 @@ import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
   const history = useHistory();
-  const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
-  const [allMovies, setAllMovies] = useState(null)
+  const { getAllMovies, countMovieDocuments, filteredSearch } = useContext(MovieContext);
+  const [allMovies, setAllMovies] = useState(null);
 
   const moviesGetting = async () => {
     let response = await getAllMovies(currentPage);
     setAllMovies(response);
   };
-
   //for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [pageTotal, setPageTotal] = useState(null);
@@ -47,7 +46,7 @@ const AllMovies = () => {
     content = (
       <div>
         <div className="d-flex flex-wrap justify-content-center">
-          {allMovies.map((movie, i) => (
+          {filteredSearch && filteredSearch.map((movie, i) => (
             <div onClick={() => handleClick(movie)}>
               <MovieCard key={i} movie={movie} />
             </div>
@@ -64,14 +63,14 @@ const AllMovies = () => {
   return (
     <>
       <div className="container mt-5">
-       {allMovies && <Filtermovies movies={allMovies} />}
+        {allMovies && <Filtermovies movies={allMovies} />}
         <Search />
         {content}
       </div>
     </>
   );
 
-//   return <div className="container mt-5">{content}</div>;
+  //   return <div className="container mt-5">{content}</div>;
 };
 
 export default AllMovies;

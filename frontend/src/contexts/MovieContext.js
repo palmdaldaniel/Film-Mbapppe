@@ -6,7 +6,9 @@ const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
     const [showing, setShowing] = useState(null); 
     const [filteredSearch, setFilteredSearch] = useState(null); 
-    // const [filteredActor, setFilteredActor] = useState(null); 
+    const [filter, setFilter] = useState({}); 
+
+    console.log(filter)
 
     useEffect(() => {
         getShowingsByDate('2021-06-13');
@@ -61,6 +63,8 @@ const MovieContextProvider = (props) => {
         getMovieBySearch,
         filteredSearch, 
         countMovieDocuments,
+        filter, 
+        setFilter
     }
 
     return (
