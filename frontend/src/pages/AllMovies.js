@@ -4,12 +4,13 @@ import Search from "../components/Search";
 import MovieCard from '../components/MovieCard'
 import PaginationComponent from '../components/Pagination'
 import { useHistory } from "react-router-dom";
+import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
     const history = useHistory();
     const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
 
-    const [allMovies, setAllMovies] = useState(null);
+  const { getAllMovies } = useContext(MovieContext);
 
     const moviesGetting = async () => {
         let response = await getAllMovies(currentPage)
@@ -62,10 +63,17 @@ const AllMovies = () => {
 
     return (
         <div className='container mt-5' >
+        <Filtermovies movies={allMovies} />
             <Search />
             {content}
         </div>
+      </>
     );
+  } else {
+    content = <div>Loading...</div>;
+  }
+
+  return <div className="container mt-5">{content}</div>;
 };
 
 export default AllMovies;
