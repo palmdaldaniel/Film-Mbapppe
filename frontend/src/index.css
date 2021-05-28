@@ -29,20 +29,21 @@ code {
   border: none;
   text-align: center;
   outline: none;
+  font-weight: 100 !important;
 }
 
 .react-datepicker-wrapper,
-.react-datepicker__input-container {
-    font-weight: 100;
+.react-datepicker__input-container,
+.react-datepicker-ignore-onclickoutside {
+    font-weight: 100 !important;
     border-bottom: .5px solid rgba(255, 255, 255, 0.24);
     color:#fff;
     font-size: 20px;
-    margin: 20px 0;
 }
 
 .react-datepicker-popper * {
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 100 !important;
   background: rgb(41, 41, 41);
   color: #fff !important;
 }
@@ -95,7 +96,7 @@ code {
   content: none !important;
 }
 .dropdown-menu {
-  background: rgb(41, 41, 41);
+  background: rgb(41, 41, 41) !important;
   
 }
 .dropdown-item {

@@ -6,6 +6,7 @@ const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
     const [showing, setShowing] = useState(null); 
     const [chosenDate, setChosenDate] = useState(new Date()); //format Thu May 27 2021 09:52:34 GMT+0200 (Central European Summer Time)
+    const [chosenPrice, setChosenPrice] = useState(null); 
 
     const dateToString = (date) => {
         let stringDate = [
@@ -16,10 +17,21 @@ const MovieContextProvider = (props) => {
         return stringDate // convert date format to '2021-05-21'
     }
 
+    let showingQuery = {
+        date: dateToString(chosenDate),
+        price: chosenPrice
+    }
+
     useEffect(() => {
-        getShowingsByDate(dateToString(chosenDate));
+        setChosenPrice(null)
+        getShowingsByDate(showingQuery.date, showingQuery.price);
     }, [chosenDate]);
 
+    useEffect(() => {
+        getShowingsByDate(showingQuery.date, showingQuery.price);
+    }, [ chosenPrice]);
+
+    
     const countMovieDocuments = async () => {
         let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
         amountOfDocuments = await amountOfDocuments.json();
@@ -38,8 +50,14 @@ const MovieContextProvider = (props) => {
         return movie
     }
 
-    const getShowingsByDate = async (date) => {
-        let showings = await fetch(`/api/v1/showings/?date=${date}`); //required date format 2021-06-13
+    const getShowingsByDate = async (date, price) => {
+        let url = ''
+        if(date && price) {
+            url = `/api/v1/showings/?date=${date}&price=${price}` //required date format 2021-06-13
+        } else {
+            url = `/api/v1/showings/?date=${date}`
+        }
+        let showings = await fetch(`${url}`); 
         showings = await showings.json();
         setShowings(showings)
     }
@@ -60,7 +78,8 @@ const MovieContextProvider = (props) => {
         showing,
         chosenDate,
         setChosenDate,
-        countMovieDocuments
+        countMovieDocuments,
+        setChosenPrice
     }
 
     return (
