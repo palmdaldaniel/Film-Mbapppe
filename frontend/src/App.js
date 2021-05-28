@@ -10,6 +10,7 @@ import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieInfoPage from './pages/MovieInfoPage'
+import bookingtest from "./pages/bookingtest";
 
 
 function App() {
@@ -29,9 +30,10 @@ function App() {
               <UserPage />
             </Route>
             <Route exact path="/showing/:showingId" component={Showing} />
-            <Route exact path="/about" />
+            <Route exact path="/booking" component ={bookingtest}/>
             <Route exact path="/profile" />
             <Route exact path="/register" component ={SignupPage}/>
+            
             <Route exact path="/login" />
             <Route exact path="/allmovies">
               <AllMovies />
