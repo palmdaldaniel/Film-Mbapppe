@@ -6,14 +6,20 @@ const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
     const [showing, setShowing] = useState(null); 
     const [filteredSearch, setFilteredSearch] = useState(null); 
-    const [filter, setFilter] = useState({}); 
+    const [filter, setFilter] = useState({}); //used in Filtermovie.js
+    const [finalSearch, setFinalSearch] = useState(null) //used in Search.js
 
-    console.log(filter)
+    console.log(filter); 
+    console.log(finalSearch);
 
     useEffect(() => {
         getShowingsByDate('2021-06-13');
         
     }, []);
+
+    useEffect(() => {
+        getMovieBySearch(finalSearch)
+    }, [filter, finalSearch])
 
     const countMovieDocuments = async () => {
         let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
@@ -45,12 +51,19 @@ const MovieContextProvider = (props) => {
         setShowing(showing); 
     }
     
-    const getMovieBySearch = async (search) => {
-        let s = await fetch(`/api/v1/movies/?search=${search}`); 
+    const getMovieBySearch = async (finalSearch) => {
+        let s = await fetch(`/api/v1/movies/?search=${finalSearch}`, {
+            method: "Post", 
+            headers: {
+                "content-type": "application/json",
+                },
+            body: JSON.stringify(filter)
+        }); 
         s = await s.json(); 
         console.log("results of searches", s);
         setFilteredSearch(s); 
-        return;  
+
+        // console.log(filter.Genre, finalSearch);
     }
 
 
@@ -64,7 +77,8 @@ const MovieContextProvider = (props) => {
         filteredSearch, 
         countMovieDocuments,
         filter, 
-        setFilter
+        setFilter, 
+        setFinalSearch
     }
 
     return (

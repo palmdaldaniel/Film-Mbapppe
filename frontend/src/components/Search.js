@@ -3,12 +3,8 @@ import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Search.module.css";
 
 const Search = () => {
-  const { getAllMovies, getMovieBySearch } = useContext(MovieContext);
-  const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    getAllMovies();
-  }, []);
+  const { getAllMovies, setFinalSearch } = useContext(MovieContext);
+  const [search, setSearch] = useState("")
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -16,7 +12,7 @@ const Search = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    getMovieBySearch(search);
+    setFinalSearch(search)
   };
 
   return (

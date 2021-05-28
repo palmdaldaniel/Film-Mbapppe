@@ -1,21 +1,28 @@
 const Movie = require("../models/Movie");
 
 const getAllMovies = async (req, res) => {
-  // console.log(req.query);
+  let movies = await Movie.find().exec()
+  res.json(movies)
+  return
+}
+
+const filterAllMovies = async (req, res) => {
+  console.log(req.query);
+  console.log(req.body);
 
   //for pagination
   const { page = req.query.page } = req.query
   const limit = 9 //how many documents that comes back from MongoDB per request
 
   // year will come in as a string from user input so we need to convert in to a number to mathc schema.
-  let yearToNumber = parseInt(req.query.year)
+  let yearToNumber = parseInt(req.body.Year)
   
   //first we check if the query object has any content. If not we send back all movies
-  if (Object.keys(req.query).length === 0) {
-    let movies = await Movie.find().exec()
-    res.json(movies)
-    return
-  }
+  // if (Object.keys(req.query).length === 0) {
+  //   let movies = await Movie.find().exec()
+  //   res.json(movies)
+  //   return
+  // }
 
   //url for testing http://localhost:3001/api/v1/movies?actor=morgan&title=spiral
   let querySearch = new RegExp(`^${req.query.search ? req.query.search : ''}\\w*`, 'gi')
@@ -33,11 +40,11 @@ const getAllMovies = async (req, res) => {
   //3. tester could also log the req.query object at start of function
 
   // this one filters for one genre is that enough?
-  let queryGenre = new RegExp(`${req.query.genre ? req.query.genre : ''}\\w*`, 'gi');
-  let queryRated = new RegExp(`${req.query.rated ? req.query.rated : ''}\\w*`, 'gi');
-  let queryDirector = new RegExp(`${req.query.director ? req.query.director : ''}\\w*`, 'gi');
-  let queryLanguage = new RegExp(`${req.query.language ? req.query.language : ''}\\w*`, 'gi');
-  let queryRuntime = new RegExp(`${req.query.runtime ? req.query.runtime : ''}\\w*`, 'gi');
+  let queryGenre = new RegExp(`${req.body.Genre ? req.body.Genre : ''}\\w*`, 'gi');
+  let queryRated = new RegExp(`${req.body.Rated ? req.body.Rated : ''}\\w*`, 'gi');
+  let queryDirector = new RegExp(`${req.body.Director ? req.body.Director : ''}\\w*`, 'gi');
+  let queryLanguage = new RegExp(`${req.body.Language ? req.body.Language : ''}\\w*`, 'gi');
+  let queryRuntime = new RegExp(`${req.body.Runtime ? req.body.Runtime : ''}\\w*`, 'gi');
 
   //if the find method dosen't have any arguments, all documents will be return
   // let movies = await Movie.find({ Title: queryTitle}).exec()   
@@ -56,11 +63,11 @@ const getAllMovies = async (req, res) => {
     .limit(limit * 1) //for pagination
     .skip((page - 1) * limit)//for pagination
     .exec()
-
-  if (movies.length === 0) {
-    res.send('No movies matched the filter');
-    return;
-  }
+console.log("movies", movies.length, movies);
+  // if (movies.length === 0) {
+  //   res.send('No movies matched the filter');
+  //   return;
+  // }
   res.json(movies)
 }
 
@@ -99,6 +106,7 @@ const getMovieById = async (req, res) => {
 module.exports = {
   getAllMovies,
   getMovieById,
-  countMovieDocuments
+  countMovieDocuments, 
+  filterAllMovies
 };
 
