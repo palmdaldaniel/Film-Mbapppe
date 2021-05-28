@@ -34,7 +34,7 @@ code {
 .react-datepicker-wrapper,
 .react-datepicker__input-container {
     font-weight: 100;
-    border-bottom: 1px solid #fff;
+    border-bottom: .5px solid rgba(255, 255, 255, 0.24);
     color:#fff;
     font-size: 20px;
     margin: 20px 0;
@@ -55,11 +55,10 @@ code {
 .react-datepicker__year-text:hover {
   color: #08233d !important;
 }
-.react-datepicker__day-names *{
-  font-weight: 700 !important;
-}
+
 
 /* Styling for pagination */
+
 .page-item.active .page-link  {
   background-color: #e21b33 !important;
   border-color: #e21b33 !important;
@@ -68,4 +67,46 @@ code {
 
 .page-link {
   color: #000 !important;
+}
+
+
+/* Styling for PriceFilter */
+
+#dropdown-basic-button {
+  font-weight: 100 !important;
+  background: none !important;
+  border: none;
+  font-size: 20px;
+  border-bottom: .5px solid rgba(255, 255, 255, 0.24);
+  font-weight: 700;
+  border-radius: 0;
+  outline: none;
+  padding: 0 0 1px 0;
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+#dropdown-basic-button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+.dropdown-menu {
+  background: rgb(41, 41, 41);
+  
+}
+.dropdown-item {
+  color: #fff !important;
+}
+.dropdown-item:hover {
+  color: #08233d !important;
+}
+
+@media (min-width: 576px) { 
+  #dropdown-basic-button {
+    margin: 0  0 1px 70px;
+  }
 }

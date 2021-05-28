@@ -14,8 +14,10 @@ const HomePage = () => {
         content =
             <div>
                 <h2>Todays showings</h2>
-                <DatePickerComponent/>
-                <PriceFilter/>
+                <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center'>
+                    <DatePickerComponent/>
+                    <PriceFilter/>
+                </div>
                 <ShowingCard showings={showings} />
             </div>
     }
