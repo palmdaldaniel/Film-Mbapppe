@@ -1,79 +1,77 @@
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext, useState, useEffect } from "react";
-import Search from "../components/Search"; 
-import MovieCard from '../components/MovieCard'
-import PaginationComponent from '../components/Pagination'
+import Search from "../components/Search";
+import MovieCard from "../components/MovieCard";
+import PaginationComponent from "../components/Pagination";
 import { useHistory } from "react-router-dom";
 import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
-    const history = useHistory();
-    const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
+  const history = useHistory();
+  const { getAllMovies, countMovieDocuments } = useContext(MovieContext);
+  const [allMovies, setAllMovies] = useState(null)
 
-  const { getAllMovies } = useContext(MovieContext);
+  const moviesGetting = async () => {
+    let response = await getAllMovies(currentPage);
+    setAllMovies(response);
+  };
 
-    const moviesGetting = async () => {
-        let response = await getAllMovies(currentPage)
-        setAllMovies(response)
-    }
+  //for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageTotal, setPageTotal] = useState(null);
 
-    //for pagination
-    const [currentPage, setCurrentPage] = useState(1)
-    const [pageTotal, setPageTotal] = useState(null)
+  const countPageTotal = async () => {
+    let response = await countMovieDocuments();
+    let pageTotal = Math.ceil(response / 9);
+    setPageTotal(pageTotal);
+  };
 
-    const countPageTotal = async () => {
-        let response = await countMovieDocuments()
-        let pageTotal = Math.ceil(response / 9)
-        setPageTotal(pageTotal)
-    }
+  useEffect(() => {
+    moviesGetting();
+    countPageTotal();
+  }, [getAllMovies, currentPage, countMovieDocuments]);
 
-    useEffect(() => {
-        moviesGetting()
-        countPageTotal()
-    }, [getAllMovies, currentPage, countMovieDocuments])
+  const handleClick = (movie) => {
+    history.push(`/movie-info/${movie._id}`);
+  };
 
-    const handleClick = (movie) => {
-        history.push(`/movie-info/${movie._id}`);
-    };
+  let content = "";
 
-    let content = ''
+  let values = {
+    activPage: currentPage,
+    pageTotal: pageTotal,
+    setCurrentPage,
+  };
 
-    let values = {
-        activPage: currentPage,
-        pageTotal: pageTotal,
-        setCurrentPage
-    }
-
-    if (allMovies) {
-        content =
-            <div>
-                <div className='d-flex flex-wrap justify-content-center'>
-                    {allMovies.map((movie, i) => (
-                        <div onClick={()=>handleClick(movie)}>
-                        <MovieCard key={i} movie={movie} />
-                    </div>
-                    ))}''
-                </div>
-                <PaginationComponent values={values} />
+  if (allMovies) {
+    content = (
+      <div>
+        <div className="d-flex flex-wrap justify-content-center">
+          {allMovies.map((movie, i) => (
+            <div onClick={() => handleClick(movie)}>
+              <MovieCard key={i} movie={movie} />
             </div>
-    }
-    else {
-        content = <div>Loading...</div>
-    }
-
-    return (
-        <div className='container mt-5' >
-        <Filtermovies movies={allMovies} />
-            <Search />
-            {content}
+          ))}
+          ''
         </div>
-      </>
+        <PaginationComponent values={values} />
+      </div>
     );
   } else {
     content = <div>Loading...</div>;
   }
 
-  return <div className="container mt-5">{content}</div>;
+  return (
+    <>
+      <div className="container mt-5">
+       {allMovies && <Filtermovies movies={allMovies} />}
+        <Search />
+        {content}
+      </div>
+    </>
+  );
+
+//   return <div className="container mt-5">{content}</div>;
 };
 
 export default AllMovies;
