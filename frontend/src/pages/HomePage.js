@@ -1,42 +1,32 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
 
 const HomePage = () => {
-    const { showings, setChosenPrice } = useContext(MovieContext);
-    const [priceOptions, setPriceOptions] = useState(null); //3. after step 2 when it got its value, it became an array will 6 prices, it sends as props to PriceFilter
-    console.log(`showings`, showings)
+    const { showings, filteredShowings } = useContext(MovieContext);
+    
+    let listData
 
-    let listData = showings;
-
-    useEffect(() => { // 1. when we get showings, we take every price from every showing and keep it in the array "allPriceOptions"
-        let allPriceOptions = [] 
-        if(showings) {
-            showings.forEach((oneShowing)=> {
-                allPriceOptions.push(oneShowing.price)
-            })
-            setPriceOptions(allPriceOptions) //2. after we have looped through all showings, we put all prices to state
-        }
-    }, [showings]);
-
-    let values = {
-        setChosenPrice,
-        priceOptions
+    if(filteredShowings && filteredShowings.length > 0) {
+        listData = filteredShowings
+    } else {
+        listData = showings
     }
-
+    
+     
     let content = ''
 
-    if (showings) {
+    if (listData) {
         content =
             <div>
-                <h2>Todays showings</h2>
+                <h2 className='mt-3 mb-5' >Todays showings</h2>
                 <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center mb-5'>
-                    <DatePickerComponent/>
-                    <PriceFilter values={values}/>
+                    <DatePickerComponent />
+                    <PriceFilter />
                 </div>
-                <ShowingCard showings={showings} />
+                <ShowingCard showings={listData} />
             </div>
     }
     else {
@@ -44,8 +34,8 @@ const HomePage = () => {
     }
 
     return (
-        <div className="container">
-            <h1>Home page</h1>
+        <div className="container text-center">
+
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}

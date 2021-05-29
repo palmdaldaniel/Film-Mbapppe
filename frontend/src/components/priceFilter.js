@@ -1,30 +1,30 @@
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import { MovieContext } from "../contexts/MovieContext";
+import { useContext } from "react";
 
-function PriceFilter(props) { // priceOptions are gotten from Home page as props. Its format [100, 150, 150, 150, 100, 150]
-    const { setChosenPrice, priceOptions} = props.values
+function PriceFilter() {
+    const { priceOptions, setChosenPrice } = useContext(MovieContext);
+
     let items = [];//here we'll keep items that are going to be in the dropdown menu 
 
     const handleClick = (priceOpt) => {
-        // document.querySelector('#dropdown-basic-button').innerHTML = `Price: ${priceOpt}$`
         setChosenPrice(priceOpt)
     }
 
-    if(priceOptions !== null ) { //when we got priceOptions as props
-        let uniquePriceOpt = [... new Set(priceOptions)].sort((a,b) => a-b) //keep only unique values and sort them in falling ordning
-
-        for (let i = 0; i < uniquePriceOpt.length; i++) { //loop through uniquePriceOpt
-            items.push(//push every unique item to the array 
-                <Dropdown.Item key={i} onClick={()=>handleClick(uniquePriceOpt[i])}>
-                    {`${uniquePriceOpt[i]}`}
+    if (priceOptions) { //priceOptions format [100, 150, 200]
+        for (let i = 0; i < priceOptions.length; i++) {
+            items.push(
+                <Dropdown.Item key={i} onClick={() => handleClick(priceOptions[i])}>
+                    {`${priceOptions[i]}`}
                 </Dropdown.Item>,
             );
+        }
     }
-}
-    
+
     return (
-        <DropdownButton style={{display: 'inline-block'}} id="dropdown-basic-button" title="Price">
-            {items} 
+        <DropdownButton style={{ display: 'inline-block' }} id="dropdown-basic-button" title="Price">
+            {items}
         </DropdownButton>
     )
 }

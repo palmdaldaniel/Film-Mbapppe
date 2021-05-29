@@ -4,10 +4,39 @@ export const MovieContext = createContext();
 
 const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
-    const [showing, setShowing] = useState(null); 
+    const [showing, setShowing] = useState(null);
     const [chosenDate, setChosenDate] = useState(new Date()); //format Thu May 27 2021 09:52:34 GMT+0200 (Central European Summer Time)
-    const [chosenPrice, setChosenPrice] = useState(null); 
 
+    //for Price filter
+    const [priceOptions, setPriceOptions] = useState(null); // format [100, 150, 200]
+    const [chosenPrice, setChosenPrice] = useState(null); //format 100
+    const [filteredShowings, setFilteredShowings] = useState(null);
+
+
+    useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
+        let allPrices = [] // => [200, 150, 100, 100, 200, 200]
+        if (showings) {
+            showings.forEach((oneShowing) => {
+                allPrices.push(oneShowing.price)
+            })
+            let uniquePriceOpt = [... new Set(allPrices)].sort((a, b) => a - b) //keep only unique values and sort them in falling ordning => [100, 150, 200]
+            setPriceOptions(uniquePriceOpt) //after we have looped through all showings, we put unique prices to the state
+        }
+    }, [showings]);
+
+    useEffect(() => {//if some price was chosen, call function for filtrering 
+        filterShowingsByPrice(chosenPrice)
+    }, [chosenPrice]);
+
+    const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
+        if (showings) {
+            let filtered = showings.filter(oneShowing => oneShowing.price === price)
+            setFilteredShowings(filtered)//put result with filtered showings to the state
+        }
+    }
+
+
+    //for converting date to string
     const dateToString = (date) => {
         let stringDate = [
             date.getFullYear(),
@@ -17,21 +46,13 @@ const MovieContextProvider = (props) => {
         return stringDate // convert date format to '2021-05-21'
     }
 
-    let showingQuery = {
-        date: dateToString(chosenDate),
-        price: chosenPrice
-    }
-
     useEffect(() => {
         setChosenPrice(null)
-        getShowingsByDate(showingQuery.date, showingQuery.price);
+        getShowingsByDate(dateToString(chosenDate));
     }, [chosenDate]);
 
-    useEffect(() => {
-        getShowingsByDate(showingQuery.date, showingQuery.price);
-    }, [ chosenPrice]);
 
-    
+
     const countMovieDocuments = async () => {
         let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
         amountOfDocuments = await amountOfDocuments.json();
@@ -43,21 +64,15 @@ const MovieContextProvider = (props) => {
         movies = await movies.json();
         return movies
     }
-    
+
     const getMovieById = async (movieId) => {
         let movie = await fetch(`/api/v1/movies/${movieId}`);
         movie = await movie.json();
         return movie
     }
 
-    const getShowingsByDate = async (date, price) => {
-        let url = ''
-        if(date && price) {
-            url = `/api/v1/showings/?date=${date}&price=${price}` //required date format 2021-06-13
-        } else {
-            url = `/api/v1/showings/?date=${date}`
-        }
-        let showings = await fetch(`${url}`); 
+    const getShowingsByDate = async (date) => {
+        let showings = await fetch(`/api/v1/showings/?date=${date}`);
         showings = await showings.json();
         setShowings(showings)
     }
@@ -65,9 +80,9 @@ const MovieContextProvider = (props) => {
         let showing = await fetch(`/api/v1/showings/${showingId}`);
         showing = await showing.json();
         // return showing
-        setShowing(showing); 
+        setShowing(showing);
     }
-    
+
 
 
     const values = {
@@ -79,7 +94,9 @@ const MovieContextProvider = (props) => {
         chosenDate,
         setChosenDate,
         countMovieDocuments,
-        setChosenPrice
+        setChosenPrice,
+        priceOptions,
+        filteredShowings
     }
 
     return (

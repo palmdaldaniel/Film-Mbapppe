@@ -84,7 +84,7 @@ code {
   outline: none;
   padding: 0 0 1px 0;
   width: 160px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 #dropdown-basic-button:focus {
@@ -104,6 +104,9 @@ code {
 }
 .dropdown-item:hover {
   color: #08233d !important;
+}
+.dropdown-item:active {
+  background-color: #fff !important;
 }
 
 @media (min-width: 576px) { 
