@@ -6,9 +6,9 @@ import styles from "../css/SignUp.module.css";
 
 const Register = () => {
   const history = useHistory();
-  const { createUser, showLogin, setShowLogin, newUser, registerUser } =useContext(UserContext);
-  const [activeUser, setActiveUser] = useState(null);
-  const [user, setUser] = useState(null);
+  const { newUser } =useContext(UserContext);
+ 
+  const [setUser] = useState(null);
   const [signUpDone, setSignUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
@@ -18,8 +18,8 @@ const Register = () => {
 
 
   //the register part from backend
-  const register = (newUser) => {
-    fetch("/api/v1/users/register", {
+  const register = async (newUser) => {
+    let result = await fetch("/api/v1/users/register", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newUser),
@@ -39,7 +39,7 @@ const Register = () => {
       });
   };
 
-  const handlNameChange = (e) => {
+  const handleNameChange = (e) => {
     setName(e.target.value);
   };
   const handleEmailChange = (e) => {
@@ -52,20 +52,16 @@ const Register = () => {
 
   const registerSubmitHandler = (e) => {
     e.preventDefault();
-    let userData = {
-      email,
-      password,
-      name,
-    };
+    e.preventDefault();
+    let newUser = {};
+    document.querySelectorAll("input").forEach(field => newUser[field.name] = field.value);
+    document.querySelectorAll("input").forEach(field => newUser[field.email] = field.value);
+    document.querySelectorAll("input").forEach(field => newUser[field.password] = field.value);
 
     register(newUser);
-  };
+}
 
-  /*const homeRouter = () => {
-   setShowLogin(false);
-   history.push("/");
- };
- */
+
 
   return (
     <div className={styles.registercontainer}>
@@ -73,7 +69,7 @@ const Register = () => {
       <Container className={`${styles.containerStyle} py-0`}>
         {signUpDone ? (
           <div className="confirmationDiv">
-            <h1>You have now been registred!!</h1>
+            <h1>You have been registred!!</h1>
           </div>
         ) : (
           <div>
@@ -85,11 +81,11 @@ const Register = () => {
                     <Form.Control
                       className={styles.inputField}
                       size="lg"
-                      htmlFor="handlename"
+                      htmlFor="handleName"
                       type="name"
                       placeholder="Username"
                       required
-                      onChange={() => setSignUpFail(false)}
+                      onChange={({handleNameChange})}
                     />
                   </Form.Group>
 
@@ -101,7 +97,7 @@ const Register = () => {
                       type="email"
                       placeholder="E-mail"
                       required
-                      onChange={() => setSignUpFail(false)}
+                      onChange={({handleEmailChange}) }
                     />
                   </Form.Group>
 
@@ -113,7 +109,7 @@ const Register = () => {
                       type="password"
                       placeholder="Password"
                       required
-                      onChange={() => setSignUpFail(false)}
+                      onChange={(handlePasswordChange)}
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{0,7}$"
                       required
                     />
@@ -126,6 +122,7 @@ const Register = () => {
                     className={styles.registerButton}
                     variant="danger"
                     type="submit"
+                    onSubmit={registerSubmitHandler}
                   >
                     Register
                   </Button>

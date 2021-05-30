@@ -50,17 +50,17 @@ const getUserById = async (req, res) => {
 */}
 
 const register = async (req, res) => {
-  //Checking if user exists
+  //if user exists
   let userExists = await User.exists({ email: req.body.email });
   if (userExists) return res.status(400).json({ error: "User with that email already exists." });
 
-  //Encryption line
+  //Encrypt passw
   req.body.password = encrypt(req.body.password);
 
-  //Creating user
+  //Create user
   let newUser = await User.create(req.body);
   newUser.password = undefined;
-  return res.status(200).json({ message: "New user created!", user: newUser });
+  return res.status(200).json({ message: "Created new user!", user: newUser });
 }
 
 

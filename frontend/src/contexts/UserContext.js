@@ -12,8 +12,9 @@ const UserContextProvider = (props) => {
   const [message, setMessage] = useState(null);
   const [loginResult, setLoginResult] = useState(null);
   const [isUser, setIsUser] = useState(false);
+
  
-  const [setRegResult] = useState(null);
+
   
   useEffect(() => {
     whoami();
@@ -112,6 +113,7 @@ const UserContextProvider = (props) => {
     loginResult,
     isUser,
     setIsUser,
+    
    
   };
 
