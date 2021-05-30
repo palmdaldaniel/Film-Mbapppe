@@ -2,13 +2,12 @@ import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
 import Navbar from "./components/Navbar";
-import SignupPage from "./pages/SignupPage";
+import SignUp from "./components/SignUp";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
-import UserContextProvider from './contexts/UserContext';
-import MovieContextProvider from './contexts/MovieContext';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import UserContextProvider from "./contexts/UserContext";
+import MovieContextProvider from "./contexts/MovieContext";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -31,7 +30,7 @@ function App() {
             <Route exact path="/allmovies" />
             <Route exact path="/about" />
             <Route exact path="/profile" />
-            <Route exact path="/register" component ={SignupPage}/>
+            <Route exact path="/register" component={SignUp} />
             <Route exact path="/login" />
             <Route exact path="/allmovies">
               <AllMovies />

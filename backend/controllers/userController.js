@@ -29,7 +29,9 @@ const getUserById = async (req, res) => {
 
 //create user
 
-const createUser = async (req, res) => {
+{/*
+  
+  const createUser = async (req, res) => {
   // destructure req.body object
   const { email } = req.body;
 
@@ -45,8 +47,21 @@ const createUser = async (req, res) => {
   user.password = undefined;
   res.json(user);
 };
+*/}
 
+const register = async (req, res) => {
+  //Checking if user exists
+  let userExists = await User.exists({ email: req.body.email });
+  if (userExists) return res.status(400).json({ error: "User with that email already exists." });
 
+  //Encryption line
+  req.body.password = encrypt(req.body.password);
+
+  //Creating user
+  let newUser = await User.create(req.body);
+  newUser.password = undefined;
+  return res.status(200).json({ message: "New user created!", user: newUser });
+}
 
 
 // Edit User
@@ -123,26 +138,17 @@ const whoami = async (req, res) => {
   return res.json(req.session.user || null);
 }
 
-// register
-
-const register = async (req, res) => {
-  //check if user already exists
-  let userExists = await User.exists({ email: req.body.email });
-  if (userExists) return res.status(400).json({ error: "User with that email already exists." });
-  req.body.password = encrypt(req.body.password);
-
 
 
 module.exports = {
   logout,
   editUser,
-  createUser,
+  //createUser,
   loginUser,
   whoami,
   getAllUsers,
   getUserById,
   register,
+  newUser
   
 }
-};
-

@@ -9,8 +9,9 @@ router.post('/login', userController.loginUser)
 router.post('/logout', userController.logout) //log out user
 router.get('/:userId', userController.getUserById)
 router.get('', userController.getAllUsers)
-router.post('', userController.createUser)
-router.post("/register",userController.register);
+router.post('', userController.createUser);
+router.post("/register", userController.register);
+
 
 
 
