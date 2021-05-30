@@ -23,7 +23,7 @@
 }
 
 .Jumbotron {
-  height: 80vh !important;
+  height: 60vh !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -36,7 +36,9 @@
   color: black;
 }
 .info {
-  padding: 3rem;
+  margin-top: -5rem;
+  padding: 5rem;
+  font-weight: 400 !important;
 }
 
 .location {
