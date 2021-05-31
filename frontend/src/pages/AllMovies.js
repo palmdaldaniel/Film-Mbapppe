@@ -1,34 +1,13 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
-import PaginationComponent from "../components/Pagination";
 import { useHistory } from "react-router-dom";
 import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
     const history = useHistory();
-    const { getAllMovies, countMovieDocuments, filteredSearch, setFinalSearch, setFilter, everyMovies } = useContext(MovieContext);
-    const [allMovies, setAllMovies] = useState(null);
-
-    // const moviesGetting = async () => {
-    //     let response = await getAllMovies(currentPage);
-    //     setAllMovies(response);
-    // };
-    // //for pagination
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [pageTotal, setPageTotal] = useState(null);
-
-    // const countPageTotal = async () => {
-    //     let response = await countMovieDocuments();
-    //     let pageTotal = Math.ceil(response / 9);
-    //     setPageTotal(pageTotal);
-    // };
-
-    // useEffect(() => {
-    //     moviesGetting();
-    //     countPageTotal();
-    // }, [getAllMovies, currentPage, countMovieDocuments]);
+    const { getAllMovies, filteredSearch, everyMovies } = useContext(MovieContext);
 
     useEffect(() => {
         getAllMovies();
@@ -39,12 +18,6 @@ const AllMovies = () => {
     };
 
     let content = "";
-
-    // let values = {
-    //     activPage: currentPage,
-    //     pageTotal: pageTotal,
-    //     setCurrentPage,
-    // };
 
     if (everyMovies) {
         content = (
@@ -57,7 +30,6 @@ const AllMovies = () => {
             ))}
             ''
             </div>
-            {/* <PaginationComponent values={values} /> */}
         </div>
         );
     } else {
@@ -73,8 +45,6 @@ const AllMovies = () => {
         </div>
         </>
     );
-
-  //   return <div className="container mt-5">{content}</div>;
 };
 
 export default AllMovies;
