@@ -21,7 +21,7 @@ function ShowingCard({ showings }) {
                             <br />
                             <span>{show.time}</span>
                             <br />
-                            <span>Price: {show.price} $</span>
+                            <span>Price: {show.price} Kr</span>
                         </Card.Text>
                     </Card.Body>
                 </Card>

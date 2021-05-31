@@ -20,6 +20,12 @@ function PriceFilter() {
                 </Dropdown.Item>,
             );
         }
+
+        items.unshift(
+            <Dropdown.Item onClick={() => handleClick('all')}>
+                {`All`}
+            </Dropdown.Item>,
+        );
     }
 
     return (
