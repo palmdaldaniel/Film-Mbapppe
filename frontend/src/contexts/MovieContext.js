@@ -8,11 +8,11 @@ const MovieContextProvider = (props) => {
     const [filteredSearch, setFilteredSearch] = useState(null); 
     const [filter, setFilter] = useState({}); //used in Filtermovie.js
     const [finalSearch, setFinalSearch] = useState("") //used in Search.js
+    const [everyMovies, setEveryMovies] = useState(null); 
     
 
     useEffect(() => {
         getShowingsByDate('2021-06-13');
-        
     }, []);
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const MovieContextProvider = (props) => {
     const getAllMovies = async (page) => {
         let movies = await fetch(`/api/v1/movies?page=${page}`);
         movies = await movies.json();
-        return movies
+        setEveryMovies(movies); 
     }
     
     const getMovieById = async (movieId) => {
@@ -60,8 +60,6 @@ const MovieContextProvider = (props) => {
         s = await s.json(); 
         console.log("results of searches", s);
         setFilteredSearch(s); 
-
-        // console.log(filter.Genre, finalSearch);
     }
 
 
@@ -77,6 +75,8 @@ const MovieContextProvider = (props) => {
         filter, 
         setFilter, 
         setFinalSearch, 
+        setEveryMovies,
+        everyMovies
     }
 
     return (

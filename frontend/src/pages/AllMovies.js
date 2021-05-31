@@ -8,27 +8,31 @@ import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
     const history = useHistory();
-    const { getAllMovies, countMovieDocuments, filteredSearch } = useContext(MovieContext);
+    const { getAllMovies, countMovieDocuments, filteredSearch, setFinalSearch, setFilter, everyMovies } = useContext(MovieContext);
     const [allMovies, setAllMovies] = useState(null);
 
-    const moviesGetting = async () => {
-        let response = await getAllMovies(currentPage);
-        setAllMovies(response);
-    };
-    //for pagination
-    const [currentPage, setCurrentPage] = useState(1);
-    const [pageTotal, setPageTotal] = useState(null);
+    // const moviesGetting = async () => {
+    //     let response = await getAllMovies(currentPage);
+    //     setAllMovies(response);
+    // };
+    // //for pagination
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [pageTotal, setPageTotal] = useState(null);
 
-    const countPageTotal = async () => {
-        let response = await countMovieDocuments();
-        let pageTotal = Math.ceil(response / 9);
-        setPageTotal(pageTotal);
-    };
+    // const countPageTotal = async () => {
+    //     let response = await countMovieDocuments();
+    //     let pageTotal = Math.ceil(response / 9);
+    //     setPageTotal(pageTotal);
+    // };
+
+    // useEffect(() => {
+    //     moviesGetting();
+    //     countPageTotal();
+    // }, [getAllMovies, currentPage, countMovieDocuments]);
 
     useEffect(() => {
-        moviesGetting();
-        countPageTotal();
-    }, [getAllMovies, currentPage, countMovieDocuments]);
+        getAllMovies();
+    }, []); 
 
     const handleClick = (movie) => {
         history.push(`/movie-info/${movie._id}`);
@@ -36,24 +40,24 @@ const AllMovies = () => {
 
     let content = "";
 
-    let values = {
-        activPage: currentPage,
-        pageTotal: pageTotal,
-        setCurrentPage,
-    };
+    // let values = {
+    //     activPage: currentPage,
+    //     pageTotal: pageTotal,
+    //     setCurrentPage,
+    // };
 
-    if (allMovies) {
+    if (everyMovies) {
         content = (
         <div>
             <div className="d-flex flex-wrap justify-content-center">
             {filteredSearch && filteredSearch.map((movie, i) => (
-                <div onClick={() => handleClick(movie)}>
+                <div key={i} onClick={() => handleClick(movie)}>
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
             ''
             </div>
-            <PaginationComponent values={values} />
+            {/* <PaginationComponent values={values} /> */}
         </div>
         );
     } else {
@@ -63,7 +67,7 @@ const AllMovies = () => {
     return (
         <>
         <div className="container mt-5">
-            {allMovies && <Filtermovies movies={allMovies} />}
+            {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
             {content}
         </div>

@@ -7,12 +7,10 @@ const getAllMovies = async (req, res) => {
 }
 
 const filterAllMovies = async (req, res) => {
-  console.log(req.query);
-  console.log(req.body);
 
   //for pagination
   const { page = req.query.page } = req.query
-  const limit = 9 //how many documents that comes back from MongoDB per request
+  const limit = 0 //how many documents that comes back from MongoDB per request
 
   // year will come in as a string from user input so we need to convert in to a number to mathc schema.
   let yearToNumber = parseInt(req.body.Year)
@@ -26,8 +24,6 @@ const filterAllMovies = async (req, res) => {
 
   //url for testing http://localhost:3001/api/v1/movies?actor=morgan&title=spiral
   let querySearch = new RegExp(`^${req.query.search ? req.query.search : ''}\\w*`, 'gi')
-  // let queryTitle = new RegExp(`^${req.query.title ? req.query.title : ''}\\w*`, 'gi')
-  // let queryActor = new RegExp(`${req.query.actor ? req.query.actor : ''}\\w*`, 'gi')
 
   // filter in movies
   // filter by rated
@@ -63,7 +59,7 @@ const filterAllMovies = async (req, res) => {
     .limit(limit * 1) //for pagination
     .skip((page - 1) * limit)//for pagination
     .exec()
-console.log("movies", movies.length, movies);
+// console.log("movies", movies.length, movies);
   // if (movies.length === 0) {
   //   res.send('No movies matched the filter');
   //   return;

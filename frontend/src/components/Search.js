@@ -3,16 +3,24 @@ import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Search.module.css";
 
 const Search = () => {
-  const { setFinalSearch } = useContext(MovieContext);
-  const [search, setSearch] = useState("")
+  const { setFinalSearch, setFilter } = useContext(MovieContext);
+  const [search, setSearch] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
+    setInputValue(e.target.value); 
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setFinalSearch(search)
+    setFinalSearch(search);
+  };
+
+  const handleReset = () => {
+    setInputValue("");
+    setFinalSearch("");
+    setFilter({});
   };
 
   return (
@@ -21,10 +29,12 @@ const Search = () => {
         <input
           className={styles.searchInput}
           type="text"
+          value={inputValue}
           placeholder="Search for movies or actors"
           onChange={(e) => handleSearch(e)}
         />
       </form>
+      <button onClick={handleReset}>reset</button>
     </div>
   );
 };
