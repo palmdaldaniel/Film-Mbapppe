@@ -17,32 +17,37 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-
+console.log(`name`, name)
+console.log(`email`, email)
+console.log(`password`, password)
 
 
   //the register part from backend
   const register = async (newUser) => {
+    console.log(`new user`, newUser)
     let result = await fetch("/api/v1/users/register", {
+      
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(newUser)
     })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.hasOwnProperty("error")) {
-          setSignUpFail(true);
-        } else {
-          setActiveUser(result.user);
-          setSignUpFail(false);
-          setSignUpDone(true);
-          setTimeout(() => {
-            history.push("/");
-          }, 6000);
-        }
-      });
+      // .then((response) => response.json())
+      // .then((result) => {
+      //   if (result.hasOwnProperty("error")) {
+      //     setSignUpFail(true);
+      //   } else {
+      //     setActiveUser(result.user);
+      //     setSignUpFail(false);
+      //     setSignUpDone(true);
+      //     setTimeout(() => {
+      //       history.push("/");
+      //     }, 6000);
+      //   }
+      // });
   };
 
   const handleNameChange = (e) => {
+    console.log(e.target.value)
     setName(e.target.value);
   };
   const handleEmailChange = (e) => {
@@ -55,14 +60,16 @@ const Register = () => {
 
   const registerSubmitHandler = (e) => {
     e.preventDefault();
-    e.preventDefault();
-    let newUser = {};
-    document.querySelectorAll("input").forEach(field => newUser[field.name] = field.value);
-    
+    console.log('Hello')
+    let newUser = {
+      email,
+      password,
+      name
+    };
+    // document.querySelectorAll("input").forEach(field => newUser[field.name] = field.value);
+    console.log(`newUser`, newUser)
     register(newUser);
 }
-
-
 
   return (
     <div className={styles.registercontainer}>
@@ -76,8 +83,8 @@ const Register = () => {
           <div>
             <p className={styles.registerformtext}>Register your account</p>
             <div className={styles.registerform}>
-              <Form>
-                <form action="submit" onSubmit={registerSubmitHandler}>
+              <Form onSubmit={(e) => registerSubmitHandler(e)}>
+                
                   <Form.Group controlId="formBasicUsername">
                     <Form.Control
                       className={styles.inputField}
@@ -86,7 +93,7 @@ const Register = () => {
                       type="name"
                       placeholder="Username"
                       required
-                      onChange={({handleNameChange})}
+                      onChange={handleNameChange}
                     />
                   </Form.Group>
 
@@ -98,7 +105,7 @@ const Register = () => {
                       type="email"
                       placeholder="E-mail"
                       required
-                      onChange={({handleEmailChange}) }
+                      onChange={handleEmailChange}
                     />
                   </Form.Group>
 
@@ -110,8 +117,8 @@ const Register = () => {
                       type="password"
                       placeholder="Password"
                       required
-                      onChange={(handlePasswordChange)}
-                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{0,7}$"
+                      onChange={handlePasswordChange}
+                      // pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{0,7}$"
                       required
                     />
                     {signUpFail && (
@@ -123,11 +130,11 @@ const Register = () => {
                     className={styles.registerButton}
                     variant="danger"
                     type="submit"
-                    onSubmit={registerSubmitHandler}
+                    
                   >
                     Register
                   </Button>
-                </form>
+                
               </Form>
               {}{" "}
             </div>

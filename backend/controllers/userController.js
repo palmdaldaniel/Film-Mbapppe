@@ -50,6 +50,7 @@ const getUserById = async (req, res) => {
 */}
 
 const register = async (req, res) => {
+  console.log(`req.body is here `, req.body )
   //if user exists
   let userExists = await User.exists({ email: req.body.email });
   if (userExists) return res.status(400).json({ error: "User with that email already exists." });

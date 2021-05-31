@@ -4,7 +4,7 @@ html, body{
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap');
 * {
-  background-color: #000;
+  /* background-color: #000; */
   color: #fff;
   font-weight: 700;
 }
@@ -21,3 +21,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
