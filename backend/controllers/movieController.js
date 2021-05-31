@@ -18,11 +18,11 @@ const filterAllMovies = async (req, res) => {
   let yearToNumber = parseInt(req.body.Year)
   
   //first we check if the query object has any content. If not we send back all movies
-  // if (Object.keys(req.query).length === 0) {
-  //   let movies = await Movie.find().exec()
-  //   res.json(movies)
-  //   return
-  // }
+  if (Object.keys(req.query).length === 0) {
+    let movies = await Movie.find().exec()
+    res.json(movies)
+    return
+  }
 
   //url for testing http://localhost:3001/api/v1/movies?actor=morgan&title=spiral
   let querySearch = new RegExp(`^${req.query.search ? req.query.search : ''}\\w*`, 'gi')

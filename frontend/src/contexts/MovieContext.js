@@ -50,7 +50,7 @@ const MovieContextProvider = (props) => {
     }
     
     const getMovieBySearch = async (finalSearch) => {
-        let s = await fetch(`/api/v1/movies/?search=${finalSearch}`, {
+        let s = await fetch(`/api/v1/movies/filter/?search=${finalSearch}`, {
             method: "Post", 
             headers: {
                 "content-type": "application/json",

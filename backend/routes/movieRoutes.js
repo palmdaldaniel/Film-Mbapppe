@@ -8,6 +8,6 @@ router.get('/countDocuments', movieController.countMovieDocuments)
 router.get('', movieController.getAllMovies)
 router.get('/:movieid', movieController.getMovieById)
 
-router.post("", movieController.filterAllMovies)
+router.post("/filter", movieController.filterAllMovies)
 
 module.exports = router;
