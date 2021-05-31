@@ -90,25 +90,6 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      {/* <select value={genreState} onChange={handleGenreChange} name="Genre" required>
-        <option value=""> Genre </option>
-        <option value="Crime"> Crime </option>
-        <option value="Horror"> Horror </option>
-        <option value="Mystery"> Mystery </option>
-        <option value="Action"> Action </option>
-        <option value="Adventure"> Adventure </option>
-        <option value="Fantasy"> Fantasy </option>
-        <option value="Drama"> Drama </option>
-      </select> */}
-      {/* <select value={yearState} onChange={handleYearChange} name="Year" required>
-        <option value=""> Year </option>
-        <option value="2021"> 2021 </option>
-        <option value="2020"> 2020 </option>
-        <option value="2019"> 2019 </option>
-        <option value="2013"> 2013 </option>
-        
-      </select> */}
-      
       <select value={yearState} onChange={handleYearChange} name="Year" required>
         <option value=""> Year </option>
         {years.map((year) => (
