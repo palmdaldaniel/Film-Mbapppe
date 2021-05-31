@@ -35,6 +35,7 @@ button {
 }
 
 .instaIcon {
+  margin-top: 1px;
   height: 27px;
   width: 30px;
   margin-left: 5px;
