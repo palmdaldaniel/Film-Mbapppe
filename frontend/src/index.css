@@ -29,20 +29,21 @@ code {
   border: none;
   text-align: center;
   outline: none;
+  font-weight: 100 !important;
 }
 
 .react-datepicker-wrapper,
-.react-datepicker__input-container {
-    font-weight: 100;
-    border-bottom: 1px solid #fff;
+.react-datepicker__input-container,
+.react-datepicker-ignore-onclickoutside {
+    font-weight: 100 !important;
+    border-bottom: .5px solid rgba(255, 255, 255, 0.24);
     color:#fff;
     font-size: 20px;
-    margin: 20px 0;
 }
 
 .react-datepicker-popper * {
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 100 !important;
   background: rgb(41, 41, 41);
   color: #fff !important;
 }
@@ -55,11 +56,10 @@ code {
 .react-datepicker__year-text:hover {
   color: #08233d !important;
 }
-.react-datepicker__day-names *{
-  font-weight: 700 !important;
-}
+
 
 /* Styling for pagination */
+
 .page-item.active .page-link  {
   background-color: #e21b33 !important;
   border-color: #e21b33 !important;
@@ -68,4 +68,49 @@ code {
 
 .page-link {
   color: #000 !important;
+}
+
+
+/* Styling for PriceFilter */
+
+#dropdown-basic-button {
+  font-weight: 100 !important;
+  background: none !important;
+  border: none;
+  font-size: 20px;
+  border-bottom: .5px solid rgba(255, 255, 255, 0.24);
+  font-weight: 700;
+  border-radius: 0;
+  outline: none;
+  padding: 0 0 1px 0;
+  width: 160px;
+  margin: 20px 0;
+}
+
+#dropdown-basic-button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+.dropdown-menu {
+  background: rgb(41, 41, 41) !important;
+  
+}
+.dropdown-item {
+  color: #fff !important;
+}
+.dropdown-item:hover {
+  color: #08233d !important;
+}
+.dropdown-item:active {
+  background-color: #fff !important;
+}
+
+@media (min-width: 576px) { 
+  #dropdown-basic-button {
+    margin: 0  0 1px 70px;
+  }
 }

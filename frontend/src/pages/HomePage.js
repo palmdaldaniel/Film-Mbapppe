@@ -1,22 +1,32 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import Card from 'react-bootstrap/Card';
+import { useContext } from "react";
 import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
+import PriceFilter from '../components/priceFilter'
 
 const HomePage = () => {
-    const { showings } = useContext(MovieContext);
+    const { showings, filteredShowings } = useContext(MovieContext);
+    
+    let listData
 
-    let listData = showings;
+    if(filteredShowings && filteredShowings.length > 0) {
+        listData = filteredShowings
+    } else {
+        listData = showings
+    }
+    
+     
     let content = ''
 
-    if (showings) {
+    if (listData) {
         content =
             <div>
-                <h2>Todays showings</h2>
-                <DatePickerComponent/>
-                <ShowingCard showings={showings} />
+                <h2 className='mt-3 mb-5' >Todays showings</h2>
+                <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center mb-5'>
+                    <DatePickerComponent />
+                    <PriceFilter />
+                </div>
+                <ShowingCard showings={listData} />
             </div>
     }
     else {
@@ -24,8 +34,8 @@ const HomePage = () => {
     }
 
     return (
-        <div className="container">
-            <h1>Home page</h1>
+        <div className="container text-center">
+
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}
