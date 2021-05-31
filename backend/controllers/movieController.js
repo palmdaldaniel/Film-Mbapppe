@@ -1,8 +1,6 @@
 const Movie = require("../models/Movie");
 
 const getAllMovies = async (req, res) => {
-  console.log(req.query);
-
   //for pagination
   const { page = req.query.page } = req.query
   const limit = 9 //how many documents that comes back from MongoDB per request

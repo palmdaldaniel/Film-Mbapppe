@@ -1,0 +1,64 @@
+.registerform {
+  width: 33%;
+  margin: auto;
+ }
+  
+ .container {
+  justify-content: center !important;
+ }
+  
+ .registerformtext {
+  display: flex;
+  justify-content: center !important;
+ }
+  
+  
+ .header {
+  font-size: 10rem;
+ }
+  
+ .inputField {
+  border: 1px black;
+ }
+  
+ .errorBox {
+  display: none;
+ }
+  
+ .errorBox.active {
+  display: block;
+ }
+  
+ .errorBox.inactive {
+  display: none
+ }
+  
+ .registerButton {
+  background-color: #fd0000 ;
+  margin-top:2rem;
+  width: 70%;
+  border: none;
+  justify-content: center;
+ }
+  
+ .containerStyle{
+  min-height: 80vh;
+ }
+  
+ .registercontainer {
+  display: grid;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #000000;
+ }
+ .toggleText{
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+ }
+  
+ .toggleText:hover{
+  color:#FE7F50
+ }
+ 

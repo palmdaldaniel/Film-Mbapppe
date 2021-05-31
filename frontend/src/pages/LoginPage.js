@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap"
 import { UserContext } from "../contexts/UserContext"
 import styles from "../css/login.module.css"
 import { useHistory } from "react-router-dom";
+//import SignUp from "../components/SignUp";
 
 export default function LoginPage() {
   const history = useHistory();
@@ -21,6 +22,7 @@ export default function LoginPage() {
       <h1 className={styles.header}>MOVIEPLUS</h1>
       <Container className={`${styles.containerStyle} py-0`} >
         {showLogin ? <LoginForm /> : <LoginForm />}
+        
         <p className={styles.toggleText} onClick={registerRouter}>{showLogin ? "Are you not a member yet? " : " Register here"}</p>
       </Container>
     </div>
