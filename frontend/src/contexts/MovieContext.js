@@ -39,6 +39,9 @@ const MovieContextProvider = (props) => {
         }
     }
 
+    useEffect(() => {
+        getAllMovies();
+    }, []); 
 
     //for converting date to string
     const dateToString = (date) => {
