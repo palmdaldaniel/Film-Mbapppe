@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import {MovieContext} from "../contexts/MovieContext"; 
 
 const Filtermovies = ({ movies }) => {
-  const { filter, setFilter } = useContext(MovieContext); 
+  const { filter, setFilter, setInputValue, setFinalSearch } = useContext(MovieContext); 
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
   const [ratings, setRatings] = useState([]);
@@ -10,7 +10,8 @@ const Filtermovies = ({ movies }) => {
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
 
-  const [testOption, setTestOption] = useState(""); 
+  const [genreState, setGenreState] = useState(""); 
+  const [yearState, setYearState] = useState("")
   
   useEffect(() => {
     // fire helperfunctions on pageload
@@ -46,7 +47,6 @@ const Filtermovies = ({ movies }) => {
 
   // create an object from the values of the selectfields. 
   const handleChange = (e) => {
-    console.log(e.target.value);
     let f = {
       ...filter,
       [e.target.name]: e.target.value
@@ -54,17 +54,62 @@ const Filtermovies = ({ movies }) => {
     setFilter(f)
   }
 
+  const handleGenreChange = (e) => {
+    setGenreState(e.target.value)
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+    setFilter(f)
+  }
+
+  const handleYearChange = (e) => {
+    setYearState(e.target.value)
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+    setFilter(f)
+  }
+
+  const handleReset = () => {
+    setInputValue("");
+    setFinalSearch("");
+    setFilter({});
+    setGenreState("")
+    setYearState("")
+  };
+
   return (
     <div className="FilterContainer">
-      <select onChange={handleChange} name="Genre" required>
-        <option value=""> Genre </option>
+      <select value={genreState} onChange={handleGenreChange} name="Genre" required>
+        <option  value=""> Genre </option>
         {genres.map((genre) => (
           <option value={genre} key={genre}>
             {genre}
           </option>
         ))}
       </select>
-      <select onChange={handleChange} name="Year" required>
+      {/* <select value={genreState} onChange={handleGenreChange} name="Genre" required>
+        <option value=""> Genre </option>
+        <option value="Crime"> Crime </option>
+        <option value="Horror"> Horror </option>
+        <option value="Mystery"> Mystery </option>
+        <option value="Action"> Action </option>
+        <option value="Adventure"> Adventure </option>
+        <option value="Fantasy"> Fantasy </option>
+        <option value="Drama"> Drama </option>
+      </select> */}
+      {/* <select value={yearState} onChange={handleYearChange} name="Year" required>
+        <option value=""> Year </option>
+        <option value="2021"> 2021 </option>
+        <option value="2020"> 2020 </option>
+        <option value="2019"> 2019 </option>
+        <option value="2013"> 2013 </option>
+        
+      </select> */}
+      
+      <select value={yearState} onChange={handleYearChange} name="Year" required>
         <option value=""> Year </option>
         {years.map((year) => (
           <option value={year} key={year}>
@@ -104,11 +149,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select onChange={handleChange} name="test" required>
-        <option value={testOption} key={0}> Test </option>
-        <option value="" key={1}> Test1 </option>
-        <option value="" key={2}> Test2 </option>
-      </select>
+      <button onClick={handleReset}>reset</button>
     </div>
   );
 };

@@ -15,6 +15,7 @@ const MovieContextProvider = (props) => {
     const [priceOptions, setPriceOptions] = useState(null); // format [100, 150, 200]
     const [chosenPrice, setChosenPrice] = useState(null); //format 100
     const [filteredShowings, setFilteredShowings] = useState(null);
+    const [inputValue, setInputValue] = useState("");
 
 
     useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
@@ -121,7 +122,9 @@ const MovieContextProvider = (props) => {
         setChosenDate,
         setChosenPrice,
         priceOptions,
-        filteredShowings
+        filteredShowings,
+        inputValue, 
+        setInputValue
     }
 
     return (
