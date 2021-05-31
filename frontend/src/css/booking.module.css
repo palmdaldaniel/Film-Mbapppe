@@ -5,12 +5,13 @@
 
 .ticketContainer {
   margin-top: 35px;
-  background-color: #E4263E ;
+  background-color: #4387FC ;
   display: flex;
   width: 20%;
   height: 4rem;
   border-radius: 5px;
   font-size:1rem;
+  padding: 0 10px;
 }
 
 .bookingInfo {
@@ -23,17 +24,18 @@
   margin-left: 10px;
 }
 
-select {
-  background-color: #E4263E ;
+.ticketContainer select {
+  background-color: #4387FC ;
   border: none;
   border-radius: 5px;
 }
 
-select:hover {
+.ticketContainer select:hover {
   background-color: #0501029c ;
   cursor: pointer;
 }
-p {
+.ticketContainer p,
+.buyTickets p {
   background-color: inherit;
 }
 
