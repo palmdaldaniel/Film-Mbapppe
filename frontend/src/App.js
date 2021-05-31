@@ -2,6 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
 import Navbar from "./components/Navbar";
+import SignUp from "./components/SignUp";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
 import UserPage from "./pages/UserPage";
@@ -9,7 +10,6 @@ import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieInfoPage from './pages/MovieInfoPage'
-
 
 function App() {
   return (
@@ -28,8 +28,8 @@ function App() {
               <UserPage />
             </Route>
             <Route exact path="/showing/:showingId" component={Showing} />
-            <Route exact path="/about" />
             <Route exact path="/profile" />
+            <Route exact path="/register" component={SignUp} />
             <Route exact path="/login" />
             <Route exact path="/allmovies">
               <AllMovies />

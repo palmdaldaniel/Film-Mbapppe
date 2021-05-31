@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
-    const { loginUser } = useContext(UserContext);
+    const { loginUser } = useContext(UserContext); //added 
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
@@ -34,6 +34,7 @@ export default function Login() {
           }
         };
 
+       
     return (
         <div className={styles.container}>
             <p className={styles.loginformtext}>Welcome back. Log in to see your movie points and more!</p>
@@ -55,6 +56,7 @@ export default function Login() {
                             SIGN IN
                     </Button>
                     </Container>
+               
                 </Form>
             </div>
         </div>

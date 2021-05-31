@@ -9,11 +9,51 @@ const MovieContextProvider = (props) => {
     const [filter, setFilter] = useState({}); //used in Filtermovie.js
     const [finalSearch, setFinalSearch] = useState("") //used in Search.js
     const [everyMovies, setEveryMovies] = useState(null); 
-    
+    const [chosenDate, setChosenDate] = useState(new Date()); //format Thu May 27 2021 09:52:34 GMT+0200 (Central European Summer Time)
+
+    //for Price filter
+    const [priceOptions, setPriceOptions] = useState(null); // format [100, 150, 200]
+    const [chosenPrice, setChosenPrice] = useState(null); //format 100
+    const [filteredShowings, setFilteredShowings] = useState(null);
+
+
+    useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
+        let allPrices = [] // => [200, 150, 100, 100, 200, 200]
+        if (showings) {
+            showings.forEach((oneShowing) => {
+                allPrices.push(oneShowing.price)
+            })
+            let uniquePriceOpt = [... new Set(allPrices)].sort((a, b) => a - b) //keep only unique values and sort them in falling ordning => [100, 150, 200]
+            setPriceOptions(uniquePriceOpt) //after we have looped through all showings, we put unique prices to the state
+        }
+    }, [showings]);
+
+    useEffect(() => {//if some price was chosen, call function for filtrering 
+        filterShowingsByPrice(chosenPrice)
+    }, [chosenPrice]);
+
+    const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
+        if (showings) {
+            let filtered = showings.filter(oneShowing => oneShowing.price === price)
+            setFilteredShowings(filtered)//put result with filtered showings to the state
+        }
+    }
+
+
+    //for converting date to string
+    const dateToString = (date) => {
+        let stringDate = [
+            date.getFullYear(),
+            ('0' + (date.getMonth() + 1)).slice(-2), // to delete 0 before 10,11,12. 
+            ('0' + date.getDate()).slice(-2)]
+            .join('-');
+        return stringDate // convert date format to '2021-05-21'
+    }
 
     useEffect(() => {
-        getShowingsByDate('2021-06-13');
-    }, []);
+        setChosenPrice(null)
+        getShowingsByDate(dateToString(chosenDate));
+    }, [chosenDate]);
 
     useEffect(() => {
         getMovieBySearch(finalSearch)
@@ -30,7 +70,7 @@ const MovieContextProvider = (props) => {
         movies = await movies.json();
         setEveryMovies(movies); 
     }
-    
+
     const getMovieById = async (movieId) => {
         let movie = await fetch(`/api/v1/movies/${movieId}`);
         movie = await movie.json();
@@ -38,7 +78,7 @@ const MovieContextProvider = (props) => {
     }
 
     const getShowingsByDate = async (date) => {
-        let showings = await fetch(`/api/v1/showings/?date=${date}`); //required date format 2021-06-13
+        let showings = await fetch(`/api/v1/showings/?date=${date}`);
         showings = await showings.json();
         setShowings(showings)
     }
@@ -46,7 +86,7 @@ const MovieContextProvider = (props) => {
         let showing = await fetch(`/api/v1/showings/${showingId}`);
         showing = await showing.json();
         // return showing
-        setShowing(showing); 
+        setShowing(showing);
     }
     
     const getMovieBySearch = async (finalSearch) => {
@@ -63,6 +103,7 @@ const MovieContextProvider = (props) => {
     }
 
 
+
     const values = {
         getAllMovies,
         getMovieById,
@@ -71,12 +112,16 @@ const MovieContextProvider = (props) => {
         showing, 
         getMovieBySearch,
         filteredSearch, 
-        countMovieDocuments,
         filter, 
         setFilter, 
         setFinalSearch, 
         setEveryMovies,
-        everyMovies
+        everyMovies,
+        chosenDate,
+        setChosenDate,
+        setChosenPrice,
+        priceOptions,
+        filteredShowings
     }
 
     return (
