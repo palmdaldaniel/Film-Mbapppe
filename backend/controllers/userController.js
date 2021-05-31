@@ -34,7 +34,6 @@ const getUserById = async (req, res) => {
 
 
 const createUser = async (req, res) => {
-  console.log(`req.body from createUser in Backend`, req.body)
   // destructure req.body object
   const { email } = req.body;
 
@@ -74,9 +73,7 @@ const editUser = async (req, res) => {
     }
 
     user = result;
-    console.log("User: ", user);
     Object.assign(user, req.body);
-    console.log("Updated user: ", user);
 
     // save it back in the DB .
     await user.save();
@@ -124,7 +121,6 @@ const whoami = async (req, res) => {
 }
 
 
-
 module.exports = {
   logout,
   editUser,
@@ -134,3 +130,4 @@ module.exports = {
   getAllUsers,
   getUserById
 }
+

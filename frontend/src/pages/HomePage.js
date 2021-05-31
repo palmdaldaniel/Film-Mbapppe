@@ -1,49 +1,44 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import Card from 'react-bootstrap/Card';
+import { useContext } from "react";
+import DatePickerComponent from '../components/DatePicker'
+import ShowingCard from "../components/ShowingCard";
+import PriceFilter from '../components/priceFilter'
 
 const HomePage = () => {
-    const history = useHistory();
-    const { showings, getShowingsById } = useContext(MovieContext);
-    console.log(showings)
+    const { showings, filteredShowings } = useContext(MovieContext);
+    
+    let listData
 
-    const handleClick = (showingId) => {
-        history.push(`/showing/${showingId}`)
+    if(filteredShowings && filteredShowings.length > 0) {
+        listData = filteredShowings
+    } else {
+        listData = showings
     }
-
+    
+     
     let content = ''
 
-    if (showings) {
+    if (listData) {
         content =
             <div>
-                <h2>Todays showings</h2>
-                <div className='d-flex flex-wrap'>
-                    {showings.map((showing, i) => (
-                        <Card key={i} onClick={() => handleClick(showing._id)} style={{ width: '15rem' }}>
-                            <Card.Img variant="top" src={showing.film.Poster} style={{ height: '22rem' }} />
-                            <Card.Body>
-                                <Card.Title>{showing.film.Title}</Card.Title>
-                                <Card.Text>
-                                    {showing.film.Genre[0]}
-                                    <span className='mx-2'>{showing.time}</span>
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    ))}
+                <h2 className='mt-3 mb-5' >Todays showings</h2>
+                <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center mb-5'>
+                    <DatePickerComponent />
+                    <PriceFilter />
                 </div>
+                <ShowingCard showings={listData} />
             </div>
-
-
     }
     else {
         content = <div>Loading...</div>
     }
 
     return (
-        <div className="container">
-            <h1>Home page</h1>
-            {content}
+        <div className="container text-center">
+
+            {listData ? (content)
+                :
+                (<h2>No showings!</h2>)}
         </div>
     );
 };

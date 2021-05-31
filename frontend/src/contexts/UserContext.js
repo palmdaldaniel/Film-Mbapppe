@@ -22,7 +22,6 @@ const UserContextProvider = (props) => {
     user = await user.json();
     // let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user);
-    console.log(`from whoamI, active user is`, user)
     return;
   };
 
@@ -49,17 +48,16 @@ const UserContextProvider = (props) => {
 
   
   const loginUser = async (loginInfo) => {
-    let result = await fetch("/api/v1/users/login", {
+    let userLoggingIn = await fetch("/api/v1/users/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(loginInfo),
     });
-    let userLoggingIn = await userLoggingIn.json();
+     userLoggingIn = await userLoggingIn.json();
     if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
-      console.log("User logging in: ", activeUser);
       setLoginResult(null);
     } else {
       setLoginResult(userLoggingIn.error);

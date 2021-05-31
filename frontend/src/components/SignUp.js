@@ -35,10 +35,9 @@ const Register = () => {
       name
     };
     let result = await createUser(newUser);
-    console.log(`result`, result.error)
     if(!result.error) {
       setActiveUser(result)
-      
+
       history.push('/')
     }
 }
