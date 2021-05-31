@@ -4,7 +4,7 @@ import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
 import Filtermovies from "../components/Filtermovies";
-
+import Notfound from "../components/Notfound";
 const AllMovies = () => {
     const history = useHistory();
     const { getAllMovies, filteredSearch, everyMovies } = useContext(MovieContext);
@@ -28,7 +28,7 @@ const AllMovies = () => {
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
-            ''
+             <Notfound/>
             </div>
         </div>
         );
