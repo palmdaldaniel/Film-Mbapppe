@@ -10,19 +10,17 @@ const Filtermovies = ({ movies }) => {
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
 
-  const [genreState, setGenreState] = useState(""); 
-  const [yearState, setYearState] = useState("")
+  const [genreValue, setGenreValue] = useState(""); 
+  const [yearValue, setYearValue] = useState(""); 
+  const [ratingValue, setRatingValue] = useState(""); 
+  const [runtimeValue, setRuntimeValue] = useState(""); 
+  const [directorValue, setDirectorValue] = useState(""); 
+  const [languageValue, setLanguageValue] = useState(""); 
   
   useEffect(() => {
     // fire helperfunctions on pageload
     makeValues(movies);
   }, []);
-
-  useEffect(() => {
-    // if(Object.keys(filter).length === 0){
-    //   setTestOption(""); 
-    // }
-  }, [filter])
 
   const makeValues = (movies) => {
     // create values for label genre
@@ -45,17 +43,9 @@ const Filtermovies = ({ movies }) => {
     setLanguages([...new Set(movies.map((value) => value.Language))]);
   };
 
-  // create an object from the values of the selectfields. 
-  const handleChange = (e) => {
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value
-    }
-    setFilter(f)
-  }
-
+  // create an object from the values of the selectfields with ...filter
   const handleGenreChange = (e) => {
-    setGenreState(e.target.value)
+    setGenreValue(e.target.value)
     let f = {
       ...filter,
       [e.target.name]: e.target.value
@@ -64,7 +54,41 @@ const Filtermovies = ({ movies }) => {
   }
 
   const handleYearChange = (e) => {
-    setYearState(e.target.value)
+    setYearValue(e.target.value)
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+    setFilter(f)
+  }
+
+  const handleRatingChange = (e) => {
+    setRatingValue(e.target.value)
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+    setFilter(f)
+  }
+
+  const handleRuntimeChange = (e) => {
+    setRuntimeValue(e.target.value)
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+    setFilter(f)
+  }
+  const handleDirectorChange = (e) => {
+    setDirectorValue(e.target.value)
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value
+    }
+    setFilter(f)
+  }
+  const handleLanguageChange = (e) => {
+    setLanguageValue(e.target.value)
     let f = {
       ...filter,
       [e.target.name]: e.target.value
@@ -76,13 +100,17 @@ const Filtermovies = ({ movies }) => {
     setInputValue("");
     setFinalSearch("");
     setFilter({});
-    setGenreState("")
-    setYearState("")
+    setGenreValue(""); 
+    setYearValue(""); 
+    setRatingValue(""); 
+    setRuntimeValue(""); 
+    setDirectorValue(""); 
+    setLanguageValue(""); 
   };
 
   return (
     <div className="FilterContainer">
-      <select value={genreState} onChange={handleGenreChange} name="Genre" required>
+      <select value={genreValue} onChange={handleGenreChange} name="Genre" required>
         <option  value=""> Genre </option>
         {genres.map((genre) => (
           <option value={genre} key={genre}>
@@ -90,7 +118,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select value={yearState} onChange={handleYearChange} name="Year" required>
+      <select value={yearValue} onChange={handleYearChange} name="Year" required>
         <option value=""> Year </option>
         {years.map((year) => (
           <option value={year} key={year}>
@@ -98,7 +126,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select onChange={handleChange} name="Rating" required>
+      <select value={ratingValue} onChange={handleRatingChange} name="Rating" required>
         <option value=""> Rating </option>
         {ratings.map((rating) => (
           <option value={rating} key={rating}>
@@ -106,7 +134,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select onChange={handleChange} name="Runtime" required>
+      <select value={runtimeValue} onChange={handleRuntimeChange} name="Runtime" required>
         <option value=""> Runtime </option>
         {runtimes.map((runtime) => (
           <option value={runtime} key={runtime}>
@@ -114,7 +142,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select onChange={handleChange} name="Director" required>
+      <select value={directorValue} onChange={handleDirectorChange} name="Director" required>
         <option value=""> Director </option>
         {directors.map((director) => (
           <option value={director} key={director}>
@@ -122,7 +150,7 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      <select onChange={handleChange} name="Language" required>
+      <select value={languageValue} onChange={handleLanguageChange} name="Language" required>
         <option value=""> Language </option>
         {languages.map((language) => (
           <option value={language} key={language}>

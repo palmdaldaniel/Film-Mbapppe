@@ -5,7 +5,6 @@ import styles from "../css/Search.module.css";
 const Search = () => {
   const { setFinalSearch, setFilter, filter, inputValue, setInputValue } = useContext(MovieContext);
   const [search, setSearch] = useState("");
-  // const [inputValue, setInputValue] = useState("");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -16,13 +15,6 @@ const Search = () => {
     e.preventDefault();
     setFinalSearch(search);
   };
-
-  // const handleReset = () => {
-  //   setInputValue("");
-  //   setFinalSearch("");
-  //   setFilter({});
-  // };
-
 
   return (
     <div>
@@ -35,7 +27,6 @@ const Search = () => {
           onChange={(e) => handleSearch(e)}
         />
       </form>
-      {/* <button onClick={handleReset}>reset</button> */}
     </div>
   );
 };
