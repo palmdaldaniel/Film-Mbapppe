@@ -4,7 +4,6 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
 
-  const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false); // set this from true to false, that's why it wasn't working.
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
@@ -12,9 +11,6 @@ const UserContextProvider = (props) => {
   const [message, setMessage] = useState(null);
   const [loginResult, setLoginResult] = useState(null);
   const [isUser, setIsUser] = useState(false);
-
- 
-
   
   useEffect(() => {
     whoami();
@@ -22,10 +18,11 @@ const UserContextProvider = (props) => {
 
   const whoami = async () => {
     //uncomment bellow after testing
-    //let user = await fetch("/api/v1/users/whoami");
-    //user = await user.json();
-    let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
+    let user = await fetch("/api/v1/users/whoami");
+    user = await user.json();
+    // let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user);
+    console.log(`from whoamI, active user is`, user)
     return;
   };
 
@@ -73,7 +70,7 @@ const UserContextProvider = (props) => {
 
   
   const createUser = async (newUser) => {
-    let result = await fetch("/api/v1/users", {
+    let result = await fetch("/api/v1/users/register", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,21 +78,22 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(newUser),
     });
     result = await result.json();
-    whoami();
+    
+   
     return result;
   };
 
   const logout = async () => {
-    await fetch("/api/v1/users/logout");
-    whoami();
+    let result = await fetch("/api/v1/users/logout");
+    result = await result.json();
+    setActiveUser(null)
+    return result;
   };
 
  
 
   const values = {
     activeUser,
-    user,
-    setUser,
     setActiveUser,
     bookings,
     setBookings,
