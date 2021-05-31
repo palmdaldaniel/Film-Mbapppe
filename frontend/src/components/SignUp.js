@@ -111,9 +111,10 @@ const Register = () => {
                       placeholder="Password"
                       required
                       onChange={(handlePasswordChange)}
-                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{0,7}$"
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
                       required
                     />
+                      <p> 5-7 letters. At least one lower case, one upper case letter, one number, one special character.</p>
                     {signUpFail && (
                       <p className="error">This email is already at use.</p>
                     )}
