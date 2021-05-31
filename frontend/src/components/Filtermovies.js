@@ -3,29 +3,25 @@ import {MovieContext} from "../contexts/MovieContext";
 
 const Filtermovies = ({ movies }) => {
   const { filter, setFilter } = useContext(MovieContext); 
-  const [labels, setLabels] = useState([]);
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
   const [ratings, setRatings] = useState([]);
   const [runtimes, setRuntimes] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
+
+  const [testOption, setTestOption] = useState(""); 
   
   useEffect(() => {
     // fire helperfunctions on pageload
-    makeLabels(movies);
     makeValues(movies);
   }, []);
 
-  // create labels from the movie object keys, this might not be nessary
-  const makeLabels = (movies) => {
-    let labels = Object.keys(movies[0]);
-    let values = ["_id", "Poster", "Trailer", "Plot", "Actors", "Title", "__v"];
-
-    // take out the labels we don't want to filter on. Will use it to create select fields in return statement
-    labels = labels.filter((label) => !values.includes(label));
-    setLabels(labels);
-  };
+  useEffect(() => {
+    // if(Object.keys(filter).length === 0){
+    //   setTestOption(""); 
+    // }
+  }, [filter])
 
   const makeValues = (movies) => {
     // create values for label genre
@@ -50,6 +46,7 @@ const Filtermovies = ({ movies }) => {
 
   // create an object from the values of the selectfields. 
   const handleChange = (e) => {
+    console.log(e.target.value);
     let f = {
       ...filter,
       [e.target.name]: e.target.value
@@ -106,6 +103,11 @@ const Filtermovies = ({ movies }) => {
             {language}
           </option>
         ))}
+      </select>
+      <select onChange={handleChange} name="test" required>
+        <option value={testOption} key={0}> Test </option>
+        <option value="" key={1}> Test1 </option>
+        <option value="" key={2}> Test2 </option>
       </select>
     </div>
   );

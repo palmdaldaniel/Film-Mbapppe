@@ -32,7 +32,7 @@ const filterAllMovies = async (req, res) => {
     "gi"
   );
   let queryRated = new RegExp(
-    `${req.body.Rated ? req.body.Rated : ""}\\w*`,
+    `${req.body.Rating ? req.body.Rating : ""}\\w*`,
     "gi"
   );
   let queryDirector = new RegExp(

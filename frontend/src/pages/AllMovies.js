@@ -28,7 +28,6 @@ const AllMovies = () => {
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
-            ''
             </div>
         </div>
         );
