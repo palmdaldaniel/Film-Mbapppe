@@ -11,6 +11,12 @@ const MovieContextProvider = (props) => {
     const [everyMovies, setEveryMovies] = useState(null); 
     const [chosenDate, setChosenDate] = useState(new Date()); //format Thu May 27 2021 09:52:34 GMT+0200 (Central European Summer Time)
 
+
+    useEffect(() => {
+        getAllMovies();
+    }, []); 
+
+    
     //for Price filter
     const [priceOptions, setPriceOptions] = useState(null); // format [100, 150, 200]
     const [chosenPrice, setChosenPrice] = useState(null); //format 100
@@ -98,7 +104,7 @@ const MovieContextProvider = (props) => {
             body: JSON.stringify(filter)
         }); 
         s = await s.json(); 
-        console.log("results of searches", s);
+        // console.log("results of searches", s);
         setFilteredSearch(s); 
     }
 
