@@ -11,6 +11,7 @@ const AllMovies = () => {
 
     useEffect(() => {
         getAllMovies();
+        // eslint-disable-next-line
     }, []); 
 
     //This redirects to the movie info about the movie that is clicked
