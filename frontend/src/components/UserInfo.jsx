@@ -3,7 +3,7 @@ import { UserContext } from '../contexts/UserContext';
 import styles from '../css/userPage.module.css'
 
 const UserInfo = () => {
-  const { activeUser, isEditing, setIsEditing, editName, message } = useContext(UserContext);
+  const { activeUser, isEditing, setIsEditing, editName, message, whoami } = useContext(UserContext);
 
   return (
     <div className={styles.userInfo}>

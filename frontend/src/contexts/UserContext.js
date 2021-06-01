@@ -11,7 +11,7 @@ const UserContextProvider = (props) => {
   const [message, setMessage] = useState(null);
   const [loginResult, setLoginResult] = useState(null);
   const [isUser, setIsUser] = useState(false);
-  
+
   useEffect(() => {
     whoami();
   }, []);
@@ -25,99 +25,106 @@ const UserContextProvider = (props) => {
     return;
   };
 
-  const editName = (e) => {
-    e.preventDefault();
-    let newName = e.target[0].value;
-    if (newName.length > 12) {
-      setMessage("Name too long!");
-      setTimeout(() => {
-        setMessage(null);
-      }, 2000);
-      return;
-    }
-    if (newName.length <= 1) {
-      setMessage("Name too short!");
-      setTimeout(() => {
-        setMessage(null);
-      }, 2000);
-      return;
-    }
-    setActiveUser({ name: newName });
-    setIsEditing(false);
-    //Send to DB and change there when connected to DB and recall whoami()
-  };
+  async function editName (e){
+  e.preventDefault();
+  let newName = { name: e.target[0].value };
+  if (newName.length > 12) {
+    setMessage("Name too long!");
+    setTimeout(() => {
+      setMessage(null);
+    }, 2000);
+    return;
+  }
+  if (newName.length <= 1) {
+    setMessage("Name too short!");
+    setTimeout(() => {
+      setMessage(null);
+    }, 2000);
+    return;
+  }
+
+  let changeUserName = await fetch(`/api/v1/users/${activeUser._id}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(newName)
+  })
+  changeUserName = await changeUserName.json();
+  setIsEditing(false);
+};
 
 
-  
-  const loginUser = async (loginInfo) => {
-    let userLoggingIn = await fetch("/api/v1/users/login", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(loginInfo),
-    });
-     userLoggingIn = await userLoggingIn.json();
-    if (!userLoggingIn.error) {
-      setActiveUser(userLoggingIn);
-      setLoginResult(null);
-    } else {
-      setLoginResult(userLoggingIn.error);
-    }
-    return userLoggingIn;
-  };
+
+const loginUser = async (loginInfo) => {
+  let userLoggingIn = await fetch("/api/v1/users/login", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(loginInfo),
+  });
+  userLoggingIn = await userLoggingIn.json();
+  if (!userLoggingIn.error) {
+    setActiveUser(userLoggingIn);
+    setLoginResult(null);
+  } else {
+    setLoginResult(userLoggingIn.error);
+  }
+  return userLoggingIn;
+};
 
 
-  
-  const createUser = async (newUser) => {
-    let result = await fetch("/api/v1/users/register", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newUser),
-    });
-    result = await result.json();
-    
-   
-    return result;
-  };
 
-  const logout = async () => {
-    let result = await fetch("/api/v1/users/logout");
-    result = await result.json();
-    setActiveUser(null)
-    return result;
-  };
+const createUser = async (newUser) => {
+  let result = await fetch("/api/v1/users/register", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(newUser),
+  });
+  result = await result.json();
 
- 
 
-  const values = {
-    activeUser,
-    setActiveUser,
-    bookings,
-    setBookings,
-    loginUser,
-    createUser,
-    logout,
-    whoami,
-    editName,
-    isEditing,
-    setIsEditing,
-    setShowLogin,
-    showLogin,
-    message,
-    setLoginResult,
-    loginResult,
-    isUser,
-    setIsUser,
-    
-   
-  };
+  return result;
+};
 
-  return (
-    <UserContext.Provider value={values}>{props.children}</UserContext.Provider>
-  );
+const logout = async () => {
+  let result = await fetch("/api/v1/users/logout");
+  result = await result.json();
+  setActiveUser(null)
+  return result;
+};
+
+
+
+const values = {
+  activeUser,
+  setActiveUser,
+  bookings,
+  setBookings,
+  loginUser,
+  createUser,
+  logout,
+  whoami,
+  editName,
+  isEditing,
+  setIsEditing,
+  setShowLogin,
+  showLogin,
+  message,
+  setLoginResult,
+  loginResult,
+  isUser,
+  setIsUser,
+
+
+};
+
+return (
+  <UserContext.Provider value={values}>{props.children}</UserContext.Provider>
+);
 };
 
 export default UserContextProvider;
