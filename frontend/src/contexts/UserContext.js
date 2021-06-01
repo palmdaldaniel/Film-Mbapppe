@@ -50,7 +50,7 @@ const UserContextProvider = (props) => {
     })
     changeUserName = await changeUserName.json();
     setActiveUser(changeUserName)
-    setIsEditing(false);
+    setIsEditing(!isEditing);
   };
 
 
