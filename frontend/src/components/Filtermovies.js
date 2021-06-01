@@ -27,27 +27,33 @@ const Filtermovies = ({ movies }) => {
 
   const makeValues = (movies) => {
     // create values for label genre
-    setGenres([...new Set(movies.map((value) => value.Genre).flat())]);
+   const genres = [...new Set(movies.map((value) => value.Genre).flat())]
+   setGenres(genres.sort());
 
     //create values for label year
     const years = movies.map((value) => value.Year).sort((a, b) => a - b);
     setYears([...new Set(years)]);
 
     // create values for label rating
-    setRatings([...new Set(movies.map((value) => value.Rated))]);
+    const ratings = [...new Set(movies.map((value) => value.Rated))]
+    setRatings(ratings.sort());
 
     // create values for runtime
-    setRuntimes([...new Set(movies.map((value) => value.Runtime))]);
-
+    let runtime = [...new Set(movies.map((value) => parseInt(value.Runtime)))] 
+    runtime = runtime.filter(time => time).sort((a,b) => a - b);
+    setRuntimes(runtime);
+  
     // create values for Director
-    setDirectors([...new Set(movies.map((value) => value.Director))]);
+    const directors = [...new Set(movies.map((value) => value.Director))]
+    setDirectors(directors.sort());
 
     // create values for Language
-    setLanguages([...new Set(movies.map((value) => value.Language))]);
+    const language = [...new Set(movies.map((value) => value.Language))] 
+    setLanguages(language.sort());
   };
 
   // collectFiltered is the main function that all handles use in order to create an object from the values of the selected fields
-  console.log(filter);
+  // console.log(filter);
   const collectFiltered = (e) => {
     let f = {
       ...filter,
@@ -134,7 +140,7 @@ const Filtermovies = ({ movies }) => {
         <option value=""> Runtime </option>
         {runtimes.map((runtime) => (
           <option value={runtime} key={runtime}>
-            {runtime}
+            {`${runtime} min`}
           </option>
         ))}
       </select>
