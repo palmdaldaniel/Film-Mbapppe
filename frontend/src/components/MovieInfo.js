@@ -28,9 +28,13 @@ const MovieInfo = (props) => {
               <p><span className={styles.bold}>Genre:</span> {film.Genre}</p>
               <p><span className={styles.bold}>Age Rating:</span> {film.Rated}</p>
               <p><span className={styles.bold}>Language:</span> {film.Language}</p>
-              <p><span className={styles.bold}>Starring:</span>
+              {/* <p><span className={styles.bold}>Starring:</span>
                 {film.Actors.map((actor) => (
                   <span> {actor}, </span>
+                ))}</p> */}
+              <p><span className={styles.bold}>Starring:</span>
+                {film.Actors.map((actor, i) => (
+                  <span key={i}> {(i ? ', ' : '') + actor} </span>
                 ))}</p>
               <p><span className={styles.bold}>Director:</span> {film.Director}</p>
               <p><span className={styles.bold}>Description:</span> {film.Plot}</p>
