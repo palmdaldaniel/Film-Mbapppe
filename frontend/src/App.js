@@ -2,7 +2,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
 import Navbar from "./components/Navbar";
-import SignupPage from "./pages/SignupPage";
+import SignUp from "./components/SignUp";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
 import UserPage from "./pages/UserPage";
@@ -11,7 +11,6 @@ import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieInfoPage from './pages/MovieInfoPage'
 import Footer from "./components/Footer";
-
 
 function App() {
   return (
@@ -31,8 +30,7 @@ function App() {
             </Route>
             <Route exact path="/showing/:showingId" component={Showing} />
             <Route exact path="/profile" />
-            <Route exact path="/register" component ={SignupPage}/>
-            
+            <Route exact path="/register" component={SignUp} />
             <Route exact path="/login" />
             <Route exact path="/allmovies">
               <AllMovies />

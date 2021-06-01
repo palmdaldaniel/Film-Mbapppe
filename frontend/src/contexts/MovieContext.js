@@ -4,13 +4,18 @@ export const MovieContext = createContext();
 
 const MovieContextProvider = (props) => {
     const [showings, setShowings] = useState(null);
-    const [showing, setShowing] = useState(null);
+    const [showing, setShowing] = useState(null); 
+    const [filteredSearch, setFilteredSearch] = useState(null); 
+    const [filter, setFilter] = useState({}); //used in Filtermovie.js
+    const [finalSearch, setFinalSearch] = useState("") //used in Search.js
+    const [everyMovies, setEveryMovies] = useState(null); 
     const [chosenDate, setChosenDate] = useState(new Date()); //format Thu May 27 2021 09:52:34 GMT+0200 (Central European Summer Time)
 
     //for Price filter
     const [priceOptions, setPriceOptions] = useState(null); // format [100, 150, 200]
     const [chosenPrice, setChosenPrice] = useState(null); //format 100
     const [filteredShowings, setFilteredShowings] = useState(null);
+    const [inputValue, setInputValue] = useState("");
 
 
     useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
@@ -51,7 +56,10 @@ const MovieContextProvider = (props) => {
         getShowingsByDate(dateToString(chosenDate));
     }, [chosenDate]);
 
-
+    // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
+    useEffect(() => {
+        getMovieBySearch(finalSearch)
+    }, [filter, finalSearch])
 
     const countMovieDocuments = async () => {
         let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
@@ -62,7 +70,7 @@ const MovieContextProvider = (props) => {
     const getAllMovies = async (page) => {
         let movies = await fetch(`/api/v1/movies?page=${page}`);
         movies = await movies.json();
-        return movies
+        setEveryMovies(movies); 
     }
 
     const getMovieById = async (movieId) => {
@@ -82,21 +90,39 @@ const MovieContextProvider = (props) => {
         // return showing
         setShowing(showing);
     }
-
-
+    
+    const getMovieBySearch = async (finalSearch) => {
+        let s = await fetch(`/api/v1/movies/filter/?search=${finalSearch}`, {
+            method: "Post", 
+            headers: {
+                "content-type": "application/json",
+                },
+            body: JSON.stringify(filter)
+        }); 
+        s = await s.json(); 
+        setFilteredSearch(s); 
+    }
 
     const values = {
         getAllMovies,
         getMovieById,
         showings,
         getShowingsById,
-        showing,
+        showing, 
+        getMovieBySearch,
+        filteredSearch, 
+        filter, 
+        setFilter, 
+        setFinalSearch, 
+        setEveryMovies,
+        everyMovies,
         chosenDate,
         setChosenDate,
-        countMovieDocuments,
         setChosenPrice,
         priceOptions,
-        filteredShowings
+        filteredShowings,
+        inputValue, 
+        setInputValue
     }
 
     return (

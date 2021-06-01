@@ -2,7 +2,6 @@ const Showing = require("../models/Showing");
 
 //only using createShowing function to test if getShowingById works
 const createShowing = async (req, res) => {
-  console.log(req.body);
   let newShowing = await Showing.create(req.body);
   await newShowing.save();
   res.json(newShowing);
