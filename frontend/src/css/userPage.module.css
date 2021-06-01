@@ -99,6 +99,10 @@
   padding: 0.2rem 2rem;
 }
 
+.h2{
+  margin-bottom: 1.5rem;
+}
+
 @media (min-width: 576px) {
   .movieGrid {
     flex-direction: row;
