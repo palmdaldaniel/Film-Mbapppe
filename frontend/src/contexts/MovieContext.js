@@ -104,8 +104,6 @@ const MovieContextProvider = (props) => {
         setFilteredSearch(s); 
     }
 
-
-
     const values = {
         getAllMovies,
         getMovieById,
