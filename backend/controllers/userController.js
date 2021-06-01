@@ -59,7 +59,6 @@ const editUser = async (req, res) => {
   user = await User.findByIdAndUpdate(req.params.userId, { name: req.body.name }, {new: true}).exec();
   user.password = undefined;
   req.session.user = user;
-  console.log(user);
   res.send(user);
 }
 
