@@ -29,8 +29,9 @@ const MovieInfo = (props) => {
               <p><span className={styles.bold}>Age Rating:</span> {film.Rated}</p>
               <p><span className={styles.bold}>Language:</span> {film.Language}</p>
               <p><span className={styles.bold}>Starring:</span>
-                {film.Actors[0]}, {film.Actors[1]}
-              </p>
+                {film.Actors.map((actor) => (
+                  <span> {actor}, </span>
+                ))}</p>
               <p><span className={styles.bold}>Director:</span> {film.Director}</p>
               <p><span className={styles.bold}>Description:</span> {film.Plot}</p>
             </div>
@@ -39,7 +40,7 @@ const MovieInfo = (props) => {
           <div className={styles.iframe}>
             <Video video={film.Trailer} />
           </div>
-          
+
         </div>
       </div>
     );
