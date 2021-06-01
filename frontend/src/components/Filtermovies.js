@@ -61,8 +61,6 @@ const Filtermovies = ({ movies }) => {
       [e.target.name]: e.target.value
     }
 
-
-    console.log(f);
     setFilter(f)
   }
 
