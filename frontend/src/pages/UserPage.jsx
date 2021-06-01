@@ -17,6 +17,7 @@ const UserPage = () => {
     if (activeUser) {
       whoami();
     }
+    // eslint-disable-next-line
   }, [])
 
   return (
