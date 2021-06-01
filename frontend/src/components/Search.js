@@ -3,7 +3,7 @@ import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Search.module.css";
 
 const Search = () => {
-  const { setFinalSearch, setFilter, filter, inputValue, setInputValue } = useContext(MovieContext);
+  const { setFinalSearch, inputValue, setInputValue } = useContext(MovieContext);
   const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
