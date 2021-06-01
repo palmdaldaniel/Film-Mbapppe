@@ -17,10 +17,8 @@ const UserContextProvider = (props) => {
   }, []);
 
   const whoami = async () => {
-    //uncomment bellow after testing
     let user = await fetch("/api/v1/users/whoami");
     user = await user.json();
-    // let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user);
     return user;
   };

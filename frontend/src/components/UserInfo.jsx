@@ -3,7 +3,7 @@ import { UserContext } from '../contexts/UserContext';
 import styles from '../css/userPage.module.css'
 
 const UserInfo = () => {
-  const { activeUser, isEditing, setIsEditing, editName, message, whoami } = useContext(UserContext);
+  const { activeUser, isEditing, setIsEditing, editName, message } = useContext(UserContext);
 
   return (
     <div className={styles.userInfo}>
@@ -15,7 +15,6 @@ const UserInfo = () => {
         <div>
           <form action="submit"
             onSubmit={e => editName(e)}>
-
             <input className={styles.textInput} type="text" />
             <button className={styles.inputBtn} >Change</button>
             {message ? (
