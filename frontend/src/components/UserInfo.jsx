@@ -13,13 +13,17 @@ const UserInfo = () => {
         onClick={() => setIsEditing(!isEditing)}>Edit name</button>
       {isEditing ? (
         <div>
-          <input type="text" />
-          <button onClick={e => editName(e.target.previousSibling.value)}>Submit!</button>
-          {message ? (
-            <p>{message}</p>
-          ) : (
-            <div></div>
-          )}
+          <form action="submit"
+            onSubmit={e => editName(e)}>
+
+            <input className={styles.textInput} type="text" />
+            <button className={styles.inputBtn} >Change</button>
+            {message ? (
+              <p>{message}</p>
+            ) : (
+              <div></div>
+            )}
+          </form>
         </div>
       ) : (
         <div></div>

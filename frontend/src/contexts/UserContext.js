@@ -25,7 +25,9 @@ const UserContextProvider = (props) => {
     return;
   };
 
-  const editName = (newName) => {
+  const editName = (e) => {
+    e.preventDefault();
+    let newName = e.target[0].value;
     if (newName.length > 12) {
       setMessage("Name too long!");
       setTimeout(() => {
