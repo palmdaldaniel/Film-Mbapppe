@@ -26,7 +26,7 @@ const HomePage = () => {
                     <DatePickerComponent />
                     <PriceFilter />
                 </div>
-                {/* <ShowingCard showings={listData} /> */}
+                <ShowingCard showings={listData} />
             </div>
     }
     else {

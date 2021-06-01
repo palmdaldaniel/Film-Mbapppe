@@ -30,12 +30,12 @@ const UserPage = () => {
             <div className={styles.upcoming}>
               <h2>Upcoming movies</h2>
               {/* Change showings for upcoming bookings on user when bookings are ready*/}
-              {/* {showings ? (<ShowingCard showings={showings} /> */}) : (<h3>No upcoming showings!</h3>)}
+              {showings ? (<ShowingCard showings={showings} />) : (<h3>No upcoming showings!</h3>)}
             </div>
             <div className={styles.previous}>
               <h2>Previous movies</h2>
               {/* Change showings for previous bookings on user when bookings are ready*/}
-{/*               {showings ? (<ShowingCard showings={showings} /> */}) : (<h3>No previous showings!</h3>)}
+              {showings ? (<ShowingCard showings={showings} />) : (<h3>No previous showings!</h3>)}
             </div>
           </div>
         </div>
