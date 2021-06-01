@@ -1,0 +1,45 @@
+.footerInfo {
+  display: grid;
+  justify-content: center;
+  height: 100px;
+  font-size: 1rem;
+  margin-bottom: 45px;
+}
+
+
+.footerText {
+  display: flex;
+}
+
+.about {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.companyName {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.Logo {
+height: 70px;
+width: 70px;
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: center;
+}
+
+.icons {
+  height: 25px;
+  width: 25px;
+}
+
+.instaIcon {
+  margin-top: 1px;
+  height: 27px;
+  width: 30px;
+  margin-left: 5px;
+}
