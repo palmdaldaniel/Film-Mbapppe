@@ -21,7 +21,7 @@ const MovieInfo = (props) => {
         </div>
         <div className={styles.descContainer}>
           <p><span className={styles.bold}>Runtime:</span>  {film.Runtime}</p>
-          <p><span className={styles.bold}>Genre:</span> {film.Genre[0]}</p>
+          <p><span className={styles.bold}>Genre:</span> {film.Genre}</p>
           <p><span className={styles.bold}>Age Rating:</span> {film.Rated}</p>
           <p><span className={styles.bold}>Language:</span> {film.Language}</p>
           <p><span className={styles.bold}>Starring:</span>

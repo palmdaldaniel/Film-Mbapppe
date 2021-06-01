@@ -8,10 +8,6 @@ export default function Footer() {
 
   const history = useHistory();
 
-  function handleClick() {
-    history.push("/");
-  }
-
   return (
     <footer>
       <Container fluid>

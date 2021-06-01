@@ -18,7 +18,7 @@ function MovieCard(props) {
                 <Card.Body>
                     <Card.Text className={`${styles.cardTitle} text-center mb-1`}>{movie.Title}</Card.Text>
                     <Card.Text className={`${styles.cardText} text-center`}>
-                        <span>{movie.Genre[0]}</span>   
+                        <span>{movie.Genre}</span>   
                         <br/>
                         <span>{movie.Actors[0]}</span> 
                     </Card.Text>
