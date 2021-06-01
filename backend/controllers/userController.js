@@ -56,8 +56,8 @@ const createUser = async (req, res) => {
 const editUser = async (req, res) => {
   let user;
 
-  user = User.findByIdAndUpdate(req.params.userId, { name: req.body.name }).exec();
-
+  user = await User.findByIdAndUpdate(req.params.userId, { name: req.body.name }, {new: true}).exec();
+  req.session.user = user;
   res.send(user);
 }
 
