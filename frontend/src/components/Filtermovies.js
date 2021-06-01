@@ -41,11 +41,9 @@ const Filtermovies = ({ movies }) => {
     setRatings(ratings.sort());
 
     // create values for runtime
-    let runtime = [...new Set(movies.map((value) => parseInt(value.Runtime)).sort((a,b) => a - b))] 
-  console.log(runtime);
-    
-
-    //setRuntimes(runtime)
+    let runtime = [...new Set(movies.map((value) => parseInt(value.Runtime)))] 
+    runtime = runtime.filter(time => time).sort((a,b) => a - b);
+    setRuntimes(runtime);
   
     // create values for Director
     const directors = [...new Set(movies.map((value) => value.Director))]
@@ -98,7 +96,7 @@ const Filtermovies = ({ movies }) => {
         <option value=""> Runtime </option>
         {runtimes.map((runtime) => (
           <option value={runtime} key={runtime}>
-            {runtime}
+            {`${runtime} min`}
           </option>
         ))}
       </select>
