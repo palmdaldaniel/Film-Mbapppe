@@ -41,8 +41,12 @@ const Filtermovies = ({ movies }) => {
     setRatings(ratings.sort());
 
     // create values for runtime
-    setRuntimes([...new Set(movies.map((value) => value.Runtime))]);
+    let runtime = [...new Set(movies.map((value) => parseInt(value.Runtime)).sort((a,b) => a - b))] 
+  console.log(runtime);
+    
 
+    //setRuntimes(runtime)
+  
     // create values for Director
     const directors = [...new Set(movies.map((value) => value.Director))]
     setDirectors(directors.sort());
@@ -58,6 +62,9 @@ const Filtermovies = ({ movies }) => {
       ...filter,
       [e.target.name]: e.target.value
     }
+
+
+    console.log(f);
     setFilter(f)
   }
 
