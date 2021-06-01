@@ -22,7 +22,7 @@ function PriceFilter() {
         }
 
         items.unshift(
-            <Dropdown.Item onClick={() => handleClick('all')}>
+            <Dropdown.Item key={'all'} onClick={() => handleClick('all')}>
                 {`All`}
             </Dropdown.Item>,
         );
