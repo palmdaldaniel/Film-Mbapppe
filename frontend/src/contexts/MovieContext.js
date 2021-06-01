@@ -18,6 +18,11 @@ const MovieContextProvider = (props) => {
     const [inputValue, setInputValue] = useState("");
 
 
+    useEffect(() => {
+        getAllMovies();
+        // eslint-disable-next-line
+    }, []);
+
     useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
         let allPrices = [] // => [200, 150, 100, 100, 200, 200]
         if (showings) {

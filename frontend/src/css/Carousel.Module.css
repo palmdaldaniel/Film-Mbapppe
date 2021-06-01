@@ -1,19 +1,13 @@
-.imageBox{
+.bannerBox{
     width: 100%;
-    height: 750px;
+    height: 75vh;
     overflow: hidden;
+    /* margin: 0 auto; */
     background-position: top;
-    margin: 0 auto;
-    background: no-repeat center;
-    /* background-size: 100%; */
+    background: no-repeat bottom;
+    background-size: 100%; 
     background-size: cover;
-    
 }
-
-.heading2 {
-    padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.726) !important;
-    border-radius: 5px;
-   
+.imageBox {
+    height: 50vh;
 }
-

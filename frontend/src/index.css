@@ -117,17 +117,13 @@ code {
 
 /* Styling for carousel */
 
-.carousel-caption {
+ .carousel-caption {
   width: 30%;
   margin: 0 auto;
-  /* background-color: rgba(0, 0, 0, 0.884) !important; */
   background-color: transparent !important;
-  
 }
 
-/* .carousel-caption * {
-  background: none !important;
-} */
+
 
 .getTicketBtn {
   background-color: #E4263E !important;
@@ -136,5 +132,4 @@ code {
   border-radius: 20px;
   font-size: 20px;
   font-weight: 400;
-  margin-top: 30px;
 }
