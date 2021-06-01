@@ -11,21 +11,21 @@ const UserContextProvider = (props) => {
   const [message, setMessage] = useState(null);
   const [loginResult, setLoginResult] = useState(null);
   const [isUser, setIsUser] = useState(false);
-  
+
   useEffect(() => {
     whoami();
   }, []);
 
   const whoami = async () => {
-    //uncomment bellow after testing
     let user = await fetch("/api/v1/users/whoami");
     user = await user.json();
-    // let user = { name: "Bob", email: "Chris@mail.com" }; //delete after testing
     setActiveUser(user);
-    return;
+    return user;
   };
 
-  const editName = (newName) => {
+  const editName = async (e) => {
+    e.preventDefault();
+    let newName = e.target[0].value ;
     if (newName.length > 12) {
       setMessage("Name too long!");
       setTimeout(() => {
@@ -40,13 +40,21 @@ const UserContextProvider = (props) => {
       }, 2000);
       return;
     }
-    setActiveUser({ name: newName });
-    setIsEditing(false);
-    //Send to DB and change there when connected to DB and recall whoami()
+
+    let changeUserName = await fetch(`/api/v1/users/${activeUser._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({name: newName})
+    })
+    changeUserName = await changeUserName.json();
+    setActiveUser(changeUserName)
+    setIsEditing(!isEditing);
   };
 
 
-  
+
   const loginUser = async (loginInfo) => {
     let userLoggingIn = await fetch("/api/v1/users/login", {
       method: "POST",
@@ -55,7 +63,7 @@ const UserContextProvider = (props) => {
       },
       body: JSON.stringify(loginInfo),
     });
-     userLoggingIn = await userLoggingIn.json();
+    userLoggingIn = await userLoggingIn.json();
     if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
       setLoginResult(null);
@@ -66,7 +74,7 @@ const UserContextProvider = (props) => {
   };
 
 
-  
+
   const createUser = async (newUser) => {
     let result = await fetch("/api/v1/users/register", {
       method: "POST",
@@ -76,8 +84,8 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(newUser),
     });
     result = await result.json();
-    
-   
+
+
     return result;
   };
 
@@ -88,7 +96,7 @@ const UserContextProvider = (props) => {
     return result;
   };
 
- 
+
 
   const values = {
     activeUser,
@@ -109,8 +117,8 @@ const UserContextProvider = (props) => {
     loginResult,
     isUser,
     setIsUser,
-    
-   
+
+
   };
 
   return (

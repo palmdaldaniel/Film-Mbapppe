@@ -10,6 +10,7 @@ import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieInfoPage from './pages/MovieInfoPage'
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -35,10 +36,11 @@ function App() {
               <AllMovies />
             </Route>
             <Route exact path="/movie-info/:movieId" component={MovieInfoPage}/>
-              
+            <Footer />  
           </BrowserRouter>
         </UserContextProvider>
       </MovieContextProvider>
+      
     </div>
   );
 }
