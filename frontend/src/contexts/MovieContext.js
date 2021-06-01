@@ -15,6 +15,7 @@ const MovieContextProvider = (props) => {
     const [priceOptions, setPriceOptions] = useState(null); // format [100, 150, 200]
     const [chosenPrice, setChosenPrice] = useState(null); //format 100
     const [filteredShowings, setFilteredShowings] = useState(null);
+    const [inputValue, setInputValue] = useState("");
 
 
     useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
@@ -26,10 +27,12 @@ const MovieContextProvider = (props) => {
             let uniquePriceOpt = [... new Set(allPrices)].sort((a, b) => a - b) //keep only unique values and sort them in falling ordning => [100, 150, 200]
             setPriceOptions(uniquePriceOpt) //after we have looped through all showings, we put unique prices to the state
         }
+        // eslint-disable-next-line
     }, [showings]);
 
     useEffect(() => {//if some price was chosen, call function for filtrering 
         filterShowingsByPrice(chosenPrice)
+        // eslint-disable-next-line
     }, [chosenPrice]);
 
     const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
@@ -38,10 +41,6 @@ const MovieContextProvider = (props) => {
             setFilteredShowings(filtered)//put result with filtered showings to the state
         }
     }
-
-    useEffect(() => {
-        getAllMovies();
-    }, []); 
 
     //for converting date to string
     const dateToString = (date) => {
@@ -58,6 +57,7 @@ const MovieContextProvider = (props) => {
         getShowingsByDate(dateToString(chosenDate));
     }, [chosenDate]);
 
+    // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
     useEffect(() => {
         getMovieBySearch(finalSearch)
     }, [filter, finalSearch])
@@ -101,11 +101,8 @@ const MovieContextProvider = (props) => {
             body: JSON.stringify(filter)
         }); 
         s = await s.json(); 
-        console.log("results of searches", s);
         setFilteredSearch(s); 
     }
-
-
 
     const values = {
         getAllMovies,
@@ -124,7 +121,9 @@ const MovieContextProvider = (props) => {
         setChosenDate,
         setChosenPrice,
         priceOptions,
-        filteredShowings
+        filteredShowings,
+        inputValue, 
+        setInputValue
     }
 
     return (

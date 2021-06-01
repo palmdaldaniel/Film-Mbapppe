@@ -8,7 +8,6 @@ import styles from "../css/Navbar.module.css";
 const Navbar = () => {
 
   const { logout, activeUser } = useContext(UserContext);
-  console.log(activeUser)
   return (
     <div>
       <nav

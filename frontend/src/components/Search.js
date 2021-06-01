@@ -1,26 +1,22 @@
-import { useEffect, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Search.module.css";
 
 const Search = () => {
-  const { setFinalSearch, setFilter } = useContext(MovieContext);
+  const { setFinalSearch, inputValue, setInputValue } = useContext(MovieContext);
   const [search, setSearch] = useState("");
-  const [inputValue, setInputValue] = useState("");
 
   const handleSearch = (e) => {
+    //retrieve what the user is typing in and turning it into a variable
     setSearch(e.target.value);
+    //setInputValue is used together with reset to change value back to default state
     setInputValue(e.target.value); 
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    //when submit is clicked, search variable is sent as finalSearch in MovieContext to be used with getMovieBySearch function
     setFinalSearch(search);
-  };
-
-  const handleReset = () => {
-    setInputValue("");
-    setFinalSearch("");
-    setFilter({});
   };
 
   return (
@@ -34,7 +30,6 @@ const Search = () => {
           onChange={(e) => handleSearch(e)}
         />
       </form>
-      <button onClick={handleReset}>reset</button>
     </div>
   );
 };
