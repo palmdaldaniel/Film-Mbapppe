@@ -98,7 +98,6 @@ const MovieContextProvider = (props) => {
             body: JSON.stringify(filter)
         }); 
         s = await s.json(); 
-        console.log("results of searches", s);
         setFilteredSearch(s); 
     }
 
