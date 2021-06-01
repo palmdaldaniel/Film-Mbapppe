@@ -6,28 +6,25 @@
   margin-bottom: 45px;
 }
 
-img {
-  height: 70px;
-  width: 70px;
-}
 
 .footerText {
   display: flex;
 }
 
-p {
+.about {
   margin-left: 20px;
   cursor: pointer;
 }
 
-span {
+.companyName {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
 }
 
-button {
-  border: none;
+.Logo {
+height: 70px;
+width: 70px;
 }
 
 .footerLogo {

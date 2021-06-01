@@ -17,8 +17,8 @@ export default function Footer() {
       <Container fluid>
         <Row>
           <Col className={styles.footerInfo}>
-            <Link to="/" className={styles.footerLogo}><img src="./assets/whitepopcorn.svg" alt="popcorn logo" /></Link>
-            <span>Filmvisarna AB</span>
+            <Link to="/" className={styles.footerLogo}><img className={styles.Logo} src="./assets/whitepopcorn.svg" alt="popcorn logo" /></Link>
+            <span className={styles.companyName}>Filmvisarna AB</span>
             <div className={styles.footerText}>
               <img 
               className={styles.icons} 
@@ -30,9 +30,7 @@ export default function Footer() {
               src="./assets/insta.png" 
               alt="Socialicon Instagram" 
               />
-              
-              <p>Contact us</p>
-              <p onClick={() => { history.push('/about') }}>About us</p>
+              <p className={styles.about} onClick={() => { history.push('/about') }}>About us</p>
             </div>
           </Col>
         </Row>
