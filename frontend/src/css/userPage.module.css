@@ -92,6 +92,13 @@
   flex-basis: 10%;
 }
 
+.links{
+  font-size: 1.5rem;
+  color: #4387FC;
+  margin: 0.1rem 0rem;
+  padding: 0.2rem 2rem;
+}
+
 @media (min-width: 576px) {
   .movieGrid {
     flex-direction: row;
