@@ -108,7 +108,8 @@ const Filtermovies = ({ movies }) => {
   return (
     <div className={styles.filterContainer}>
       {/* value={genreValue} is used together with reset to set buttons back to its default state */}
-      <select value={genreValue} onChange={handleGenreChange} name="Genre" required>
+      <div className={styles.columnOne}>
+       <select value={genreValue} onChange={handleGenreChange} name="Genre" required>
         <option value=""> Genre </option>
         {/* mapping through genres to automate the dropdown options */}
         {genres.map((genre) => (
@@ -118,7 +119,7 @@ const Filtermovies = ({ movies }) => {
         ))}
       </select>
 
-      <select value={yearValue} onChange={handleYearChange} name="Year" required>
+       <select value={yearValue} onChange={handleYearChange} name="Year" required>
         <option value=""> Year </option>
         {years.map((year) => (
           <option value={year} key={year}>
@@ -127,7 +128,7 @@ const Filtermovies = ({ movies }) => {
         ))}
       </select>
 
-      <select value={ratingValue} onChange={handleRatingChange} name="Rating" required>
+       <select value={ratingValue} onChange={handleRatingChange} name="Rating" required>
         <option value=""> Rating </option>
         {ratings.map((rating) => (
           <option value={rating} key={rating}>
@@ -135,8 +136,9 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-      
-      <select value={runtimeValue} onChange={handleRuntimeChange} name="Runtime" required>
+      </div>
+      <div className={styles.columnTwo}>
+       <select value={runtimeValue} onChange={handleRuntimeChange} name="Runtime" required>
         <option value=""> Runtime </option>
         {runtimes.map((runtime) => (
           <option value={runtime} key={runtime}>
@@ -145,7 +147,7 @@ const Filtermovies = ({ movies }) => {
         ))}
       </select>
 
-      <select value={directorValue} onChange={handleDirectorChange} name="Director" required>
+       <select value={directorValue} onChange={handleDirectorChange} name="Director" required>
         <option value=""> Director </option>
         {directors.map((director) => (
           <option value={director} key={director}>
@@ -154,7 +156,7 @@ const Filtermovies = ({ movies }) => {
         ))}
       </select>
 
-      <select value={languageValue} onChange={handleLanguageChange} name="Language" required>
+       <select value={languageValue} onChange={handleLanguageChange} name="Language" required>
         <option value=""> Language </option>
         {languages.map((language) => (
           <option value={language} key={language}>
@@ -162,8 +164,8 @@ const Filtermovies = ({ movies }) => {
           </option>
         ))}
       </select>
-
-      <button className={styles.resetButton} onClick={handleReset}>reset</button>
+      </div>
+      <button className={styles.resetButton} onClick={handleReset}>Reset</button>
     </div>
   );
 };
