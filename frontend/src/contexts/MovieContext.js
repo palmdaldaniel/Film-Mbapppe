@@ -56,6 +56,7 @@ const MovieContextProvider = (props) => {
         getShowingsByDate(dateToString(chosenDate));
     }, [chosenDate]);
 
+    // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
     useEffect(() => {
         getMovieBySearch(finalSearch)
     }, [filter, finalSearch])

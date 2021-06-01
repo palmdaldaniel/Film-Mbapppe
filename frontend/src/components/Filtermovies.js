@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { MovieContext } from "../contexts/MovieContext";
+import styles from "../css/Filter.module.css";
 
 const Filtermovies = ({ movies }) => {
   const { filter, setFilter, setInputValue, setFinalSearch } =
@@ -11,6 +12,7 @@ const Filtermovies = ({ movies }) => {
   const [directors, setDirectors] = useState([]);
   const [languages, setLanguages] = useState([]);
 
+  //values needed to set filters back to default in its "select" attribute
   const [genreValue, setGenreValue] = useState("");
   const [yearValue, setYearValue] = useState("");
   const [ratingValue, setRatingValue] = useState("");
@@ -44,16 +46,16 @@ const Filtermovies = ({ movies }) => {
     setLanguages([...new Set(movies.map((value) => value.Language))]);
   };
 
-const collectFiltered = (e) => {
-  let f = {
-    ...filter,
-    [e.target.name]: e.target.value,
-  };
-  setFilter(f);
-}
+  // collectFiltered is the main function that all handles use in order to create an object from the values of the selected fields
+  console.log(filter);
+  const collectFiltered = (e) => {
+    let f = {
+      ...filter,
+      [e.target.name]: e.target.value,
+    };
+    setFilter(f);
+  }
 
-  // create an object from the values of the selectfields with ...filter
-  // console.log(filter);
   const handleGenreChange = (e) => {
     setGenreValue(e.target.value);
     collectFiltered(e)
@@ -84,6 +86,7 @@ const collectFiltered = (e) => {
     collectFiltered(e)
   };
 
+  //When reset is clicked, this handle will put all variables back to its default state
   const handleReset = () => {
     setInputValue("");
     setFinalSearch("");
@@ -97,26 +100,19 @@ const collectFiltered = (e) => {
   };
 
   return (
-    <div className="FilterContainer">
-      <select
-        value={genreValue}
-        onChange={handleGenreChange}
-        name="Genre"
-        required
-      >
+    <div className={styles.filterContainer}>
+      {/* value={genreValue} is used together with reset to set buttons back to its default state */}
+      <select value={genreValue} onChange={handleGenreChange} name="Genre" required>
         <option value=""> Genre </option>
+        {/* mapping through genres to automate the dropdown options */}
         {genres.map((genre) => (
           <option value={genre} key={genre}>
             {genre}
           </option>
         ))}
       </select>
-      <select
-        value={yearValue}
-        onChange={handleYearChange}
-        name="Year"
-        required
-      >
+
+      <select value={yearValue} onChange={handleYearChange} name="Year" required>
         <option value=""> Year </option>
         {years.map((year) => (
           <option value={year} key={year}>
@@ -124,12 +120,8 @@ const collectFiltered = (e) => {
           </option>
         ))}
       </select>
-      <select
-        value={ratingValue}
-        onChange={handleRatingChange}
-        name="Rating"
-        required
-      >
+
+      <select value={ratingValue} onChange={handleRatingChange} name="Rating" required>
         <option value=""> Rating </option>
         {ratings.map((rating) => (
           <option value={rating} key={rating}>
@@ -137,12 +129,8 @@ const collectFiltered = (e) => {
           </option>
         ))}
       </select>
-      <select
-        value={runtimeValue}
-        onChange={handleRuntimeChange}
-        name="Runtime"
-        required
-      >
+      
+      <select value={runtimeValue} onChange={handleRuntimeChange} name="Runtime" required>
         <option value=""> Runtime </option>
         {runtimes.map((runtime) => (
           <option value={runtime} key={runtime}>
@@ -150,12 +138,8 @@ const collectFiltered = (e) => {
           </option>
         ))}
       </select>
-      <select
-        value={directorValue}
-        onChange={handleDirectorChange}
-        name="Director"
-        required
-      >
+
+      <select value={directorValue} onChange={handleDirectorChange} name="Director" required>
         <option value=""> Director </option>
         {directors.map((director) => (
           <option value={director} key={director}>
@@ -163,12 +147,8 @@ const collectFiltered = (e) => {
           </option>
         ))}
       </select>
-      <select
-        value={languageValue}
-        onChange={handleLanguageChange}
-        name="Language"
-        required
-      >
+
+      <select value={languageValue} onChange={handleLanguageChange} name="Language" required>
         <option value=""> Language </option>
         {languages.map((language) => (
           <option value={language} key={language}>
@@ -176,7 +156,8 @@ const collectFiltered = (e) => {
           </option>
         ))}
       </select>
-      <button onClick={handleReset}>reset</button>
+
+      <button className={styles.resetButton} onClick={handleReset}>reset</button>
     </div>
   );
 };
