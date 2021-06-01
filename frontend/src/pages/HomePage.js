@@ -26,7 +26,7 @@ const HomePage = () => {
             <div>
                 <CarouselComponent/>
                 <div className="container text-center">
-                    <h2 className='mt-3 mb-5' >Todays showings</h2>
+                    <h2 className='mt-3 my-5' >Todays showings</h2>
                     <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center my-5'>
                         <DatePickerComponent />
                         <PriceFilter />
