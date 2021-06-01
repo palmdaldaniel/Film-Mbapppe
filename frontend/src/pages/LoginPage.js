@@ -19,7 +19,7 @@ export default function LoginPage() {
   };
   return (
     <div className={styles.logincontainer}>
-      <h1 className={styles.header}>MOVIEPLUS</h1>
+      <h1 className={styles.header}>Filmvisarna</h1>
       <Container className={`${styles.containerStyle} py-0`} >
         {showLogin ? <LoginForm /> : <LoginForm />}
         
