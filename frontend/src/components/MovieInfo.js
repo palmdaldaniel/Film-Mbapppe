@@ -4,14 +4,14 @@ import styles from "../css/MovieInfo.module.css";
 const MovieInfo = (props) => {
 
   let film = null
-  
+
   if (props && props.showing ) {
     film = props.showing.film
   } else if (props ){
     film = props.movie
   }
 
-  console.log(film);
+  // console.log(film);
 
   let content = "";
   if (film) {
