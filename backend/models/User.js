@@ -12,7 +12,6 @@ const userSchema = new Schema({
 
 // Here we add some built-in middleware in mongoose. Specifically we want to injects some code before something is saved to the database. We must have a regular javascript function here because we want acces to "this" object which in our case is the mongo document that was just creatd by Model.create().
 userSchema.pre("save", async function (next) {
-  console.log("Inside mongoose middleware, this: ", this);
   this.password = Encrypt.encrypt(this.password);
   return next();
 });

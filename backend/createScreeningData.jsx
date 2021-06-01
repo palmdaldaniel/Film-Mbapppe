@@ -51,19 +51,15 @@ const ScreeningData = () => {
 
   const pickTime = () => {
     time = Math.floor(Math.random() * (maxTime - minTime) + minTime);
-    // console.log("time", time);
   };
 
   const randomMovies = () => {
     let randomNumber = Math.floor(Math.random() * movies.length);
-    // console.log(randomNumber);
     randomMovie = movies[randomNumber];
-    console.log("movies", randomMovie);
   };
 
   const randomShowings = (saloon) => {
     for (let i = 0; i < 3; i++) {
-      // console.log("loop", i);
       randomMovies();
       pickTime();
       randomPrice();
@@ -84,12 +80,10 @@ const ScreeningData = () => {
         date = "0" + date; 
       }
       yymmdd = `2021-06-${date}`;
-      // console.log(yymmdd);
       assignSaloon();
     }
   };
 
-  // console.log(screenings);
 
   let content = <p>Loading...</p>;
   if (screenings) {

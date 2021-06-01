@@ -20,6 +20,8 @@ function ShowingCard({ showings }) {
                             <span>{show.film.Genre[0]}</span>
                             <br />
                             <span>{show.time}</span>
+                            <br />
+                            <span>Price: {show.price} Kr</span>
                         </Card.Text>
                     </Card.Body>
                 </Card>
