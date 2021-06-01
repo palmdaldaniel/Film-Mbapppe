@@ -5,13 +5,14 @@ import "../css/AboutPage.module.css";
 const AboutPage = () => {
   return (
     <div>
-      <div className={styles.about2}>
-        
-      </div>
+      <div className={styles.about2}></div>
       <div className={styles.aboutContainer}>
         <div className={styles.about}>
-          <h1>Filmvissarna</h1>
-          <h3>About us</h3>
+          <div className={styles.header}>
+            <h1>Filmvisarna</h1>
+            <h3>About us</h3>
+          </div>
+          <br />
           <p>
             {" "}
             Filmvissarnase is the oldest and first website dedicated exclusively
@@ -22,17 +23,6 @@ const AboutPage = () => {
             Malmö theatre listings, news and reviews.
           </p>
           <br />
-
-          <p>
-            Founded by the original site Editor Darren Dalglish in 1995,
-            LondonTheatre.co.uk was born from the growing need for UK and
-            international fans of London theatre to read news, reviews and
-            features. Growing quickly through the 90s, along with its first
-            dedicated weekly theatre newsletter, the website built loyal
-            visitors from around the world who would use the site to plan trips
-            to the West End and beyond..
-          </p>
-
           <p>
             Founded by the original site Editor Darren Dalglish in 1995,
             LondonTheatre.co.uk was born from the growing need for UK and
@@ -45,7 +35,7 @@ const AboutPage = () => {
         </div>
 
         <div className={styles.about1}>
-          <div className="öppet">
+          <div className="scheduleContainer">
             <h4>Address</h4>
             <p>Gustav Torg 1</p>
             <p>Malmö, Sweden</p>
