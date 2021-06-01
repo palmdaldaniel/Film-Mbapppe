@@ -18,6 +18,7 @@ export default function Footer() {
         <Row>
           <Col className={styles.footerInfo}>
             <Link to="/" className={styles.footerLogo}><img src="./assets/whitepopcorn.svg" alt="popcorn logo" /></Link>
+            <span>Filmvisarna AB</span>
             <div className={styles.footerText}>
               <img 
               className={styles.icons} 
