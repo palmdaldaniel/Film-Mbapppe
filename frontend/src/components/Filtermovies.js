@@ -53,7 +53,7 @@ const Filtermovies = ({ movies }) => {
   };
 
   // collectFiltered is the main function that all handles use in order to create an object from the values of the selected fields
-  console.log(filter);
+  // console.log(filter);
   const collectFiltered = (e) => {
     let f = {
       ...filter,
