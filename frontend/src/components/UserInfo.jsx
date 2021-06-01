@@ -14,8 +14,10 @@ const UserInfo = () => {
       {isEditing ? (
         <div>
           <form action="submit"
-            onSubmit={e => editName(e)}>
-            <input className={styles.textInput} type="text" />
+            onSubmit={e => editName(e)}
+            className={styles.nameForm}>
+            <input className={styles.searchInput} type="text" 
+            placeholder="New name..."/>
             <button className={styles.inputBtn} >Change</button>
             {message ? (
               <p>{message}</p>

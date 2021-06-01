@@ -34,13 +34,15 @@
   cursor: pointer;
   display: block;
   margin: 0rem;
-  padding: 0rem;
+  padding: 0rem 1rem 0rem 0rem;
+  height: 3rem;
 }
 
 .editNameButton:hover {
   color: gray;
   border: none;
   outline: none;
+
 }
 
 .showings {
@@ -68,6 +70,25 @@
 
 .tempCard p {
   align-self: center;
+}
+
+.nameForm{
+  height: 3rem;
+  display: flex;
+}
+.searchInput {
+  display: block;
+  border: 0; 
+  outline: 0;
+  background: rgb(20, 20, 20);
+  border-bottom: 1px solid white;
+  font-size: 1.1rem;
+  color: white;
+  flex-basis: 80%;
+}
+
+.inputBtn{
+  background: rgba(192, 192, 192, 0.212);
 }
 
 @media (min-width: 576px) {

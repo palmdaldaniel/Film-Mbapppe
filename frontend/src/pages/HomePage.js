@@ -6,16 +6,16 @@ import PriceFilter from '../components/priceFilter'
 
 const HomePage = () => {
     const { showings, filteredShowings } = useContext(MovieContext);
-    
+
     let listData
 
-    if(filteredShowings && filteredShowings.length > 0) {
+    if (filteredShowings && filteredShowings.length > 0) {
         listData = filteredShowings
     } else {
         listData = showings
     }
-    
-     
+
+
     let content = ''
 
     if (listData) {
@@ -26,7 +26,7 @@ const HomePage = () => {
                     <DatePickerComponent />
                     <PriceFilter />
                 </div>
-                <ShowingCard showings={listData} />
+                {/* <ShowingCard showings={listData} /> */}
             </div>
     }
     else {
