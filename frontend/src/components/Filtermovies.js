@@ -44,60 +44,44 @@ const Filtermovies = ({ movies }) => {
     setLanguages([...new Set(movies.map((value) => value.Language))]);
   };
 
+const collectFiltered = (e) => {
+  let f = {
+    ...filter,
+    [e.target.name]: e.target.value,
+  };
+  setFilter(f);
+}
+
   // create an object from the values of the selectfields with ...filter
   // console.log(filter);
   const handleGenreChange = (e) => {
     setGenreValue(e.target.value);
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value,
-    };
-    setFilter(f);
+    collectFiltered(e)
   };
 
   const handleYearChange = (e) => {
     setYearValue(e.target.value);
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value,
-    };
-    setFilter(f);
+    collectFiltered(e)
   };
 
   const handleRatingChange = (e) => {
     setRatingValue(e.target.value);
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value,
-    };
-    setFilter(f);
+    collectFiltered(e)
   };
 
   const handleRuntimeChange = (e) => {
     setRuntimeValue(e.target.value);
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value,
-    };
-    setFilter(f);
+    collectFiltered(e)
   };
 
   const handleDirectorChange = (e) => {
     setDirectorValue(e.target.value);
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value,
-    };
-    setFilter(f);
+    collectFiltered(e)
   };
 
   const handleLanguageChange = (e) => {
     setLanguageValue(e.target.value);
-    let f = {
-      ...filter,
-      [e.target.name]: e.target.value,
-    };
-    setFilter(f);
+    collectFiltered(e)
   };
 
   const handleReset = () => {
