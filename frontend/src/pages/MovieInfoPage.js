@@ -26,9 +26,7 @@ const MovieInfoPage = (props) => {
 
   return (
     <div>
-        <h1>MovieInfo page</h1>
         <MovieInfo movie={fetchedMovie} />
-      
     </div>
   );
 };
