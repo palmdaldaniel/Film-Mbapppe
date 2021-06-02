@@ -4,6 +4,7 @@ import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
 import Filtermovies from "../components/Filtermovies";
+import NotFound from "../components/Notfound";
 
 const AllMovies = () => {
     const history = useHistory();
@@ -17,8 +18,9 @@ const AllMovies = () => {
     let content = "";
 
     if (everyMovies) {
-        content = (
-        <div>
+        content = ( 
+        (<div>
+            {filteredSearch.length === 0 ? <NotFound /> :
             <div className="d-flex flex-wrap justify-content-center">
             {/* here we take the results of filtered/searched movies and render them out to home page */}
             {filteredSearch && filteredSearch.map((movie, i) => (
@@ -27,9 +29,11 @@ const AllMovies = () => {
                 </div>
             ))}
             </div>
-        </div>
-        );
-    } else {
+            }
+        </div>)
+        
+
+        )} else {
         content = <div>Loading...</div>;
     }
 
