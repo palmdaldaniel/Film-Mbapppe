@@ -22,20 +22,24 @@ const AllMovies = () => {
     let content = "";
 
     if (everyMovies) {
-        content = (
-        <div>
+        
+        content = ( 
+
+  
+               
+        (<div>
             <div className="d-flex flex-wrap justify-content-center">
             {filteredSearch && filteredSearch.map((movie, i) => (
                 <div key={i} onClick={() => handleClick(movie)}>
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
-           <Notfound/>
-            </div>
-        </div>
         
-        );
-    } else {
+            </div>
+        </div>)
+        
+
+        )} else {
         content = <div>Loading...</div>;
     }
 
@@ -44,13 +48,15 @@ const AllMovies = () => {
         <div className="container mt-5">
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
-            {content}
-
-           
+            {content} 
+   
+            {AllMovies.length === 0 ? <Notfound/> : AllMovies.map((movie)=> 
+            (<MovieCard key={movie._id} movie={movie} />
+            ))}
+            
         </div>
         </>
     );
 };
-
 
 export default AllMovies;
