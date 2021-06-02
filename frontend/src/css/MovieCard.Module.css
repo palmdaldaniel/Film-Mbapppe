@@ -6,3 +6,44 @@
 .cardTitle{
     font-size: 24px;
 }
+
+  
+.hoverZoom {
+    margin-top: 20px;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+  }
+  .hoverZoom:hover {
+    transform: scale(1.2);
+  }
+
+  .second {
+      display: none;
+  }
+
+
+
+.hoverZoom:hover span.first {
+display: none;
+}
+
+.hoverZoom:hover span.second {
+    display: block;
+}
+
+.imgAfter {
+    opacity: 0.3;
+    height: 390px;
+}
+
+.textAfter {
+ background: transparent;
+position: absolute;
+font-size: 10px;
+bottom: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+  
