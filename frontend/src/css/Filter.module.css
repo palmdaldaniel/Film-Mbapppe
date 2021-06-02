@@ -56,3 +56,26 @@
     justify-content: flex-start;
   }
 }
+
+@media only screen and (min-width: 900px) {
+
+  .filterContainer {
+    max-width: 540px;
+  }
+ 
+  .filterContainer select, .resetButton {
+    width: 160px;
+  }
+
+  .columnOne,
+.columnTwo {
+  grid-template-columns: 1fr 1fr 1fr; 
+}
+
+  
+
+
+
+
+
+}
