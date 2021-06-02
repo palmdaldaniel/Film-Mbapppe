@@ -17,6 +17,7 @@ const UserPage = () => {
     if (activeUser) {
       whoami();
     }
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -27,23 +28,23 @@ const UserPage = () => {
 
           <div className={styles.showings}>
             <div className={styles.upcoming}>
-              <h2>Upcoming movies</h2>
+              <h2 className={styles.h2}>Upcoming movies</h2>
               {/* Change showings for upcoming bookings on user when bookings are ready*/}
               {showings ? (<ShowingCard showings={showings} />) : (<h3>No upcoming showings!</h3>)}
             </div>
             <div className={styles.previous}>
-              <h2>Previous movies</h2>
+              <h2 className={styles.h2}>Previous movies</h2>
               {/* Change showings for previous bookings on user when bookings are ready*/}
               {showings ? (<ShowingCard showings={showings} />) : (<h3>No previous showings!</h3>)}
             </div>
           </div>
         </div>
       ) : (
-        <div className="content">
+        <div className={styles.container}>
           <h3>You must be logged in to use this page!</h3>
 
-          <Link to="/login">Login</Link>
-          <Link to="/register">Registrer user</Link>
+          <Link className={styles.links} to="/login">Login</Link>
+          <Link className={styles.links} to="/register">Register user</Link>
         </div>
       )}
     </div>

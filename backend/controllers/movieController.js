@@ -12,7 +12,7 @@ const filterAllMovies = async (req, res) => {
 
   //url for testing http://localhost:3001/api/v1/movies?actor=morgan&title=spiral
   let querySearch = new RegExp(
-    `^${req.query.search ? req.query.search : ""}\\w*`,
+    `${req.query.search ? req.query.search : ""}\\w*`,
     "gi"
   );
 
@@ -32,7 +32,7 @@ const filterAllMovies = async (req, res) => {
     "gi"
   );
   let queryRated = new RegExp(
-    `${req.body.Rated ? req.body.Rated : ""}\\w*`,
+    `${req.body.Rating ? req.body.Rating : ""}\\w*`,
     "gi"
   );
   let queryDirector = new RegExp(

@@ -1,5 +1,4 @@
 .container {
-  background: rgb(235, 235, 235);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +12,6 @@
 }
 
 .userInfo, .showings {
-  background: lightgray;
   width: 90%;
   margin: 1rem auto;
 }
@@ -36,11 +34,15 @@
   cursor: pointer;
   display: block;
   margin: 0rem;
-  padding: 0rem;
+  padding: 0rem 1rem 0rem 0rem;
+  height: 3rem;
 }
 
 .editNameButton:hover {
   color: gray;
+  border: none;
+  outline: none;
+
 }
 
 .showings {
@@ -68,6 +70,38 @@
 
 .tempCard p {
   align-self: center;
+}
+
+.nameForm{
+  display: flex;
+}
+.searchInput {
+  display: block;
+  border: 0; 
+  outline: 0;
+  border-bottom: 1px solid white;
+  font-size: 1.1rem;
+  color: white;
+  flex-basis: 90%;
+}
+
+.inputBtn{
+  display: block;
+  border: solid 1px white;
+  margin-left: 0.5rem;
+  padding: 5px 20px;
+  flex-basis: 10%;
+}
+
+.links{
+  font-size: 1.5rem;
+  color: #4387FC;
+  margin: 0.1rem 0rem;
+  padding: 0.2rem 2rem;
+}
+
+.h2{
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 576px) {

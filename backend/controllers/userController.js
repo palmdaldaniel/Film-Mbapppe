@@ -56,31 +56,12 @@ const createUser = async (req, res) => {
 const editUser = async (req, res) => {
   let user;
 
-  User.findById(req.params.userId).exec(async (err, result) => {
-
-    // checks for errors
-    if (err) {
-      res.status(400).json({ error: "Something went wrong" });
-      return;
-    }
-
-    // in case no matching are found in the DB.
-    if (!result) {
-      res
-        .status(404)
-        .json({ error: `User with id ${req.params.userId} does not exist` });
-      return;
-    }
-
-    user = result;
-    Object.assign(user, req.body);
-
-    // save it back in the DB .
-    await user.save();
-  });
-
-  res.send("Ok");
+  user = await User.findByIdAndUpdate(req.params.userId, { name: req.body.name }, {new: true}).exec();
+  user.password = undefined;
+  req.session.user = user;
+  res.send(user);
 }
+
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
