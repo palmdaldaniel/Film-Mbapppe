@@ -7,11 +7,7 @@ import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
     const history = useHistory();
-    const { getAllMovies, filteredSearch, everyMovies } = useContext(MovieContext);
-
-    useEffect(() => {
-        getAllMovies();
-    }, []); 
+    const { filteredSearch, everyMovies } = useContext(MovieContext);
 
     //This redirects to the movie info about the movie that is clicked
     const handleClick = (movie) => {

@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Search.module.css";
 

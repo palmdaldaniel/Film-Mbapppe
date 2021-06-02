@@ -3,6 +3,7 @@ import { useContext } from "react";
 import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
+import CarouselComponent from '../components/Carousel'
 
 const HomePage = () => {
     const { showings, filteredShowings } = useContext(MovieContext);
@@ -14,19 +15,27 @@ const HomePage = () => {
     } else {
         listData = showings
     }
-
+    console.log(`listData`, listData)
 
     let content = ''
 
     if (listData) {
         content =
             <div>
-                <h2 className='mt-3 mb-5' >Todays showings</h2>
-                <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center mb-5'>
-                    <DatePickerComponent />
-                    <PriceFilter />
+                <CarouselComponent />
+                <div className="container text-center">
+                    <h2 className='mt-3 my-5' >Todays showings</h2>
+                    <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center my-5'>
+                        <DatePickerComponent />
+                        <PriceFilter />
+                    </div>
+
+                    {listData.length === 0 ?
+                        (<div>There are no showings on this date</div>)
+                        :
+                        <ShowingCard showings={listData} />
+                    }
                 </div>
-                <ShowingCard showings={listData} />
             </div>
     }
     else {
@@ -34,7 +43,7 @@ const HomePage = () => {
     }
 
     return (
-        <div className="container text-center">
+        <div >
 
             {listData ? (content)
                 :

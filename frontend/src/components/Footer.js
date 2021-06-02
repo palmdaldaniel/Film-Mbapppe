@@ -8,26 +8,22 @@ export default function Footer() {
 
   const history = useHistory();
 
-  function handleClick() {
-    history.push("/");
-  }
-
   return (
     <footer>
       <Container fluid>
         <Row>
           <Col className={styles.footerInfo}>
-            <Link to="/" className={styles.footerLogo}><img className={styles.Logo} src="./assets/whitepopcorn.svg" alt="popcorn logo" /></Link>
+            <Link to="/" className={styles.footerLogo}><img className={styles.Logo} src="../assets/whitepopcorn.svg" alt="popcorn logo" /></Link>
             <span className={styles.companyName}>Filmvisarna AB</span>
             <div className={styles.footerText}>
               <img 
               className={styles.icons} 
-              src="./assets/fb-icon.png" 
+              src="../assets/fb-icon.png" 
               alt="Socialicon facebook" 
               />
               <img 
               className={styles.instaIcon} 
-              src="./assets/insta.png" 
+              src="../assets/insta.png" 
               alt="Socialicon Instagram" 
               />
               <p className={styles.about} onClick={() => { history.push('/about') }}>About us</p>
