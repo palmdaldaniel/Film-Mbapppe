@@ -1,5 +1,5 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
@@ -37,8 +37,10 @@ const AllMovies = () => {
         <>
         <div className="container mt-5">
             {/* everyMovies is a list of all movies that is being used here to make filter options list all genres, years, directors */}
+          
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
+   
             {content}
         </div>
         </>
