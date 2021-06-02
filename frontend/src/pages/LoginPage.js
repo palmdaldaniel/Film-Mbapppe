@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import LoginForm from "../components/LoginForm";
 import { Container } from "react-bootstrap"
 import { UserContext } from "../contexts/UserContext"
@@ -10,6 +10,13 @@ export default function LoginPage() {
   const toggle = () => {
     setShowLogin(!showLogin)
   }
+
+  useEffect(() => {
+    return () => {
+    setShowLogin(true);
+    };
+    }, []);
+  
 
   return (
     <div className={styles.logincontainer}>
