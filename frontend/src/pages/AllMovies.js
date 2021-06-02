@@ -28,7 +28,9 @@ const AllMovies = () => {
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
-             <Notfound/>
+                      {AllMovies.length === 0 ? <Notfound/> : AllMovies.map((movie)=> 
+            (<MovieCard key={movie._id} movie={movie} />
+            ))}
             </div>
         </div>
         );
@@ -42,6 +44,7 @@ const AllMovies = () => {
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
             {content}
+           
         </div>
         </>
     );
