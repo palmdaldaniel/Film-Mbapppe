@@ -88,7 +88,6 @@
 .inputBtn{
   display: block;
   border: solid 1px white;
-  /* background: rgba(192, 192, 192, 0.212); */
   margin-left: 0.5rem;
   padding: 5px 20px;
   flex-basis: 10%;

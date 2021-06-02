@@ -1,5 +1,5 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
