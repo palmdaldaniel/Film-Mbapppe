@@ -1,7 +1,9 @@
 
 .loginform {
-  width: 33%;
+  width: 50%;
   margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -13,15 +15,44 @@
   justify-content: center;
 }
 
-
 .header {
-  font-size: 10rem;
+  font-size: 6rem;
+  text-align: center !important;
+  align-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 3rem;
+  }
+  .loginform {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    font-size: 8rem;
+  }
+  .loginform {
+    width: 50%;
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .loginform {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .loginform {
+    width: 50%;
+  }
 }
 
 .inputField {
   border: 1px black;
 }
-
 
 .errorBox {
   display: none;
@@ -32,19 +63,20 @@
 }
 
 .errorBox.inactive {
-  display: none
+  display: none;
 }
 
 .singInButton {
-  background-color: #fd0000 ;
-  margin-top:2rem;
+  background-color: #fd0000;
+  margin-top: 2rem;
   width: 70%;
   border: none;
 }
 
 /* LoginPage.js style*/
-.containerStyle{
+.containerStyle {
   min-height: 80vh;
+  width: 100%;
 }
 
 .logincontainer {
@@ -53,13 +85,13 @@
   color: #ffffff;
   background-color: #000000;
 }
-.toggleText{
+.toggleText {
   margin-top: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: underline;
 }
 
-.toggleText:hover{
-  color:#FE7F50
+.toggleText:hover {
+  color: #fe7f50;
 }

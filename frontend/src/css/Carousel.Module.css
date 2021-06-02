@@ -1,0 +1,13 @@
+.bannerBox{
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    /* margin: 0 auto; */
+    background-position: top;
+    background: no-repeat bottom;
+    background-size: 100%; 
+    background-size: cover;
+}
+.imageBox {
+    height: 60vh;
+}

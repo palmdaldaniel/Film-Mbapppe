@@ -1,5 +1,5 @@
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
@@ -7,12 +7,7 @@ import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
     const history = useHistory();
-    const { getAllMovies, filteredSearch, everyMovies } = useContext(MovieContext);
-
-    useEffect(() => {
-        getAllMovies();
-        // eslint-disable-next-line
-    }, []); 
+    const { filteredSearch, everyMovies } = useContext(MovieContext);
 
     //This redirects to the movie info about the movie that is clicked
     const handleClick = (movie) => {
@@ -42,8 +37,10 @@ const AllMovies = () => {
         <>
         <div className="container mt-5">
             {/* everyMovies is a list of all movies that is being used here to make filter options list all genres, years, directors */}
+          
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
+   
             {content}
         </div>
         </>
