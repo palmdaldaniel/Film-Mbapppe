@@ -16,8 +16,8 @@
   border-top-right-radius: .25rem;
 }
 
-.posterAndText img {
-  width: 100%;
+.posterContainer img {
+  height: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -28,6 +28,10 @@
   .posterAndText {
     display: flex;
     flex-direction: row;
+  }
+
+  .posterContainer {
+    height: 400px;
   }
 
   .descContainer {
