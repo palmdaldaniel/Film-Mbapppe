@@ -69,7 +69,7 @@
 .singInButton {
   background-color: #dc3545;
   margin-top: 2rem;
-  width: 70%;
+  width: 100%;
   border: none;
 }
 
@@ -95,3 +95,8 @@
 .toggleText:hover {
   color: #fd0000;
 }
+
+.buttonContainer {
+  padding: 0px !important;
+}
+
