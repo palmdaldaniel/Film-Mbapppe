@@ -31,13 +31,13 @@ const Navbar = () => {
             <Link className={styles.link} to="/about">
               About
             </Link>
-            <Link className={styles.link} to="/profile">
-              Profile
-            </Link>
 
             {
               activeUser ? (
                 <React.Fragment>
+                  <Link className={styles.link} to="/profile">
+                    Profile
+                  </Link>
                   <Link
                     onClick={logout}
                     className={`${styles.link} float-end`}
