@@ -20,8 +20,8 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSearchSubmit}>
+ 
+      <form onSubmit={handleSearchSubmit} className={styles.form}>
         <input
           className={styles.searchInput}
           type="text"
@@ -30,7 +30,7 @@ const Search = () => {
           onChange={(e) => handleSearch(e)}
         />
       </form>
-    </div>
+ 
   );
 };
 
