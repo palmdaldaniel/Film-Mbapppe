@@ -12,14 +12,13 @@ function MovieCard(props) {
     };
 
     return (
-        <div className={styles.hoverZoom} >
+        <div className={styles.hoverZoom}>
             <Card className={`mx-1 mx-md-3`} style={{ width: '270px', background: 'none' }} onClick={handleClick}>
 
                 <div className={styles.item}>
                     <span className={styles.first}>
                         <Card.Img variant="top" src={movie.Poster} style={{ height: '390px' }} />
                     </span>
-
                     <span className={styles.second}>
                         <Card.Img className={styles.imgAfter} variant="top" src={movie.Poster} />
                         <p className={styles.textAfter}>
@@ -28,9 +27,7 @@ function MovieCard(props) {
                             {movie.Actors[0]} | {movie.Genre}
                         </p>
                     </span>
-
                 </div >
-
                 <Card.Body>
                     <Card.Text className={`${styles.cardTitle} text-center mb-1`}>{movie.Title}</Card.Text>
                     <Card.Text className={`${styles.cardText} text-center`}>

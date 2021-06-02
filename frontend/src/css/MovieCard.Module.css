@@ -47,5 +47,18 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
+.hoverZoomShow {
+    transition: all 0.2s ease 0.2s;
+}
 
-  
+.hoverZoomShow:hover {
+    transform: scale(1.1);
+  }
+
+  .hoverZoomShow:hover span.first {
+    display: none;
+    }
+    
+    .hoverZoomShow:hover span.second {
+        display: block;
+    }
