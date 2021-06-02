@@ -97,7 +97,7 @@
 
 .registerButton,
 .Button {
-  background-color: #fd0000;
+  background-color: #dc3545;
   margin-top: 2rem;
   width: 100%;
   padding-left: 1rem !important;
@@ -128,9 +128,7 @@
   text-decoration: underline;
 }
 
-.toggleText:hover {
-  color: #fe7f50;
-}
+
 
 .rules {
   
