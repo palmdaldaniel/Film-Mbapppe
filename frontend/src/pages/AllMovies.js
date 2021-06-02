@@ -5,6 +5,8 @@ import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
 import Filtermovies from "../components/Filtermovies";
 import Notfound from "../components/Notfound";
+
+
 const AllMovies = () => {
     const history = useHistory();
     const { getAllMovies, filteredSearch, everyMovies } = useContext(MovieContext);
@@ -28,11 +30,10 @@ const AllMovies = () => {
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
-                      {AllMovies.length === 0 ? <Notfound/> : AllMovies.map((movie)=> 
-            (<MovieCard key={movie._id} movie={movie} />
-            ))}
+           <Notfound/>
             </div>
         </div>
+        
         );
     } else {
         content = <div>Loading...</div>;
@@ -44,10 +45,12 @@ const AllMovies = () => {
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
             {content}
+
            
         </div>
         </>
     );
 };
+
 
 export default AllMovies;
