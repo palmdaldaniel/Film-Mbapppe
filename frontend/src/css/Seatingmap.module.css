@@ -4,6 +4,11 @@ red #E4263E
 blue #4387FC
 */
 
+:root{
+  --borderW: 3px;
+  --borderPM: 4px;
+}
+
 .seatingWrapper {
   display: flex;
   flex-direction: column;
@@ -37,41 +42,41 @@ blue #4387FC
 }
 
 .seat, .open {
-  border-bottom: 5px solid #77818d;
-  border-left: 5px solid #77818d;
-  border-right: 5px solid #77818d;
-  padding: 7px;
-  margin: 7px;
+  border-bottom: var(--borderW) solid #77818d;
+  border-left: var(--borderW) solid #77818d;
+  border-right: var(--borderW) solid #77818d;
+  padding: var(--borderPM);
+  margin: var(--borderPM);
 }
 
 .bookedSeat, .booked {
-  border-bottom: 5px solid #e4263e;
-  border-left: 5px solid #e4263e;
-  border-right: 5px solid #e4263e;
-  padding: 7px;
-  margin: 7px;
+  border-bottom: var(--borderW) solid #e4263e;
+  border-left: var(--borderW) solid #e4263e;
+  border-right: var(--borderW) solid #e4263e;
+  padding: var(--borderPM);
+  margin: var(--borderPM);
 }
 
 .reservedSeat, .reserved {
-  border-bottom: 5px solid #4387fc;
-  border-left: 5px solid #4387fc;
-  border-right: 5px solid #4387fc;
-  padding: 7px;
-  margin: 7px;
+  border-bottom: var(--borderW) solid #4387fc;
+  border-left: var(--borderW) solid #4387fc;
+  border-right: var(--borderW) solid #4387fc;
+  padding: var(--borderPM);
+  margin: var(--borderPM);
 }
 
 .openSeat:hover {
   cursor: pointer;
-  border-bottom: 5px solid white;
-  border-left: 5px solid white;
-  border-right: 5px solid white;
+  border-bottom: var(--borderW) solid white;
+  border-left: var(--borderW) solid white;
+  border-right: var(--borderW) solid white;
 }
 
 .reservedSeat:hover {
   cursor: pointer;
-  border-bottom: 5px solid #4387fc;
-  border-left: 5px solid #4387fc;
-  border-right: 5px solid #4387fc;
+  border-bottom: var(--borderW) solid #4387fc;
+  border-left: var(--borderW) solid #4387fc;
+  border-right: var(--borderW) solid #4387fc;
 }
 
 .rowNumber {
@@ -97,24 +102,24 @@ blue #4387FC
 }
 
 .open {
-  border-left: 5px solid #77818d;
-  border-bottom: 5px solid #77818d;
-  border-right: 5px solid #77818d;
-  padding: 7px;
+  border-left: var(--borderW) solid #77818d;
+  border-bottom: var(--borderW) solid #77818d;
+  border-right: var(--borderW) solid #77818d;
+  padding: var(--borderPM);
 }
 
 .reserved {
-  border-bottom: 5px solid #4387fc;
-  border-left: 5px solid #4387fc;
-  border-right: 5px solid #4387fc;
-  padding: 7px;
+  border-bottom: var(--borderW) solid #4387fc;
+  border-left: var(--borderW) solid #4387fc;
+  border-right: var(--borderW) solid #4387fc;
+  padding: var(--borderPM);
 }
 
 .booked {
-  border-bottom: 5px solid #e4263e;
-  border-left: 5px solid #e4263e;
-  border-right: 5px solid #e4263e;
-  padding: 7px;
+  border-bottom: var(--borderW) solid #e4263e;
+  border-left: var(--borderW) solid #e4263e;
+  border-right: var(--borderW) solid #e4263e;
+  padding: var(--borderPM);
 }
 
 .helper p {
@@ -122,7 +127,18 @@ blue #4387FC
   margin: 0 5px 0 5px;
 }
 
+@media (min-width: 576px) {
+  :root{
+    --borderW: 4px;
+    --borderPM: 8px;
+  }
+}
+
 @media only screen and (min-width: 600px) {
+  :root{
+    --borderW: 5px;
+    --borderPM: 10px;
+  }
   .seatingWrapper {
     max-width: 740px;
     padding-top: 75px;
