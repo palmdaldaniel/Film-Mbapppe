@@ -1,46 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-//import { UserContext } from "../contexts/UserContext";
-import { Alert, Container, Form, Button } from "react-bootstrap";
+import { UserContext } from "../contexts/UserContext";
+import { Container, Form, Button } from "react-bootstrap";
 import styles from "../css/SignUp.module.css";
 
 const Register = () => {
   const history = useHistory();
-  //const { setActiveUser } = useContext(UserContext);
+  const { createUser, setActiveUser } = useContext(UserContext);
  
-  const [
-    
-  ] = useState(null);
+
   const [signUpDone, setSignUpDone] = useState(false);
-  const [ setActiveUser] = useState(null);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-
-
-  //the register part from backend
-  const register = async (newUser) => {
-    let result = await fetch("/api/v1/users/register", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(newUser),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.hasOwnProperty("error")) {
-          setSignUpFail(true);
-        } else {
-          setActiveUser(result.user);
-          setSignUpFail(false);
-          setSignUpDone(true);
-          setTimeout(() => {
-            history.push("/");
-          }, 6000);
-        }
-      });
-  };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -53,16 +27,20 @@ const Register = () => {
     setPassword(e.target.value);
   };
 
-  const registerSubmitHandler = (e) => {
+  const registerSubmitHandler = async (e) => {
     e.preventDefault();
-    e.preventDefault();
-    let newUser = {};
-    document.querySelectorAll("input").forEach(field => newUser[field.name] = field.value);
-    
-    register(newUser);
+    let newUser = {
+      email,
+      password,
+      name
+    };
+    let result = await createUser(newUser);
+    if(!result.error) {
+      setActiveUser(result)
+
+      history.push('/')
+    }
 }
-
-
 
   return (
     <div className={styles.registercontainer}>
@@ -76,8 +54,9 @@ const Register = () => {
           <div>
             <p className={styles.registerformtext}>Register your account</p>
             <div className={styles.registerform}>
-              <Form>
-                <form action="submit" onSubmit={registerSubmitHandler}>
+            
+              <Form onSubmit={(e) => registerSubmitHandler(e)}>
+                
                   <Form.Group controlId="formBasicUsername">
                     <Form.Control
                       className={styles.inputField}
@@ -86,7 +65,7 @@ const Register = () => {
                       type="name"
                       placeholder="Username"
                       required
-                      onChange={({handleNameChange})}
+                      onChange={handleNameChange}
                     />
                   </Form.Group>
 
@@ -98,7 +77,7 @@ const Register = () => {
                       type="email"
                       placeholder="E-mail"
                       required
-                      onChange={({handleEmailChange}) }
+                      onChange={handleEmailChange}
                     />
                   </Form.Group>
 
@@ -110,12 +89,20 @@ const Register = () => {
                       type="password"
                       placeholder="Password"
                       required
-                      onChange={(handlePasswordChange)}
+                      onChange={handlePasswordChange}
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
                       required
                     />
-                      <p> 5-7 letters. At least one lower case, one upper case letter, one number, one special character.</p>
+                    <ul>
+                        <li>5-7 letters</li>
+                        <li>1 lowercase letter</li>
+                        <li>1 uppercase letter</li>
+                        <li>1 number</li>
+                        <li>1 special character</li>
+                    </ul>
+                   
                     {signUpFail && (
+                      
                       <p className="error">This email is already at use.</p>
                     )}
                   </Form.Group>
@@ -124,12 +111,11 @@ const Register = () => {
                     className={styles.registerButton}
                     variant="danger"
                     type="submit"
-                    onSubmit={registerSubmitHandler}
+                    
                   >
                     Register
                   </Button>
-                  </div>
-                </form>
+                
               </Form>
               {}{" "}
             </div>

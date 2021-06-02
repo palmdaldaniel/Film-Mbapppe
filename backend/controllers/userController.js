@@ -1,6 +1,8 @@
 const User = require("../models/User");
 const Encrypt = require("../Encrypt");
 
+
+
 const getAllUsers = async (req, res) => {
   let users = await User.find().exec();
   res.json(users);
@@ -29,9 +31,9 @@ const getUserById = async (req, res) => {
 
 //create user
 
-{/*
-  
-  const createUser = async (req, res) => {
+
+
+const createUser = async (req, res) => {
   // destructure req.body object
   const { email } = req.body;
 
@@ -45,23 +47,9 @@ const getUserById = async (req, res) => {
 
   let user = await User.create(req.body);
   user.password = undefined;
+  req.session.user = user;
   res.json(user);
 };
-*/}
-
-const register = async (req, res) => {
-  //if user exists
-  let userExists = await User.exists({ email: req.body.email });
-  if (userExists) return res.status(400).json({ error: "User with that email already exists." });
-
-  //Encrypt passw
-  req.body.password = encrypt(req.body.password);
-
-  //Create user
-  let newUser = await User.create(req.body);
-  newUser.password = undefined;
-  return res.status(200).json({ message: "Created new user!", user: newUser });
-}
 
 
 // Edit User
@@ -76,7 +64,7 @@ const editUser = async (req, res) => {
       return;
     }
 
-  // in case no matching are found in the DB.
+    // in case no matching are found in the DB.
     if (!result) {
       res
         .status(404)
@@ -85,9 +73,7 @@ const editUser = async (req, res) => {
     }
 
     user = result;
-    console.log("User: ", user);
     Object.assign(user, req.body);
-    console.log("Updated user: ", user);
 
     // save it back in the DB .
     await user.save();
@@ -125,10 +111,6 @@ const loginUser = async (req, res) => {
 
 // log out
 const logout = (req, res) => {
-  console.log(
-    "Logged out:",
-    req.session.user.name,
-  );
   delete req.session.user;
   res.json({ success: "Logged out successfully" });
 };
@@ -139,16 +121,13 @@ const whoami = async (req, res) => {
 }
 
 
-
 module.exports = {
   logout,
   editUser,
-  //createUser,
+  createUser,
   loginUser,
   whoami,
   getAllUsers,
-  getUserById,
-  register,
-  newUser
-  
+  getUserById
 }
+

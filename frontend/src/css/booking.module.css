@@ -1,0 +1,72 @@
+.bookingcomponent {
+  margin-top: 100px;
+  margin-left: 25px;
+}
+
+.ticketContainer {
+  margin-top: 35px;
+  background-color: #4387FC ;
+  display: flex;
+  width: 20%;
+  height: 4rem;
+  border-radius: 5px;
+  font-size:1rem;
+  padding: 0 10px;
+}
+
+.bookingInfo {
+  width: 85%;
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.ticketContainer select {
+  background-color: #4387FC ;
+  border: none;
+  border-radius: 5px;
+}
+
+.ticketContainer select:hover {
+  background-color: #0501029c ;
+  cursor: pointer;
+}
+.ticketContainer p,
+.buyTickets p {
+  background-color: inherit;
+}
+
+
+
+.buyTickets {
+padding: 10px;
+border-radius: 10px;
+background-color: #77818D;
+margin-top: 3rem;
+display: grid;
+width: 20%;
+height: auto;
+}
+
+.ticketsInfo {
+  background-color: inherit;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buyButton {
+  text-align: center;
+  padding: 10px;
+  background-color: #5b5f63;
+  justify-content: center;
+  border: 2px solid #5b5f63;
+  border-radius: 5px;
+}
+
+.buyButton:hover {
+  background-color: #444647;
+}
+

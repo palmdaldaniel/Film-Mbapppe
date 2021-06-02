@@ -5,7 +5,7 @@ import { UserContext } from "../contexts/UserContext";
 import { useHistory } from "react-router-dom";
 
 export default function Login() {
-    const { loginUser ,showLogin,setShowLogin} = useContext(UserContext); //added 
+    const { loginUser } = useContext(UserContext); //added 
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
@@ -28,11 +28,9 @@ export default function Login() {
         };
         let result = await loginUser(loginInfo);
         if (!result.error) {
-            console.log("You're logged in");
             history.push("/");
           } else {
             setError(result.error);
-            console.log(result.error)
           }
         };
 
