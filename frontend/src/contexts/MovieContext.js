@@ -18,6 +18,11 @@ const MovieContextProvider = (props) => {
     const [inputValue, setInputValue] = useState("");
 
 
+    useEffect(() => {
+        getAllMovies();
+        // eslint-disable-next-line
+    }, []);
+
     useEffect(() => { // after we got showings, we take price from every showing and save it in the array "allPrices"
         let allPrices = [] // => [200, 150, 100, 100, 200, 200]
         if (showings) {
@@ -27,10 +32,12 @@ const MovieContextProvider = (props) => {
             let uniquePriceOpt = [... new Set(allPrices)].sort((a, b) => a - b) //keep only unique values and sort them in falling ordning => [100, 150, 200]
             setPriceOptions(uniquePriceOpt) //after we have looped through all showings, we put unique prices to the state
         }
+        // eslint-disable-next-line
     }, [showings]);
 
     useEffect(() => {//if some price was chosen, call function for filtrering 
         filterShowingsByPrice(chosenPrice)
+        // eslint-disable-next-line
     }, [chosenPrice]);
 
     const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
@@ -39,7 +46,6 @@ const MovieContextProvider = (props) => {
             setFilteredShowings(filtered)//put result with filtered showings to the state
         }
     }
-
 
     //for converting date to string
     const dateToString = (date) => {
