@@ -1,8 +1,10 @@
 import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-import { Container, Form, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Container, Form, Button, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
+
 import styles from "../css/SignUp.module.css";
+import ModalWindow from './ModalWindow'
 
 const Register = () => {
   const history = useHistory();
@@ -49,9 +51,17 @@ const Register = () => {
     let result = await createUser(newUser);
     if(!result.error) {
       setActiveUser(result)
-
       history.push('/')
     }
+    else if (result.error){
+      setSignUpFail(true)
+    }
+}
+
+let modalValues = {
+  signUpFail: signUpFail,
+  setSignUpFail: setSignUpFail,
+  modalText: 'This email is already registered'
 }
 
   return (
@@ -117,6 +127,7 @@ const Register = () => {
 
                       <p className="error">This email is already at use.</p>
                     )}
+
                   </Form.Group>
                 </OverlayTrigger>
                   <div className={styles.regarea}>
@@ -134,6 +145,7 @@ const Register = () => {
               
               {}{" "}
             </div>
+            <ModalWindow modalValues={modalValues}/>
           </div>
         )}
       </Container>
