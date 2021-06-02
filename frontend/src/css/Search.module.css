@@ -1,5 +1,5 @@
 .form {
-  width: 300px;
+  max-width: 300px;
   margin: 30px auto 30px;
 
 }
@@ -18,11 +18,11 @@
 
 @media only screen and (min-width: 700px) {
   .form {
-    width: 620px;
+    max-width: 620px;
   }
 }
 @media only screen and (min-width: 900px) {
   .form {
-    width: 520px;
+    max-width: 520px;
   }
 }
