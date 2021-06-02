@@ -52,7 +52,7 @@ export default function Login() {
                     <Form.Group controlId="formBasicPassword">
                         <Form.Control className={styles.inputField} onChange={handlePasswordChange} size="lg" type="password" placeholder="Password" required />
                     </Form.Group>
-                    <Container className="text-center">
+                    <Container className={`${styles.buttonContainer} text-center`}>
                         <Button className={styles.singInButton} variant="danger" type="submit">
                             SIGN IN
                     </Button>
