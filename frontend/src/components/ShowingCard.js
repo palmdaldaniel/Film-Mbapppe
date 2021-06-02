@@ -17,7 +17,7 @@ function ShowingCard({ showings }) {
                     <Card.Body>
                         <Card.Text className={`${styles.cardTitle} text-center mb-1`}>{show.film.Title}</Card.Text>
                         <Card.Text className={`${styles.cardText} text-center`}>
-                            <span>{show.film.Genre[0]}</span>
+                            <span>{show.film.Genre}</span>
                             <br />
                             <span>{show.time}</span>
                             <br />

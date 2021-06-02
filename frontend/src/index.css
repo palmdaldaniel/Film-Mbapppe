@@ -109,8 +109,37 @@ code {
   background-color: #fff !important;
 }
 
+input {
+  display: block;
+  border: 0; 
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid white;
+  font-size: 1.1rem;
+  color: white;
+}
+
 @media (min-width: 576px) { 
   #dropdown-basic-button {
     margin: 0  0 1px 70px;
   }
+}
+
+/* Styling for carousel */
+
+ .carousel-caption {
+  width: 30%;
+  margin: 0 auto;
+  background-color: transparent !important;
+}
+
+
+
+.getTicketBtn {
+  background-color: #E4263E !important;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 400;
 }
