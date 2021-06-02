@@ -13,8 +13,8 @@ function ShowingCard({ showings }) {
         <div className='d-flex flex-wrap justify-content-center'>
             {showings.map((show, i) => (
 
-                <div className={styles.hoverZoomShow}>
-                    <Card key={i} onClick={() => handleClick(show._id)} className={`mx-1 mx-md-3`} style={{ width: '270px', background: 'none' }}>
+                <div className={styles.hoverZoomShow} key={i}>
+                    <Card onClick={() => handleClick(show._id)} className={`mx-1 mx-md-3`} style={{ width: '270px', background: 'none' }}>
 
                         <div className={styles.item}>
                             <span className={styles.first}>
