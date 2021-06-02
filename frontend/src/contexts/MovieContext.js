@@ -29,7 +29,7 @@ const MovieContextProvider = (props) => {
             showings.forEach((oneShowing) => {
                 allPrices.push(oneShowing.price)
             })
-            let uniquePriceOpt = [... new Set(allPrices)].sort((a, b) => a - b) //keep only unique values and sort them in falling ordning => [100, 150, 200]
+            let uniquePriceOpt = [...new Set(allPrices)].sort((a, b) => a - b) //keep only unique values and sort them in falling ordning => [100, 150, 200]
             setPriceOptions(uniquePriceOpt) //after we have looped through all showings, we put unique prices to the state
         }
         // eslint-disable-next-line
@@ -65,13 +65,8 @@ const MovieContextProvider = (props) => {
     // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
     useEffect(() => {
         getMovieBySearch(finalSearch)
+        // eslint-disable-next-line
     }, [filter, finalSearch])
-
-    const countMovieDocuments = async () => {
-        let amountOfDocuments = await fetch(`/api/v1/movies/countDocuments`);
-        amountOfDocuments = await amountOfDocuments.json();
-        return amountOfDocuments
-    }
 
     const getAllMovies = async (page) => {
         let movies = await fetch(`/api/v1/movies?page=${page}`);
