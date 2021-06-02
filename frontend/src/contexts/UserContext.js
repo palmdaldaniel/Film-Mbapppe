@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
 
-  const [showLogin, setShowLogin] = useState(false); // set this from true to false, that's why it wasn't working.
+  const [showLogin, setShowLogin] = useState(true); 
   const [activeUser, setActiveUser] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
