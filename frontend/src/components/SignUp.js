@@ -115,14 +115,17 @@ const Register = () => {
                   >
                     Register
                   </Button>
+                  </div>
                 
               </Form>
+              
               {}{" "}
             </div>
           </div>
         )}
       </Container>
     </div>
+
   );
 };
 
