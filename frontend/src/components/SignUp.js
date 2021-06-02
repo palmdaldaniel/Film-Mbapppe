@@ -102,18 +102,14 @@ let modalValues = {
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
                       required
                     />
-                    <ul>
+                    <ul className='mt-4 mb-0'>
                         <li>5-7 letters</li>
                         <li>1 lowercase letter</li>
                         <li>1 uppercase letter</li>
                         <li>1 number</li>
                         <li>1 special character</li>
                     </ul>
-{/*                    
-                    {signUpFail && (
-                      
-                      <p className="error">This email is already at use.</p>
-                    )} */}
+
                   </Form.Group>
                   <div className={styles.regarea}>
                   <Button
