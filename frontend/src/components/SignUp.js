@@ -1,8 +1,10 @@
 import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
+
 import styles from "../css/SignUp.module.css";
+import ModalWindow from './ModalWindow'
 
 const Register = () => {
   const history = useHistory();
@@ -14,6 +16,18 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      <ul className={styles.rules}>
+        <li>5-7 letters       </li>
+        <li>1 lowercase letter</li>
+        <li>1 uppercase letter</li>
+        <li>1 number          </li>
+        <li>1 special character</li>
+      </ul>
+    </Tooltip>
+  );
 
 
   const handleNameChange = (e) => {
@@ -37,9 +51,17 @@ const Register = () => {
     let result = await createUser(newUser);
     if(!result.error) {
       setActiveUser(result)
-
       history.push('/')
     }
+    else if (result.error){
+      setSignUpFail(true)
+    }
+}
+
+let modalValues = {
+  signUpFail: signUpFail,
+  setSignUpFail: setSignUpFail,
+  modalText: 'This email is already registered'
 }
 
   return (
@@ -81,6 +103,12 @@ const Register = () => {
                     />
                   </Form.Group>
 
+                  <OverlayTrigger
+                  trigger="click"
+                  placement="top"
+                  overlay={renderTooltip}
+                  variant="secondary">
+
                   <Form.Group controlId="formBasicPassword">
                     <Form.Control
                       className={styles.inputField}
@@ -92,20 +120,16 @@ const Register = () => {
                       onChange={handlePasswordChange}
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
                       required
+
                     />
-                    <ul>
-                        <li>5-7 letters</li>
-                        <li>1 lowercase letter</li>
-                        <li>1 uppercase letter</li>
-                        <li>1 number</li>
-                        <li>1 special character</li>
-                    </ul>
-                   
+
                     {signUpFail && (
-                      
+
                       <p className="error">This email is already at use.</p>
                     )}
+
                   </Form.Group>
+                </OverlayTrigger>
                   <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}
@@ -121,6 +145,7 @@ const Register = () => {
               
               {}{" "}
             </div>
+            <ModalWindow modalValues={modalValues}/>
           </div>
         )}
       </Container>

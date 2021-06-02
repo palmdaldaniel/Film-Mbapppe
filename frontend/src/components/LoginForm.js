@@ -37,7 +37,8 @@ export default function Login() {
        
     return (
         <div className={styles.container}>
-            <p className={styles.loginformtext}>Welcome back. Log in to see your movie points and more!</p>
+             <h1 className={styles.header}>Filmvisarna</h1>
+            <p className={styles.loginformtext}>Welcome back</p>
             <div className={styles.loginform}>
                 <Form
                     onSubmit={(e) => {
@@ -51,7 +52,7 @@ export default function Login() {
                     <Form.Group controlId="formBasicPassword">
                         <Form.Control className={styles.inputField} onChange={handlePasswordChange} size="lg" type="password" placeholder="Password" required />
                     </Form.Group>
-                    <Container className="text-center">
+                    <Container className={`${styles.buttonContainer} text-center`}>
                         <Button className={styles.singInButton} variant="danger" type="submit">
                             SIGN IN
                     </Button>

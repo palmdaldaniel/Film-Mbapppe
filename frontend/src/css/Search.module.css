@@ -1,11 +1,28 @@
+.form {
+  max-width: 300px;
+  margin: 30px auto 30px;
+
+}
+
 .searchInput {
   display: block;
-  border: 0; 
+  border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 1px solid white;
   font-size: 1.1rem;
   color: white;
-  width: 70vw;
-  margin: 0 auto 30px;
+  width: 100%;
+  /* margin: 0 auto 30px; */
+}
+
+@media only screen and (min-width: 700px) {
+  .form {
+    max-width: 620px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .form {
+    max-width: 520px;
+  }
 }

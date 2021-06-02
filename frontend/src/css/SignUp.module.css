@@ -69,14 +69,14 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .registerform {
-    width: 33%;
+    width: 50%;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .registerform {
-    width: 33%;
+    width: 50%;
   }
 }
 .inputField {
@@ -97,7 +97,7 @@
 
 .registerButton,
 .Button {
-  background-color: #fd0000;
+  background-color: #dc3545;
   margin-top: 2rem;
   width: 100%;
   padding-left: 1rem !important;
@@ -109,7 +109,6 @@
 }
 
 .containerStyle {
-  min-height: 80vh;
   width: 100%;
 }
 
@@ -127,6 +126,10 @@
   text-decoration: underline;
 }
 
-.toggleText:hover {
-  color: #fe7f50;
+
+
+.rules {
+  
+  text-align: left;
+  display: inline-block;
 }
