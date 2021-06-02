@@ -37,7 +37,7 @@ export default function Login() {
        
     return (
         <div className={styles.container}>
-            <p className={styles.loginformtext}>Welcome back. Log in to see your movie points and more!</p>
+            <p className={styles.loginformtext}>Welcome back</p>
             <div className={styles.loginform}>
                 <Form
                     onSubmit={(e) => {
