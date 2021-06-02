@@ -133,8 +133,6 @@ input {
   background-color: transparent !important;
 }
 
-
-
 .getTicketBtn {
   background-color: #E4263E !important;
   padding: 10px 30px;
@@ -142,4 +140,17 @@ input {
   border-radius: 20px;
   font-size: 20px;
   font-weight: 400;
+}
+
+/* Styling for modal window */
+.modal {
+  max-width: 500px !important;
+  max-height: 180px !important;
+  top: 40% !important;
+  left: 40% !important;
+
+  border: 1px solid #E4263E;
+}
+.modal-footer{
+  border: none !important;
 }
