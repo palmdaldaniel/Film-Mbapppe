@@ -145,12 +145,18 @@ input {
 /* Styling for modal window */
 .modal {
   max-width: 500px !important;
-  max-height: 180px !important;
-  top: 40% !important;
-  left: 40% !important;
-
+  height: 25% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
   border: 1px solid #E4263E;
+}
+
+.modal-body {
+  text-align: center;
 }
 .modal-footer{
   border: none !important;
+  display: flex;
+  justify-content: center !important;
 }

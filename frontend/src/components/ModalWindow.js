@@ -10,7 +10,7 @@ function ModalWindow(props) {
         <Modal show={signUpFail} onHide={()=>setSignUpFail(false)} animation={false}>
           <Modal.Body>{modalText}</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={()=>setSignUpFail(false)}>
+            <Button variant="danger" onClick={()=>setSignUpFail(false)}>
               Close
             </Button>
           </Modal.Footer>
