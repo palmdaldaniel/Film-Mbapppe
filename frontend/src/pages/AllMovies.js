@@ -4,8 +4,7 @@ import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
 import Filtermovies from "../components/Filtermovies";
-import Notfound from "../components/Notfound";
-
+import NotFound from "../components/Notfound";
 
 const AllMovies = () => {
     const history = useHistory();
@@ -22,20 +21,17 @@ const AllMovies = () => {
     let content = "";
 
     if (everyMovies) {
-        
         content = ( 
-
-  
-               
         (<div>
+            {filteredSearch.length === 0 ? <NotFound /> :
             <div className="d-flex flex-wrap justify-content-center">
             {filteredSearch && filteredSearch.map((movie, i) => (
                 <div key={i} onClick={() => handleClick(movie)}>
                 <MovieCard key={i} movie={movie} />
                 </div>
             ))}
-        
             </div>
+            }
         </div>)
         
 
@@ -48,12 +44,7 @@ const AllMovies = () => {
         <div className="container mt-5">
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
-            {content} 
-   
-            {AllMovies.length === 0 ? <Notfound/> : AllMovies.map((movie)=> 
-            (<MovieCard key={movie._id} movie={movie} />
-            ))}
-            
+            {content}
         </div>
         </>
     );
