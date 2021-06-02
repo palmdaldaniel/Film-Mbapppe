@@ -15,7 +15,7 @@ const AboutPage = () => {
           <br />
           <p>
             {" "}
-            Filmvissarnase is the oldest and first website dedicated exclusively
+            Filmvisarna AB is the oldest and first website dedicated exclusively
             to Malmö Cinema, and has been the most trusted cinema guide on the
             web for the past 22 years. Founded i n early 1995 at the dawn of
             commercial internet use, the website continues to be one of the
@@ -30,7 +30,7 @@ const AboutPage = () => {
             features. Growing quickly through the 90s, along with its first
             dedicated weekly theatre newsletter, the website built loyal
             visitors from around the world who would use the site to plan trips
-            to the West End and beyond..
+            to the West End and beyond.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ const AboutPage = () => {
           <div className="contactContainer">
             <div className="contact">
               <h4>Contact</h4>
-              <p>filmvissarna@gmx.com</p>
+              <p>filmvisarna@gmx.com</p>
               <p>070 98 76 12</p>
             </div>
           </div>
