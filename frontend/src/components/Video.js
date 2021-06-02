@@ -7,7 +7,7 @@ const Video = ({ video }) => {
   let linkVideo = `${embedLink}`;
 
   return (
-    <div>
+  
       <iframe
         className={styles.iframe}
         src={linkVideo}
@@ -16,7 +16,7 @@ const Video = ({ video }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
-    </div>
+ 
   );
 };
 
