@@ -1,3 +1,7 @@
+footer {
+  margin-top: 20px;
+}
+
 .footerInfo {
   display: grid;
   justify-content: center;

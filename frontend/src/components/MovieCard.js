@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import styles from "../css/MovieCard.Module.css";
 import { useHistory } from "react-router-dom";
-    
+
 
 function MovieCard(props) {
     const history = useHistory();
@@ -12,23 +12,23 @@ function MovieCard(props) {
     };
 
     return (
-            <div className={styles.hoverZoom} >
-           <Card className={`mx-1 mx-md-3`} style={{width: '270px', background: 'none'}} onClick={handleClick}>
+        <div className={styles.hoverZoom} >
+            <Card className={`mx-1 mx-md-3`} style={{ width: '270px', background: 'none' }} onClick={handleClick}>
 
-               <div className={styles.item}>
-                   <span className={styles.first}>
-                       <Card.Img variant="top" src={movie.Poster} style={{ height: '390px' }} />
-                       </span>
+                <div className={styles.item}>
+                    <span className={styles.first}>
+                        <Card.Img variant="top" src={movie.Poster} style={{ height: '390px' }} />
+                    </span>
 
-                   <span className={styles.second}>
-                       <Card.Img className={styles.imgAfter} variant="top" src={movie.Poster} />
-                       <p className={styles.textAfter}>
-                       {movie.Runtime}
-                       <br />
-                           {movie.Actors[0]} | {movie.Genre}
-                           </p>
-                       </span>
-                
+                    <span className={styles.second}>
+                        <Card.Img className={styles.imgAfter} variant="top" src={movie.Poster} />
+                        <p className={styles.textAfter}>
+                            {movie.Runtime}
+                            <br />
+                            {movie.Actors[0]} | {movie.Genre}
+                        </p>
+                    </span>
+
                 </div >
 
                 <Card.Body>
