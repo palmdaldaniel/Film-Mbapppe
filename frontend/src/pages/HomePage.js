@@ -15,21 +15,26 @@ const HomePage = () => {
     } else {
         listData = showings
     }
-
+    console.log(`listData`, listData)
 
     let content = ''
 
     if (listData) {
         content =
             <div>
-                <CarouselComponent/>
+                <CarouselComponent />
                 <div className="container text-center">
                     <h2 className='mt-3 my-5' >Todays showings</h2>
                     <div className='d-flex flex-column flex-sm-row justify-content-center align-items-center my-5'>
                         <DatePickerComponent />
                         <PriceFilter />
                     </div>
-                    <ShowingCard showings={listData} />
+
+                    {listData.length === 0 ?
+                        (<div>There are no showings on this date</div>)
+                        :
+                        <ShowingCard showings={listData} />
+                    }
                 </div>
             </div>
     }

@@ -53,7 +53,7 @@ let modalValues = {
 
   return (
     <div className={styles.registercontainer}>
-      <h1 className={styles.header}>MOVIEPLUS</h1>
+      <h1 className={styles.header}>Filmvisarna</h1>
       <Container className={`${styles.containerStyle} py-0`}>
         {signUpDone ? (
           <div className="confirmationDiv">
@@ -115,7 +115,7 @@ let modalValues = {
                       <p className="error">This email is already at use.</p>
                     )} */}
                   </Form.Group>
-
+                  <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}
                     variant="danger"
@@ -124,8 +124,10 @@ let modalValues = {
                   >
                     Register
                   </Button>
+                  </div>
                 
               </Form>
+              
               {}{" "}
             </div>
             <ModalWindow modalValues={modalValues}/>
@@ -133,6 +135,7 @@ let modalValues = {
         )}
       </Container>
     </div>
+
   );
 };
 
