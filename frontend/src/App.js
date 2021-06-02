@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import SignUp from "./components/SignUp";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
+import AboutPage from "./pages/AboutPage";
 import UserPage from "./pages/UserPage";
 import UserContextProvider from './contexts/UserContext';
 import MovieContextProvider from './contexts/MovieContext';
@@ -30,6 +31,7 @@ function App() {
             </Route>
             <Route exact path="/showing/:showingId" component={Showing} />
             <Route exact path="/profile" />
+            <Route exact path="/about" component={AboutPage} />
             <Route exact path="/register" component={SignUp} />
             <Route exact path="/login" />
             <Route exact path="/allmovies">
