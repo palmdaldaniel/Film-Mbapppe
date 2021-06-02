@@ -37,10 +37,12 @@ display: none;
 }
 
 .textAfter {
+width: 100%;
+margin-left: 10px;
  background: transparent;
 position: absolute;
-font-size: 10px;
-bottom: 50%;
+font-size: 15px;
+bottom: 20%;
 left: 50%;
 transform: translate(-50%, -50%);
 }

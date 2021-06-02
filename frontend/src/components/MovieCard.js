@@ -23,8 +23,9 @@ function MovieCard(props) {
                    <span className={styles.second}>
                        <Card.Img className={styles.imgAfter} variant="top" src={movie.Poster} />
                        <p className={styles.textAfter}>
-                           
-                           Director: {movie.Director}
+                       {movie.Runtime}
+                       <br />
+                           {movie.Actors[0]} | {movie.Genre}
                            </p>
                        </span>
                 
@@ -33,9 +34,6 @@ function MovieCard(props) {
                 <Card.Body>
                     <Card.Text className={`${styles.cardTitle} text-center mb-1`}>{movie.Title}</Card.Text>
                     <Card.Text className={`${styles.cardText} text-center`}>
-                        <span>{movie.Genre[0]}</span>   
-                        <br/>
-                        <span>{movie.Actors[0]}</span> 
                     </Card.Text>
                 </Card.Body>
             </Card>
