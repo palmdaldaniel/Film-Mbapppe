@@ -17,7 +17,7 @@ const Register = () => {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      <ul>
+      <ul className={styles.rules}>
         <li>5-7 letters       </li>
         <li>1 lowercase letter</li>
         <li>1 uppercase letter</li>
@@ -95,7 +95,7 @@ const Register = () => {
 
                   <OverlayTrigger
                   trigger="click"
-                  placement="right"
+                  placement="top"
                   overlay={renderTooltip}
                   variant="secondary">
 

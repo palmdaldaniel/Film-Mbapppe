@@ -131,3 +131,9 @@
 .toggleText:hover {
   color: #fe7f50;
 }
+
+.rules {
+  
+  text-align: left;
+  display: inline-block;
+}
