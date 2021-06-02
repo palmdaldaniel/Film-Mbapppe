@@ -18,7 +18,7 @@ const ShowingPage = (props) => {
     <div>
       <MovieInfo showing={showing} />
       <Booking />
-      {showing && <SeatingMap saloon={showing.saloon} />     }
+      {showing && <SeatingMap saloon={showing.saloon} />}
 
     </div>
   );
