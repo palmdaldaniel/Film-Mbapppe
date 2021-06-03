@@ -5,6 +5,7 @@ import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import Filtermovies from "../components/Filtermovies";
 import NotFound from "../components/Notfound";
+import Arrow from "../components/ScrollToTop"
 
 const AllMovies = () => {
     const history = useHistory();
@@ -31,8 +32,6 @@ const AllMovies = () => {
             </div>
             }
         </div>)
-        
-
         )} else {
         content = <div>Loading...</div>;
     }
@@ -41,11 +40,10 @@ const AllMovies = () => {
         <>
         <div className="container mt-5">
             {/* everyMovies is a list of all movies that is being used here to make filter options list all genres, years, directors */}
-          
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
-   
             {content}
+            {filteredSearch.length > 3 ? <Arrow /> : ""}
         </div>
         </>
     );
