@@ -6,7 +6,7 @@ const Categories = () => {
   return (
     <div className={styles.arrowContainer}>
       <img className={styles.arrow} onClick={executeScroll} src="../assets/arrow.png" alt="scroll to top arrow" />
-      <p>To Top</p>
+      {/* <p>To Top</p> */}
     </div>
   );
 }

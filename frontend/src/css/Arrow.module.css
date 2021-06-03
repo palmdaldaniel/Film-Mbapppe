@@ -1,9 +1,24 @@
+.homeContainer {
+position: relative; 
+}
+
 .arrowContainer {
-  position: -webkit-sticky; 
-  position: sticky;
-  right: 0;
+  position: absolute;
+  bottom: -60px;
+  right: 185px;
+  z-index: 5;
+}
+
+/* arrow animation  */
+@keyframes bounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
 }
 
 .arrow {
   width: 40px;
+  animation: bounce 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
+

@@ -4,7 +4,8 @@ import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
 import CarouselComponent from '../components/Carousel'
-import Arrow from "../components/ScrollToTop"
+import Arrow from "../components/ScrollToTop";
+import a from "../css/Arrow.module.css"
 
 const HomePage = () => {
     const { showings, filteredShowings } = useContext(MovieContext);
@@ -43,13 +44,13 @@ const HomePage = () => {
     }
 
     return (
-        <div>
+        <div className={a.homeContainer}>
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}
-                <Arrow />
+            <Arrow />
         </div>
-        
+
     );
 };
 
