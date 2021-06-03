@@ -17,7 +17,7 @@ const MovieInfoPage = (props) => {
   }, [movieId, getMovieById]);
 
   return (
-    <div>
+    <div className='container'>
       <MovieInfo movie={fetchedMovie} />
     </div>
   );

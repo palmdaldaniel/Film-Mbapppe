@@ -27,6 +27,7 @@
 }
 .descContainer p {
   font-weight: 400;
+  font-size: 17px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -46,7 +47,6 @@
 
   .descContainer {
     padding-left: 30px;
-    font-size: 19px;
   }
   
 }
