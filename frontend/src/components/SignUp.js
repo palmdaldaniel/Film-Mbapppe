@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-import { Container, Form, Button, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
+import { Container, Form, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import styles from "../css/SignUp.module.css";
 import ModalWindow from './ModalWindow'

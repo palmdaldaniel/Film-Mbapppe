@@ -15,8 +15,7 @@ const HomePage = () => {
     } else {
         listData = showings
     }
-    console.log(`listData`, listData)
-
+    
     let content = ''
 
     if (listData) {
