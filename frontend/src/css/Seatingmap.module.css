@@ -102,6 +102,11 @@ blue #4387FC
   margin: 0 5px 0 5px;
 }
 
+.legend .r {
+  cursor: default;
+ 
+}
+
 @media (min-width: 576px) {
   .seat {
     height: 18px;
