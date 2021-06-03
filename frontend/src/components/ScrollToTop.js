@@ -1,10 +1,7 @@
-import { useRef } from 'react'
 import styles from '../css/Arrow.module.css'
 
 const Categories = () => {
-  const myRef = useRef(null)
-
-  const executeScroll = () => myRef.current.scrollIntoView({ behavior: "smooth" })
+  const executeScroll = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <div className={styles.arrowContainer}>

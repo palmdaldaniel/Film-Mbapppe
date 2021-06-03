@@ -1,3 +1,9 @@
+.arrowContainer {
+  position: -webkit-sticky; 
+  position: sticky;
+  right: 0;
+}
+
 .arrow {
   width: 40px;
 }
