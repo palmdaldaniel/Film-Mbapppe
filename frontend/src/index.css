@@ -1,0 +1,166 @@
+html, body{
+  overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap');
+
+* {
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* DatePicker Styling  */
+.react-datepicker__input-container input,
+.react-datepicker__input-container input:focus {
+  display: block;
+  border: 0; 
+  outline: 0;
+  text-align: center;
+  background: transparent;
+  border-bottom: 1px solid white;
+  font-size: 1.1rem;
+  font-weight: 300 !important;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker-ignore-onclickoutside {
+    font-weight: 100 !important;
+    border-bottom: .5px solid rgba(255, 255, 255, 0.24);
+    color:#fff;
+    font-size: 20px;
+}
+
+.react-datepicker-popper * {
+  font-size: 16px;
+  font-weight: 100 !important;
+  background: rgb(41, 41, 41);
+  color: #fff !important;
+}
+.react-datepicker__month-container {
+  width: 260px;
+}
+.react-datepicker__day:hover, 
+.react-datepicker__month-text:hover, 
+.react-datepicker__quarter-text:hover, 
+.react-datepicker__year-text:hover {
+  color: #08233d !important;
+}
+
+
+/* Styling for pagination */
+
+.page-item.active .page-link  {
+  background-color: #e21b33 !important;
+  border-color: #e21b33 !important;
+  color: #fff !important;
+}
+
+.page-link {
+  color: #000 !important;
+}
+
+
+/* Styling for PriceFilter */
+
+#dropdown-basic-button {
+  font-weight: 300 !important;
+  background: none !important;
+  border: none;
+  font-size: 20px;
+  border-bottom: 1px solid white;
+  font-weight: 700;
+  border-radius: 0;
+  outline: none;
+  padding: 0 0 1px 0;
+  width: 160px;
+  margin: 20px 0;
+}
+
+#dropdown-basic-button:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+.dropdown-menu {
+  background: rgb(41, 41, 41) !important;
+  
+}
+.dropdown-item {
+  color: #fff !important;
+}
+.dropdown-item:hover {
+  color: #08233d !important;
+}
+.dropdown-item:active {
+  background-color: #fff !important;
+}
+
+input {
+  display: block;
+  border: 0; 
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid white;
+  font-size: 1.1rem;
+  color: white;
+}
+
+@media (min-width: 576px) { 
+  #dropdown-basic-button {
+    margin: 0  0 1px 70px;
+  }
+}
+
+/* Styling for carousel */
+
+ .carousel-caption {
+  width: 30%;
+  margin: 0 auto;
+  background-color: transparent !important;
+}
+
+.getTicketBtn {
+  background-color: #E4263E !important;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* Styling for modal window */
+.modal {
+  max-width: 500px !important;
+  height: 25% !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  border: 1px solid #E4263E;
+}
+
+.modal-body {
+  text-align: center;
+}
+.modal-footer{
+  border: none !important;
+  display: flex;
+  justify-content: center !important;
+}

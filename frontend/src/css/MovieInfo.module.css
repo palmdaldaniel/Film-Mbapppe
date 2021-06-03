@@ -1,0 +1,51 @@
+.movieinfocontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 3rem;
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 1.7rem;
+}
+
+.poster {
+  margin-bottom: 20px;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.posterContainer img {
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .movieinfocontainer {
+    align-items: flex-start;
+  }
+
+  .posterAndText {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .posterContainer {
+    height: 400px;
+  }
+
+  .descContainer {
+    padding-left: 30px;
+  }
+}
+
+@media only screen and (min-width: 1200px) 
+{
+  .miniwrapper {
+    display: flex;
+  }
+
+  .descContainer {
+    padding-right: 50px;
+  }
+}

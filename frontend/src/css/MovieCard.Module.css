@@ -1,0 +1,64 @@
+
+.cardText {
+    font-size: 16px;
+}
+
+.cardTitle{
+    font-size: 20px;
+}
+
+  
+.hoverZoom {
+    margin-top: 20px;
+    transition: all 0.2s ease 0.2s;
+    width: 100%;
+  }
+  .hoverZoom:hover {
+    transform: scale(1.1);
+  }
+
+  .second {
+      display: none;
+  }
+
+
+
+.hoverZoom:hover span.first {
+display: none;
+}
+
+.hoverZoom:hover span.second {
+    display: block;
+}
+
+.imgAfter {
+    opacity: 0.7;
+    height: 390px;
+}
+
+.textAfter {
+width: 100%;
+margin-left: 10px;
+ background: transparent;
+position: absolute;
+font-size: 15px;
+bottom: 20%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.hoverZoomShow {
+    transition: all 0.2s ease 0.2s;
+}
+
+.hoverZoomShow:hover {
+    transform: scale(1.1);
+  }
+
+  .hoverZoomShow:hover span.first {
+    display: none;
+    }
+    
+    .hoverZoomShow:hover span.second {
+        display: block;
+    }
