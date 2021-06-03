@@ -17,7 +17,7 @@ const MovieInfo = (props) => {
   if (film) {
     content = (
       <div className={styles.movieinfocontainer}>
-        <strong className={styles.title}>{film.Title}</strong>
+        <h2 className={styles.title}>{film.Title}</h2>
 
         <div className={styles.miniwrapper}>
 
@@ -32,7 +32,7 @@ const MovieInfo = (props) => {
               <p><span className={styles.bold}>Language:</span> {film.Language}</p>
               <p><span className={styles.bold}>Starring:</span>
                 {film.Actors.map((actor, i) => (
-                  <span key={i}> {(i ? ', ' : '') + actor} </span>
+                  <span style={{fontWeight: 300}} key={i}> {(i ? ', ' : '') + actor} </span>
                 ))}</p>
               <p><span className={styles.bold}>Director:</span> {film.Director}</p>
               <p><span className={styles.bold}>Description:</span> {film.Plot}</p>

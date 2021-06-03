@@ -9,7 +9,7 @@ const Booking = () => {
   }
   return (
     <div className={styles.bookingcomponent}>
-      <h1>Tickets</h1>
+      <h2>Tickets</h2>
      <div className={styles.ticketContainer}>
          <select name="" id="">
            <option value="0">0</option>

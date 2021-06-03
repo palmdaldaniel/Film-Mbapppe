@@ -1,4 +1,5 @@
 .booking_wrapper {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,8 +8,11 @@
 
 .bookingcomponent {
   width: 75vw;
-  margin: auto;
-  padding: 75px 0rem 25px;
+  margin-bottom: 20px;
+}
+.bookingcomponent h2 {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .ticketContainer {
@@ -76,15 +80,28 @@
   background-color: #444647;
 }
 
+@media (min-width: 576px) {
+  
+  .bookingcomponent h2{
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .booking_wrapper {
+    margin-top: 60px;
+  }
+  .bookingcomponent {
+    margin-bottom: 60px;
+  }
+}
 @media (min-width: 992px) {
   .booking_wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
   }
 
   .bookingcomponent {
-    width: 25vw;
-    margin-left: auto;
-    margin-right: 1rem;
+    width: 350px;
   }
 }

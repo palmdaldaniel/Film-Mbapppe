@@ -38,8 +38,8 @@ blue #4387FC
 }
 
 .seat {
-  height: 16px;
-  width: 23px;
+  height: 13px;
+  width: 17px;
   margin: 1px 3px;
   background-color: #77818d;
   display: flex;
@@ -106,32 +106,31 @@ blue #4387FC
   cursor: default;
  
 }
-
-@media (min-width: 576px) {
+@media (min-width: 400px) {
   .seat {
     height: 18px;
     width: 25px;
+  }
+}
+
+@media (min-width: 576px) {
+  .seat {
+    height: 22px;
+    width: 29px;
     margin: 7px;
   }
   .cushing {
-    height: 14px;
-    width: 17px;
+    height: 18px;
+    width: 21px;
   }
 }
 
 @media (min-width: 992px) {
   .seatingWrapper {
     width: 50%;
-    margin-right: auto;
-    margin-left: 1rem;
   }
   .seat {
-    height: 22px;
-    width: 29px;
     margin: 10px;
   }
-  .cushing {
-    height: 18px;
-    width: 21px;
-  }
+  
 }

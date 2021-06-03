@@ -16,7 +16,7 @@ const ShowingPage = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className='container'>
       <MovieInfo showing={showing} />
       <div className={styles.booking_wrapper}>
         <Booking />
