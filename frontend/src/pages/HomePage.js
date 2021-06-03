@@ -44,7 +44,7 @@ const HomePage = () => {
     }
 
     return (
-        <div className={a.homeContainer}>
+        <div>
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}
