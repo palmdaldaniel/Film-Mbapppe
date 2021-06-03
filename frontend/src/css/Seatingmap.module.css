@@ -33,14 +33,62 @@ blue #4387FC
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 35px;
 }
 
-.rowNumber {
+.rowNumber {  
+
   color: white;
-  padding: 10px;
+  padding: 5px;
   margin: 0px;
 }
 
+.seat {
+  height: 17px;
+  width: 25px;
+
+  margin: 4px;
+  background-color: #77818D;
+  display: flex;
+  justify-content: center;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+
+}
+
+.cushing {
+  height: 14px;
+  width: 17px;
+  border-bottom: 2.5px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+  background-color: #77818D;
+}
+
+/* colors for every seat */
+
+.b {
+  background: #E4263E ;
+}
+
+.r {
+  background: #4387FC ;
+}
+.r:hover {
+  cursor: pointer;
+}
+
+/* for hover effect */
+.o:hover, .o:hover > div {
+  cursor: pointer;
+  background: #babec3;
+}
+
+
+
+
+
+/* 
 .seat, .open {
   border-bottom: var(--borderW) solid #77818d;
   border-left: var(--borderW) solid #77818d;
@@ -48,7 +96,7 @@ blue #4387FC
   padding: var(--borderPM);
   margin: var(--borderPM);
 }
-
+ */
 .bookedSeat, .booked {
   border-bottom: var(--borderW) solid #e4263e;
   border-left: var(--borderW) solid #e4263e;
@@ -147,7 +195,7 @@ blue #4387FC
     min-width: 40%;
   }
   .rowNumber {
-    font-size: 1rem;
+    font-size: 10px;
   }
 }
 
