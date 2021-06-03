@@ -23,7 +23,7 @@ const Filtermovies = ({ movies }) => {
   useEffect(() => {
     // fire helperfunctions on pageload
     makeValues(movies);
-  }, []);
+  }, [movies]);
 
   const makeValues = (movies) => {
     // create values for label genre

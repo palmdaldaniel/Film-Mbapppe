@@ -15,7 +15,7 @@ export default function LoginPage() {
     return () => {
     setShowLogin(true);
     };
-    }, []);
+    }, [setShowLogin]);
   
 
   return (
