@@ -3,7 +3,7 @@ import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Filter.module.css";
 
 const Filtermovies = ({ movies }) => {
-  const { filter, setFilter, setInputValue, setFinalSearch } =
+  const { filter, setFilter, setInputValue, setFinalSearch, setCurrentPage } =
     useContext(MovieContext);
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
@@ -55,6 +55,7 @@ const Filtermovies = ({ movies }) => {
   // collectFiltered is the main function that all handles use in order to create an object from the values of the selected fields
   // console.log(filter);
   const collectFiltered = (e) => {
+    setCurrentPage(1)
     let f = {
       ...filter,
       [e.target.name]: e.target.value,

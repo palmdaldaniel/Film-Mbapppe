@@ -21,7 +21,7 @@ const MovieContextProvider = (props) => {
     const [pageTotal, setPageTotal] = useState(null)
     const [currentPage, setCurrentPage] = useState(1)
 
-    const countPageTotal = async (amountOfDoc) => {
+    const countPageTotal = async (amountOfDoc) => {//function fires when we get result of getMovieBySearch. AmountOfDoc - how many movies match the request with the filter
         let pageTotal = Math.ceil(amountOfDoc / 9) //9 because we dont want more than 9 cards on the page
         setPageTotal(pageTotal)
     }
@@ -111,9 +111,7 @@ const MovieContextProvider = (props) => {
             body: JSON.stringify(filter)
         }); 
         s = await s.json(); 
-        console.log(`s`, s)
         setFilteredSearch(s.movies); 
-        console.log(`s.amount`, s.amount)
         countPageTotal(s.amount)
 
     }
