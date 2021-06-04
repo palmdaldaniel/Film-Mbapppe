@@ -41,10 +41,9 @@ const AllMovies = () => {
         <>
             <div className="container mt-5">
                 {/* everyMovies is a list of all movies that is being used here to make filter options list all genres, years, directors */}
-
                 {everyMovies && <Filtermovies movies={everyMovies} />}
                 <Search />
-                {content}
+                {filteredSearch && filteredSearch.length > 0 ? (content) : <NotFound />}
             </div>
         </>
     );
