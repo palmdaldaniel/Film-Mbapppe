@@ -1,15 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { MovieContext } from "../contexts/MovieContext";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import NotFound from "../components/Notfound";
-import Filtermovies2 from "../components/Filtermovies2";
 import Filtermovies from "../components/Filtermovies";
 
 const AllMovies = () => {
     const history = useHistory();
-    const { filteredSearch, everyMovies, getMovieBySearch } = useContext(MovieContext);
+    const { filteredSearch, everyMovies } = useContext(MovieContext);
 
     //This redirects to the movie info about the movie that is clicked
     const handleClick = (movie) => {
