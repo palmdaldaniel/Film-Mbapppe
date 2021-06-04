@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Filter.module.css";
 
-const Filtermovies = () => {
+const Filtermovies = ({ movies }) => {
   const { filter, setFilter, setInputValue, setFinalSearch, everyMovies, getAllMovies } =
     useContext(MovieContext);
   const [genres, setGenres] = useState([]);
@@ -21,7 +21,7 @@ const Filtermovies = () => {
   const [languageValue, setLanguageValue] = useState("");
 
   useEffect(() => {
-    getAllMovies(); 
+    // getAllMovies(); 
     // fire helperfunctions on pageload
     makeValues(movies);
   }, [movies]);
