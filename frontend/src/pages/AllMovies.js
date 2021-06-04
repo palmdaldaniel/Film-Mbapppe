@@ -43,8 +43,6 @@ const AllMovies = () => {
                 {/* everyMovies is a list of all movies that is being used here to make filter options list all genres, years, directors */}
 
                 {everyMovies && <Filtermovies movies={everyMovies} />}
-                {/* <Filtermovies  /> */}
-                {/* <Filtermovies2 /> */}
                 <Search />
                 {content}
             </div>
