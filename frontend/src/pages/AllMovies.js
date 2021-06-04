@@ -3,13 +3,23 @@ import { useContext } from "react";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Filtermovies from "../components/Filtermovies";
 import NotFound from "../components/Notfound";
+import Pagination from '../components/Pagination'
 
 const AllMovies = () => {
     const history = useHistory();
-    const { filteredSearch, everyMovies } = useContext(MovieContext);
+    const { filteredSearch, everyMovies, pageTotal, currentPage, setCurrentPage  } = useContext(MovieContext);
 
+
+    useEffect(() => {
+        if(filteredSearch && filteredSearch.length > 0) {
+            console.log(`filteredSearch`, filteredSearch)
+            
+        }
+    }, [filteredSearch])
+    
     //This redirects to the movie info about the movie that is clicked
     const handleClick = (movie) => {
         history.push(`/movie-info/${movie._id}`);
@@ -20,7 +30,7 @@ const AllMovies = () => {
     if (everyMovies) {
         content = ( 
         (<div>
-            {filteredSearch.length === 0 ? <NotFound /> :
+            {filteredSearch && filteredSearch.length === 0 ? <NotFound /> :
             <div className="d-flex flex-wrap justify-content-center">
             {/* here we take the results of filtered/searched movies and render them out to home page */}
             {filteredSearch && filteredSearch.map((movie, i) => (
@@ -37,6 +47,12 @@ const AllMovies = () => {
         content = <div>Loading...</div>;
     }
 
+    let paginationsValue = {
+        activPage: currentPage,
+        pageTotal: pageTotal,
+        setCurrentPage: setCurrentPage
+    }
+
     return (
         <>
         <div className="container mt-5">
@@ -44,8 +60,9 @@ const AllMovies = () => {
           
             {everyMovies && <Filtermovies movies={everyMovies} />}
             <Search />
-   
+
             {content}
+            <Pagination values={paginationsValue}/>
         </div>
         </>
     );
