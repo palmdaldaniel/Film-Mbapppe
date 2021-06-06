@@ -13,6 +13,12 @@ blue #4387FC
   padding-top: 25px;
 }
 
+.seatingWrapper p {
+  font-size: 8px;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+
 .seatingWrapper:before {
   content: " ";
   padding: 3px;
@@ -28,13 +34,13 @@ blue #4387FC
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 31px;
+  height: 40px;
 }
 
 .rowNumber {
+  align-self: start;
   color: white;
-  padding: 5px;
-  margin: 0px;
+  padding: 0 8px 0 8px;
 }
 
 .seat {
@@ -77,13 +83,6 @@ blue #4387FC
   background: #babec3;
 }
 
-.rowNumber {
-  font-size: 10px;
-  color: white;
-  padding: 10px;
-  margin: 0px;
-}
-
 /* Styles for legend */
 .legend {
   display: flex;
@@ -104,7 +103,6 @@ blue #4387FC
 
 .legend .r {
   cursor: default;
- 
 }
 
 @media (min-width: 576px) {
@@ -116,6 +114,13 @@ blue #4387FC
   .cushing {
     height: 14px;
     width: 17px;
+  }
+
+  .rows {
+    height: 44px;
+  }
+  .rowNumber {
+    padding-top: 4px;
   }
 }
 
@@ -133,5 +138,13 @@ blue #4387FC
   .cushing {
     height: 18px;
     width: 21px;
+  }
+  .rows {
+    height: 52px;
+  }
+
+  .rowNumber {
+    
+    padding-top: 7px;
   }
 }
