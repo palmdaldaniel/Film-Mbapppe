@@ -12,6 +12,8 @@ import MovieContextProvider from './contexts/MovieContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieInfoPage from './pages/MovieInfoPage'
 import Footer from "./components/Footer";
+import NotFoundPage from './pages/NotFoundPage'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
               <UserPage />
             </Route>
             <Route exact path="/showing/:showingId" component={Showing} />
-            <Route exact path="/profile" />
+            <ProtectedRoute exact path="/profile"  component={UserPage}/>
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/register" component={SignUp} />
             <Route exact path="/login" />
@@ -38,6 +40,7 @@ function App() {
               <AllMovies />
             </Route>
             <Route exact path="/movie-info/:movieId" component={MovieInfoPage}/>
+            <Route exact path="/notfound" component={NotFoundPage}/>
             <Footer />  
           </BrowserRouter>
         </UserContextProvider>
