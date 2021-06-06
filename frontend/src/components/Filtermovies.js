@@ -3,8 +3,7 @@ import { MovieContext } from "../contexts/MovieContext";
 import styles from "../css/Filter.module.css";
 
 const Filtermovies = ({ movies }) => {
-  const { filter, setFilter, setInputValue, setFinalSearch } =
-    useContext(MovieContext);
+  const { filter, setFilter, setInputValue, setFinalSearch } = useContext(MovieContext);
   const [genres, setGenres] = useState([]);
   const [years, setYears] = useState([]);
   const [ratings, setRatings] = useState([]);
@@ -53,23 +52,63 @@ const Filtermovies = ({ movies }) => {
   };
 
   // collectFiltered is the main function that all handles use in order to create an object from the values of the selected fields
-  // console.log(filter);
+  console.log("filter", filter);
+  // const collectFiltered = (e) => {
+  //   let f = {
+  //     ...filter,
+  //     [e.target.name]: e.target.value,
+  //   };
+
+  //   setFilter(f);
+  // }
+
   const collectFiltered = (e) => {
     let f = {
       ...filter,
-      [e.target.name]: e.target.value,
+      [Object.keys(e)]: Object.values(e),
     };
+
     setFilter(f);
   }
 
+  //works with filter
+  // const handleGenreChange = (e) => {
+  //   const genreSelected = { [e.target.name]: e.target.value }
+  //   // console.log("genreValue", genreValue);
+  //   localStorage.setItem('genreSelected', JSON.stringify(genreSelected));
+  //   const parseGenreSelected = JSON.parse(localStorage.getItem('genreSelected'));
+  //   console.log(parseGenreSelected);
+
+  //   collectFiltered(parseGenreSelected)
+  //   // console.log(e.target.value); //Comedy
+  // };
+
+  useEffect(() => {
+    if (localStorage.getItem('genreSelected') != null) {
+      const parseGenreSelected = JSON.parse(localStorage.getItem('genreSelected'));
+      collectFiltered(parseGenreSelected)
+    } else {
+      return
+    }
+    const parseGenreValue = JSON.parse(localStorage.getItem('genreValue'));
+    setGenreValue(parseGenreValue)
+  }, [])
+
+  //works with reload
   const handleGenreChange = (e) => {
-    setGenreValue(e.target.value);
-    collectFiltered(e)
+    const genreSelected = { [e.target.name]: e.target.value }
+    localStorage.setItem('genreSelected', JSON.stringify(genreSelected));
+    const parseGenreSelected = JSON.parse(localStorage.getItem('genreSelected'));
+    collectFiltered(parseGenreSelected)
+
+    localStorage.setItem('genreValue', JSON.stringify(e.target.value));
+    const parseGenreValue = JSON.parse(localStorage.getItem('genreValue'));
+    setGenreValue(parseGenreValue)
   };
 
   const handleYearChange = (e) => {
-    setYearValue(e.target.value);
-    collectFiltered(e)
+    setYearValue(e.target.value); 
+    collectFiltered(e); 
   };
 
   const handleRatingChange = (e) => {
@@ -103,6 +142,7 @@ const Filtermovies = ({ movies }) => {
     setRuntimeValue("");
     setDirectorValue("");
     setLanguageValue("");
+    localStorage.clear(); 
   };
 
   return (
