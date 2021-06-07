@@ -28,9 +28,6 @@ function App() {
             <Route exact path="/login">
               <LoginPage />
             </Route>
-            <Route exact path="/profile">
-              <UserPage />
-            </Route>
             <Route exact path="/showing/:showingId" component={Showing} />
             <ProtectedRoute exact path="/profile"  component={UserPage}/>
             <Route exact path="/about" component={AboutPage} />
