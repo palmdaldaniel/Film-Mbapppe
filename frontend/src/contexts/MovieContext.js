@@ -17,6 +17,15 @@ const MovieContextProvider = (props) => {
     const [filteredShowings, setFilteredShowings] = useState(null);
     const [inputValue, setInputValue] = useState("");
 
+    //for pagination
+    const [pageTotal, setPageTotal] = useState(null)
+    const [currentPage, setCurrentPage] = useState(1)
+
+    const countPageTotal = async (amountOfDoc) => {//function fires when we get result of getMovieBySearch. AmountOfDoc - how many movies match the request with the filter
+        let pageTotal = Math.ceil(amountOfDoc / 9) //9 because we dont want more than 9 cards on the page
+        setPageTotal(pageTotal)
+    }
+
 
     useEffect(() => {
         getAllMovies();
@@ -64,12 +73,12 @@ const MovieContextProvider = (props) => {
 
     // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
     useEffect(() => {
-        getMovieBySearch(finalSearch)
+        getMovieBySearch(finalSearch, currentPage)
         // eslint-disable-next-line
-    }, [filter, finalSearch])
+    }, [filter, finalSearch, currentPage])
 
-    const getAllMovies = async (page) => {
-        let movies = await fetch(`/api/v1/movies?page=${page}`);
+    const getAllMovies = async () => {
+        let movies = await fetch(`/api/v1/movies`);
         movies = await movies.json();
         setEveryMovies(movies); 
     }
@@ -92,8 +101,9 @@ const MovieContextProvider = (props) => {
         setShowing(showing);
     }
     
-    const getMovieBySearch = async (finalSearch) => {
-        let s = await fetch(`/api/v1/movies/filter/?search=${finalSearch}`, {
+    const getMovieBySearch = async (finalSearch, page) => {
+        // console.log(`page`, page)
+        let s = await fetch(`/api/v1/movies/filter/?search=${finalSearch}&page=${page}`, {
             method: "Post", 
             headers: {
                 "content-type": "application/json",
@@ -101,7 +111,9 @@ const MovieContextProvider = (props) => {
             body: JSON.stringify(filter)
         }); 
         s = await s.json(); 
-        setFilteredSearch(s); 
+        setFilteredSearch(s.movies); 
+        countPageTotal(s.amount)
+
     }
 
     const values = {
@@ -123,7 +135,10 @@ const MovieContextProvider = (props) => {
         priceOptions,
         filteredShowings,
         inputValue, 
-        setInputValue
+        setInputValue,
+        pageTotal,
+        currentPage,
+        setCurrentPage
     }
 
     return (
