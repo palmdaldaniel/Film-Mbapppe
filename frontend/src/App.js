@@ -13,6 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MovieInfoPage from "./pages/MovieInfoPage";
 import Footer from "./components/Footer";
 import BookingContextProvider from "./contexts/BookingContext";
+import RedirectToTop from "./components/RedirectToTop";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <BookingContextProvider>
             <BrowserRouter>
               <Navbar />
+              <RedirectToTop />
               <Route exact path="/">
                 <HomePage />
               </Route>
