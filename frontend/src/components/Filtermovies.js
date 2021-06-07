@@ -84,14 +84,18 @@ const Filtermovies = ({ movies }) => {
   // };
 
   useEffect(() => {
-    if (localStorage.getItem('genreSelected') != null) {
-      const parseGenreSelected = JSON.parse(localStorage.getItem('genreSelected'));
-      collectFiltered(parseGenreSelected)
-    } else {
-      return
-    }
+    // if (localStorage.getItem('genreSelected') != null) {
+    //   const parseGenreSelected = JSON.parse(localStorage.getItem('genreSelected'));
+    //   collectFiltered(parseGenreSelected)
+    // } else {
+    //   return
+    // }
+
     const parseGenreValue = JSON.parse(localStorage.getItem('genreValue'));
     setGenreValue(parseGenreValue)
+
+    const parseYearValue = JSON.parse(localStorage.getItem('yearValue'));
+    setYearValue(parseYearValue)
   }, [])
 
   //works with reload
@@ -101,14 +105,26 @@ const Filtermovies = ({ movies }) => {
     const parseGenreSelected = JSON.parse(localStorage.getItem('genreSelected'));
     collectFiltered(parseGenreSelected)
 
+    console.log("parseGenreSelected: ", parseGenreSelected);
+
     localStorage.setItem('genreValue', JSON.stringify(e.target.value));
     const parseGenreValue = JSON.parse(localStorage.getItem('genreValue'));
     setGenreValue(parseGenreValue)
   };
 
   const handleYearChange = (e) => {
-    setYearValue(e.target.value); 
-    collectFiltered(e); 
+    const yearSelected = { [e.target.name]: e.target.value }
+    localStorage.setItem('yearSelected', JSON.stringify(yearSelected));
+    const parseYearSelected = JSON.parse(localStorage.getItem('yearSelected'));
+    collectFiltered(parseYearSelected)
+
+    console.log("parseYearSelected: ", parseYearSelected);
+
+    localStorage.setItem('yearValue', JSON.stringify(e.target.value));
+    const parseYearValue = JSON.parse(localStorage.getItem('yearValue'));
+    setYearValue(parseYearValue)
+    // setYearValue(e.target.value); 
+    // collectFiltered(e); 
   };
 
   const handleRatingChange = (e) => {
