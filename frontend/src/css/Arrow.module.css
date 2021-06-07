@@ -1,0 +1,21 @@
+.arrowContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  margin-top: 40px;
+}
+
+/* arrow animation  */
+@keyframes bounce { 
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+
+.arrow {
+  width: 40px;
+  animation: bounce 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}

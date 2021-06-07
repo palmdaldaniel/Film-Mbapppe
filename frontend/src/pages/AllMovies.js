@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import NotFound from "../components/Notfound";
 import Pagination from '../components/Pagination'
 import Filtermovies from '../components/Filtermovies'
+import ArrowToTop from "../components/ScrollToTop.jsx"
 
 const AllMovies = () => {
     const history = useHistory();
@@ -48,6 +49,7 @@ const AllMovies = () => {
                 {everyMovies && <Filtermovies movies={everyMovies} />}
                 <Search />
                 {filteredSearch && filteredSearch.length > 0 ? (content) : <NotFound />}
+                {filteredSearch && filteredSearch.length > 3 ? <ArrowToTop /> : ""}
             <Pagination values={paginationsValue}/>
         </div>
         </>
