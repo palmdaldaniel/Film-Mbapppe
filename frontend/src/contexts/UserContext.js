@@ -31,7 +31,7 @@ const UserContextProvider = (props) => {
     else {
       setActiveUser(null)
     }
-    //return user;
+    return user;
   };
 
 
@@ -80,6 +80,7 @@ const UserContextProvider = (props) => {
     if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
       setLoginResult(null);
+      setIsAuth(true);
     } else {
       setLoginResult(userLoggingIn.error);
     }
@@ -106,6 +107,7 @@ const UserContextProvider = (props) => {
     let result = await fetch("/api/v1/users/logout");
     result = await result.json();
     setActiveUser(null)
+    setIsAuth(false);
     return result;
   };
 

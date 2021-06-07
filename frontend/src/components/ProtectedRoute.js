@@ -7,6 +7,9 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   
   const {activeUser, isAuth} = useContext(UserContext);
 
+  console.log('activeUser', activeUser);
+  console.log('isAuth', isAuth);
+
   if(activeUser === undefined) {
     return null
   }
