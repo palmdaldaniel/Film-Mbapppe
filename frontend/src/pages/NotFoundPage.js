@@ -1,7 +1,7 @@
 const NotFoundPage= () => {
     return (  
-        <div>
-            <h1>Sorry, you need to be logged in to go to this page...</h1>
+        <div style={{height: '50vh', textAlign: 'center', margin: '50px 10px'}}>
+            <h3>Please, log in to go to this page...</h3>
         </div>
     );
 }
