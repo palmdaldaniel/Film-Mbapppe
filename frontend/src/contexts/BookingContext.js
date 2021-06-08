@@ -20,18 +20,25 @@ const BookingContextProvider = (props) => {
     { row: 5, seatNumber: 50 },
   ]);
   const [reserved, setReserved] = useState([]);
+
+
   useEffect(() => {
     makeTickets();
   }, [seniorTickets, adultTickets, childrenTickets]);
+  
+  
   const [booking, setBooking] = useState(null);
+
+
   const makeTickets = () => {
     let temp = [];
 
-      adultTickets,
     let tempTickets = {
       childrenTickets,
       seniorTickets,
+      adultTickets,
     };
+
     tempTickets.adultTickets.forEach((t) => {
       temp.push(t);
     });
@@ -67,7 +74,7 @@ const BookingContextProvider = (props) => {
   
     }
   };
-  const createBooking = async (userId, showingId, tickets) => {
+  /* const makeBooking = async (userId, showingId, tickets) => {
     let b = await fetch (`/api/v1/bookings`, {
       method: "Post", 
       headers: {
@@ -77,12 +84,12 @@ const BookingContextProvider = (props) => {
     }); 
     b = await booking.json(); 
     setBooking(b)
-  }
+  } */
 
   const values = {
-    booked, // kyd has this one
-    reserved, // kyd has this one
-    setReserved, // kyd has this one
+    booked,
+    reserved, 
+    setReserved, 
     tickets,
     setTickets,
     makeBooking,
@@ -90,6 +97,7 @@ const BookingContextProvider = (props) => {
     setAdultTickets,
     setChildrenTickets,
   };
+
   return (
     <BookingContext.Provider value={values}>
       {props.children}
