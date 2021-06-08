@@ -28,6 +28,11 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
         res.json(booking);
     });
 }
+const getBookingsByShowingId = async (req, res) => {
+    let bookings = await Booking.find({ 'showingId': req.params.showingId }).exec()
+
+    res.json(bookings);
+}
 
 const deleteBooking = async (req, res) => {
     try {
@@ -48,8 +53,10 @@ const deleteBooking = async (req, res) => {
 }
 
 module.exports = {
-    getBookingById,
     createBooking,
-    deleteBooking
+    getBookingById,
+    deleteBooking,
+    getBookingsByShowingId
+
 };
 

@@ -60,26 +60,36 @@ const SeatingMap = ({ saloon }) => {
             <div className={styles.rows} key={i}>
               <p className={styles.rowNumber}>{i + 1}</p>
               {/* Loop out every seat in each row */}
-              {rows.map((seat) => {
+              {rows.map((seat,i) => {
                 if (booked.find((b) => b.seatNumber === seat.seatNumber)) {
                   return (
-                    <div className={`${styles.seat} ${styles.b}`}>
+                    <div key={i}>
+                     <div className={`${styles.seat} ${styles.b}`}>
                       <div className={`${styles.cushing} ${styles.b} `}></div>
+                     </div>
+                     <p>{seat.seatNumber}</p>
                     </div>
                   );
                 } else if (
                   reserved.find((r) => r.seatNumber === seat.seatNumber)
                 ) {
                   return (
+                  <div key={i}>
                     <div className={`${styles.seat} ${styles.r}`} onClick={() => deselectSeat(seat)}>
                       <div className={`${styles.cushing} ${styles.r}`}></div>
+                    </div>
+                    <p>{seat.seatNumber}</p>
                     </div>
                   );
                 } else {
                   return (
+                    <div  key={i}>
                     <div className={`${styles.seat}  ${styles.o}`} onClick={() => reserveSeat(seat)}>
                       <div className={`${styles.cushing}`}></div>
                     </div>
+                    <p>{seat.seatNumber}</p>
+                    </div>
+                    
                   );
                 }
               })}
