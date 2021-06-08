@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { BookingContext } from '../contexts/BookingContext';
 
@@ -8,14 +8,23 @@ import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  const { prev, previousBookings, upcomingBookings, getBookingsByUserId } = useContext(BookingContext);
+  const { getBookingsByUserId } = useContext(BookingContext);
 
-  console.log(`previousBookings`, previousBookings)
-  console.log(`upcomingBookings`, upcomingBookings)
-  console.log(`activeUser`, activeUser.loggedInUser._id)
+  const [upcomingBookings, setUpcomingBookings] = useState([])
+  const [previousBookings, setPreviousBookings] = useState([])
+
+  //Used for booking card trashcan rendering
+  const prev = useState(true);
+
+  const gettingBookings = async (userId) => {
+    let bookings = await getBookingsByUserId(userId)
+    setUpcomingBookings(bookings.upcomingBookings)
+    setPreviousBookings(bookings.previousBookings)
+  }
+
   useEffect(() => {
-    getBookingsByUserId(activeUser.loggedInUser._id)
-  },[activeUser, getBookingsByUserId])
+    gettingBookings(activeUser._id)
+  }, [getBookingsByUserId, activeUser])
 
   return (
     <div className={styles.container}>
