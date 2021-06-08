@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from "../css/Seatingmap.module.css";
+import { BookingContext } from "../contexts/BookingContext";
 
 const SeatingMap = ({ saloon }) => {
+  const { bookedPlaces } = useContext(BookingContext);
+
   const [seats, setSeats] = useState([]);
-  const [booked] = useState([
-    { row: 1, seatNumber: 2 },
-    { row: 2, seatNumber: 5 },
-    { row: 5, seatNumber: 50 },
-  ]);
+  
   const [reserved, setReserved] = useState([
     { row: 2, seatNumber: 11 },
     { row: 3, seatNumber: 22 },
@@ -61,7 +60,7 @@ const SeatingMap = ({ saloon }) => {
               <p className={styles.rowNumber}>{i + 1}</p>
               {/* Loop out every seat in each row */}
               {rows.map((seat,i) => {
-                if (booked.find((b) => b.seatNumber === seat.seatNumber)) {
+                if (bookedPlaces.find((b) => b.seatingNumber === seat.seatNumber)) {
                   return (
                     <div key={i}>
                      <div className={`${styles.seat} ${styles.b}`}>
