@@ -18,21 +18,25 @@ const UserPage = () => {
           <div className={styles.showings}>
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
-              {upcomingBookings
-                ? (upcomingBookings.map((booking, i) => (<BookingCard
-                  booking={booking}
-                  prev={!prev}
-                  key={i}/>)))
-                : (<h3>No upcoming bookings..</h3>)}
+              <div className={styles.movieGrid}>
+                {upcomingBookings
+                  ? (upcomingBookings.map((booking, i) => (<BookingCard
+                    booking={booking}
+                    prev={!prev}
+                    key={i} />)))
+                  : (<h3>No upcoming bookings..</h3>)}
+              </div>
             </div>
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
-              {previousBookings
-                ? (previousBookings.map((booking, i) => (<BookingCard
-                  booking={booking}
-                  prev={prev}
-                  key={i}/>)))
-                : (<h3>No upcoming bookings..</h3>)}
+              <div className={styles.movieGrid}>
+                {previousBookings
+                  ? (previousBookings.map((booking, i) => (<BookingCard
+                    booking={booking}
+                    prev={prev}
+                    key={i} />)))
+                  : (<h3>No upcoming bookings..</h3>)}
+              </div>
             </div>
           </div>
         </div>
