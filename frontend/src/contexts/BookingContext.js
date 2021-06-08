@@ -50,20 +50,18 @@ const BookingContextProvider = (props) => {
   };
 
   const makeBooking = () => {
-     if (tickets.length === reserved.length) {
-       const data = tickets.map((ticket, i) => {
-         return {
-           ...ticket,
-           row: reserved[i].row,
-           seatNumber: reserved[i].seatNumber
-         }
-       });
-       console.log(data);
+    if (tickets.length !== reserved.length) {
+      console.log("both need to match");
     } else {
-      console.log('both need to match');
+      const data = tickets.map((ticket, i) => {
+        return {
+          ...ticket,
+          row: reserved[i].row,
+          seatNumber: reserved[i].seatNumber,
+        };
+      });
+      console.log(data);
     }
-
-  
   };
 
   const values = {
