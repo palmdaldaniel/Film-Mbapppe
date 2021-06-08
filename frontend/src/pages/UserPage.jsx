@@ -8,72 +8,7 @@ import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  /* const { previousBookings, upcomingBookings } = useContext(BookingContext); */
-
-  const [prev, setPrev] = useState(true);
-
-  //TEMPORARY DATA, NEED TO BE CONNECXED TO DATABASE EVENTUALLY BUT WORKS WITH THIS FOR NOW
-  const [upcomingBookings, setUpcomingBookings] = useState([
-    {
-      _id: "qwe789",
-      showingId: {
-        date: "2021-06-01",
-        saloon: "Big saloon",
-        film: "Tarzan",
-        time: "10:00",
-        price: 150
-      },
-      tickets: [
-        {
-          price: 110,
-          seatingNumber: 8,
-          rowNumber: 3
-        }
-      ]
-    },
-    {
-      _id: "asd456",
-      showingId: {
-        date: "2021-06-01",
-        saloon: "Big saloon",
-        film: "Nemo",
-        time: "10:00",
-        price: 150
-      },
-      tickets: [
-        {
-          price: 110,
-          seatingNumber: 8,
-          rowNumber: 3
-        }
-      ]
-    }
-  ]);
-  const [previousBookings, setPreviousBookings] = useState([
-    {
-      _id: "abc123",
-      showingId: {
-        date: "2021-06-01",
-        saloon: "Small saloon",
-        film: "Tarzan",
-        time: "10:00",
-        price: 150
-      },
-      tickets: [
-        {
-          price: 110,
-          seatingNumber: 8,
-          rowNumber: 3
-        },
-        {
-          price: 110,
-          seatingNumber: 7,
-          rowNumber: 3
-        }
-      ]
-    }
-  ]);
-  console.log(previousBookings, upcomingBookings);
+  const { prev, previousBookings, upcomingBookings } = useContext(BookingContext);
 
   return (
     <div className={styles.container}>
