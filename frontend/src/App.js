@@ -25,6 +25,7 @@ function App() {
           <BookingContextProvider>
             <BrowserRouter>
               <Navbar />
+              <RedirectToTop />
               <Route exact path="/">
                 <HomePage />
               </Route>

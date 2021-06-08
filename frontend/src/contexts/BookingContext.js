@@ -1,11 +1,17 @@
 import { createContext, useContext, useState } from "react";
 import { UserContext } from "./UserContext";
+import { MovieContext } from "./MovieContext"; 
 
 export const BookingContext = createContext();
 
 
 const BookingContextProvider = (props) => {
-  const { activeUser } = useContext(UserContext)
+    const { activeUser} = useContext(UserContext)
+    const { showing } = useContext(MovieContext); 
+    
+    console.log('in booking context...showing', showing);
+    console.log('in booking context', activeUser);
+  const values = {};
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
