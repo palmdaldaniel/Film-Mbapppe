@@ -60,8 +60,8 @@ const BookingContextProvider = (props) => {
       const data = tickets.map((ticket, i) => {
         return {
           ...ticket,
-          row: reserved[i].row,
-          seatNumber: reserved[i].seatNumber,
+          rowNumber: reserved[i].row,
+          seatIngNumber: reserved[i].seatNumber,
         };
       });
       const info = {
@@ -70,21 +70,24 @@ const BookingContextProvider = (props) => {
         tickets: data,
       }
       console.log(info);
-
-  
+      postBooking(info)
     }
   };
-  /* const makeBooking = async (userId, showingId, tickets) => {
-    let b = await fetch (`/api/v1/bookings`, {
+  const postBooking = async (bookingData) => {
+  console.log(bookingData);
+  
+  
+  let b = await fetch (`/api/v1/bookings`, {
       method: "Post", 
       headers: {
           "content-type": "application/json",
           },
-      body: JSON.stringify(userId, showingId, tickets)
+      body: JSON.stringify(bookingData)
     }); 
-    b = await booking.json(); 
-    setBooking(b)
-  } */
+    b = await b.json(); 
+    console.log(b); 
+    //setBooking(b) 
+  } 
 
   const values = {
     booked,

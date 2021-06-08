@@ -7,10 +7,10 @@ const bookingSchema = new Schema({
     showingId: { type: Schema.Types.ObjectId, ref: "Showing", default: null },
     tickets: [
         {
-            ticketId: { type: Number },
             price: { type: Number },
             seatingNumber: { type: Number },
             rowNumber: { type: Number },
+            type: {type: String}
         }
     ]
 });
