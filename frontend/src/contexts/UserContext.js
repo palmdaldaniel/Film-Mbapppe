@@ -5,12 +5,17 @@ export const UserContext = createContext();
 const UserContextProvider = (props) => {
 
   const [showLogin, setShowLogin] = useState(true); 
-  const [activeUser, setActiveUser] = useState(null);
+  const [activeUser, setActiveUser] = useState(undefined);
   const [bookings, setBookings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState(null);
   const [loginResult, setLoginResult] = useState(null);
   const [isUser, setIsUser] = useState(false);
+
+  // for Protected route
+  const [isAuth, setIsAuth] = useState(false);
+
+
 
   useEffect(() => {
     whoami();
@@ -19,9 +24,17 @@ const UserContextProvider = (props) => {
   const whoami = async () => {
     let user = await fetch("/api/v1/users/whoami");
     user = await user.json();
-    setActiveUser(user);
+    if(user) {
+      setIsAuth(true);
+      setActiveUser(user);
+    }
+    else {
+      setActiveUser(null)
+    }
     return user;
   };
+
+
 
   const editName = async (e) => {
     e.preventDefault();
@@ -67,6 +80,7 @@ const UserContextProvider = (props) => {
     if (!userLoggingIn.error) {
       setActiveUser(userLoggingIn);
       setLoginResult(null);
+      setIsAuth(true);
     } else {
       setLoginResult(userLoggingIn.error);
     }
@@ -93,6 +107,7 @@ const UserContextProvider = (props) => {
     let result = await fetch("/api/v1/users/logout");
     result = await result.json();
     setActiveUser(null)
+    setIsAuth(false);
     return result;
   };
 
@@ -117,8 +132,7 @@ const UserContextProvider = (props) => {
     loginResult,
     isUser,
     setIsUser,
-
-
+    isAuth
   };
 
   return (

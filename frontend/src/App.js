@@ -14,6 +14,8 @@ import MovieInfoPage from "./pages/MovieInfoPage";
 import Footer from "./components/Footer";
 import BookingContextProvider from "./contexts/BookingContext";
 import RedirectToTop from "./components/RedirectToTop";
+import NotFoundPage from './pages/NotFoundPage'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -30,22 +32,16 @@ function App() {
               <Route exact path="/login">
                 <LoginPage />
               </Route>
-              <Route exact path="/profile">
-                <UserPage />
-              </Route>
               <Route exact path="/showing/:showingId" component={Showing} />
-              <Route exact path="/profile" />
+              <ProtectedRoute exact path="/profile" component={UserPage} />
               <Route exact path="/about" component={AboutPage} />
               <Route exact path="/register" component={SignUp} />
               <Route exact path="/login" />
               <Route exact path="/allmovies">
                 <AllMovies />
               </Route>
-              <Route
-                exact
-                path="/movie-info/:movieId"
-                component={MovieInfoPage}
-              />
+              <Route exact path="/movie-info/:movieId" component={MovieInfoPage} />
+              <Route exact path="/notfound" component={NotFoundPage} />
               <Footer />
             </BrowserRouter>
           </BookingContextProvider>
