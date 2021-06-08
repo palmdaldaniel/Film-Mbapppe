@@ -82,13 +82,17 @@ const UserPage = () => {
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
               {upcomingBookings
-                ? (upcomingBookings.map(booking => (<BookingCard booking={booking} />)))
+                ? (upcomingBookings.map((booking, i) => (<BookingCard
+                  booking={booking}
+                  key={i}/>)))
                 : (<h3>No upcoming bookings..</h3>)}
             </div>
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
               {previousBookings
-                ? (previousBookings.map(booking => (<BookingCard booking={booking} />)))
+                ? (previousBookings.map((booking, i) => (<BookingCard
+                  booking={booking}
+                  key={i}/>)))
                 : (<h3>No upcoming bookings..</h3>)}
             </div>
           </div>

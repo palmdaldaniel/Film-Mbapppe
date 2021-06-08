@@ -13,8 +13,8 @@ const BookingCard = ({ booking }) => {
         <p>Seats:</p>
         <ul className={styles.seatList}>
           {/* Maps out all seats in booking */}
-          {booking.tickets.map(ticket => (
-            <li>
+          {booking.tickets.map((ticket, i) => (
+            <li key={i}>
               row: {ticket.rowNumber},
               seat: {ticket.seatingNumber}
             </li>
