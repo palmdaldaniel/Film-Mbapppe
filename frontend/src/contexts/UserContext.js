@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
 
-  const [showLogin, setShowLogin] = useState(true); 
+  const [showLogin, setShowLogin] = useState(true);
   const [activeUser, setActiveUser] = useState(undefined);
   const [bookings, setBookings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -24,7 +24,7 @@ const UserContextProvider = (props) => {
   const whoami = async () => {
     let user = await fetch("/api/v1/users/whoami");
     user = await user.json();
-    if(user) {
+    if (user) {
       setIsAuth(true);
       setActiveUser(user);
     }
@@ -38,7 +38,7 @@ const UserContextProvider = (props) => {
 
   const editName = async (e) => {
     e.preventDefault();
-    let newName = e.target[0].value ;
+    let newName = e.target[0].value;
     if (newName.length > 12) {
       setMessage("Name too long!");
       setTimeout(() => {
@@ -59,7 +59,7 @@ const UserContextProvider = (props) => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({name: newName})
+      body: JSON.stringify({ name: newName })
     })
     changeUserName = await changeUserName.json();
     setActiveUser(changeUserName)
@@ -136,7 +136,9 @@ const UserContextProvider = (props) => {
   };
 
   return (
-    <UserContext.Provider value={values}>{props.children}</UserContext.Provider>
+    <UserContext.Provider value={values}>
+      {props.children}
+    </UserContext.Provider>
   );
 };
 

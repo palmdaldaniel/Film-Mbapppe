@@ -1,0 +1,51 @@
+.card,
+.card *{
+  background: rgb(29, 29, 29);
+}
+
+.card{
+  flex-basis: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  height: 25vh;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card *{
+  margin: 0;
+}
+
+.top{
+  flex-basis: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom{
+  flex-basis: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bottom *{
+  color: #bbb;
+}
+
+.title{
+  flex-basis: 60%;
+}
+
+.delete{
+  padding: 0.5rem;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .card{
+    flex-basis: 25%;
+  }
+}

@@ -60,21 +60,10 @@
   gap: 1rem;
 }
 
-.tempCard {
-  background: darkgreen;
-  display: flex;
-  justify-content: center;
-  height: 20rem;
-  min-width: 15rem;
-}
-
-.tempCard p {
-  align-self: center;
-}
-
 .nameForm{
   display: flex;
 }
+
 .searchInput {
   display: block;
   border: 0; 
@@ -104,16 +93,11 @@
   margin-bottom: 1.5rem;
 }
 
-@media (min-width: 576px) {
+
+@media (min-width: 768px) {
   .movieGrid {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 768px) {
-  .tempCard {
-    min-width: 13.7rem;
   }
 }
 
