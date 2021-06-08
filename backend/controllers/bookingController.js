@@ -62,7 +62,6 @@ const getBookingsByUserId = async (req, res) => {
             }
        })
         res.json({previousBookings, upcomingBookings});
-       
     });
 
     

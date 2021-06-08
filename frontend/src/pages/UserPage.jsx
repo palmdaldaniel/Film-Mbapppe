@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { BookingContext } from '../contexts/BookingContext';
 
@@ -8,7 +8,14 @@ import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  const { prev, previousBookings, upcomingBookings } = useContext(BookingContext);
+  const { prev, previousBookings, upcomingBookings, getBookingsByUserId } = useContext(BookingContext);
+
+  console.log(`previousBookings`, previousBookings)
+  console.log(`upcomingBookings`, upcomingBookings)
+  console.log(`activeUser`, activeUser.loggedInUser._id)
+  useEffect(() => {
+    getBookingsByUserId(activeUser.loggedInUser._id)
+  },[activeUser, getBookingsByUserId])
 
   return (
     <div className={styles.container}>
