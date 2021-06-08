@@ -5,9 +5,8 @@ import { MovieContext } from "./MovieContext";
 export const BookingContext = createContext();
 
 const BookingContextProvider = (props) => {
-  const { activeUser } = useContext(UserContext)
+  const { activeUser } = useContext(UserContext);
   const { showing } = useContext(MovieContext);
-
   const [tickets, setTickets] = useState([]);
   const [seniorTickets, setSeniorTickets] = useState([]);
   const [adultTickets, setAdultTickets] = useState([]);
@@ -23,8 +22,6 @@ const BookingContextProvider = (props) => {
   const [reserved, setReserved] = useState([]);
 
   useEffect(() => {
-    console.log(tickets);
-
       if(tickets.length > 0) {
        let total = tickets.reduce((sum, value) =>  {
           return sum + value.price
@@ -32,9 +29,6 @@ const BookingContextProvider = (props) => {
         setTotalPrice(total);
 
       }
-      
-
-
   }, [tickets])
 
 
@@ -42,8 +36,6 @@ const BookingContextProvider = (props) => {
     makeTickets();
   }, [seniorTickets, adultTickets, childrenTickets]);
   
-  
-
 
   const makeTickets = () => {
     let temp = [];
@@ -54,16 +46,9 @@ const BookingContextProvider = (props) => {
       adultTickets,
     };
 
-    tempTickets.adultTickets.forEach((t) => {
-      temp.push(t);
-    });
-    tempTickets.childrenTickets.forEach((t) => {
-      temp.push(t);
-    });
-    tempTickets.seniorTickets.forEach((t) => {
-
-      temp.push(t);
-    });
+    for(const [key, value] of Object.entries(tempTickets)) {
+      value.forEach(t => temp.push(t));
+    }
 
     setTickets(temp);
   };

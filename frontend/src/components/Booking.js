@@ -151,10 +151,9 @@ const Booking = ({ data }) => {
       <div className={styles.buyTickets}>
         <div className={styles.ticketsInfo}>
           <p>
-            Tickets: 
-            {tickets.length > 0 && ' ' + tickets.length } 
+            Tickets: {tickets.length > 0 ? tickets.length : 0 + ' kr' } 
           </p>
-          <p>{totalPrice > 0 && totalPrice + " kr"}</p>
+          <p>{totalPrice > 0 ? totalPrice + " kr" : 0 + ' kr'}</p>
         </div>
         <button className={styles.buyButton} onClick={() => makeBooking()}>
           Buy Tickets
