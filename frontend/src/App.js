@@ -22,6 +22,7 @@ function App() {
     <div className="App">
       <MovieContextProvider>
         <UserContextProvider>
+          <BookingContextProvider>
           <BrowserRouter>
             <Navbar />
             <Route exact path="/">
@@ -42,6 +43,7 @@ function App() {
             <Route exact path="/notfound" component={NotFoundPage}/>
             <Footer />  
           </BrowserRouter>
+          </BookingContextProvider>
         </UserContextProvider>
       </MovieContextProvider>
     </div>

@@ -1,9 +1,14 @@
 import styles from "../css/booking.module.css";
 import React from "react";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import {BookingContext }from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
+
+  //const { tickets, setTickets } = useContext(BookingContext)
+
+
   const { price, priceChild, pricePensioner } = data;
 
   const [adults, setAdults] = useState({ type: "", quantity: 0, totalPrice: 0 });
