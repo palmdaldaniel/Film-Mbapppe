@@ -30,8 +30,18 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
 }
 const getBookingsByShowingId = async (req, res) => {
     let bookings = await Booking.find({ 'showingId': req.params.showingId }).exec()
-
-    res.json(bookings);
+    let booked = []
+    let allTickets = bookings.map(oneBooking => Object.values(oneBooking.tickets))// [[{..}], [{..}], [{..}], [{..}]]
+    for (const oneTicket of allTickets) {
+      console.log(oneTicket);
+      for (const element of oneTicket) {
+        let tempObj = {}
+        tempObj.seatingNumber = element.seatingNumber
+        tempObj.rowNumber = element.rowNumber
+        booked.push(tempObj)
+      }
+    }
+    res.json(booked);
 }
 
 const deleteBooking = async (req, res) => {
