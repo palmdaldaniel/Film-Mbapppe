@@ -6,7 +6,7 @@ export const BookingContext = createContext();
 
 const BookingContextProvider = (props) => {
   const { activeUser } = useContext(UserContext);
-  const { showing } = useContext(MovieContext);
+  const { showing } = useContext(MovieContext); // kyd has this
 
   // connected to booking.js
   const [tickets, setTickets] = useState([]);
@@ -14,7 +14,7 @@ const BookingContextProvider = (props) => {
   const [adultTickets, setAdultTickets] = useState([]);
   const [childrenTickets, setChildrenTickets] = useState([]);
 
-  // for testing with bookings component
+  // for testing with bookings component // kyd has these
   const [booked] = useState([
     { row: 1, seatNumber: 2 },
     { row: 2, seatNumber: 5 },
@@ -42,6 +42,7 @@ const BookingContextProvider = (props) => {
     tempTickets.childrenTickets.forEach((t) => {
       temp.push(t);
     });
+
     tempTickets.seniorTickets.forEach((t) => {
       temp.push(t);
     });
@@ -60,14 +61,22 @@ const BookingContextProvider = (props) => {
           seatNumber: reserved[i].seatNumber,
         };
       });
-      console.log(data);
+
+      const info = {
+        showingId: showing._id,
+        userId: activeUser._id,
+        tickets: data,
+      }
+
+      console.log(info);
+  
     }
   };
 
   const values = {
-    booked,
-    reserved,
-    setReserved,
+    booked, // kyd has this one
+    reserved, // kyd has this one
+    setReserved, // kyd has this one
     tickets,
     setTickets,
     makeBooking,
