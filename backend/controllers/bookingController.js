@@ -1,6 +1,5 @@
 const Booking = require("../models/Booking");
 
-
 const createBooking = async (req, res) => {
     let booking = await Booking.create({
         userId: req.body.userId,
@@ -11,9 +10,7 @@ const createBooking = async (req, res) => {
     res.send(booking);
 }
 
-
 const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc6595aa
-
     Booking.findById(req.params.bookingid).exec((err, booking) => {
         // Checks for thrown errors from the method itself.
         if (err) {
@@ -28,14 +25,38 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
                 .json({ error: `Booking with id ${req.params.bookingid} does not exist` });
             return;
         }
-
         res.json(booking);
     });
 }
+const getBookingsByShowingId = async (req, res) => {
+    let bookings = await Booking.find({ 'showingId': req.params.showingId }).exec()
 
+    res.json(bookings);
+}
+
+const deleteBooking = async (req, res) => {
+    try {
+        let exists = await Booking.exists({ _id: req.params.bookingid });
+        if (exists) {
+            await Booking.deleteOne({ _id: req.params.bookingid }).exec();
+            res.json({
+                message: `Booking with id ${req.params.bookingid} has been deleted.`
+            });
+            return;
+        }
+    } catch (error) {
+        res
+            .status(404)
+            .json({ error: `Booking with id ${req.query.bookingid} does not exist.` });
+        return;
+    }
+}
 
 module.exports = {
+    createBooking,
     getBookingById,
-    createBooking
+    deleteBooking,
+    getBookingsByShowingId
+
 };
 

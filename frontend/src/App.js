@@ -23,26 +23,27 @@ function App() {
       <MovieContextProvider>
         <UserContextProvider>
           <BookingContextProvider>
-          <BrowserRouter>
-            <Navbar />
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Route exact path="/showing/:showingId" component={Showing} />
-            <ProtectedRoute exact path="/profile"  component={UserPage}/>
-            <Route exact path="/about" component={AboutPage} />
-            <Route exact path="/register" component={SignUp} />
-            <Route exact path="/login" />
-            <Route exact path="/allmovies">
-              <AllMovies />
-            </Route>
-            <Route exact path="/movie-info/:movieId" component={MovieInfoPage}/>
-            <Route exact path="/notfound" component={NotFoundPage}/>
-            <Footer />  
-          </BrowserRouter>
+            <BrowserRouter>
+              <Navbar />
+              <RedirectToTop />
+              <Route exact path="/">
+                <HomePage />
+              </Route>
+              <Route exact path="/login">
+                <LoginPage />
+              </Route>
+              <Route exact path="/showing/:showingId" component={Showing} />
+              <ProtectedRoute exact path="/profile" component={UserPage} />
+              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/register" component={SignUp} />
+              <Route exact path="/login" />
+              <Route exact path="/allmovies">
+                <AllMovies />
+              </Route>
+              <Route exact path="/movie-info/:movieId" component={MovieInfoPage} />
+              <Route exact path="/notfound" component={NotFoundPage} />
+              <Footer />
+            </BrowserRouter>
           </BookingContextProvider>
         </UserContextProvider>
       </MovieContextProvider>

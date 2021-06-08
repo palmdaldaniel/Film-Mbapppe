@@ -1,10 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
+import { MovieContext } from "./MovieContext"; 
 
 export const BookingContext = createContext();
 
 const BookingContextProvider = (props) => {
-  const { activeUser } = useContext(UserContext);
+    const { activeUser} = useContext(UserContext)
+    const { showing } = useContext(MovieContext); 
 
   // connected to booking.js
   const [tickets, setTickets] = useState([]);
