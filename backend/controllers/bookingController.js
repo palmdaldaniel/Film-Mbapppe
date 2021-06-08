@@ -42,7 +42,7 @@ const getBookingsByShowingId = async (req, res) => {
         if (!bookings) {
             res
                 .status(404)
-                .json({ error: `Booking with id ${req.params.bookingid} does not exist` });
+                .json({ error: `No bookings on showing with id ${req.params.showingId}.` });
             return;
         }
 
