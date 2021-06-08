@@ -71,9 +71,6 @@ const BookingContextProvider = (props) => {
     }
   ]);
 
-  console.log(prev);
-  console.log('in booking context', activeUser);
-
   const values = {
     prev,
     upcomingBookings,
