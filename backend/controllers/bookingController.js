@@ -12,7 +12,7 @@ const createBooking = async (req, res) => {
 }
 
 
-const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc6595aa
+const getBookingById = async (req, res) => { 
 
     Booking.findById(req.params.bookingid).exec((err, booking) => {
         // Checks for thrown errors from the method itself.
@@ -32,10 +32,56 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
         res.json(booking);
     });
 }
+const getBookingsByUserId = async (req, res) => { 
+    
+    Booking.find({userId: req.query.userId}).exec((err, bookings) => {
+        // Checks for thrown errors from the method itself.
+        if (err) {
+            res.status(400).json({ error: "Something went wrong" });
+            return;
+        }
+
+        // If no match is found in the DB.
+        if (!bookings) {
+            res
+                .status(404)
+                .json({ error: `The user with id ${userId} dosen't have bookigs` });
+            return;
+        }
+
+        res.json(bookings);
+    });
+   
+}
+
+//for testing
+const getAllBookings = async (req, res) => { 
+    
+    Booking.find().exec((err, bookings) => {
+        // Checks for thrown errors from the method itself.
+        if (err) {
+            res.status(400).json({ error: "Something went wrong" });
+            return;
+        }
+
+        // If no match is found in the DB.
+        if (!bookings) {
+            res
+                .status(404)
+                .json({ error: `The user with id ${userId} dosen't have bookigs` });
+            return;
+        }
+
+        res.json(bookings);
+    });
+   
+}
 
 
 module.exports = {
     getBookingById,
-    createBooking
+    createBooking,
+    getBookingsByUserId,
+    getAllBookings
 };
 
