@@ -1,22 +1,27 @@
 import styles from '../css/BookingCard.module.css';
 
-const BookingCard = () => {
+const BookingCard = ({ booking }) => {
   return (
     <div className={styles.card}>
       <div className={styles.top}>
-        <h3 className={styles.title}>Movie title</h3>
+        <h3 className={styles.title}>{booking.showingId.film}</h3>
         <p className={styles.delete}>X {/* put trashcan here */}</p>
       </div>
       <div className={styles.bottom}>
-        <p className={styles.showingInfo}>Saloon 1 | 05.06.2021 | 12:00</p>
-        <p className={styles.bookingNumber}>Bookingnumber: 123456</p>
+        <p className={styles.showingInfo}>{booking.showingId.saloon} | {booking.showingId.date} | {booking.showingId.time}</p>
+        <p className={styles.bookingNumber}>Bookingnumber: {booking._id}</p>
         <p>Seats:</p>
         <ul className={styles.seatList}>
-          <li>row: 1, seat: 2</li>
-          <li>row: 1, seat: 3</li>
-          <li>row: 1, seat: 4</li>
+          {/* Maps out all seats in booking */}
+          {booking.tickets.map(ticket => (
+            <li>
+              row: {ticket.rowNumber},
+              seat: {ticket.seatingNumber}
+            </li>
+          )
+          )}
         </ul>
-        <p className={styles.titalSeats}>Total seats: 3</p>
+        <p className={styles.totalSeats}>Total seats: {booking.tickets.length}</p>
       </div>
     </div>
   );

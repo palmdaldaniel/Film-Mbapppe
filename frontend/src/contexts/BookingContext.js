@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { UserContext } from "./UserContext";
 
 export const BookingContext = createContext();
@@ -6,9 +6,12 @@ export const BookingContext = createContext();
 
 const BookingContextProvider = (props) => {
     const { activeUser} = useContext(UserContext)
-    
+
+
+
     console.log('in booking context', activeUser);
-  const values = {};
+  const values = {
+  };
 
   return (
     <BookingContext.Provider value={values}>

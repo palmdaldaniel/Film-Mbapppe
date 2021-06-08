@@ -1,9 +1,6 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { MovieContext } from "../contexts/MovieContext";
-import { Link } from 'react-router-dom';
-
-import ShowingCard from "../components/ShowingCard";
+import { BookingContext } from '../contexts/BookingContext';
 
 import styles from '../css/userPage.module.css'
 import UserInfo from '../components/UserInfo';
@@ -11,8 +8,48 @@ import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  //Get upcoming bookings and previous bookings on user by filtering on showing date in future or past, instead of showings here
+  /* const { previousBookings, upcomingBookings } = useContext(BookingContext); */
 
+  const [upcomingBookings, setUpcomingBookings] = useState({
+    _id: "qwe789",
+    showingId: {
+      date: "2021-06-01",
+      saloon: "Big saloon",
+      film: "Tarzan",
+      time: "10:00",
+      price: 150
+    },
+    tickets: [
+      {
+        price: 110,
+        seatingNumber: 8,
+        rowNumber: 3
+      }
+    ]
+  });
+  const [previousBookings, setPreviousBookings] = useState({
+    _id: "abc123",
+    showingId: {
+      date: "2021-06-01",
+      saloon: "Small saloon",
+      film: "Tarzan",
+      time: "10:00",
+      price: 150
+    },
+    tickets: [
+      {
+        price: 110,
+        seatingNumber: 8,
+        rowNumber: 3
+      },
+      {
+        price: 110,
+        seatingNumber: 7,
+        rowNumber: 3
+      }
+    ]
+  });
+  console.log(previousBookings, upcomingBookings);
 
   return (
     <div className={styles.container}>
@@ -23,13 +60,13 @@ const UserPage = () => {
           <div className={styles.showings}>
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
-              {/* Change showings for upcoming bookings on user when bookings are ready*/}
-              <BookingCard />
+              {upcomingBookings
+                ? <BookingCard booking={upcomingBookings} /> : <h3>No upcoming bookings..</h3>}
             </div>
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
-              {/* Change showings for previous bookings on user when bookings are ready*/}
-              <BookingCard />
+              {previousBookings
+                ? <BookingCard booking={previousBookings} /> : <h3>No past bookings..</h3>}
             </div>
           </div>
         </div>
