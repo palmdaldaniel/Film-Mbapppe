@@ -1,11 +1,13 @@
 import styles from '../css/BookingCard.module.css';
 
-const BookingCard = ({ booking }) => {
+const BookingCard = ({ booking, prev }) => {
   return (
     <div className={styles.card}>
       <div className={styles.top}>
         <h3 className={styles.title}>{booking.showingId.film}</h3>
-        <p className={styles.delete}>X {/* put trashcan here */}</p>
+       {prev === false
+       ? <p className={styles.delete}>X {/* put trashcan here */}</p>
+      : <p></p> }
       </div>
       <div className={styles.bottom}>
         <p className={styles.showingInfo}>{booking.showingId.saloon} | {booking.showingId.date} | {booking.showingId.time}</p>

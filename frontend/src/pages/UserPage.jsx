@@ -10,6 +10,7 @@ const UserPage = () => {
   const { activeUser } = useContext(UserContext);
   /* const { previousBookings, upcomingBookings } = useContext(BookingContext); */
 
+  const [prev, setPrev] = useState(true);
   const [upcomingBookings, setUpcomingBookings] = useState([
     {
       _id: "qwe789",
@@ -84,6 +85,7 @@ const UserPage = () => {
               {upcomingBookings
                 ? (upcomingBookings.map((booking, i) => (<BookingCard
                   booking={booking}
+                  prev={!prev}
                   key={i}/>)))
                 : (<h3>No upcoming bookings..</h3>)}
             </div>
@@ -92,6 +94,7 @@ const UserPage = () => {
               {previousBookings
                 ? (previousBookings.map((booking, i) => (<BookingCard
                   booking={booking}
+                  prev={prev}
                   key={i}/>)))
                 : (<h3>No upcoming bookings..</h3>)}
             </div>
