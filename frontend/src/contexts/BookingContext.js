@@ -12,8 +12,8 @@ const BookingContextProvider = (props) => {
   const [seniorTickets, setSeniorTickets] = useState([]);
   const [adultTickets, setAdultTickets] = useState([]);
   const [childrenTickets, setChildrenTickets] = useState([]);
+  const [currentBooking, setCurrentBooking] = useState(null);
 
-  // for testing with bookings component // kyd has these
   const [booked] = useState([
     { row: 1, seatNumber: 2 },
     { row: 2, seatNumber: 5 },
@@ -27,7 +27,6 @@ const BookingContextProvider = (props) => {
   }, [seniorTickets, adultTickets, childrenTickets]);
   
   
-  const [booking, setBooking] = useState(null);
 
 
   const makeTickets = () => {
@@ -61,7 +60,7 @@ const BookingContextProvider = (props) => {
         return {
           ...ticket,
           rowNumber: reserved[i].row,
-          seatIngNumber: reserved[i].seatNumber,
+          seatingNumber: reserved[i].seatNumber,
         };
       });
       const info = {
@@ -74,9 +73,7 @@ const BookingContextProvider = (props) => {
     }
   };
   const postBooking = async (bookingData) => {
-  console.log(bookingData);
-  
-  
+
   let b = await fetch (`/api/v1/bookings`, {
       method: "Post", 
       headers: {
@@ -85,8 +82,8 @@ const BookingContextProvider = (props) => {
       body: JSON.stringify(bookingData)
     }); 
     b = await b.json(); 
-    console.log(b); 
-    //setBooking(b) 
+
+    setCurrentBooking(b) 
   } 
 
   const values = {
