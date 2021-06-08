@@ -6,11 +6,9 @@ import { useState } from "react";
 const Booking = ({ data }) => {
   const { price, priceChild, pricePensioner } = data;
 
-  const [adults, setAdults] = useState({ type: "", quantity: 0, price: 0 })
-  const [children, setChildren] = useState({ type: "", quantity: 0, price: 0 })
-  const [seniors, setSeniors] = useState({ type: "", quantity: 0, price: 0 });
-
-
+  const [adults, setAdults] = useState({ type: "", quantity: 0, totalPrice: 0 });
+  const [children, setChildren] = useState({ type: "", quantity: 0, totalPrice: 0 });
+  const [seniors, setSeniors] = useState({ type: "", quantity: 0, totalPrice: 0 });
 
   function booked() {
     alert("Youn succefully booked tickets!");
@@ -20,39 +18,35 @@ const Booking = ({ data }) => {
     let adultTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
-      price: parseInt(e.target.value) * price,
+      totalPrice: parseInt(e.target.value) * price,
     };
 
     setAdults(adultTickets);
-
   };
 
   const handleChildrenChange = (e) => {
     let childTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
-      price: parseInt(e.target.value) * priceChild,
+      totalPrice: parseInt(e.target.value) * priceChild,
     };
 
     setChildren(childTickets);
- 
   };
 
   const handleSeniorChange = (e) => {
     let seniorTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
-      price: parseInt(e.target.value) * pricePensioner,
+      totalPrice: parseInt(e.target.value) * pricePensioner,
     };
 
     setSeniors(seniorTickets);
-
   };
 
   return (
     <div className={styles.bookingcomponent}>
       <h1>Tickets</h1>
-      <p>Total tickets: { adults.quantity + children.quantity + seniors.quantity } </p>
       <div className={styles.ticketContainer}>
         <select name="adult" id="" onChange={(e) => handleAdultChange(e)}>
           <option value="0">0</option>
@@ -110,8 +104,8 @@ const Booking = ({ data }) => {
 
       <div className={styles.buyTickets}>
         <div className={styles.ticketsInfo}>
-          <p>2 Tickets</p>
-          <p>300 kr</p>
+          <p> Tickets: { adults.quantity + children.quantity + seniors.quantity > 0 &&  adults.quantity + children.quantity + seniors.quantity }</p>
+          <p>{adults.totalPrice + children.totalPrice + seniors.totalPrice > 0 && adults.totalPrice + children.totalPrice + seniors.totalPrice + ' kr' }</p>
         </div>
         <button className={styles.buyButton} onClick={booked}>
           Buy Tickets
