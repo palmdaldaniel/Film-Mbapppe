@@ -4,9 +4,10 @@ import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
 import CarouselComponent from '../components/Carousel'
+import ArrowToTop from '../components/ScrollToTop'
 
 const HomePage = () => {
-    const { showings, filteredShowings } = useContext(MovieContext);
+    const { showings, filteredShowings, filteredSearch } = useContext(MovieContext);
 
     let listData
 
@@ -47,6 +48,7 @@ const HomePage = () => {
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}
+                {filteredSearch && filteredSearch.length > 3 ? <ArrowToTop /> : ""}
         </div>
     );
 };

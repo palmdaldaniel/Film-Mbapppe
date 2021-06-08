@@ -9,20 +9,13 @@ import styles from '../css/userPage.module.css'
 import UserInfo from '../components/UserInfo';
 
 const UserPage = () => {
-  const { activeUser, whoami } = useContext(UserContext);
+  const { activeUser } = useContext(UserContext);
   const { showings } = useContext(MovieContext); //Get upcoming bookings and previous bookings on user by filtering on showing date in future or past, instead of showings here
 
 
-  useEffect(() => {
-    if (activeUser) {
-      whoami();
-    }
-    // eslint-disable-next-line
-  }, [])
-
   return (
     <div className={styles.container}>
-      {activeUser ? (
+      {activeUser && (
         <div className={styles.content}>
           <UserInfo />
 
@@ -38,13 +31,6 @@ const UserPage = () => {
               {showings ? (<ShowingCard showings={showings} />) : (<h3>No previous showings!</h3>)}
             </div>
           </div>
-        </div>
-      ) : (
-        <div className={styles.container}>
-          <h3>You must be logged in to use this page!</h3>
-
-          <Link className={styles.links} to="/login">Login</Link>
-          <Link className={styles.links} to="/register">Register user</Link>
         </div>
       )}
     </div>
