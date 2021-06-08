@@ -11,7 +11,6 @@ const BookingContextProvider = (props) => {
     
     console.log('in booking context...showing', showing);
     console.log('in booking context', activeUser);
-  const values = {};
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
