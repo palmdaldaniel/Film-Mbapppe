@@ -2,21 +2,34 @@ import styles from "../css/booking.module.css";
 import React from "react";
 
 import { useState, useContext } from "react";
-import {BookingContext }from "../contexts/BookingContext";
+import { BookingContext } from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
-
-  const { tickets, setTickets, makeBooking } = useContext(BookingContext)
-
-
+  const {
+    makeBooking,
+    setSeniorTickets,
+    setAdultTickets,
+    setChildrenTickets,
+  } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;
 
-  const [adults, setAdults] = useState({ type: "", quantity: 0, totalPrice: 0 });
-  const [children, setChildren] = useState({ type: "", quantity: 0, totalPrice: 0 });
-  const [seniors, setSeniors] = useState({ type: "", quantity: 0, totalPrice: 0 });
-
-
+  // values for displaying data on page for the moment.
+  const [adults, setAdults] = useState({
+    type: "",
+    quantity: 0,
+    totalPrice: 0,
+  });
+  const [children, setChildren] = useState({
+    type: "",
+    quantity: 0,
+    totalPrice: 0,
+  });
+  const [seniors, setSeniors] = useState({
+    type: "",
+    quantity: 0,
+    totalPrice: 0,
+  });
 
   const handleAdultChange = (e) => {
     let adultTickets = {
@@ -25,16 +38,16 @@ const Booking = ({ data }) => {
       totalPrice: parseInt(e.target.value) * price,
     };
 
-    let aT  = []
-    for(let i = 0; i < adultTickets.quantity; i ++) {
-        let ticket = {
-          type: e.target.name,
-          price: price
-        }
-        aT.push(ticket)
+    let aT = [];
+    for (let i = 0; i < adultTickets.quantity; i++) {
+      let ticket = {
+        type: e.target.name,
+        price: price,
+      };
+      aT.push(ticket);
     }
 
-    setTickets([...tickets, aT])
+    setAdultTickets(aT);
     //  keep for displaying data
     //setAdults(adultTickets);
   };
@@ -46,16 +59,16 @@ const Booking = ({ data }) => {
       totalPrice: parseInt(e.target.value) * priceChild,
     };
 
-    let cT  = []
-    for(let i = 0; i < childTickets.quantity; i ++) {
+    let cT = [];
+    for (let i = 0; i < childTickets.quantity; i++) {
       let ticket = {
         type: e.target.name,
-        price: priceChild
-      }
-      cT.push(ticket)
+        price: priceChild,
+      };
+      cT.push(ticket);
     }
-    setTickets([...tickets, cT])
-    
+    setChildrenTickets(cT);
+
     //  keep for displaying data
     //setChildren(childTickets);
   };
@@ -66,19 +79,19 @@ const Booking = ({ data }) => {
       quantity: parseInt(e.target.value),
       totalPrice: parseInt(e.target.value) * pricePensioner,
     };
-    
-    let sT  = []
-    for(let i = 0; i < seniorTickets.quantity; i ++) {
-        let ticket = {
-          type: e.target.name,
-          price: pricePensioner
-        }
-        sT.push(ticket)
+
+    let sT = [];
+    for (let i = 0; i < seniorTickets.quantity; i++) {
+      let ticket = {
+        type: e.target.name,
+        price: pricePensioner,
+      };
+      sT.push(ticket);
     }
-    setTickets([...tickets, sT])
+    setSeniorTickets(sT);
 
     //  keep for displaying data
-  //  setSeniors(seniorTickets);
+    //  setSeniors(seniorTickets);
   };
 
   return (
@@ -141,8 +154,19 @@ const Booking = ({ data }) => {
 
       <div className={styles.buyTickets}>
         <div className={styles.ticketsInfo}>
-          <p> Tickets: { adults.quantity + children.quantity + seniors.quantity > 0 &&  adults.quantity + children.quantity + seniors.quantity }</p>
-          <p>{adults.totalPrice + children.totalPrice + seniors.totalPrice > 0 && adults.totalPrice + children.totalPrice + seniors.totalPrice + ' kr' }</p>
+          <p>
+            {" "}
+            Tickets:{" "}
+            {adults.quantity + children.quantity + seniors.quantity > 0 &&
+              adults.quantity + children.quantity + seniors.quantity}
+          </p>
+          <p>
+            {adults.totalPrice + children.totalPrice + seniors.totalPrice > 0 &&
+              adults.totalPrice +
+                children.totalPrice +
+                seniors.totalPrice +
+                " kr"}
+          </p>
         </div>
         <button className={styles.buyButton} onClick={() => makeBooking()}>
           Buy Tickets

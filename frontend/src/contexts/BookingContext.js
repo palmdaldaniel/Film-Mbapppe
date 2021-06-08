@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
 
 export const BookingContext = createContext();
@@ -8,26 +8,53 @@ const BookingContextProvider = (props) => {
 
   // connected to booking.js
   const [tickets, setTickets] = useState([]);
+  const [seniorTickets, setSeniorTickets] = useState([]);
+  const [adultTickets, setAdultTickets] = useState([]);
+  const [childrenTickets, setChildrenTickets] = useState([]);
 
-  console.log('in context', tickets);
- 
+  useEffect(() => {
+    makeTickets();
+  }, [seniorTickets, adultTickets, childrenTickets]);
 
-  const makeBooking = () => {
-
-    console.log('ticket', tickets.flat());
-  }
-  
+  console.log(tickets);
 
 
 
-  const values = {
-  tickets,
-  setTickets,
-  makeBooking
+  const makeTickets = () => {
+    let temp = [];
 
+    let tempTickets = {
+      adultTickets,
+      childrenTickets,
+      seniorTickets,
+    };
+
+    tempTickets.adultTickets.forEach((t) => {
+      temp.push(t);
+    });
+
+    tempTickets.childrenTickets.forEach((t) => {
+      temp.push(t);
+    });
+    tempTickets.seniorTickets.forEach((t) => {
+      temp.push(t);
+    });
+
+    setTickets(temp)
   };
 
-  console.log(values);
+  const makeBooking = () => {
+    console.log("making a booking");
+  };
+
+  const values = {
+    tickets,
+    setTickets,
+    makeBooking,
+    setSeniorTickets,
+    setAdultTickets,
+    setChildrenTickets,
+  };
 
   return (
     <BookingContext.Provider value={values}>
