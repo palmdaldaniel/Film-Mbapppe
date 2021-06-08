@@ -6,7 +6,8 @@ import {BookingContext }from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
 
-  //const { tickets, setTickets } = useContext(BookingContext)
+  const { tickets, setTickets, makeBooking } = useContext(BookingContext)
+
 
 
   const { price, priceChild, pricePensioner } = data;
@@ -15,9 +16,7 @@ const Booking = ({ data }) => {
   const [children, setChildren] = useState({ type: "", quantity: 0, totalPrice: 0 });
   const [seniors, setSeniors] = useState({ type: "", quantity: 0, totalPrice: 0 });
 
-  function booked() {
-    alert("Youn succefully booked tickets!");
-  }
+
 
   const handleAdultChange = (e) => {
     let adultTickets = {
@@ -30,11 +29,12 @@ const Booking = ({ data }) => {
     for(let i = 0; i < adultTickets.quantity; i ++) {
         let ticket = {
           type: e.target.name,
-          price: priceChild
+          price: price
         }
         aT.push(ticket)
     }
-    console.log('adultTickets', aT);   
+
+    setTickets([...tickets, aT])
     //  keep for displaying data
     //setAdults(adultTickets);
   };
@@ -54,7 +54,7 @@ const Booking = ({ data }) => {
       }
       cT.push(ticket)
     }
-    console.log('childTickets', cT);
+    setTickets([...tickets, cT])
     
     //  keep for displaying data
     //setChildren(childTickets);
@@ -75,7 +75,7 @@ const Booking = ({ data }) => {
         }
         sT.push(ticket)
     }
-    console.log('seniorTickets', sT);
+    setTickets([...tickets, sT])
 
     //  keep for displaying data
   //  setSeniors(seniorTickets);
@@ -144,7 +144,7 @@ const Booking = ({ data }) => {
           <p> Tickets: { adults.quantity + children.quantity + seniors.quantity > 0 &&  adults.quantity + children.quantity + seniors.quantity }</p>
           <p>{adults.totalPrice + children.totalPrice + seniors.totalPrice > 0 && adults.totalPrice + children.totalPrice + seniors.totalPrice + ' kr' }</p>
         </div>
-        <button className={styles.buyButton} onClick={booked}>
+        <button className={styles.buyButton} onClick={() => makeBooking()}>
           Buy Tickets
         </button>
       </div>

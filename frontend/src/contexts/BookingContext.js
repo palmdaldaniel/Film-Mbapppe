@@ -8,14 +8,23 @@ const BookingContextProvider = (props) => {
 
   // connected to booking.js
   const [tickets, setTickets] = useState([]);
+
+  console.log('in context', tickets);
  
+
+  const makeBooking = () => {
+
+    console.log('ticket', tickets.flat());
+  }
   
 
 
 
   const values = {
-  tickets
-  
+  tickets,
+  setTickets,
+  makeBooking
+
   };
 
   console.log(values);
