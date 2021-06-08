@@ -15,17 +15,15 @@ const BookingContextProvider = (props) => {
     { row: 5, seatNumber: 50 },
   ]);
   const [reserved, setReserved] = useState([
-    { row: 2, seatNumber: 11 },
-    { row: 3, seatNumber: 22 },
   ]);
-  const [booking, setBooking] = useState(null); 
+  const [booking, setBooking] = useState(null);
 
 
   console.log('in booking context...showing', showing);
   console.log('in booking context', activeUser);
 
   const createBooking = async (userId, showingId, tickets) => {
-    let b = await fetch (`/api/v1/booking`, {
+    let b = await fetch (`/api/v1/bookings`, {
       method: "Post", 
       headers: {
           "content-type": "application/json",

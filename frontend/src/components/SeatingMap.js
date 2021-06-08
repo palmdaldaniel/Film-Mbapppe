@@ -3,15 +3,15 @@ import styles from "../css/Seatingmap.module.css";
 
 const SeatingMap = ({ saloon }) => {
   const [seats, setSeats] = useState([]);
-  const [booked] = useState([
-    { row: 1, seatNumber: 2 },
-    { row: 2, seatNumber: 5 },
-    { row: 5, seatNumber: 50 },
-  ]);
-  const [reserved, setReserved] = useState([
-    { row: 2, seatNumber: 11 },
-    { row: 3, seatNumber: 22 },
-  ]);
+  // const [booked] = useState([
+  //   { row: 1, seatNumber: 2 },
+  //   { row: 2, seatNumber: 5 },
+  //   { row: 5, seatNumber: 50 },
+  // ]);
+  // const [reserved, setReserved] = useState([
+  //   { row: 2, seatNumber: 11 },
+  //   { row: 3, seatNumber: 22 },
+  // ]);
 
   useEffect(() => {
     // create seats on component load
