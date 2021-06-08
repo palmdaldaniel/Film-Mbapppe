@@ -32,10 +32,28 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
         res.json(booking);
     });
 }
+const getBookingsByShowingId = async (req, res) => { //id for testing 60a7ab00b8587950bc6595aa
+
+    Booking.find({'showingId': req.params.showingId}).exec((err, bookings) => {
+        if (err) {
+            res.status(400).json({ error: "Something went wrong" });
+            return;
+        }
+        if (!bookings) {
+            res
+                .status(404)
+                .json({ error: `Booking with id ${req.params.bookingid} does not exist` });
+            return;
+        }
+
+        res.json(bookings);
+    });
+}
 
 
 module.exports = {
+    createBooking,
     getBookingById,
-    createBooking
+    getBookingsByShowingId
 };
 
