@@ -12,7 +12,6 @@ const BookingCard = ({ booking, prev }) => {
       <div className={styles.bottom}>
         <p className={styles.showingInfo}>{booking.showingId.saloon} | {booking.showingId.date} | {booking.showingId.time}</p>
         <p className={styles.bookingNumber}>Bookingnumber: {booking._id}</p>
-        <p>Seats:</p>
         <ul className={styles.seatList}>
           {/* Maps out all seats in booking */}
           {booking.tickets.map((ticket, i) => (
