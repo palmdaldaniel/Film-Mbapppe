@@ -10,6 +10,7 @@ const BookingCard = () => {
       <div className={styles.bottom}>
         <p className={styles.showingInfo}>Saloon 1 | 05.06.2021 | 12:00</p>
         <p className={styles.bookingNumber}>Bookingnumber: 123456</p>
+        <p>Seats:</p>
         <ul className={styles.seatList}>
           <li>row: 1, seat: 2</li>
           <li>row: 1, seat: 3</li>
