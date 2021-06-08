@@ -21,7 +21,17 @@ const Booking = ({ data }) => {
       totalPrice: parseInt(e.target.value) * price,
     };
 
-    setAdults(adultTickets);
+    let aT  = []
+    for(let i = 0; i < adultTickets.quantity; i ++) {
+        let ticket = {
+          type: e.target.name,
+          price: priceChild
+        }
+        aT.push(ticket)
+    }
+    console.log('adultTickets', aT);   
+    //  keep for displaying data
+    //setAdults(adultTickets);
   };
 
   const handleChildrenChange = (e) => {
@@ -31,7 +41,18 @@ const Booking = ({ data }) => {
       totalPrice: parseInt(e.target.value) * priceChild,
     };
 
-    setChildren(childTickets);
+    let cT  = []
+    for(let i = 0; i < childTickets.quantity; i ++) {
+      let ticket = {
+        type: e.target.name,
+        price: priceChild
+      }
+      cT.push(ticket)
+    }
+    console.log('childTickets', cT);
+    
+    //  keep for displaying data
+    //setChildren(childTickets);
   };
 
   const handleSeniorChange = (e) => {
@@ -40,8 +61,19 @@ const Booking = ({ data }) => {
       quantity: parseInt(e.target.value),
       totalPrice: parseInt(e.target.value) * pricePensioner,
     };
+    
+    let sT  = []
+    for(let i = 0; i < seniorTickets.quantity; i ++) {
+        let ticket = {
+          type: e.target.name,
+          price: pricePensioner
+        }
+        sT.push(ticket)
+    }
+    console.log('seniorTickets', sT);
 
-    setSeniors(seniorTickets);
+    //  keep for displaying data
+  //  setSeniors(seniorTickets);
   };
 
   return (

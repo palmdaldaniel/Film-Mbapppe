@@ -10,8 +10,6 @@ const ShowingPage = (props) => {
 
   const { getShowingsById, showing } = useContext(MovieContext);
 
-  console.log(showing);
-
   useEffect(() => {
     getShowingsById(showingId);
     // eslint-disable-next-line
