@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { BookingContext } from '../contexts/BookingContext';
 
@@ -7,8 +7,12 @@ import UserInfo from '../components/UserInfo';
 import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
-  const { activeUser } = useContext(UserContext);
+  const { activeUser, whoami } = useContext(UserContext);
   const { prev, previousBookings, upcomingBookings } = useContext(BookingContext);
+
+  useEffect(()=> {
+    whoami()
+  },[])
 
   return (
     <div className={styles.container}>
