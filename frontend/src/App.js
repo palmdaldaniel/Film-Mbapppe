@@ -7,11 +7,13 @@ import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
 import AboutPage from "./pages/AboutPage";
 import UserPage from "./pages/UserPage";
-import UserContextProvider from './contexts/UserContext';
-import MovieContextProvider from './contexts/MovieContext';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieInfoPage from './pages/MovieInfoPage'
+import UserContextProvider from "./contexts/UserContext";
+import MovieContextProvider from "./contexts/MovieContext";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MovieInfoPage from "./pages/MovieInfoPage";
 import Footer from "./components/Footer";
+import BookingContextProvider from "./contexts/BookingContext";
+import RedirectToTop from "./components/RedirectToTop";
 import NotFoundPage from './pages/NotFoundPage'
 import ProtectedRoute from './components/ProtectedRoute'
 
@@ -42,7 +44,6 @@ function App() {
           </BrowserRouter>
         </UserContextProvider>
       </MovieContextProvider>
-      
     </div>
   );
 }
