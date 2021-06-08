@@ -33,10 +33,11 @@ const getBookingById = async (req, res) => {
     });
 }
 const getBookingsByUserId = async (req, res) => { 
-    
-    Booking.find({userId: req.query.userId}).exec((err, bookings) => {
+
+    Booking.find({userId: req.query.userId}).populate('showingId').exec((err, bookings) => {
         // Checks for thrown errors from the method itself.
         if (err) {
+            console.log(`err`, err)
             res.status(400).json({ error: "Something went wrong" });
             return;
         }
@@ -49,15 +50,31 @@ const getBookingsByUserId = async (req, res) => {
             return;
         }
 
-        res.json(bookings);
+        let previousBookings = []
+        let upcomingBookings = []
+      
+       bookings.map(oneBooking => {
+           let currentDate = new Date()
+           let showingDate = new Date(oneBooking.showingId.date)
+
+            if(showingDate.valueOf() > currentDate.valueOf()) {
+                upcomingBookings.push(oneBooking)
+            } else {
+                previousBookings.push(oneBooking)
+            }
+       })
+        res.json({previousBookings, upcomingBookings});
+       
     });
+
+    
    
 }
 
 //for testing
 const getAllBookings = async (req, res) => { 
     
-    Booking.find().exec((err, bookings) => {
+    Booking.find().populate('showingId').exec((err, bookings) => {
         // Checks for thrown errors from the method itself.
         if (err) {
             res.status(400).json({ error: "Something went wrong" });
