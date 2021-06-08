@@ -12,6 +12,7 @@ const BookingContextProvider = (props) => {
   const [seniorTickets, setSeniorTickets] = useState([]);
   const [adultTickets, setAdultTickets] = useState([]);
   const [childrenTickets, setChildrenTickets] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0)
   const [currentBooking, setCurrentBooking] = useState(null);
 
   const [booked] = useState([
@@ -20,6 +21,21 @@ const BookingContextProvider = (props) => {
     { row: 5, seatNumber: 50 },
   ]);
   const [reserved, setReserved] = useState([]);
+
+  useEffect(() => {
+    console.log(tickets);
+
+      if(tickets.length > 0) {
+       let total = tickets.reduce((sum, value) =>  {
+          return sum + value.price
+        }, 0)
+        setTotalPrice(total);
+
+      }
+      
+
+
+  }, [tickets])
 
 
   useEffect(() => {
@@ -56,6 +72,8 @@ const BookingContextProvider = (props) => {
     if (tickets.length !== reserved.length) {
       console.log("both need to match");
     } else {
+
+      // merge reserved seats with selected amount of tickets.
       const data = tickets.map((ticket, i) => {
         return {
           ...ticket,
@@ -63,12 +81,14 @@ const BookingContextProvider = (props) => {
           seatingNumber: reserved[i].seatNumber,
         };
       });
+
+      // create booking data
       const info = {
         showingId: showing._id,
         userId: activeUser._id,
         tickets: data,
       }
-      console.log(info);
+    // send it to post request.
       postBooking(info)
     }
   };
@@ -91,6 +111,7 @@ const BookingContextProvider = (props) => {
     reserved, 
     setReserved, 
     tickets,
+    totalPrice,
     setTickets,
     makeBooking,
     setSeniorTickets,
