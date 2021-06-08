@@ -41,7 +41,7 @@ const getBookingsByShowingId = async (req, res) => {
         booked.push(tempObj)
       }
     }
-    res.json(booked);
+    res.json(booked); // [{"seatingNumber": 6,"rowNumber": 1},{"seatingNumber": 16,"rowNumber": 3}]
 }
 
 const deleteBooking = async (req, res) => {
