@@ -15,7 +15,6 @@ const UserPage = () => {
       {activeUser && (
         <div className={styles.content}>
           <UserInfo />
-
           <div className={styles.showings}>
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
