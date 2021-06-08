@@ -34,12 +34,13 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
 }
 const getBookingsByShowingId = async (req, res) => {
 
+
     Booking.find({'showingId': req.params.showingId}).exec((err, bookings) => {
         if (err) {
             res.status(400).json({ error: "Something went wrong" });
             return;
         }
-        if (!bookings) {
+        if (bookings == []) {
             res
                 .status(404)
                 .json({ error: `No bookings on showing with id ${req.params.showingId}.` });
