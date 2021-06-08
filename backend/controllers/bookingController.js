@@ -32,7 +32,7 @@ const getBookingById = async (req, res) => { //id for testing 60a7ab00b8587950bc
         res.json(booking);
     });
 }
-const getBookingsByShowingId = async (req, res) => { //id for testing 60a7ab00b8587950bc6595aa
+const getBookingsByShowingId = async (req, res) => {
 
     Booking.find({'showingId': req.params.showingId}).exec((err, bookings) => {
         if (err) {
