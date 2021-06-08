@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const bookingSchema = new Schema({
 
     userId: { type: Schema.Types.ObjectId, ref: "User", default: null },
-    showingId: { type: Schema.Types.ObjectId, ref: "Showings", default: null },
+    showingId: { type: Schema.Types.ObjectId, ref: "Showing", default: null },
     tickets: [
         {
             ticketId: { type: Number },
