@@ -9,7 +9,8 @@ const BookingContextProvider = (props) => {
 
   //Used for booking card trashcan rendering
   const [prev, setPrev] = useState(true);
-  //TEMP DATA FOR NOW, NEED TO BE REPLACED WITH USER BOOKINGS IN FUTURE
+
+  //TEMP DATA FOR NOW, CONNECT USER BOOKINGS TO setUpcomingBookings and setPreviousBookings AND REMOVE DEFAULT DATA TO HOOK IT UP TO BOOKINGCARD
   const [upcomingBookings, setUpcomingBookings] = useState([
     {
       _id: "qwe789",
