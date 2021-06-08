@@ -11,6 +11,8 @@ const UserPage = () => {
   /* const { previousBookings, upcomingBookings } = useContext(BookingContext); */
 
   const [prev, setPrev] = useState(true);
+
+  //TEMPORARY DATA, NEED TO BE CONNECXED TO DATABASE EVENTUALLY BUT WORKS WITH THIS FOR NOW
   const [upcomingBookings, setUpcomingBookings] = useState([
     {
       _id: "qwe789",
