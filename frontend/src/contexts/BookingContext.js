@@ -1,12 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
-import { MovieContext } from "./MovieContext"; 
+import { MovieContext } from "./MovieContext";
 
 export const BookingContext = createContext();
 
 const BookingContextProvider = (props) => {
-    const { activeUser} = useContext(UserContext)
-    const { showing } = useContext(MovieContext); 
+  const { activeUser } = useContext(UserContext);
+  const { showing } = useContext(MovieContext);
 
   // connected to booking.js
   const [tickets, setTickets] = useState([]);
@@ -14,13 +14,17 @@ const BookingContextProvider = (props) => {
   const [adultTickets, setAdultTickets] = useState([]);
   const [childrenTickets, setChildrenTickets] = useState([]);
 
+  // for testing with bookings component
+  const [booked] = useState([
+    { row: 1, seatNumber: 2 },
+    { row: 2, seatNumber: 5 },
+    { row: 5, seatNumber: 50 },
+  ]);
+  const [reserved, setReserved] = useState([]);
+
   useEffect(() => {
     makeTickets();
   }, [seniorTickets, adultTickets, childrenTickets]);
-
-  console.log(tickets);
-
-
 
   const makeTickets = () => {
     let temp = [];
@@ -42,14 +46,30 @@ const BookingContextProvider = (props) => {
       temp.push(t);
     });
 
-    setTickets(temp)
+    setTickets(temp);
   };
 
   const makeBooking = () => {
-    console.log("making a booking");
+     if (tickets.length === reserved.length) {
+       const data = tickets.map((ticket, i) => {
+         return {
+           ...ticket,
+           row: reserved[i].row,
+           seatNumber: reserved[i].seatNumber
+         }
+       });
+       console.log(data);
+    } else {
+      console.log('both need to match');
+    }
+
+  
   };
 
   const values = {
+    booked,
+    reserved,
+    setReserved,
     tickets,
     setTickets,
     makeBooking,
