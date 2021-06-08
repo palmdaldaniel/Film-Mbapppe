@@ -10,6 +10,8 @@ const ShowingPage = (props) => {
 
   const { getShowingsById, showing } = useContext(MovieContext);
 
+  console.log(showing);
+
   useEffect(() => {
     getShowingsById(showingId);
     // eslint-disable-next-line
@@ -19,8 +21,8 @@ const ShowingPage = (props) => {
     <div>
       <MovieInfo showing={showing} />
       <div className={styles.booking_wrapper}>
-        <Booking />
-        {showing && <SeatingMap saloon={showing.saloon} />}
+       {showing && <Booking data={showing}/>  } 
+        {showing && <SeatingMap saloon={showing.saloon} />  }
       </div>
 
     </div>
