@@ -8,9 +8,6 @@ export const BookingContext = createContext();
 const BookingContextProvider = (props) => {
     const { activeUser} = useContext(UserContext)
     const { showing } = useContext(MovieContext); 
-    
-    console.log('in booking context...showing', showing);
-    console.log('in booking context', activeUser);
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
