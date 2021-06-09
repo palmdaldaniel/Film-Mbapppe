@@ -4,9 +4,7 @@ import styles from "../css/Seatingmap.module.css";
 
 const SeatingMap = ({ saloon }) => {
   const [seats, setSeats] = useState([]);
-  
-  const { booked, reserved, setReserved } = useContext(BookingContext);
-
+  const { bookedPlaces, reserved, setReserved } = useContext(BookingContext);
 
   useEffect(() => {
     // create seats on component load
@@ -56,7 +54,9 @@ const SeatingMap = ({ saloon }) => {
               <p className={styles.rowNumber}>{i + 1}</p>
               {/* Loop out every seat in each row */}
               {rows.map((seat, i) => {
-                if (booked.find((b) => b.seatNumber === seat.seatNumber)) {
+                if (
+                  bookedPlaces.find((b) => b.seatingNumber === seat.seatNumber)
+                ) {
                   return (
                     <div key={i}>
                       <div className={`${styles.seat} ${styles.b}`}>
