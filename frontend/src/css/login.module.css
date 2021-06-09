@@ -20,6 +20,16 @@
   text-align: center !important;
   align-content: center;
 }
+
+.loginformShowing {
+  width: 20vw;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 3rem;
@@ -28,6 +38,15 @@
     width: 100%;
     padding: 2rem;
   }
+
+
+  .loginformShowing {
+    width: 50%;
+  
+  }
+  
+
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -38,16 +57,35 @@
     width: 50%;
     padding: 2rem;
   }
+
+  .loginformShowing {
+    width:35%;
+  
+  }
+
+ 
+
+ 
 }
 @media only screen and (min-width: 992px) {
   .loginform {
     width: 40%;
   }
+  .loginformShowing {
+    width:35%;
+  
+  }
+
 }
 @media only screen and (min-width: 1200px) {
   .loginform {
     width: 50%;
   }
+  .loginformShowing {
+    width:25%;
+  
+  }
+
 }
 
 .inputField {
@@ -102,9 +140,4 @@
 }
 
 
-.loginformShowing {
-  width: 20%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
+
