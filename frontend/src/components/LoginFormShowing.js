@@ -2,14 +2,12 @@ import { useState, useContext } from "react"
 import styles from "../css/login.module.css"
 import { Alert, Container, Form, Button } from "react-bootstrap"
 import { UserContext } from "../contexts/UserContext";
-import { useHistory } from "react-router-dom";
 
 export default function Login() {
     const { loginUser } = useContext(UserContext); //added 
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
-    const history = useHistory();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);

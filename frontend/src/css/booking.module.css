@@ -100,3 +100,11 @@
   margin-left: 100px; 
   margin-right: 100px;
 }
+
+.toggleText {
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  justify-content: center;
+}
