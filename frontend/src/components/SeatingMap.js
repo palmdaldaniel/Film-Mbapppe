@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+import { BookingContext } from "../contexts/BookingContext";
 import styles from "../css/Seatingmap.module.css";
 import { BookingContext } from "../contexts/BookingContext";
 
@@ -6,11 +7,8 @@ const SeatingMap = ({ saloon }) => {
   const { bookedPlaces } = useContext(BookingContext);
 
   const [seats, setSeats] = useState([]);
-  
-  const [reserved, setReserved] = useState([
-    { row: 2, seatNumber: 11 },
-    { row: 3, seatNumber: 22 },
-  ]);
+  const { booked, reserved, setReserved } = useContext(BookingContext);
+
 
   useEffect(() => {
     // create seats on component load
@@ -63,32 +61,37 @@ const SeatingMap = ({ saloon }) => {
                 if (bookedPlaces.find((b) => b.seatingNumber === seat.seatNumber)) {
                   return (
                     <div key={i}>
-                     <div className={`${styles.seat} ${styles.b}`}>
-                      <div className={`${styles.cushing} ${styles.b} `}></div>
-                     </div>
-                     <p>{seat.seatNumber}</p>
+                      <div className={`${styles.seat} ${styles.b}`}>
+                        <div className={`${styles.cushing} ${styles.b} `}></div>
+                      </div>
+                      <p>{seat.seatNumber}</p>
                     </div>
                   );
                 } else if (
                   reserved.find((r) => r.seatNumber === seat.seatNumber)
                 ) {
                   return (
-                  <div key={i}>
-                    <div className={`${styles.seat} ${styles.r}`} onClick={() => deselectSeat(seat)}>
-                      <div className={`${styles.cushing} ${styles.r}`}></div>
-                    </div>
-                    <p>{seat.seatNumber}</p>
+                    <div key={i}>
+                      <div
+                        className={`${styles.seat} ${styles.r}`}
+                        onClick={() => deselectSeat(seat)}
+                      >
+                        <div className={`${styles.cushing} ${styles.r}`}></div>
+                      </div>
+                      <p>{seat.seatNumber}</p>
                     </div>
                   );
                 } else {
                   return (
-                    <div  key={i}>
-                    <div className={`${styles.seat}  ${styles.o}`} onClick={() => reserveSeat(seat)}>
-                      <div className={`${styles.cushing}`}></div>
+                    <div key={i}>
+                      <div
+                        className={`${styles.seat}  ${styles.o}`}
+                        onClick={() => reserveSeat(seat)}
+                      >
+                        <div className={`${styles.cushing}`}></div>
+                      </div>
+                      <p>{seat.seatNumber}</p>
                     </div>
-                    <p>{seat.seatNumber}</p>
-                    </div>
-                    
                   );
                 }
               })}

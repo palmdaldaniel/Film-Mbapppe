@@ -1,34 +1,58 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { MovieContext } from "../contexts/MovieContext";
-import { Link } from 'react-router-dom';
-
-import ShowingCard from "../components/ShowingCard";
+import { BookingContext } from '../contexts/BookingContext';
 
 import styles from '../css/userPage.module.css'
 import UserInfo from '../components/UserInfo';
+import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  const { showings } = useContext(MovieContext); //Get upcoming bookings and previous bookings on user by filtering on showing date in future or past, instead of showings here
+  const { getBookingsByUserId } = useContext(BookingContext);
 
+  const [upcomingBookings, setUpcomingBookings] = useState([])
+  const [previousBookings, setPreviousBookings] = useState([])
+
+  //Used for booking card trashcan rendering
+  const prev = useState(true);
+
+  const gettingBookings = async (userId) => {
+    let bookings = await getBookingsByUserId(userId)
+    setUpcomingBookings(bookings.upcomingBookings)
+    setPreviousBookings(bookings.previousBookings)
+  }
+
+  useEffect(() => {
+    gettingBookings(activeUser._id)
+  }, [getBookingsByUserId, activeUser])
 
   return (
     <div className={styles.container}>
       {activeUser && (
         <div className={styles.content}>
           <UserInfo />
-
           <div className={styles.showings}>
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
-              {/* Change showings for upcoming bookings on user when bookings are ready*/}
-              {showings ? (<ShowingCard showings={showings} />) : (<h3>No upcoming showings!</h3>)}
+              <div className={styles.movieGrid}>
+                {upcomingBookings
+                  ? (upcomingBookings.map((booking, i) => (<BookingCard
+                    booking={booking}
+                    prev={!prev}
+                    key={i} />)))
+                  : (<h3>No upcoming bookings..</h3>)}
+              </div>
             </div>
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
-              {/* Change showings for previous bookings on user when bookings are ready*/}
-              {showings ? (<ShowingCard showings={showings} />) : (<h3>No previous showings!</h3>)}
+              <div className={styles.movieGrid}>
+                {previousBookings
+                  ? (previousBookings.map((booking, i) => (<BookingCard
+                    booking={booking}
+                    prev={prev}
+                    key={i} />)))
+                  : (<h3>No upcoming bookings..</h3>)}
+              </div>
             </div>
           </div>
         </div>
