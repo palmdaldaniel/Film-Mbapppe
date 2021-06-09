@@ -1,11 +1,11 @@
 import styles from "../css/booking.module.css";
 import { useContext, useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 import { BookingContext } from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
-  const history = useHistory()
+  const history = useHistory();
 
   const {
     tickets,
@@ -23,17 +23,23 @@ const Booking = ({ data }) => {
 
   const { price, priceChild, pricePensioner } = data;
 
+ 
+
+
   // clear values from user when it's leaving the page.
   useEffect(() => {
     return () => {
-      console.log('unmounting');
       setTickets([]);
       setTotalPrice(0);
       setReserved([]);
+      setSeniorTickets([])
+      setAdultTickets([])
+      setChildrenTickets([])
     };
   }, []);
 
   const handleAdultChange = (e) => {
+   
     let adultTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -53,6 +59,7 @@ const Booking = ({ data }) => {
   };
 
   const handleChildrenChange = (e) => {
+   
     let childTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -71,6 +78,8 @@ const Booking = ({ data }) => {
   };
 
   const handleSeniorChange = (e) => {
+   
+
     let seniorTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -88,15 +97,19 @@ const Booking = ({ data }) => {
     setSeniorTickets(sT);
   };
 
-const handleClick = () => {
-  history.push('/confirmation')
-  makeBooking()
-}
+  const handleClick = () => {
+    history.push("/confirmation");
+    makeBooking();
+  };
   return (
     <div className={styles.bookingcomponent}>
       <h1>Tickets</h1>
       <div className={styles.ticketContainer}>
-        <select name="adult" id="" onChange={(e) => handleAdultChange(e)}>
+        <select
+          name="adult"
+          id=""
+          onChange={(e) => handleAdultChange(e)}
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -114,7 +127,11 @@ const handleClick = () => {
         </div>
       </div>
       <div className={styles.ticketContainer}>
-        <select name="children" id="" onChange={(e) => handleChildrenChange(e)}>
+        <select
+          name="children"
+          id=""
+          onChange={(e) => handleChildrenChange(e)}
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -132,7 +149,11 @@ const handleClick = () => {
         </div>
       </div>
       <div className={styles.ticketContainer}>
-        <select name="senior" id="" onChange={(e) => handleSeniorChange(e)}>
+        <select
+          name="senior"
+          id=""
+          onChange={(e) => handleSeniorChange(e)}
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -161,7 +182,7 @@ const handleClick = () => {
         ) : (
           <button
             className={`${styles.buyButton} ${styles.active}`}
-             onClick={() => handleClick()} 
+            onClick={() => handleClick()}
           >
             Buy Tickets
           </button>
