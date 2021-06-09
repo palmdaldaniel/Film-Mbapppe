@@ -1,10 +1,12 @@
 import styles from "../css/booking.module.css";
-
-
 import { useContext, useEffect } from "react";
+import { useHistory } from 'react-router-dom'
+
 import { BookingContext } from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
+  const history = useHistory()
+
   const {
     tickets,
     reserved,
@@ -22,13 +24,13 @@ const Booking = ({ data }) => {
   const { price, priceChild, pricePensioner } = data;
 
   // clear values from user when it's leaving the page.
-    useEffect(()=> {
-      return () => {
-        setTickets([])
-        setTotalPrice(0)
-        setReserved([])
-      }
-    },[])
+  useEffect(() => {
+    return () => {
+      setTickets([]);
+      setTotalPrice(0);
+      setReserved([]);
+    };
+  }, []);
 
   const handleAdultChange = (e) => {
     let adultTickets = {
@@ -83,9 +85,12 @@ const Booking = ({ data }) => {
       sT.push(ticket);
     }
     setSeniorTickets(sT);
-
   };
 
+const handleClick = () => {
+  history.push('/confirmation')
+  makeBooking()
+}
   return (
     <div className={styles.bookingcomponent}>
       <h1>Tickets</h1>
@@ -143,7 +148,6 @@ const Booking = ({ data }) => {
           <p>{pricePensioner}</p>
         </div>
       </div>
-
       <div className={styles.buyTickets}>
         <div className={styles.ticketsInfo}>
           <p>Tickets: {tickets.length > 0 ? tickets.length : 0}</p>
@@ -151,10 +155,13 @@ const Booking = ({ data }) => {
         </div>
         {tickets.length !== reserved.length || tickets.length === 0 ? (
           <div className={styles.feedBack}>
-           <p>{feedBackMessage}</p>
+            <p>{feedBackMessage}</p>
           </div>
         ) : (
-          <button className={`${styles.buyButton} ${styles.active}`} onClick={() => makeBooking()}>
+          <button
+            className={`${styles.buyButton} ${styles.active}`}
+             onClick={() => handleClick()} 
+          >
             Buy Tickets
           </button>
         )}

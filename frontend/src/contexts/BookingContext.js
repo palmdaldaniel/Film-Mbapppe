@@ -105,7 +105,6 @@ const BookingContextProvider = (props) => {
 
   const makeTickets = () => {
     let temp = [];
-
     let tempTickets = {
       childrenTickets,
       seniorTickets,
@@ -144,19 +143,19 @@ const BookingContextProvider = (props) => {
     }
   };
   const postBooking = async (bookingData) => {
+  // prevent sending request if userId and showingId is not there.
+    if(bookingData.userId && bookingData.showingId)  {
+      let b = await fetch (`/api/v1/bookings`, {
+          method: "Post", 
+          headers: {
+              "content-type": "application/json",
+              },
+          body: JSON.stringify(bookingData)
+        }); 
+        b = await b.json(); 
+        setCurrentBooking(b)  
+    }
 
-    console.log(bookingData);
-
-  let b = await fetch (`/api/v1/bookings`, {
-      method: "Post", 
-      headers: {
-          "content-type": "application/json",
-          },
-      body: JSON.stringify(bookingData)
-    }); 
-    b = await b.json(); 
-
-    setCurrentBooking(b)  
   } 
 
   const values = {
