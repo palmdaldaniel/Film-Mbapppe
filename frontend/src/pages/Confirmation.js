@@ -5,33 +5,7 @@ import s from "../css/Confirmation.module.css";
 
 const Confirmation = () => {
   const history = useHistory();
-  
-  const { currentBooking, showing } = useContext(BookingContext);
-
-  // FAKE TEMP DATA 
-  const [tickets] = useState([
-    {
-      _id: "60c0866f052fd813234c7cd1",
-      type: "senior",
-      price: 160,
-      rowNumber: 6,
-      seatingNumber: 53
-    },
-    {
-      _id: "60c0866f052fd813234c7cd2",
-      type: "senior",
-      price: 160,
-      rowNumber: 6,
-      seatingNumber: 54
-    },
-    {
-      _id: "60c0866f052fd813234c7cd3",
-      type: "senior",
-      price: 160,
-      rowNumber: 6,
-      seatingNumber: 55
-    }
-  ])
+  const { currentBooking, showing, totalPrice } = useContext(BookingContext);
 
   useEffect(() => {
   }, [])
@@ -40,53 +14,79 @@ const Confirmation = () => {
     history.push("/");
   }
 
-  let showingInfo = ""; 
-  if(showing){
-    <div>
-      <p>
-        {showing.date}
-      </p>
-    </div>
+  console.log("currentbooking", currentBooking);
+  console.log("showing", showing);
+
+  let ticketTypes;
+  let childTix = 0; 
+  let adultTix = 0; 
+  let srTix = 0; 
+  if (currentBooking) {
+        {currentBooking.tickets.map((cbTicket, i) => {
+          if(cbTicket.type === "children"){
+            childTix += 1;
+            return
+          }
+          if(cbTicket.type === "adult"){
+            adultTix += 1; 
+            return
+          }
+          if(cbTicket.type === "senior"){
+            srTix += 1; 
+            return
+          }
+        })} 
   }
-console.log("currentbooking", currentBooking);
-console.log("showing", showing);
+
+  console.log(childTix);
+  console.log(adultTix);
+  console.log(srTix);
+
+  let info = "";
+  if (currentBooking) {
+    info = (
+      <>
+        <div className={s.confirmationContainer}>
+
+          <strong>{showing.film.Title}</strong>
+          <p>{showing.film.Runtime}</p>
+          <p>{showing.saloon.name}</p>
+          <p>{showing.date}</p>
+          <p>{showing.time}</p>
+          <p>{`Booking No: ${(currentBooking._id).slice(18)}`}</p>
+          <p>Total Seats: {currentBooking.tickets.length} </p>
+
+          <div>
+            {currentBooking.tickets.map((cbTicket, i) => (
+              <div key={i}>
+                <span>{`Ticket: ${i + 1}, Row: ${cbTicket.rowNumber}, Seat: ${cbTicket.seatingNumber}`}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            {currentBooking.tickets.map((cbTicket, i) => (
+              <div key={i}>
+                <span>{cbTicket.type}</span>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            {ticketTypes}
+          </div>
+
+          <p>Total price = {totalPrice}</p>
+
+        </div>
+      </>
+    )
+  }
   return (
     <div className={s.mainContainer}>
-      
+
       <h1>Booking Confirmed!</h1>
-      <div className={s.confirmationContainer}>
-        <strong>Title: </strong>
-        <span>min</span>
+      {info}
 
-        <div>
-          <span>Salon</span>
-          <span>{showingInfo}</span>
-          <span>Screening Time</span>
-        </div>
-        <p>Booking No:</p>
-        <p>Total Seats: </p>
-
-        {/* <div>
-        {currentBooking.map((cb, i) => (
-        <div key={i}>
-          <p>{`Ticket: ${i + 1}, Row: ${cb.rowNumber}, Seat: ${cb.seatingNumber}`}</p>
-        </div>
-      ))}
-        </div> */}
-        <div>
-          {currentBooking.tickets.map((cbTicket, i) => (
-            <div key={i}>
-              <p>{`Ticket: ${i + 1}, Row: ${cbTicket.rowNumber}, Seat: ${cbTicket.seatingNumber}`}</p>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          {/* This is a placeholder */}
-          <p>Adult * 2, Child * 1, Senior * 1</p>
-          <p>Total price = </p>
-        </div>
-      </div>
       <button className={s.button} onClick={handleClick}>Back To Homepage</button>
     </div>
   );
