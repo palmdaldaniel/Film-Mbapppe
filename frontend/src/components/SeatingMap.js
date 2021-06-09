@@ -1,14 +1,10 @@
 import { useEffect, useState, useContext } from "react";
 import { BookingContext } from "../contexts/BookingContext";
 import styles from "../css/Seatingmap.module.css";
-import { BookingContext } from "../contexts/BookingContext";
 
 const SeatingMap = ({ saloon }) => {
-  const { bookedPlaces } = useContext(BookingContext);
-
   const [seats, setSeats] = useState([]);
-  const { booked, reserved, setReserved } = useContext(BookingContext);
-
+  const { bookedPlaces, reserved, setReserved } = useContext(BookingContext);
 
   useEffect(() => {
     // create seats on component load
@@ -57,8 +53,10 @@ const SeatingMap = ({ saloon }) => {
             <div className={styles.rows} key={i}>
               <p className={styles.rowNumber}>{i + 1}</p>
               {/* Loop out every seat in each row */}
-              {rows.map((seat,i) => {
-                if (bookedPlaces.find((b) => b.seatingNumber === seat.seatNumber)) {
+              {rows.map((seat, i) => {
+                if (
+                  bookedPlaces.find((b) => b.seatingNumber === seat.seatNumber)
+                ) {
                   return (
                     <div key={i}>
                       <div className={`${styles.seat} ${styles.b}`}>
