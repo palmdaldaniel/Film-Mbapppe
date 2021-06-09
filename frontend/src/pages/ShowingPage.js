@@ -20,7 +20,7 @@ const ShowingPage = (props) => {
       <MovieInfo showing={showing} />
       <div className={styles.showingLine}>
       </div>
-      <div className={styles.showing_info}>Date:    |    Time:      |      Saloon:</div>
+      <div className={styles.showing_info}>Date: {showing?.date}   |    Time: {showing?.time}     |      Saloon: {showing?.saloon.name}</div>
       <div className={styles.booking_wrapper}>
         <Booking />
         {showing && <SeatingMap saloon={showing.saloon} />}
@@ -29,5 +29,4 @@ const ShowingPage = (props) => {
     </div>
   );
 };
-
 export default ShowingPage;
