@@ -84,6 +84,14 @@ const UserContextProvider = (props) => {
       }
     };
 
+    if (newName === "" && newPassword === "") {
+      setMessage("Please fill out at least one field");
+        setTimeout(() => {
+          setMessage(null);
+        }, 2000);
+        return;
+    }
+
     let updatedUser = await fetch(`/api/v1/users/${activeUser._id}`, {
       method: "PUT",
       headers: {
