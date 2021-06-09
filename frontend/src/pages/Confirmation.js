@@ -6,7 +6,7 @@ import s from "../css/Confirmation.module.css";
 const Confirmation = () => {
   const history = useHistory();
   
-  const { currentBooking } = useContext(BookingContext);
+  const { currentBooking, showing } = useContext(BookingContext);
 
   // FAKE TEMP DATA 
   const [tickets] = useState([
@@ -40,30 +40,45 @@ const Confirmation = () => {
     history.push("/");
   }
 
+  let showingInfo = ""; 
+  if(showing){
+    <div>
+      <p>
+        {showing.date}
+      </p>
+    </div>
+  }
+console.log("currentbooking", currentBooking);
+console.log("showing", showing);
   return (
     <div className={s.mainContainer}>
       
       <h1>Booking Confirmed!</h1>
       <div className={s.confirmationContainer}>
         <strong>Title: </strong>
-        <span>mins</span>
+        <span>min</span>
 
         <div>
           <span>Salon</span>
-          <span>Screening Date</span>
+          <span>{showingInfo}</span>
           <span>Screening Time</span>
         </div>
         <p>Booking No:</p>
         <p>Total Seats: </p>
 
-        <div>
-        {tickets.map((ticket, i) => (
+        {/* <div>
+        {currentBooking.map((cb, i) => (
         <div key={i}>
-          <p>{`${ticket.rowNumber}, ${ticket.seatingNumber}`}</p>
+          <p>{`Ticket: ${i + 1}, Row: ${cb.rowNumber}, Seat: ${cb.seatingNumber}`}</p>
         </div>
       ))}
-          <p>ticket 1 - row 1: seat 1</p>
-          <p>ticket 2 - row 1: seat 2</p>
+        </div> */}
+        <div>
+          {currentBooking.tickets.map((cbTicket, i) => (
+            <div key={i}>
+              <p>{`Ticket: ${i + 1}, Row: ${cbTicket.rowNumber}, Seat: ${cbTicket.seatingNumber}`}</p>
+            </div>
+          ))}
         </div>
 
         <div>
