@@ -40,7 +40,7 @@ const UserContextProvider = (props) => {
     e.preventDefault();
     let newPassword = e.target[1].value;
     let newName = e.target[0].value;
-
+    
     if (newName.length <= 1) {
       setMessage("Name too short!");
       setTimeout(() => {
@@ -55,13 +55,21 @@ const UserContextProvider = (props) => {
       }, 2000);
       return;
     }
+    
+    let body = { name: newName, password: newPassword };
+    if (newPassword === "") {
+      body = { name: newName }
+    };
+    if (newName === "") {
+      body = { password: newPassword }
+    };
 
     let updatedUser = await fetch(`/api/v1/users/${activeUser._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ name: newName, password: newPassword })
+      body: JSON.stringify(body)
     })
     updatedUser = await updatedUser.json();
     setActiveUser(updatedUser)
