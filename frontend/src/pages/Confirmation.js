@@ -1,29 +1,48 @@
-import { useContext, useEffect } from 'react'; 
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
-import { BookingContext } from '../contexts/BookingContext'; 
-import s from "../css/Confirmation.module.css"; 
+import { BookingContext } from '../contexts/BookingContext';
+import s from "../css/Confirmation.module.css";
 
 const Confirmation = () => {
-  const history = useHistory(); 
-  const { currentBooking } = useContext(BookingContext); 
+  const history = useHistory();
+  
+  const { currentBooking } = useContext(BookingContext);
 
   // FAKE TEMP DATA 
-  const tickets = [
-    {_id: "60c0866f052fd813234c7cd1", type: "senior", price: 160, rowNumber: 6, seatingNumber: 53},
-    {_id: "60c0866f052fd813234c7cd2", type: "senior", price: 160, rowNumber: 6, seatingNumber: 54},
-    {_id: "60c0866f052fd813234c7cd3", type: "senior", price: 160, rowNumber: 6, seatingNumber: 55}
-  ]
+  const [tickets] = useState([
+    {
+      _id: "60c0866f052fd813234c7cd1",
+      type: "senior",
+      price: 160,
+      rowNumber: 6,
+      seatingNumber: 53
+    },
+    {
+      _id: "60c0866f052fd813234c7cd2",
+      type: "senior",
+      price: 160,
+      rowNumber: 6,
+      seatingNumber: 54
+    },
+    {
+      _id: "60c0866f052fd813234c7cd3",
+      type: "senior",
+      price: 160,
+      rowNumber: 6,
+      seatingNumber: 55
+    }
+  ])
 
   useEffect(() => {
-
   }, [])
 
   const handleClick = () => {
-    history.push("/"); 
+    history.push("/");
   }
 
   return (
     <div className={s.mainContainer}>
+      
       <h1>Booking Confirmed!</h1>
       <div className={s.confirmationContainer}>
         <strong>Title: </strong>
@@ -38,7 +57,11 @@ const Confirmation = () => {
         <p>Total Seats: </p>
 
         <div>
-          {/* ticket info here. this is placeholder */}
+        {tickets.map((ticket, i) => (
+        <div key={i}>
+          <p>{`${ticket.rowNumber}, ${ticket.seatingNumber}`}</p>
+        </div>
+      ))}
           <p>ticket 1 - row 1: seat 1</p>
           <p>ticket 2 - row 1: seat 2</p>
         </div>
