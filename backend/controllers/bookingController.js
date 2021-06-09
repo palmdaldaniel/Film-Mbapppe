@@ -15,7 +15,7 @@ const createBooking = async (req, res) => {
 }
 
 
-const getBookingById = async (req, res) => { 
+const getBookingById = async (req, res) => {
 
     Booking.findById(req.params.bookingid).exec((err, booking) => {
         // Checks for thrown errors from the method itself.
@@ -34,48 +34,49 @@ const getBookingById = async (req, res) => {
         res.json(booking);
     });
 }
-const getBookingsByUserId = async (req, res) => { 
+const getBookingsByUserId = async (req, res) => {
 
-    Booking.find({userId: req.query.userId}).populate('showingId').exec((err, bookings) => {
-        // Checks for thrown errors from the method itself.
-        if (err) {
-            console.log(`err`, err)
-            res.status(400).json({ error: "Something went wrong" });
-            return;
-        }
-
-        // If no match is found in the DB.
-        if (!bookings) {
-            res
-                .status(404)
-                .json({ error: `The user with id ${userId} dosen't have bookigs` });
-            return;
-        }
-
-        let previousBookings = []
-        let upcomingBookings = []
-      
-       bookings.map(oneBooking => {
-           let currentDate = new Date()
-           let showingDate = new Date(oneBooking.showingId.date)
-
-            if(showingDate.valueOf() > currentDate.valueOf()) {
-                upcomingBookings.push(oneBooking)
-            } else {
-                previousBookings.push(oneBooking)
+    Booking.find({ userId: req.query.userId })
+        .populate({
+            path: 'showingId',
+            populate: ('film saloon')
+        })
+        .exec((err, bookings) => {
+            // Checks for thrown errors from the method itself.
+            if (err) {
+                console.log(`err`, err)
+                res.status(400).json({ error: "Something went wrong" });
+                return;
             }
-       })
-        res.json({previousBookings, upcomingBookings});
-       
-    });
 
-    
-   
+            // If no match is found in the DB.
+            if (!bookings) {
+                res
+                    .status(404)
+                    .json({ error: `The user with id ${userId} dosen't have bookigs` });
+                return;
+            }
+
+            let previousBookings = []
+            let upcomingBookings = []
+
+            bookings.map(oneBooking => {
+                let currentDate = new Date()
+                let showingDate = new Date(oneBooking.showingId.date)
+
+                if (showingDate.valueOf() > currentDate.valueOf()) {
+                    upcomingBookings.push(oneBooking)
+                } else {
+                    previousBookings.push(oneBooking)
+                }
+            })
+            res.json({ previousBookings, upcomingBookings });
+        });
 }
 
 //for testing
-const getAllBookings = async (req, res) => { 
-    
+const getAllBookings = async (req, res) => {
+
     Booking.find().populate('showingId').exec((err, bookings) => {
         // Checks for thrown errors from the method itself.
         if (err) {
@@ -94,7 +95,7 @@ const getAllBookings = async (req, res) => {
         res.json(bookings);
     });
 }
-   
+
 const getBookingsByShowingId = async (req, res) => {
     let bookings = await Booking.find({ 'showingId': req.params.showingId }).exec()
 

@@ -5,8 +5,6 @@ import { MovieContext } from "./MovieContext";
 export const BookingContext = createContext();
 
 const BookingContextProvider = (props) => {
-  const { activeUser } = useContext(UserContext);
-  const { showing } = useContext(MovieContext);
   const [tickets, setTickets] = useState([]);
   const [seniorTickets, setSeniorTickets] = useState([]);
   const [adultTickets, setAdultTickets] = useState([]);
@@ -15,70 +13,29 @@ const BookingContextProvider = (props) => {
   const [currentBooking, setCurrentBooking] = useState(null);
   const [feedBackMessage] = useState('Select tickets and seats to make purchase')
 
-  //Used for booking card trashcan rendering
-  const prev = useState(true);
+  const { activeUser } = useContext(UserContext)
+  const { showing } = useContext(MovieContext);
+  const [bookingId, setBookingId] = useState([]);
 
-  //TEMP DATA FOR NOW, CONNECT USER BOOKINGS TO setUpcomingBookings and setPreviousBookings AND REMOVE DEFAULT DATA TO HOOK IT UP TO BOOKINGCARD
-  const [upcomingBookings, setUpcomingBookings] = useState([
-    {
-      _id: "qwe789",
-      showingId: {
-        date: "2021-06-01",
-        saloon: "Big saloon",
-        film: "Tarzan",
-        time: "10:00",
-        price: 150
+
+
+  const getBookingsByUserId = async (userId) => { //60b6042a6a777f1cbc828eb5
+    let bookings = await fetch(`api/v1/bookings/user-bookings?userId=${userId}`);
+    bookings = await bookings.json();
+    // setUpcomingBookings(bookings.upcomingBookings)
+    // setPreviousBookings(bookings.previousBookings)
+    return bookings
+  }
+
+  // delete Booking 
+  const deleteBooking = async (bookingId) => {
+    await fetch(`/api/v1/bookings/${bookingId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
       },
-      tickets: [
-        {
-          price: 110,
-          seatingNumber: 8,
-          rowNumber: 3
-        }
-      ]
-    },
-    {
-      _id: "asd456",
-      showingId: {
-        date: "2021-06-01",
-        saloon: "Big saloon",
-        film: "Nemo",
-        time: "10:00",
-        price: 150
-      },
-      tickets: [
-        {
-          price: 110,
-          seatingNumber: 8,
-          rowNumber: 3
-        }
-      ]
-    }
-  ]);
-  const [previousBookings, setPreviousBookings] = useState([
-    {
-      _id: "abc123",
-      showingId: {
-        date: "2021-06-01",
-        saloon: "Small saloon",
-        film: "Tarzan",
-        time: "10:00",
-        price: 150
-      },
-      tickets: [
-        {
-          price: 110,
-          seatingNumber: 8,
-          rowNumber: 3
-        },
-        {
-          price: 110,
-          seatingNumber: 7,
-          rowNumber: 3
-        }
-      ]
-    }
-  ]);
+    });
+  };
 
   const [booked] = useState([
     { row: 1, seatNumber: 2 },
@@ -174,11 +131,16 @@ const BookingContextProvider = (props) => {
     upcomingBookings,
     previousBookings,
     feedBackMessage
+    getBookingsByUserId,
+    deleteBooking,
+    bookingId
   };
   return (
     <BookingContext.Provider value={values}>
       {props.children}
     </BookingContext.Provider>
   );
+
 };
 export default BookingContextProvider;
+
