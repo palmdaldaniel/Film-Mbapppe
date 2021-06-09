@@ -40,14 +40,31 @@ const UserContextProvider = (props) => {
     e.preventDefault();
     let newPassword = e.target[1].value;
     let newName = e.target[0].value;
-    
+
     let body = { name: newName, password: newPassword };
 
+    //PASSWORD CHECKS
     if (newPassword === "") {
       body = { name: newName }
     } else {
-      console.log("Do pass check here");
+      if (newPassword.length < 5) {
+        setMessage("Password too short!");
+        setTimeout(() => {
+          setMessage(null);
+        }, 2000);
+        return;
+      }
+      if (!newPassword.match(RegExp(
+        "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"))) {
+          setMessage("Need a stronge password");
+          setTimeout(() => {
+            setMessage(null);
+          }, 2000);
+          return;
+      }
     };
+
+    //NAME CHECKS
     if (newName === "") {
       body = { password: newPassword }
     } else {
