@@ -5,7 +5,14 @@ import s from "../css/Confirmation.module.css";
 
 const Confirmation = () => {
   const history = useHistory(); 
-  const {} = useContext(BookingContext); 
+  const { currentBooking } = useContext(BookingContext); 
+
+  // FAKE TEMP DATA 
+  const tickets = [
+    {_id: "60c0866f052fd813234c7cd1", type: "senior", price: 160, rowNumber: 6, seatingNumber: 53},
+    {_id: "60c0866f052fd813234c7cd2", type: "senior", price: 160, rowNumber: 6, seatingNumber: 54},
+    {_id: "60c0866f052fd813234c7cd3", type: "senior", price: 160, rowNumber: 6, seatingNumber: 55}
+  ]
 
   useEffect(() => {
 
