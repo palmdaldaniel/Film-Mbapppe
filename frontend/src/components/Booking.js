@@ -1,7 +1,7 @@
 import styles from "../css/booking.module.css";
-import React, { useEffect } from "react";
 
-import { useState, useContext } from "react";
+
+import { useContext, useEffect } from "react";
 import { BookingContext } from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
@@ -21,40 +21,14 @@ const Booking = ({ data }) => {
 
   const { price, priceChild, pricePensioner } = data;
 
-  // values for displaying data on page for the moment.
-  const [adults, setAdults] = useState({
-    type: "",
-    quantity: 0,
-    totalPrice: 0,
-  });
-  const [children, setChildren] = useState({
-    type: "",
-    quantity: 0,
-    totalPrice: 0,
-  });
-  const [seniors, setSeniors] = useState({
-    type: "",
-    quantity: 0,
-    totalPrice: 0,
-  });
-
+  // clear values from user when it's leaving the page.
     useEffect(()=> {
-
-      
-
       return () => {
-        console.log('unmounting');
         setTickets([])
         setTotalPrice(0)
         setReserved([])
       }
-
     },[])
-
-
-    console.log('tickets', tickets)
-    console.log('total price', totalPrice)
-    console.log('reserved', reserved); 
 
   const handleAdultChange = (e) => {
     let adultTickets = {
@@ -73,8 +47,6 @@ const Booking = ({ data }) => {
     }
 
     setAdultTickets(aT);
-    //  keep for displaying data
-    //setAdults(adultTickets);
   };
 
   const handleChildrenChange = (e) => {
@@ -93,9 +65,6 @@ const Booking = ({ data }) => {
       cT.push(ticket);
     }
     setChildrenTickets(cT);
-
-    //  keep for displaying data
-    //setChildren(childTickets);
   };
 
   const handleSeniorChange = (e) => {
@@ -115,8 +84,6 @@ const Booking = ({ data }) => {
     }
     setSeniorTickets(sT);
 
-    //  keep for displaying data
-    //  setSeniors(seniorTickets);
   };
 
   return (
