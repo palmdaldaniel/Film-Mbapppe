@@ -36,16 +36,11 @@ const UserContextProvider = (props) => {
 
 
 
-  const editName = async (e) => {
+  const editUser = async (e) => {
     e.preventDefault();
+    let newPassword = e.target[1].value;
     let newName = e.target[0].value;
-    if (newName.length > 12) {
-      setMessage("Name too long!");
-      setTimeout(() => {
-        setMessage(null);
-      }, 2000);
-      return;
-    }
+
     if (newName.length <= 1) {
       setMessage("Name too short!");
       setTimeout(() => {
@@ -53,16 +48,23 @@ const UserContextProvider = (props) => {
       }, 2000);
       return;
     }
+    if (newName.length > 12) {
+      setMessage("Name too long!");
+      setTimeout(() => {
+        setMessage(null);
+      }, 2000);
+      return;
+    }
 
-    let changeUserName = await fetch(`/api/v1/users/${activeUser._id}`, {
+    let updatedUser = await fetch(`/api/v1/users/${activeUser._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ name: newName })
+      body: JSON.stringify({ name: newName, password: newPassword })
     })
-    changeUserName = await changeUserName.json();
-    setActiveUser(changeUserName)
+    updatedUser = await updatedUser.json();
+    setActiveUser(updatedUser)
     setIsEditing(!isEditing);
   };
 
@@ -122,7 +124,7 @@ const UserContextProvider = (props) => {
     createUser,
     logout,
     whoami,
-    editName,
+    editUser,
     isEditing,
     setIsEditing,
     setShowLogin,
