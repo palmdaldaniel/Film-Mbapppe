@@ -5,8 +5,16 @@ import { useState, useContext } from "react";
 import { BookingContext } from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
-  const { tickets, totalPrice, makeBooking, setSeniorTickets, setAdultTickets, setChildrenTickets } =
-    useContext(BookingContext);
+  const {
+    tickets,
+    reserved,
+    totalPrice,
+    makeBooking,
+    setSeniorTickets,
+    setAdultTickets,
+    setChildrenTickets,
+    feedBackMessage,
+  } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;
 
@@ -150,14 +158,18 @@ const Booking = ({ data }) => {
 
       <div className={styles.buyTickets}>
         <div className={styles.ticketsInfo}>
-          <p>
-            Tickets: {tickets.length > 0 ? tickets.length : 0 + ' kr' } 
-          </p>
-          <p>{totalPrice > 0 ? totalPrice + " kr" : 0 + ' kr'}</p>
+          <p>Tickets: {tickets.length > 0 ? tickets.length : 0}</p>
+          <p>{totalPrice > 0 ? totalPrice + " kr" : 0 + " kr"}</p>
         </div>
-        <button className={styles.buyButton} onClick={() => makeBooking()}>
-          Buy Tickets
-        </button>
+        {tickets.length !== reserved.length || tickets.length === 0 ? (
+          <div className={styles.feedBack}>
+           <p>{feedBackMessage}</p>
+          </div>
+        ) : (
+          <button className={`${styles.buyButton} ${styles.active}`} onClick={() => makeBooking()}>
+            Buy Tickets
+          </button>
+        )}
       </div>
     </div>
   );

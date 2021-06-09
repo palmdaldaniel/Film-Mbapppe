@@ -13,6 +13,7 @@ const BookingContextProvider = (props) => {
   const [childrenTickets, setChildrenTickets] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0)
   const [currentBooking, setCurrentBooking] = useState(null);
+  const [feedBackMessage] = useState('Select tickets and seats to make purchase')
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
@@ -144,6 +145,8 @@ const BookingContextProvider = (props) => {
   };
   const postBooking = async (bookingData) => {
 
+    console.log(bookingData);
+
   let b = await fetch (`/api/v1/bookings`, {
       method: "Post", 
       headers: {
@@ -153,7 +156,9 @@ const BookingContextProvider = (props) => {
     }); 
     b = await b.json(); 
 
-    setCurrentBooking(b) 
+    console.log(b);
+
+    setCurrentBooking(b)  
   } 
 
   const values = {
@@ -169,7 +174,8 @@ const BookingContextProvider = (props) => {
     setChildrenTickets,
     prev,
     upcomingBookings,
-    previousBookings
+    previousBookings,
+    feedBackMessage
   };
   return (
     <BookingContext.Provider value={values}>
