@@ -1,7 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Showing from "./pages/ShowingPage";
-import Navbar from "./components/Navbar";
+import NavbarComponent from "./components/Navbar";
 import SignUp from "./components/SignUp";
 import HomePage from "./pages/HomePage";
 import AllMovies from "./pages/AllMovies";
@@ -24,7 +24,7 @@ function App() {
         <UserContextProvider>
           <BookingContextProvider>
             <BrowserRouter>
-              <Navbar />
+              <NavbarComponent />
               <RedirectToTop />
               <Route exact path="/">
                 <HomePage />
