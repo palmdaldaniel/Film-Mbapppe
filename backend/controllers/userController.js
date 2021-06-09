@@ -55,8 +55,14 @@ const createUser = async (req, res) => {
 // Edit User
 const editUser = async (req, res) => {
   let user;
-
-  user = await User.findByIdAndUpdate(req.params.userId, { name: req.body.name }, {new: true}).exec();
+  let password = Encrypt.encrypt(req.body.password);
+  let name = req.body.name;
+  if (password) {
+    user = await User.findByIdAndUpdate(req.params.userId, { password: password }, { new: true }).exec();
+  }
+  if (name) {
+    user = await User.findByIdAndUpdate(req.params.userId, { name: name }, { new: true }).exec();
+  }
   user.password = undefined;
   req.session.user = user;
   res.send(user);
