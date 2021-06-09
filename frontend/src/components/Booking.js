@@ -1,5 +1,5 @@
 import styles from "../css/booking.module.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom'
 
 import { BookingContext } from "../contexts/BookingContext";
@@ -26,6 +26,7 @@ const Booking = ({ data }) => {
   // clear values from user when it's leaving the page.
   useEffect(() => {
     return () => {
+      console.log('unmounting');
       setTickets([]);
       setTotalPrice(0);
       setReserved([]);
