@@ -49,3 +49,15 @@
     flex-basis: 25%;
   }
 }
+
+.showingLine {
+  border-top: 2px solid #ffffff;
+  margin-left: 100px; 
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.showing_info {
+  margin-left: 100px; 
+  margin-right: 100px;
+}
