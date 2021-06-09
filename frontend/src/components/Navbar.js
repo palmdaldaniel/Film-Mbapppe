@@ -21,7 +21,7 @@ const NavbarComponent = () => {
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse className={`${styles.myNav} w-100 pb-3`} id="responsive-navbar-nav">
+        <Navbar.Collapse className={`${styles.myNav} w-100 pb-3 pb-lg-0`} id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link className={styles.link} to="/allmovies">
               All movies
