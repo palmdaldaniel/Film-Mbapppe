@@ -6,22 +6,13 @@ export const BookingContext = createContext();
 
 
 const BookingContextProvider = (props) => {
-    const { activeUser} = useContext(UserContext);
+    //const { activeUser} = useContext(UserContext);
     const [bookingId, setBookingId] = useState([]);
     const { showing } = useContext(MovieContext); 
+    //Used for booking card trashcan rendering
+    const prev = useState(true);
 
-// delete Booking 
-const deleteBooking = async (bookingId, userId) => {
-  await fetch(`/api/v1/users/${bookingId}/${userId}`, {
-    method: "DELETE",
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  //Used for booking card trashcan rendering
-  const prev = useState(true);
-
-  //TEMP DATA FOR NOW, CONNECT USER BOOKINGS TO setUpcomingBookings and setPreviousBookings AND REMOVE DEFAULT DATA TO HOOK IT UP TO BOOKINGCARD
+    //TEMP DATA FOR NOW, CONNECT USER BOOKINGS TO setUpcomingBookings and setPreviousBookings AND REMOVE DEFAULT DATA TO HOOK IT UP TO BOOKINGCARD
   const [upcomingBookings, setUpcomingBookings] = useState([
     {
       _id: "qwe789",
@@ -83,16 +74,31 @@ const deleteBooking = async (bookingId, userId) => {
     }
   ]);
 
+// delete Booking 
+const deleteBooking = async (bookingId) => {
+  await fetch(`/api/v1/bookings/${bookingId}`, {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+};
+
+  
+
   const values = {
     prev,
     upcomingBookings,
-    previousBookings
+    previousBookings,
+    deleteBooking,
+    bookingId
+    
   };
 
   return (
     <BookingContext.Provider value={values}>{props.children}</BookingContext.Provider>
   ); 
-};
 
+};
 export default BookingContextProvider;
 
