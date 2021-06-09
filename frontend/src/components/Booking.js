@@ -1,5 +1,5 @@
 import styles from "../css/booking.module.css";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useState, useContext } from "react";
 import { BookingContext } from "../contexts/BookingContext";
@@ -13,6 +13,9 @@ const Booking = ({ data }) => {
     setSeniorTickets,
     setAdultTickets,
     setChildrenTickets,
+    setTotalPrice,
+    setTickets,
+    setReserved,
     feedBackMessage,
   } = useContext(BookingContext);
 
@@ -34,6 +37,24 @@ const Booking = ({ data }) => {
     quantity: 0,
     totalPrice: 0,
   });
+
+    useEffect(()=> {
+
+      
+
+      return () => {
+        console.log('unmounting');
+        setTickets([])
+        setTotalPrice(0)
+        setReserved([])
+      }
+
+    },[])
+
+
+    console.log('tickets', tickets)
+    console.log('total price', totalPrice)
+    console.log('reserved', reserved); 
 
   const handleAdultChange = (e) => {
     let adultTickets = {

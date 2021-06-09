@@ -72,11 +72,6 @@
   border-radius: 5px;
 }
 
- /* .buyButton:hover {
-  background-color: #444647;
-  
-}  */
-
 
 .active {
   background: #4387FC;
@@ -85,7 +80,6 @@
 
 .active:hover {
   background: #3c80f5;
-
 }
 
 .feedBack {
@@ -94,7 +88,6 @@
   background: #5b5f63 !important;
   border: 2px solid #5b5f63;
   border-radius: 5px;
-
 }
 
 

@@ -156,8 +156,6 @@ const BookingContextProvider = (props) => {
     }); 
     b = await b.json(); 
 
-    console.log(b);
-
     setCurrentBooking(b)  
   } 
 
@@ -167,6 +165,7 @@ const BookingContextProvider = (props) => {
     setReserved, 
     tickets,
     totalPrice,
+    setTotalPrice,
     setTickets,
     makeBooking,
     setSeniorTickets,
