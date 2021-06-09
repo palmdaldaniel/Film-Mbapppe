@@ -26,16 +26,14 @@ const ShowingPage = (props) => {
     <div>
       <MovieInfo showing={showing} />
       <div className={styles.showingLine}>
-      </div>
-      <div className={styles.showing_info}>Date:    |    Time:      |      Saloon:</div>
-      
+      </div>      
       {activeUser ? (
         <div className={styles.booking_wrapper}>
         <Booking />
         {showing && <SeatingMap saloon={showing.saloon} />}
       </div>
       ) : (
-        <div>
+        <div className={styles.formContainer}>
         {showLogin ? <LoginFormShowing /> : <SignUpShowing />}
         <p className={styles.toggleText} onClick={toggle}>{showLogin ? "Are you not a member yet? " : "Back to login"}</p>
         </div>

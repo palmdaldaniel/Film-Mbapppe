@@ -96,10 +96,6 @@
   margin-top: 20px;
 }
 
-.showing_info {
-  margin-left: 100px; 
-  margin-right: 100px;
-}
 
 .toggleText {
   margin-top: 20px;
@@ -107,4 +103,9 @@
   text-align: center;
   text-decoration: underline;
   justify-content: center;
+}
+
+
+.formContainer {
+  margin-top: 20px;
 }

@@ -7,7 +7,6 @@ import styles from "../css/SignUp.module.css";
 import ModalWindow from './ModalWindow'
 
 const Register = () => {
-  const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
  
 
@@ -73,7 +72,7 @@ let modalValues = {
         ) : (
           <div>
             <p className={styles.registerformtext}>Register your account</p>
-            <div className={styles.registerform}>
+            <div className={styles.registerformShowing}>
             
               <Form onSubmit={(e) => registerSubmitHandler(e)}>
                 
