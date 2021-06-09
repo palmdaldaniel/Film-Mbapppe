@@ -4,34 +4,31 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import styles from "../css/Navbar.module.css";
+import { Navbar, Nav } from 'react-bootstrap'
 
-const Navbar = () => {
-
+const NavbarComponent = () => {
   const { logout, activeUser } = useContext(UserContext);
   return (
-    <div>
-      <nav
-        className={styles.navbar}
-      >
-        <Link to="/">
-          <img
-            className={styles.logo}
-            src="../assets/whitepopcorn.svg"
-            alt="popcorn"
-          />
-        </Link>
 
-        <div className="">
-          {" "}
-
-          <div className="">
+    <Navbar collapseOnSelect expand="lg" variant="dark">
+        <Navbar.Brand >
+          <Link to="/">
+            <img
+              className={styles.logo}
+              src="../assets/whitepopcorn.svg"
+              alt="popcorn"
+            />
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse className={`${styles.myNav} w-100 pb-3 pb-lg-0`} id="responsive-navbar-nav">
+          <Nav className="me-auto">
             <Link className={styles.link} to="/allmovies">
               All movies
             </Link>
             <Link className={styles.link} to="/about">
               About
             </Link>
-
             {
               activeUser ? (
                 <React.Fragment>
@@ -53,11 +50,12 @@ const Navbar = () => {
                 </Link>
               )
             }
-          </div>
-        </div>
-      </nav>
-    </div>
+          </Nav>
+        </Navbar.Collapse>
+    </Navbar>
+
+
   );
 };
 
-export default Navbar;
+export default NavbarComponent;

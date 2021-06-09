@@ -90,7 +90,7 @@ const loginUser = async (req, res) => {
 
       // set users pw to undefined
       user.password = undefined;
-      return res.json({ message: "Login successfull", loggedInUser: user });
+      return res.json(user);
     }
     return res.status(401).json({ error: "Wrong email or password" });
   }
