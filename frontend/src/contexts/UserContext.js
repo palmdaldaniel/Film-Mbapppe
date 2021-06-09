@@ -42,7 +42,6 @@ const UserContextProvider = (props) => {
     let newName = e.target[0].value;
     
     let body = { name: newName, password: newPassword };
-    console.log(newName, newPassword);
 
     if (newPassword === "") {
       body = { name: newName }
@@ -67,8 +66,6 @@ const UserContextProvider = (props) => {
         return;
       }
     };
-
-    console.log("body: ", body);
 
     let updatedUser = await fetch(`/api/v1/users/${activeUser._id}`, {
       method: "PUT",
