@@ -22,7 +22,7 @@ const BookingContextProvider = (props) => {
   const [reserved, setReserved] = useState([]);
 
   useEffect(() => {
-      if(tickets.length > 0) {
+      if(tickets.length >= 0) {
        let total = tickets.reduce((sum, value) =>  {
           return sum + value.price
         }, 0)
