@@ -18,6 +18,9 @@ const ShowingPage = (props) => {
   return (
     <div>
       <MovieInfo showing={showing} />
+      <div className={styles.showingLine}>
+      </div>
+      <div className={styles.showing_info}>Date:    |    Time:      |      Saloon:</div>
       <div className={styles.booking_wrapper}>
         <Booking />
         {showing && <SeatingMap saloon={showing.saloon} />}
