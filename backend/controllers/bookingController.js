@@ -1,13 +1,17 @@
 const Booking = require("../models/Booking");
 
 const createBooking = async (req, res) => {
-    let booking = await Booking.create({
+    console.log('bookingData', req.body);
+
+      const booking = await Booking.create({
         userId: req.body.userId,
         showingId: req.body.showingId,
         tickets: req.body.tickets
     });
 
-    res.send(booking);
+    //res.send(booking); 
+    res.send(booking); 
+
 }
 
 
