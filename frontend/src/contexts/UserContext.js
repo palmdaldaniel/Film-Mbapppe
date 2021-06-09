@@ -41,28 +41,34 @@ const UserContextProvider = (props) => {
     let newPassword = e.target[1].value;
     let newName = e.target[0].value;
     
-    if (newName.length <= 1) {
-      setMessage("Name too short!");
-      setTimeout(() => {
-        setMessage(null);
-      }, 2000);
-      return;
-    }
-    if (newName.length > 12) {
-      setMessage("Name too long!");
-      setTimeout(() => {
-        setMessage(null);
-      }, 2000);
-      return;
-    }
-    
     let body = { name: newName, password: newPassword };
+    console.log(newName, newPassword);
+
     if (newPassword === "") {
       body = { name: newName }
+    } else {
+      console.log("Do pass check here");
     };
     if (newName === "") {
       body = { password: newPassword }
+    } else {
+      if (newName.length <= 1) {
+        setMessage("Name too short!");
+        setTimeout(() => {
+          setMessage(null);
+        }, 2000);
+        return;
+      }
+      if (newName.length > 12) {
+        setMessage("Name too long!");
+        setTimeout(() => {
+          setMessage(null);
+        }, 2000);
+        return;
+      }
     };
+
+    console.log("body: ", body);
 
     let updatedUser = await fetch(`/api/v1/users/${activeUser._id}`, {
       method: "PUT",
