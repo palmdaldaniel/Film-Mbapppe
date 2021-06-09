@@ -10,7 +10,7 @@ const UserInfo = () => {
       <h2>Hi, <span>{activeUser.name}</span>!</h2>
       <button
         className={styles.editNameButton}
-        onClick={() => setIsEditing(!isEditing)}>Edit name</button>
+        onClick={() => setIsEditing(!isEditing)}>Edit user</button>
       {isEditing ? (
         <div>
           <form action="submit"
@@ -22,9 +22,9 @@ const UserInfo = () => {
             placeholder="New password..."/>
             <button className={styles.inputBtn} >Change</button>
             {message ? (
-              <p>{message}</p>
+              <p className={styles.msg}>{message}</p>
             ) : (
-              <div></div>
+              <div className={styles.msg}></div>
             )}
           </form>
         </div>
