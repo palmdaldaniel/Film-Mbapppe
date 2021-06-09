@@ -22,12 +22,12 @@ const BookingContextProvider = (props) => {
   const [reserved, setReserved] = useState([]);
 
   useEffect(() => {
+    // count total price if tickets are selected
       if(tickets.length >= 0) {
        let total = tickets.reduce((sum, value) =>  {
           return sum + value.price
         }, 0)
         setTotalPrice(total);
-
       }
   }, [tickets])
 
@@ -54,7 +54,7 @@ const BookingContextProvider = (props) => {
   };
 
   const makeBooking = () => {
-    if (tickets.length !== reserved.length) {
+    if (tickets.length !== reserved.length || tickets.length === 0 ) {
       console.log("both need to match");
     } else {
 
