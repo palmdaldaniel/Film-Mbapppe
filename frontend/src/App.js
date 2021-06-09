@@ -16,6 +16,7 @@ import BookingContextProvider from "./contexts/BookingContext";
 import RedirectToTop from "./components/RedirectToTop";
 import NotFoundPage from './pages/NotFoundPage'
 import ProtectedRoute from './components/ProtectedRoute'
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
               </Route>
               <Route exact path="/movie-info/:movieId" component={MovieInfoPage} />
               <Route exact path="/notfound" component={NotFoundPage} />
+              <Route exact path="/confirmation" component={Confirmation} /> 
               <Footer />
             </BrowserRouter>
           </BookingContextProvider>
