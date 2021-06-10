@@ -113,21 +113,22 @@ const getBookingsByShowingId = async (req, res) => {
 }
 
 const deleteBooking = async (req, res) => {
+
     try {
-        let exists = await Booking.exists({ _id: req.params.bookingid });
+        let exists = await Booking.exists({ _id: req.params.bookingId });
         if (exists) {
-            await Booking.deleteOne({ _id: req.params.bookingid }).exec();
+            await Booking.deleteOne({ _id: req.params.bookingId }).exec();
             res.json({
-                message: `Booking with id ${req.params.bookingid} has been deleted.`
+                message: `Booking with id ${req.params.bookingId} has been deleted.`
             });
             return;
         }
     } catch (error) {
         res
             .status(404)
-            .json({ error: `Booking with id ${req.query.bookingid} does not exist.` });
+            .json({ error: `Booking with id ${req.query.bookingId} does not exist.` });
         return;
-    }
+    } 
 }
 
 module.exports = {

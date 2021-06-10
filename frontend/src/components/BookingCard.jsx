@@ -4,16 +4,12 @@ import { BookingContext } from "../contexts/BookingContext";
 import Trash from "../components/Trash";
 //import ModalWindowSecond from '../components/ModalWindowSecond'; //for the modal
 
-const BookingCard = ({ booking, prev,props }) => {
-  const { deleteBooking,allBooking,setAllBooking  } = useContext(BookingContext);
+const BookingCard = ({ booking, prev  }) => {
+  const { deleteBooking } = useContext(BookingContext);
+
+
   //const [bookingIsDeleted, setBookingIsDeleted ] = useState(false); //for the modal
   
-  
-//for removing the booking 
-  const  removeBooking= (bookingId) => {
-    deleteBooking(bookingId);
-    //console.log ("hello");
-   }
 
 
 // for the popup
@@ -36,7 +32,7 @@ const BookingCard = ({ booking, prev,props }) => {
        <button className={styles.delete} 
        
        onClick={() => 
-        { removeBooking(booking._id)}}> 
+        { deleteBooking(booking._id)}}> 
         
         <Trash/>  
         

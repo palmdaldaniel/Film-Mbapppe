@@ -8,9 +8,6 @@ const BookingContextProvider = (props) => {
   // From context wrapping around Booking Context in app.js
   const { activeUser } = useContext(UserContext);
   const { showing } = useContext(MovieContext);
-    const [bookingId, setBookingId] = useState([]);
-    const [allBookings, setAllBookings] = useState([]);
-    const prev = useState(true);
 
   // states for booking component
   const [adultTickets, setAdultTickets] = useState([]);
@@ -25,13 +22,16 @@ const BookingContextProvider = (props) => {
   // states for seatingmap
   const [reserved, setReserved] = useState([]);
   const [bookedPlaces, setBookedPlaces] = useState([]);
-  const [bookingId, setBookingId] = useState([]);
 
   // state for purchased bookings
   const [currentBooking, setCurrentBooking] = useState(null);
 
-  // logic for making tickets
+  // states for bookingcard
+  const [bookingId, setBookingId] = useState([]);
+  const [allBookings, setAllBookings] = useState([]);
+  const prev = useState(true);
 
+  // logic for making tickets
   useEffect(() => {
     // count total price if tickets are selected
     if (tickets.length >= 0) {
@@ -100,16 +100,6 @@ const BookingContextProvider = (props) => {
     return bookings;
   };
 
-  // delete Booking
-  const deleteBooking = async (bookingId) => {
-    await fetch(`/api/v1/bookings/${bookingId}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-  };
-
   const postBooking = async (bookingData) => {
     // prevent sending request if userId and showingId is not there.
     if (bookingData.userId && bookingData.showingId) {
@@ -125,32 +115,29 @@ const BookingContextProvider = (props) => {
     }
   };
 
-const deleteBooking = async (bookingId) => {
-console.log("bookingId", bookingId);
-  // create the deleteobject 
-  let deleteObject = {
-    bookingId: bookingId,
-   
-  }
-
-  let result = await fetch(`/api/v1/bookings/${bookingId}`, {
-    headers: {
-    method: "DELETE",
-      "content-type": "application/json",
-    },
-
-  });
-body: JSON.stringify(deleteObject)
+  // delete Booking
+  const deleteBooking = async (bookingId) => {
+    console.log("bookingId", bookingId);
+    // create the deleteobject
+  
+  /*   let result = await fetch(`/api/v1/bookings/${bookingId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
 
     result = await result.json();
-    
+
     if (result.success) {
-      console.log(result.success)
+      console.log(result.success);
     } else if (result.error) {
-      console.log(result.error)
+      console.log(result.error);
     }
 
-    setAllBookings(allBookings.filter(booking => booking.bookingId !== bookingId));
+    setAllBookings(
+      allBookings.filter((booking) => booking.bookingId !== bookingId)
+    ); */
   };
   const values = {
     getAllBookedSeatsForShowing,
@@ -170,7 +157,8 @@ body: JSON.stringify(deleteObject)
     deleteBooking,
     bookingId,
     allBookings,
-    setAllBookings
+    setAllBookings,
+    prev
   };
 
   return (
