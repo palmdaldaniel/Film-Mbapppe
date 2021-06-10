@@ -2,14 +2,14 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
 function ModalWindow(props) {
-  const {signUpFail, setSignUpFail, modalText} = props.modalValues
+  const {booleanValue, toggleBoolean, modalText} = props.modalValues
     
     return (
       <>
-        <Modal show={signUpFail} onHide={()=>setSignUpFail(false)} animation={false}>
+        <Modal show={booleanValue} onHide={()=>toggleBoolean(false)} animation={false}>
           <Modal.Body>{modalText}</Modal.Body>
           <Modal.Footer>
-            <Button variant="danger" onClick={()=>setSignUpFail(false)}>
+            <Button variant="danger" onClick={()=>toggleBoolean(false)}>
               Close
             </Button>
           </Modal.Footer>
