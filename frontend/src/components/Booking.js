@@ -13,8 +13,11 @@ const Booking = ({ data }) => {
     totalPrice,
     makeBooking,
     setSeniorTickets,
+    seniorTickets,
     setAdultTickets,
+    adultTickets,
     setChildrenTickets,
+    childrenTickets,
     setTotalPrice,
     setTickets,
     setReserved,
@@ -22,9 +25,6 @@ const Booking = ({ data }) => {
   } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;
-
- 
-
 
   // clear values from user when it's leaving the page.
   useEffect(() => {
@@ -39,7 +39,7 @@ const Booking = ({ data }) => {
   }, []);
 
   const handleAdultChange = (e) => {
-   
+
     let adultTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -59,7 +59,7 @@ const Booking = ({ data }) => {
   };
 
   const handleChildrenChange = (e) => {
-   
+
     let childTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -78,7 +78,7 @@ const Booking = ({ data }) => {
   };
 
   const handleSeniorChange = (e) => {
-   
+
 
     let seniorTickets = {
       type: e.target.name,
@@ -123,6 +123,7 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Adult</p>
+          <p style={{marginRight: '1vh'}}>x</p>
           <p>{price}</p>
         </div>
       </div>
@@ -145,6 +146,7 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Children</p>
+          <p style={{marginRight: '1vh'}}>x</p>
           <p>{priceChild}</p>
         </div>
       </div>
@@ -167,6 +169,7 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Senior</p>
+          <p style={{marginRight: '1vh'}}>x</p>
           <p>{pricePensioner}</p>
         </div>
       </div>
