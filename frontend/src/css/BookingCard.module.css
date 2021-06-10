@@ -32,7 +32,6 @@
   flex-basis: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 .bottom *{
   color: #FFF;
