@@ -55,7 +55,6 @@
 .movieGrid {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   gap: 1rem;
 }
@@ -102,6 +101,17 @@
 .h2{
   margin-bottom: 1.5rem;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .h2{
+    display: flex;
+    justify-content: center;
+  }
+  
+
+}
+
 
 
 
