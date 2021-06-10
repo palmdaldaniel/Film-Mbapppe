@@ -4,14 +4,14 @@
 }
 
 .card{
-  height: 30vh;
+  width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   background: rgb(29, 29, 29);
   color:#FFF;
-  padding:8px;
+  padding: 10px;
   font-size: 15px;
-  
 }
 
 .card *{
@@ -25,10 +25,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.showingInfo {
-  margin-top:-40px;
 }
 
 .bottom{
