@@ -1,5 +1,5 @@
 import styles from "../css/booking.module.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { BookingContext } from "../contexts/BookingContext";
@@ -13,11 +13,8 @@ const Booking = ({ data }) => {
     totalPrice,
     makeBooking,
     setSeniorTickets,
-    seniorTickets,
     setAdultTickets,
-    adultTickets,
     setChildrenTickets,
-    childrenTickets,
     setTotalPrice,
     setTickets,
     setReserved,
