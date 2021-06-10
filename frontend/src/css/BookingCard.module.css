@@ -57,9 +57,6 @@
   color: #000;
 }
 
-.info {
-}
-
 @media (min-width: 992px) {
   .card{
     flex-basis: 25%;
