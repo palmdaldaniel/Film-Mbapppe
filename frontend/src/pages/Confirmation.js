@@ -13,7 +13,14 @@ const Confirmation = () => {
 
   const handleClick = () => {
     history.push("/");
+    localStorage.clear(); 
   }
+
+  useEffect(() => {
+    return() => {
+      localStorage.clear(); 
+    }
+  }, []); 
 
   //get sum of each type of ticket
   let adultTixSum = 0;
