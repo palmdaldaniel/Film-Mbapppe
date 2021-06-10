@@ -4,14 +4,14 @@
 }
 
 .card{
-  flex-basis: 90%;
-  width: 90%;
+  height: 30vh;
   display: flex;
   flex-direction: column;
-  min-height: 10rem;
-  height: 25vh;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  background: rgb(29, 29, 29);
+  color:#FFF;
+  padding:8px;
+  font-size: 15px;
+  
 }
 
 .card *{
@@ -19,29 +19,45 @@
 }
 
 .top{
+  color: #FFF;
+  border: 2px dashed rgba(219, 219, 219, 0.5);
   flex-basis: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.showingInfo {
+  margin-top:-40px;
+}
+
 .bottom{
+  padding: 10px;
+  border: 2px dashed rgba(219, 219, 219, 0.5);
+  border-top: none;
   flex-basis: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .bottom *{
-  color: #bbb;
+  color: #FFF;
 }
 
 .title{
-  flex-basis: 60%;
+  width: 100%;
+  padding: 5px;
+  flex-basis: 100%;
+  color: #FFF;
 }
 
 .delete{
   padding: 0.5rem;
   margin: 0;
+  color: #000;
+}
+
+.info {
 }
 
 @media (min-width: 992px) {
@@ -49,4 +65,3 @@
     flex-basis: 25%;
   }
 }
-
