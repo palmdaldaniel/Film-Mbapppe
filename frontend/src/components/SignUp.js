@@ -103,13 +103,6 @@ const Register = () => {
                     onChange={handleEmailChange}
                   />
                 </Form.Group>
-{/* 
-                <OverlayTrigger
-                  trigger="click"
-                  placement="top"
-                  overlay={renderTooltip}
-                  variant="secondary"
-                > */}
                   <Form.Group controlId="formBasicPassword">
                     <Form.Control
                       className={styles.inputField}
@@ -123,11 +116,8 @@ const Register = () => {
                     />
 
                     <ul className={styles.rules}>
-                      <li>5-15 letters </li>
-                      <li>1 lowercase letter</li>
-                      <li>1 uppercase letter</li>
-                      <li>1 number </li>
-                      <li>1 special character</li>
+                      <li>5-15 letters, atleast 1 lower & upper -case </li>
+                      <li>1 number and 1 special character</li>
                     </ul>
 
                     {signUpFail && (
