@@ -8,19 +8,15 @@ const BookingCard = ({ booking, prev }) => {
 
   const [showModal, setShowModal] = useState(false)
 
-
-  const handleClick = async (bookingId) => {
-    console.log(`clicked`, bookingId)
-    let result = await deleteBooking(bookingId)
-    if (!result.error) {
-      setShowModal(true)
-    }
+  const handleClick = () => {
+    setShowModal(true)
   }
 
   let modalValues = {
     booleanValue: showModal,
     toggleBoolean: setShowModal,
-    modalText: 'The booking has been deleted'
+    modalText: 'The booking has been deleted',
+    deleteBooking: deleteBooking
   }
 
   return (
@@ -29,7 +25,7 @@ const BookingCard = ({ booking, prev }) => {
         <h3 className={styles.title}>{booking.showingId.film.Title}</h3>
         {prev === false
           ? <div className={styles.delete}>
-            <button onClick={() => handleClick(booking._id)}>X</button>
+            <button onClick={handleClick}>X</button>
           </div>
           : <p></p>}
       </div>
@@ -47,8 +43,8 @@ const BookingCard = ({ booking, prev }) => {
           )}
         </ul>
         <p className={styles.totalSeats}>Total seats: {booking.tickets.length}</p>
+        <ModalWindow modalValues={modalValues} bookingId={booking._id} />
       </div>
-      <ModalWindow modalValues={modalValues} />
     </div>
   );
 }

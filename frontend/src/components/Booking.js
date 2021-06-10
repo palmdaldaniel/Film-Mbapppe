@@ -22,6 +22,7 @@ const Booking = ({ data }) => {
     setTickets,
     setReserved,
     feedBackMessage,
+    makeConfirmation
   } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;

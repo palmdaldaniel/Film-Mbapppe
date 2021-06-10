@@ -1,18 +1,15 @@
 import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { BookingContext } from '../contexts/BookingContext';
-
 import styles from '../css/userPage.module.css'
 import UserInfo from '../components/UserInfo';
 import BookingCard from '../components/BookingCard';
 
+
+
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  const { previousBookings, upcomingBookings, gettingBookings } = useContext(BookingContext);
-
-  useEffect(()=> {
-    gettingBookings(activeUser._id)
-  })
+  const { previousBookings, upcomingBookings } = useContext(BookingContext);
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
@@ -29,7 +26,6 @@ const UserPage = () => {
                 {upcomingBookings
                   ? (upcomingBookings.map((booking, i) => (<BookingCard
                     booking={booking}
-                    // setIsDeleted={setIsDeleted}
                     prev={!prev}
                     key={i} />)))
                   : (<h3>No upcoming bookings..</h3>)}
@@ -41,7 +37,6 @@ const UserPage = () => {
                 {previousBookings
                   ? (previousBookings.map((booking, i) => (<BookingCard
                     booking={booking}
-                    // setIsDeleted={setIsDeleted}
                     prev={prev}
                     key={i} />)))
                   : (<h3>No upcoming bookings..</h3>)}
@@ -50,6 +45,7 @@ const UserPage = () => {
           </div>
         </div>
       )}
+      
     </div>
   );
 }

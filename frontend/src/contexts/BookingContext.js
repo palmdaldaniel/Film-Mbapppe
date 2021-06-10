@@ -74,7 +74,6 @@ const BookingContextProvider = (props) => {
     for (const [key, value] of Object.entries(tempTickets)) {
       value.forEach((t) => temp.push(t));
     }
-
     setTickets(temp);
   };
 
@@ -98,8 +97,12 @@ const BookingContextProvider = (props) => {
       };
       // send it to post request.
       postBooking(info);
+
+      //to refresh bookings on Profile page
+      gettingBookings(activeUser._id)
     }
   };
+
 
   // fetch requests
   const getAllBookedSeatsForShowing = async (showingId) => {
@@ -141,6 +144,8 @@ const BookingContextProvider = (props) => {
       });
       b = await b.json();
       setCurrentBooking(b);
+      localStorage.setItem('currentBooking', JSON.stringify(b)); 
+      localStorage.setItem('showing', JSON.stringify(showing)); 
     }
   };
 
@@ -166,7 +171,9 @@ const BookingContextProvider = (props) => {
     bookingId,
     upcomingBookings,
     previousBookings,
-    gettingBookings
+    gettingBookings,
+    currentBooking, 
+    showing
   };
 
   return (
