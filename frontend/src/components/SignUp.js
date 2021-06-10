@@ -22,10 +22,10 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-  const renderTooltip = (props) => (
+ /*  const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       <ul className={styles.rules}>
-        <li>5-7 letters </li>
+        <li>5-15 letters</li>
         <li>1 lowercase letter</li>
         <li>1 uppercase letter</li>
         <li>1 number </li>
@@ -33,7 +33,7 @@ const Register = () => {
       </ul>
     </Tooltip>
   );
-
+ */
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -103,14 +103,13 @@ const Register = () => {
                     onChange={handleEmailChange}
                   />
                 </Form.Group>
-
+{/* 
                 <OverlayTrigger
                   trigger="click"
                   placement="top"
                   overlay={renderTooltip}
                   variant="secondary"
-                >
-                  
+                > */}
                   <Form.Group controlId="formBasicPassword">
                     <Form.Control
                       className={styles.inputField}
@@ -122,11 +121,20 @@ const Register = () => {
                       onChange={handlePasswordChange}
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]){5,15}$"
                     />
+
+                    <ul className={styles.rules}>
+                      <li>5-15 letters </li>
+                      <li>1 lowercase letter</li>
+                      <li>1 uppercase letter</li>
+                      <li>1 number </li>
+                      <li>1 special character</li>
+                    </ul>
+
                     {signUpFail && (
                       <p className="error">This email is already at use.</p>
                     )}
                   </Form.Group>
-                </OverlayTrigger>
+             {/*    </OverlayTrigger> */}
                 <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}
