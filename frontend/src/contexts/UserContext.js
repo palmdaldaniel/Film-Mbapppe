@@ -136,6 +136,7 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(newUser),
     });
     result = await result.json();
+    setIsAuth(true);
 
 
     return result;
