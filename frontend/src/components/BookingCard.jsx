@@ -1,12 +1,46 @@
 import styles from '../css/BookingCard.module.css';
+import { useContext,useState} from "react";
+import { BookingContext } from "../contexts/BookingContext";
+import Trash from "../components/Trash";
+//import ModalWindowSecond from '../components/ModalWindowSecond'; //for the modal
 
-const BookingCard = ({ booking, prev }) => {
+const BookingCard = ({ booking, prev,props }) => {
+  const { deleteBooking,allBooking,setAllBooking  } = useContext(BookingContext);
+  //const [bookingIsDeleted, setBookingIsDeleted ] = useState(false); //for the modal
+  
+  
+//for removing the booking 
+  const  removeBooking= (bookingId) => {
+    deleteBooking(bookingId);
+    //console.log ("hello");
+   }
+
+
+// for the popup
+  {/*
+    {
+    
+    let modalValues = {
+    bookingIsDeleted: bookingIsDeleted,
+    setBookingIsDeleted: setBookingIsDeleted,
+    modalText: 'Your booking has been deleted'
+  }
+*/}
+
   return (
     <div className={styles.card}>
       <div className={styles.top}>
         <h3 className={styles.title}>{booking.showingId.film}</h3>
        {prev === false
-       ? <p className={styles.delete}>X {/* put trashcan here */}</p>
+       ? 
+       <button className={styles.delete} 
+       
+       onClick={() => 
+        { removeBooking(booking._id)}}> 
+        
+        <Trash/>  
+        
+        </button>
       : <p></p> }
       </div>
       <div className={styles.bottom}>
@@ -25,7 +59,11 @@ const BookingCard = ({ booking, prev }) => {
         <p className={styles.totalSeats}>Total seats: {booking.tickets.length}</p>
       </div>
     </div>
-  );
-}
-
-export default BookingCard;
+    
+  )
+          };
+          //for the popup
+  //<ModalWindowSecond modalValues={modalValues}/>
+    
+          
+     export default BookingCard; 

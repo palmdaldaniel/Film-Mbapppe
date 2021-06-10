@@ -1,0 +1,15 @@
+.trashContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    size: 2px;
+    margin-top: 45x;
+    width: 20px;
+    height: 20px;
+  }
+  
+  
+  .trash {
+    width: 15px;
+    
+  }
