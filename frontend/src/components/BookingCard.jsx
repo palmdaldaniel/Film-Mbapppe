@@ -30,7 +30,7 @@ const BookingCard = ({ booking, prev,props }) => {
   return (
     <div className={styles.card}>
       <div className={styles.top}>
-        <h3 className={styles.title}>{booking.showingId.film}</h3>
+        <h3 className={styles.title}>{booking.showingId.film.Title}</h3>
        {prev === false
        ? 
        <button className={styles.delete} 
@@ -44,7 +44,7 @@ const BookingCard = ({ booking, prev,props }) => {
       : <p></p> }
       </div>
       <div className={styles.bottom}>
-        <p className={styles.showingInfo}>{booking.showingId.saloon} | {booking.showingId.date} | {booking.showingId.time}</p>
+        <p className={styles.showingInfo}>{booking.showingId.saloon.name} | {booking.showingId.date} | {booking.showingId.time}</p>
         <p className={styles.bookingNumber}>Bookingnumber: {booking._id}</p>
         <ul className={styles.seatList}>
           {/* Maps out all seats in booking */}
