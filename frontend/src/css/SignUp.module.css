@@ -47,6 +47,15 @@
   justify-content: center !important;
   align-items: center !important;
 }
+
+.registerformShowing {
+  width: 25%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 3rem;
@@ -54,6 +63,11 @@
   .registerform {
     width: 100%;
     padding: 2rem;
+  }
+
+  .registerformShowing{
+    width: 60%;
+    background: #dc3545;
   }
 }
 
@@ -64,6 +78,10 @@
   .registerform {
     width: 50%;
     padding: 2rem;
+  }
+
+  .registerformShowing{
+    width:35%;
   }
 }
 /* Large devices (laptops/desktops, 992px and up) */
@@ -133,3 +151,4 @@
   text-align: left;
   display: inline-block;
 }
+
