@@ -124,7 +124,7 @@ const Booking = ({ data }) => {
         <div className={styles.bookingInfo}>
           <p>Adult</p>
           <p style={{marginRight: '1vh'}}>x</p>
-          <p>{price}</p>
+          <p>{price} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
@@ -147,7 +147,7 @@ const Booking = ({ data }) => {
         <div className={styles.bookingInfo}>
           <p>Children</p>
           <p style={{marginRight: '1vh'}}>x</p>
-          <p>{priceChild}</p>
+          <p>{priceChild} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
@@ -170,7 +170,7 @@ const Booking = ({ data }) => {
         <div className={styles.bookingInfo}>
           <p>Senior</p>
           <p style={{marginRight: '1vh'}}>x</p>
-          <p>{pricePensioner}</p>
+          <p>{pricePensioner} kr</p>
         </div>
       </div>
       <div className={styles.buyTickets}>

@@ -35,7 +35,7 @@
 
 .bookingInfo >*:nth-child(2){
   position: absolute;
-  right: 2rem;
+  right: 3rem;
 }
 
 .ticketContainer select {
