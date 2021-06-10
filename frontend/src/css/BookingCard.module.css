@@ -11,7 +11,6 @@
   background: rgb(29, 29, 29);
   color:#FFF;
   padding: 10px;
-  font-size: 15px;
 }
 
 .card *{
@@ -21,7 +20,6 @@
 .top{
   color: #FFF;
   border: 2px dashed rgba(219, 219, 219, 0.5);
-  flex-basis: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,11 +48,17 @@
 .delete{
   padding: 0.5rem;
   margin: 0;
-  color: #000;
 }
 
 @media (min-width: 992px) {
   .card{
     flex-basis: 25%;
   }
+}
+
+@media only screen and (max-width: 600px) {
+
+
+
+
 }
