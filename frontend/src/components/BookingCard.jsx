@@ -2,6 +2,8 @@ import styles from '../css/BookingCard.module.css';
 import { useContext, useState } from 'react'
 import ModalWindow from '../components/ModalWindow'
 import { BookingContext } from '../contexts/BookingContext';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const BookingCard = ({ booking, prev }) => {
   const { deleteBooking } = useContext(BookingContext);
@@ -24,9 +26,9 @@ const BookingCard = ({ booking, prev }) => {
       <div className={styles.top}>
         <h3 className={styles.title}>{booking.showingId.film.Title}</h3>
         {prev === false
-          ? <div className={styles.delete}>
-            <button onClick={handleClick}>X</button>
-          </div>
+          ? <button className={styles.delete} onClick={handleClick}>
+              <FontAwesomeIcon icon={faTrashAlt} />
+            </button>
           : <p></p>}
       </div>
       <div className={styles.bottom}>
