@@ -20,6 +20,24 @@
   text-align: center !important;
   align-content: center;
 }
+
+.loginformShowing {
+  width: 20vw;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginformtext {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+
+
+
+
 @media only screen and (max-width: 600px) {
   .header {
     font-size: 3rem;
@@ -28,6 +46,20 @@
     width: 100%;
     padding: 2rem;
   }
+  .loginformShowing {
+    width: 60%;
+  }
+  
+  .loginformtext {
+    font-size: 2rem;
+    display: flex;
+    margin-bottom: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -38,16 +70,35 @@
     width: 50%;
     padding: 2rem;
   }
+
+  .loginformShowing {
+    width:35%;
+  
+  }
+
+ 
+
+ 
 }
 @media only screen and (min-width: 992px) {
   .loginform {
     width: 40%;
   }
+  .loginformShowing {
+    width:35%;
+  
+  }
+
 }
 @media only screen and (min-width: 1200px) {
   .loginform {
     width: 50%;
   }
+  .loginformShowing {
+    width:25%;
+  
+  }
+
 }
 
 .inputField {
@@ -90,6 +141,7 @@
   cursor: pointer;
   text-align: center;
   text-decoration: underline;
+  justify-content: center;
 }
 
 .toggleText:hover {
