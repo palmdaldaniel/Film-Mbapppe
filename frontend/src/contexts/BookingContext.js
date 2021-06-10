@@ -23,17 +23,9 @@ const BookingContextProvider = (props) => {
   const [upcomingBookings, setUpcomingBookings] = useState([])
   const [previousBookings, setPreviousBookings] = useState([])
 
-  
-
-  const gettingBookings = async (userId) => {
-    let bookings = await getBookingsByUserId(userId)
-    setUpcomingBookings(bookings.upcomingBookings)
-    setPreviousBookings(bookings.previousBookings)
-  }
-
   useEffect(() => {
     if(activeUser) {
-      gettingBookings(activeUser._id)
+      getBookingsByUserId(activeUser._id)
     }
   }, [activeUser])
 
@@ -96,10 +88,13 @@ const BookingContextProvider = (props) => {
         tickets: data,
       };
       // send it to post request.
-      postBooking(info);
+      postBooking(info)
+      .then((res) => {
+        //to refresh bookings on Profile page)
+        getBookingsByUserId(activeUser._id)
+      })
 
-      //to refresh bookings on Profile page
-      gettingBookings(activeUser._id)
+
     }
   };
 
@@ -112,11 +107,11 @@ const BookingContextProvider = (props) => {
   };
 
   const getBookingsByUserId = async (userId) => {
-    let bookings = await fetch(
-      `api/v1/bookings/user-bookings?userId=${userId}`
-    );
+    let bookings = await fetch(`api/v1/bookings/user-bookings?userId=${userId}`);
     bookings = await bookings.json();
-    return bookings;
+    setUpcomingBookings(bookings.upcomingBookings)
+    setPreviousBookings(bookings.previousBookings)
+   
   };
 
   // delete Booking
@@ -127,7 +122,7 @@ const BookingContextProvider = (props) => {
         "content-type": "application/json",
       },
     });
-    gettingBookings(activeUser._id)
+    getBookingsByUserId(activeUser._id)
     result = await result.json();
     return result;
   };
@@ -171,7 +166,7 @@ const BookingContextProvider = (props) => {
     bookingId,
     upcomingBookings,
     previousBookings,
-    gettingBookings,
+    getBookingsByUserId,
     currentBooking, 
     showing
   };
