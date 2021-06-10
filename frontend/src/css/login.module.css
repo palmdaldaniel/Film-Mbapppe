@@ -28,6 +28,14 @@
   align-items: center;
 }
 
+.loginformtext {
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+
+
 
 
 @media only screen and (max-width: 600px) {
@@ -38,11 +46,16 @@
     width: 100%;
     padding: 2rem;
   }
-
-
   .loginformShowing {
-    width: 50%;
+    width: 60%;
+  }
   
+  .loginformtext {
+    font-size: 2rem;
+    display: flex;
+    margin-bottom: 1rem;
+    margin-right: auto;
+    margin-left: auto;
   }
   
 
@@ -138,10 +151,4 @@
 .buttonContainer {
   padding: 0px !important;
 }
-
-.loginformtext {
-  margin-bottom: 2rem;
-}
-
-
 

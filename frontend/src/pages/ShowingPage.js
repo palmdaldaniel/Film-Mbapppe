@@ -22,12 +22,12 @@ const ShowingPage = (props) => {
     // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
+/*   useEffect(() => {
     return () => {
     setShowLogin(true);
     };
     }, [setShowLogin]);
-
+ */
   return (
     <div>
       <MovieInfo showing={showing} />

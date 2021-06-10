@@ -34,7 +34,7 @@ export default function Login() {
        
     return (
         <div className={styles.container}>
-            <h1 className={styles.loginformtext}>Login to check available seats and book your tickets!</h1>
+            <h1 className={styles.loginformtext}>Login to book your tickets!</h1>
             <div className={styles.loginformShowing}>
                 <Form
                     onSubmit={(e) => {
