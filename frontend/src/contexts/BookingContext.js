@@ -19,6 +19,25 @@ const BookingContextProvider = (props) => {
     "Select tickets and seats to make purchase"
   );
 
+  //for rendering bookings on Profile page
+  const [upcomingBookings, setUpcomingBookings] = useState([])
+  const [previousBookings, setPreviousBookings] = useState([])
+
+  
+
+  const gettingBookings = async (userId) => {
+    let bookings = await getBookingsByUserId(userId)
+    setUpcomingBookings(bookings.upcomingBookings)
+    setPreviousBookings(bookings.previousBookings)
+  }
+
+  useEffect(() => {
+    if(activeUser) {
+      gettingBookings(activeUser._id)
+    }
+  }, [activeUser])
+
+
   // states for seatingmap
   const [reserved, setReserved] = useState([]);
   const [bookedPlaces, setBookedPlaces] = useState([]);
@@ -105,7 +124,7 @@ const BookingContextProvider = (props) => {
         "content-type": "application/json",
       },
     });
-
+    gettingBookings(activeUser._id)
     result = await result.json();
     return result;
   };
@@ -145,6 +164,9 @@ const BookingContextProvider = (props) => {
     getBookingsByUserId,
     deleteBooking,
     bookingId,
+    upcomingBookings,
+    previousBookings,
+    gettingBookings
   };
 
   return (

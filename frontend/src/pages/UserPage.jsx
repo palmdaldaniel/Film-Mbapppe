@@ -8,23 +8,14 @@ import BookingCard from '../components/BookingCard';
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  const { getBookingsByUserId } = useContext(BookingContext);
+  const { previousBookings, upcomingBookings, gettingBookings } = useContext(BookingContext);
 
-  const [upcomingBookings, setUpcomingBookings] = useState([])
-  const [previousBookings, setPreviousBookings] = useState([])
+  useEffect(()=> {
+    gettingBookings(activeUser._id)
+  })
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
-
-  const gettingBookings = async (userId) => {
-    let bookings = await getBookingsByUserId(userId)
-    setUpcomingBookings(bookings.upcomingBookings)
-    setPreviousBookings(bookings.previousBookings)
-  }
-
-  useEffect(() => {
-    gettingBookings(activeUser._id)
-  }, [getBookingsByUserId, activeUser])
 
   return (
     <div className={styles.container}>
@@ -38,6 +29,7 @@ const UserPage = () => {
                 {upcomingBookings
                   ? (upcomingBookings.map((booking, i) => (<BookingCard
                     booking={booking}
+                    // setIsDeleted={setIsDeleted}
                     prev={!prev}
                     key={i} />)))
                   : (<h3>No upcoming bookings..</h3>)}
@@ -49,6 +41,7 @@ const UserPage = () => {
                 {previousBookings
                   ? (previousBookings.map((booking, i) => (<BookingCard
                     booking={booking}
+                    // setIsDeleted={setIsDeleted}
                     prev={prev}
                     key={i} />)))
                   : (<h3>No upcoming bookings..</h3>)}
