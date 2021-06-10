@@ -37,7 +37,10 @@ const ShowingPage = (props) => {
       <div className={styles.showingLine}>
         <div>
           {activeUser ? (
-            <div className={styles.showing_info}>Date: {showing?.date}   |    Time: {showing?.time}     |      Saloon: {showing?.saloon.name}</div>
+            <div className={styles.showing_info}>
+              Date: <span className={styles.showingInfoTxt}>{showing?.date}</span>  
+              Time: <span className={styles.showingInfoTxt}>{showing?.time}</span>   
+              Saloon: <span className={styles.showingInfoTxt}>{showing?.saloon.name}</span></div>
           ) : (
 
             <div className={styles.displayNone}></div>
