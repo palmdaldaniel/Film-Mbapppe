@@ -83,7 +83,8 @@ const BookingContextProvider = (props) => {
   };
 
   const makeConfirmation = () => {
-    localStorage.setItem('tickets', JSON.stringify(tickets)); 
+    localStorage.setItem('currentBooking', JSON.stringify(currentBooking)); 
+    localStorage.setItem('showing', JSON.stringify(showing)); 
   }
 
   // fetch requests

@@ -7,14 +7,19 @@ const Confirmation = () => {
   const history = useHistory();
   const { currentBooking, showing } = useContext(BookingContext);
 
-  const [parseTickets, setParseTickets] = useState(null); 
+  const [localStorageBooking, setLocalStorageBooking] = useState(null)
+  const [localStorageShowing, setLocalStorageShowing] = useState(null)
 
   useEffect(() => {
-    const parseTickets = JSON.parse(localStorage.getItem('tickets')); 
-    setParseTickets(parseTickets)
+    const localStorageBooking = JSON.parse(localStorage.getItem('currentBooking')); 
+    const localStorageShowing = JSON.parse(localStorage.getItem('showing')); 
+    setLocalStorageBooking(localStorageBooking)
+    setLocalStorageShowing(localStorageShowing); 
   }, [])
 
-console.log(parseTickets);
+
+console.log(localStorageBooking);
+console.log(localStorage);
 
   const handleClick = () => {
     history.push("/");
@@ -24,8 +29,8 @@ console.log(parseTickets);
   let adultTixSum = 0;
   let childTixSum = 0;
   let seniorTixSum = 0;
-  if (currentBooking) {
-    currentBooking.tickets.forEach((cbTicket) => {
+  if (localStorageBooking && localStorageShowing) {
+    localStorageBooking.tickets.forEach((cbTicket) => {
       if (cbTicket.type === "adult") {
         adultTixSum += 1;
       }
@@ -59,25 +64,25 @@ console.log(parseTickets);
   }
 
   let info = "";
-  if (currentBooking) {
+  if ( localStorageBooking && localStorageShowing) {
     info = (
       <>
         <div className={s.confirmationContainer}>
           <div>
-            <strong className={s.title}>{showing.film.Title}</strong>
-            <p>Duration: {showing.film.Runtime}</p>
-            <p>{`Booking No: ${(currentBooking._id).slice(18)}`}</p>
+            <strong className={s.title}>{localStorageShowing.film.Title}</strong>
+            <p>Duration: {localStorageShowing.film.Runtime}</p>
+            <p>{`Booking No: ${(localStorageBooking._id).slice(18)}`}</p>
           </div>
 
           <div className={s.locationTime}>
-            <span>{showing.saloon.name}</span>
-            <span>{showing.date}</span>
-            <span>{showing.time}</span>
+            <span>{localStorageShowing.saloon.name}</span>
+            <span>{localStorageShowing.date}</span>
+            <span>{localStorageShowing.time}</span>
           </div>
           
 
           <div className={s.rowAndSeat}>
-            {currentBooking.tickets.map((cbTicket, i) => (
+            {localStorageBooking.tickets.map((cbTicket, i) => (
               <div key={i}>
                 <span>{`Ticket: ${i + 1}, Row: ${cbTicket.rowNumber}, Seat: ${cbTicket.seatingNumber}`}</span>
               </div>
@@ -92,9 +97,9 @@ console.log(parseTickets);
 
           <div className={s.totals}>
             <p>{`Total Seats:
-            ${currentBooking.tickets.length}`}
+            ${localStorageBooking.tickets.length}`}
             </p>
-            <p>{`Total price: ${currentBooking.tickets.reduce((acc, cur) => {
+            <p>{`Total price: ${localStorageBooking.tickets.reduce((acc, cur) => {
               return acc + cur.price
             }, 0)}`}
             </p>
