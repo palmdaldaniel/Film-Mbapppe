@@ -37,9 +37,9 @@ const NavbarComponent = () => {
                   </Nav.Link>
                 <Nav.Link eventKey="4"
                   as={Link}
-                  to="/">
+                  to="/"
                   onClick={logout}
-                      className={`${styles.link} float-end`}
+                  className={`${styles.link} float-end`}>
                     Log out
                   </Nav.Link>
               </React.Fragment>
