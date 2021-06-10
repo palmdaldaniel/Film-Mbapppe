@@ -122,12 +122,7 @@ let modalValues = {
                       required
 
                     />
-{/* 
-                    {signUpFail && (
-
-                      <p className="error">This email is already at use.</p>
-                    )} */}
-
+                    
                   </Form.Group>
                 </OverlayTrigger>
                   <div className={styles.regarea}>

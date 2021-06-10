@@ -99,12 +99,15 @@ const BookingContextProvider = (props) => {
 
   // delete Booking
   const deleteBooking = async (bookingId) => {
-    await fetch(`/api/v1/bookings/${bookingId}`, {
+    let result = await fetch(`/api/v1/bookings/${bookingId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
       },
     });
+
+    result = await result.json();
+    return result;
   };
 
   const postBooking = async (bookingData) => {
