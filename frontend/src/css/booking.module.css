@@ -23,6 +23,7 @@
 }
 
 .bookingInfo {
+  position: relative;
   width: 85%;
   background-color: inherit;
   display: flex;
@@ -30,6 +31,11 @@
   text-align: center;
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.bookingInfo >*:nth-child(2){
+  position: absolute;
+  right: 2rem;
 }
 
 .ticketContainer select {
