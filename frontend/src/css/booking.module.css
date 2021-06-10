@@ -127,13 +127,13 @@
   margin-top: 10px;
 }
 
-.showingInfoTxt {
+.showingLine span {
   font-weight: normal;
+  margin-left: 0.2rem;
 }
 .showingLine span:nth-last-of-type(3),
 .showingLine span:nth-last-of-type(2){
     margin-right: 2rem;
-    margin-left: 0.2rem;
 }
 
 @media (min-width: 992px) {
