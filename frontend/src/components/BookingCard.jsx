@@ -1,27 +1,24 @@
 import styles from '../css/BookingCard.module.css';
 import { useContext,useState} from "react";
 import { BookingContext } from "../contexts/BookingContext";
-import Trash from "../components/Trash";
-//import ModalWindowSecond from '../components/ModalWindowSecond'; //for the modal
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import ModalWindowSecond from '../components/ModalWindowSecond'; //for the modal
 
 const BookingCard = ({ booking, prev  }) => {
   const { deleteBooking } = useContext(BookingContext);
-
-
-  //const [bookingIsDeleted, setBookingIsDeleted ] = useState(false); //for the modal
-  
+  const [bookingIsDeleted, setBookingIsDeleted] = useState(false);
 
 
 // for the popup
-  {/*
     {
     
     let modalValues = {
     bookingIsDeleted: bookingIsDeleted,
     setBookingIsDeleted: setBookingIsDeleted,
-    modalText: 'Your booking has been deleted'
+    modalText: 'Your booking has been deleted!'
   }
-*/}
+
 
   return (
     <div className={styles.card}>
@@ -34,7 +31,7 @@ const BookingCard = ({ booking, prev  }) => {
        onClick={() => 
         { deleteBooking(booking._id)}}> 
         
-        <Trash/>  
+        {/*<FontAwesomeIcon icon={faTrash} /> */}
         
         </button>
       : <p></p> }
@@ -53,13 +50,16 @@ const BookingCard = ({ booking, prev  }) => {
           )}
         </ul>
         <p className={styles.totalSeats}>Total seats: {booking.tickets.length}</p>
+        
       </div>
+      <ModalWindowSecond modalValues={modalValues}/>
+      
     </div>
     
   )
           };
           //for the popup
-  //<ModalWindowSecond modalValues={modalValues}/>
+  
     
-          
+        }      
      export default BookingCard; 

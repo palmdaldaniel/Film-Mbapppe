@@ -120,7 +120,7 @@ const BookingContextProvider = (props) => {
     console.log("bookingId", bookingId);
     // create the deleteobject
   
-  /*   let result = await fetch(`/api/v1/bookings/${bookingId}`, {
+     let result = await fetch(`/api/v1/bookings/${bookingId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -137,7 +137,7 @@ const BookingContextProvider = (props) => {
 
     setAllBookings(
       allBookings.filter((booking) => booking.bookingId !== bookingId)
-    ); */
+    ); 
   };
   const values = {
     getAllBookedSeatsForShowing,
