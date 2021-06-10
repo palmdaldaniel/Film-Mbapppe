@@ -82,10 +82,6 @@ const BookingContextProvider = (props) => {
     }
   };
 
-  const makeConfirmation = () => {
-    localStorage.setItem('currentBooking', JSON.stringify(currentBooking)); 
-    localStorage.setItem('showing', JSON.stringify(showing)); 
-  }
 
   // fetch requests
   const getAllBookedSeatsForShowing = async (showingId) => {
@@ -124,6 +120,8 @@ const BookingContextProvider = (props) => {
       });
       b = await b.json();
       setCurrentBooking(b);
+      localStorage.setItem('currentBooking', JSON.stringify(b)); 
+      localStorage.setItem('showing', JSON.stringify(showing)); 
     }
   };
 
@@ -145,8 +143,7 @@ const BookingContextProvider = (props) => {
     deleteBooking,
     bookingId, 
     currentBooking, 
-    showing,
-    makeConfirmation
+    showing
   };
 
   return (

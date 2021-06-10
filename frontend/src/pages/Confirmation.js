@@ -7,19 +7,9 @@ const Confirmation = () => {
   const history = useHistory();
   const { currentBooking, showing } = useContext(BookingContext);
 
-  const [localStorageBooking, setLocalStorageBooking] = useState(null)
-  const [localStorageShowing, setLocalStorageShowing] = useState(null)
-
-  useEffect(() => {
-    const localStorageBooking = JSON.parse(localStorage.getItem('currentBooking')); 
-    const localStorageShowing = JSON.parse(localStorage.getItem('showing')); 
-    setLocalStorageBooking(localStorageBooking)
-    setLocalStorageShowing(localStorageShowing); 
-  }, [])
-
-
-console.log(localStorageBooking);
-console.log(localStorage);
+  //get from local storage on reload
+  let bookingToRender = currentBooking ? currentBooking : JSON.parse(localStorage.getItem('currentBooking')); 
+  let showingToRender = showing ? showing : JSON.parse(localStorage.getItem('showing'))
 
   const handleClick = () => {
     history.push("/");
@@ -29,8 +19,8 @@ console.log(localStorage);
   let adultTixSum = 0;
   let childTixSum = 0;
   let seniorTixSum = 0;
-  if (localStorageBooking && localStorageShowing) {
-    localStorageBooking.tickets.forEach((cbTicket) => {
+  if (bookingToRender && showingToRender) {
+    bookingToRender.tickets.forEach((cbTicket) => {
       if (cbTicket.type === "adult") {
         adultTixSum += 1;
       }
@@ -64,25 +54,25 @@ console.log(localStorage);
   }
 
   let info = "";
-  if ( localStorageBooking && localStorageShowing) {
+  if ( bookingToRender && showingToRender) {
     info = (
       <>
         <div className={s.confirmationContainer}>
           <div>
-            <strong className={s.title}>{localStorageShowing.film.Title}</strong>
-            <p>Duration: {localStorageShowing.film.Runtime}</p>
-            <p>{`Booking No: ${(localStorageBooking._id).slice(18)}`}</p>
+            <strong className={s.title}>{showingToRender.film.Title}</strong>
+            <p>Duration: {showingToRender.film.Runtime}</p>
+            <p>{`Booking No: ${(bookingToRender._id).slice(18)}`}</p>
           </div>
 
           <div className={s.locationTime}>
-            <span>{localStorageShowing.saloon.name}</span>
-            <span>{localStorageShowing.date}</span>
-            <span>{localStorageShowing.time}</span>
+            <span>{showingToRender.saloon.name}</span>
+            <span>{showingToRender.date}</span>
+            <span>{showingToRender.time}</span>
           </div>
           
 
           <div className={s.rowAndSeat}>
-            {localStorageBooking.tickets.map((cbTicket, i) => (
+            {bookingToRender.tickets.map((cbTicket, i) => (
               <div key={i}>
                 <span>{`Ticket: ${i + 1}, Row: ${cbTicket.rowNumber}, Seat: ${cbTicket.seatingNumber}`}</span>
               </div>
@@ -97,9 +87,9 @@ console.log(localStorage);
 
           <div className={s.totals}>
             <p>{`Total Seats:
-            ${localStorageBooking.tickets.length}`}
+            ${bookingToRender.tickets.length}`}
             </p>
-            <p>{`Total price: ${localStorageBooking.tickets.reduce((acc, cur) => {
+            <p>{`Total price: ${bookingToRender.tickets.reduce((acc, cur) => {
               return acc + cur.price
             }, 0)}`}
             </p>

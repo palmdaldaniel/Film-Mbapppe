@@ -101,7 +101,6 @@ const Booking = ({ data }) => {
   const handleClick = () => {
     history.push("/confirmation");
     makeBooking();
-    makeConfirmation(); 
   };
   return (
     <div className={styles.bookingcomponent}>
