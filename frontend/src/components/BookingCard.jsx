@@ -1,16 +1,16 @@
 import styles from '../css/BookingCard.module.css';
 import { useContext,useState} from "react";
 import { BookingContext } from "../contexts/BookingContext";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import ModalWindowSecond from '../components/ModalWindowSecond'; //for the modal
 
 const BookingCard = ({ booking, prev  }) => {
   const { deleteBooking } = useContext(BookingContext);
   const [bookingIsDeleted, setBookingIsDeleted] = useState(false);
+ 
 
-
-// for the popup
+// Modal Window
     {
     
     let modalValues = {
@@ -31,7 +31,7 @@ const BookingCard = ({ booking, prev  }) => {
        onClick={() => 
         { deleteBooking(booking._id)}}> 
         
-        {/*<FontAwesomeIcon icon={faTrash} /> */}
+        <FontAwesomeIcon icon={faTrash} /> 
         
         </button>
       : <p></p> }
