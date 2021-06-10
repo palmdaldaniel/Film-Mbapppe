@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import { BookingContext } from '../contexts/BookingContext';
 import s from "../css/Confirmation.module.css";
@@ -7,9 +7,14 @@ const Confirmation = () => {
   const history = useHistory();
   const { currentBooking, showing } = useContext(BookingContext);
 
+  const [parseTickets, setParseTickets] = useState(null); 
+
   useEffect(() => {
-    
+    const parseTickets = JSON.parse(localStorage.getItem('tickets')); 
+    setParseTickets(parseTickets)
   }, [])
+
+console.log(parseTickets);
 
   const handleClick = () => {
     history.push("/");

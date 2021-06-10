@@ -19,6 +19,7 @@ const Booking = ({ data }) => {
     setTickets,
     setReserved,
     feedBackMessage,
+    makeConfirmation
   } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;
@@ -100,6 +101,7 @@ const Booking = ({ data }) => {
   const handleClick = () => {
     history.push("/confirmation");
     makeBooking();
+    makeConfirmation(); 
   };
   return (
     <div className={styles.bookingcomponent}>

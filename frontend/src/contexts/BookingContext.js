@@ -82,6 +82,10 @@ const BookingContextProvider = (props) => {
     }
   };
 
+  const makeConfirmation = () => {
+    localStorage.setItem('tickets', JSON.stringify(tickets)); 
+  }
+
   // fetch requests
   const getAllBookedSeatsForShowing = async (showingId) => {
     let result = await fetch(`/api/v1/bookings/${showingId}`);
@@ -140,7 +144,8 @@ const BookingContextProvider = (props) => {
     deleteBooking,
     bookingId, 
     currentBooking, 
-    showing
+    showing,
+    makeConfirmation
   };
 
   return (
