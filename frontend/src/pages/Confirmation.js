@@ -8,6 +8,7 @@ const Confirmation = () => {
   const { currentBooking, showing } = useContext(BookingContext);
 
   useEffect(() => {
+    
   }, [])
 
   const handleClick = () => {
@@ -15,40 +16,40 @@ const Confirmation = () => {
   }
 
   //get sum of each type of ticket
-  let adultTix = 0;
-  let childTix = 0;
-  let srTix = 0;
+  let adultTixSum = 0;
+  let childTixSum = 0;
+  let seniorTixSum = 0;
   if (currentBooking) {
     currentBooking.tickets.forEach((cbTicket) => {
       if (cbTicket.type === "adult") {
-        adultTix += 1;
+        adultTixSum += 1;
       }
       if (cbTicket.type === "children") {
-        childTix += 1;
+        childTixSum += 1;
       }
       if (cbTicket.type === "senior") {
-        srTix += 1;
+        seniorTixSum += 1;
       }
     })
   }
 
-  //only prints ticket type those ticket type have been bought
-  let aTicketSum;
-  let cTicketSum;
-  let sTicketSum;
-  if (adultTix > 0) {
-    aTicketSum = (
-      <span>{adultTix} Adult</span>
+  //only render ticket type if those ticket type have been bought
+  let aTicket;
+  let cTicket;
+  let sTicket;
+  if (adultTixSum > 0) {
+    aTicket = (
+      <span>{adultTixSum} Adult</span>
     )
   }
-  if (childTix > 0) {
-    cTicketSum = (
-      <span>{childTix} Child</span>
+  if (childTixSum > 0) {
+    cTicket = (
+      <span>{childTixSum} Child</span>
     )
   }
-  if (srTix > 0) {
-    sTicketSum = (
-      <span>{srTix} Senior</span>
+  if (seniorTixSum > 0) {
+    sTicket = (
+      <span>{seniorTixSum} Senior</span>
     )
   }
 
@@ -60,6 +61,7 @@ const Confirmation = () => {
           <div>
             <strong className={s.title}>{showing.film.Title}</strong>
             <p>Duration: {showing.film.Runtime}</p>
+            <p>{`Booking No: ${(currentBooking._id).slice(18)}`}</p>
           </div>
 
           <div className={s.locationTime}>
@@ -67,7 +69,7 @@ const Confirmation = () => {
             <span>{showing.date}</span>
             <span>{showing.time}</span>
           </div>
-          <p>{`Booking No: ${(currentBooking._id).slice(18)}`}</p>
+          
 
           <div className={s.rowAndSeat}>
             {currentBooking.tickets.map((cbTicket, i) => (
@@ -78,9 +80,9 @@ const Confirmation = () => {
           </div>
 
           <div className={s.tixtypes}>
-            {aTicketSum}
-            {cTicketSum}
-            {sTicketSum}
+            {aTicket}
+            {cTicket}
+            {sTicket}
           </div>
 
           <div className={s.totals}>
