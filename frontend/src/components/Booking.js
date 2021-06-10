@@ -13,8 +13,11 @@ const Booking = ({ data }) => {
     totalPrice,
     makeBooking,
     setSeniorTickets,
+    seniorTickets,
     setAdultTickets,
+    adultTickets,
     setChildrenTickets,
+    childrenTickets,
     setTotalPrice,
     setTickets,
     setReserved,
@@ -23,9 +26,6 @@ const Booking = ({ data }) => {
   } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;
-
- 
-
 
   // clear values from user when it's leaving the page.
   useEffect(() => {
@@ -40,7 +40,7 @@ const Booking = ({ data }) => {
   }, []);
 
   const handleAdultChange = (e) => {
-   
+
     let adultTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -60,7 +60,7 @@ const Booking = ({ data }) => {
   };
 
   const handleChildrenChange = (e) => {
-   
+
     let childTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -79,7 +79,7 @@ const Booking = ({ data }) => {
   };
 
   const handleSeniorChange = (e) => {
-   
+
 
     let seniorTickets = {
       type: e.target.name,
@@ -124,7 +124,8 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Adult</p>
-          <p>{price}</p>
+          <p style={{marginRight: '1vh'}}>x</p>
+          <p>{price} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
@@ -146,7 +147,8 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Children</p>
-          <p>{priceChild}</p>
+          <p style={{marginRight: '1vh'}}>x</p>
+          <p>{priceChild} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
@@ -168,7 +170,8 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Senior</p>
-          <p>{pricePensioner}</p>
+          <p style={{marginRight: '1vh'}}>x</p>
+          <p>{pricePensioner} kr</p>
         </div>
       </div>
       <div className={styles.buyTickets}>

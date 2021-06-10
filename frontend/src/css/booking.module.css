@@ -23,6 +23,7 @@
 }
 
 .bookingInfo {
+  position: relative;
   width: 85%;
   background-color: inherit;
   display: flex;
@@ -30,6 +31,11 @@
   text-align: center;
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.bookingInfo >*:nth-child(2){
+  position: absolute;
+  right: 3rem;
 }
 
 .ticketContainer select {
@@ -92,7 +98,7 @@
 
 
 .feedBack p {
-  font-size: 12px;
+  font-size: 10px;
   margin: auto;
   color: white;
 }
@@ -108,4 +114,38 @@
     margin-left: auto;
     margin-right: 1rem;
   }
+}
+
+.showingLine {
+  border-top: 2px solid #ffffff;
+  margin-left: 100px; 
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+
+.toggleText {
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  justify-content: center;
+}
+
+
+.formContainer {
+  margin-top: 20px;
+}
+
+.showingLine {
+  border-top: 2px solid #ffffff;
+  margin-left: 100px; 
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.showing_info {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
