@@ -135,6 +135,7 @@ const BookingContextProvider = (props) => {
     setSeniorTickets,
     setAdultTickets,
     setChildrenTickets,
+    childrenTickets,
     feedBackMessage,
     getBookingsByUserId,
     deleteBooking,
