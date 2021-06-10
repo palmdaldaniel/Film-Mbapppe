@@ -109,3 +109,16 @@
 .formContainer {
   margin-top: 20px;
 }
+
+.showingLine {
+  border-top: 2px solid #ffffff;
+  margin-left: 100px; 
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.showing_info {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

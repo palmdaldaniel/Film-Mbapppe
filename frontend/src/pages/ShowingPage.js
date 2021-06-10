@@ -32,7 +32,18 @@ const ShowingPage = (props) => {
     <div>
       <MovieInfo showing={showing} />
       <div className={styles.showingLine}>
+        
+      <div>
+{activeUser ? (
+  <div className={styles.showing_info}>Date: {showing?.date}   |    Time: {showing?.time}     |      Saloon: {showing?.saloon.name}</div>
+) : (
+
+  <div className={styles.displayNone}></div>
+  
+)}
+</div>
       </div>      
+      
       {activeUser ? (
         <div className={styles.booking_wrapper}>
         <Booking />
