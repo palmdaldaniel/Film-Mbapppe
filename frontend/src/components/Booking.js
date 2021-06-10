@@ -123,7 +123,7 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Adult</p>
-          <p>{adultTickets.length} x</p>
+          <p style={{marginRight: '1vh'}}>x</p>
           <p>{price}</p>
         </div>
       </div>
@@ -146,7 +146,7 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Children</p>
-          <p>{childrenTickets.length} x</p>
+          <p style={{marginRight: '1vh'}}>x</p>
           <p>{priceChild}</p>
         </div>
       </div>
@@ -169,7 +169,7 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Senior</p>
-          <p>{seniorTickets.length} x</p>
+          <p style={{marginRight: '1vh'}}>x</p>
           <p>{pricePensioner}</p>
         </div>
       </div>
