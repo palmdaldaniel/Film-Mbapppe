@@ -100,7 +100,7 @@ const Register = () => {
                       placeholder="Password"
                       required
                       onChange={handlePasswordChange}
-                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]){5,15}$"
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"
                     />
 
                     <ul className={styles.rules}>
