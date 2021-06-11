@@ -52,11 +52,21 @@
   padding: 0;
 }
 
+.previous {
+  margin-top: 4rem;
+}
+
 .movieGrid {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+}
+
+.noMoviesMsg {
+  font-style: italic;
+  display: flex;
+  justify-content: center;
 }
 
 .nameForm{

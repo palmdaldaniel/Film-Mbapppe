@@ -13,6 +13,8 @@ const UserPage = () => {
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
+  console.log("upcoming movies", upcomingBookings);
+  console.log("previously seen", previousBookings);
 
   return (
     <div className={styles.container}>
@@ -23,23 +25,23 @@ const UserPage = () => {
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
               <div className={styles.movieGrid}>
-                {upcomingBookings
+                {upcomingBookings.length < 0
                   ? (upcomingBookings.map((booking, i) => (<BookingCard
                     booking={booking}
                     prev={!prev}
                     key={i} />)))
-                  : (<h3>No upcoming bookings..</h3>)}
+                  : (<h5 className={styles.noMoviesMsg}>No upcoming bookings...</h5>)}
               </div>
             </div>
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
               <div className={styles.movieGrid}>
-                {previousBookings
+                {previousBookings.length < 0
                   ? (previousBookings.map((booking, i) => (<BookingCard
                     booking={booking}
                     prev={prev}
                     key={i} />)))
-                  : (<h3>No upcoming bookings..</h3>)}
+                  : (<h5 className={styles.noMoviesMsg}>No previous bookings...</h5>)}
               </div>
             </div>
           </div>
