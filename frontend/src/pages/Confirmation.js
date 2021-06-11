@@ -64,6 +64,7 @@ const Confirmation = () => {
   if ( bookingToRender && showingToRender) {
     info = (
       <>
+      <h1 className={s.confirmMessage}>Booking Confirmed!</h1>
         <div className={s.confirmationContainer}>
           <div>
             <strong className={s.title}>{showingToRender.film.Title}</strong>
@@ -108,8 +109,7 @@ const Confirmation = () => {
   }
   return (
     <div className={s.mainContainer}>
-      <h1 className={s.confirmMessage}>Booking Confirmed!</h1>
-      {info}
+      {info ? info : "There's nothing here yet. Book movies by going to homepage 🍿"}
       <button className={s.button} onClick={handleClick}>To Homepage</button>
     </div>
   );
