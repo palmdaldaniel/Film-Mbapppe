@@ -12,6 +12,7 @@
     margin-top: 20px;
     transition: all 0.2s ease 0.2s;
     width: 100%;
+    cursor: pointer;
   }
   .hoverZoom:hover {
     transform: scale(1.1);
@@ -49,6 +50,7 @@ transform: translate(-50%, -50%);
 
 .hoverZoomShow {
     transition: all 0.2s ease 0.2s;
+    cursor: pointer;
 }
 
 .hoverZoomShow:hover {
