@@ -32,7 +32,12 @@ const BookingCard = ({ booking, prev }) => {
           : <p></p>}
       </div>
       <div className={styles.bottom}>
-        <p className={styles.showingInfo}>{booking.showingId.saloon.name} | {booking.showingId.date} | {booking.showingId.time}</p>
+        <p className={styles.showingInfo}>
+          <span className={styles.info}>{booking.showingId.saloon.name} | </span>  
+          <span className={styles.info}>{booking.showingId.date} | </span>
+          <span className={styles.info}>{booking.showingId.time}</span>
+          
+          </p>
         <p className={styles.bookingNumber}>Bookingnumber: {booking._id.substr(booking._id.length - 6)}</p>
         <ul className={styles.seatList}>
           {/* Maps out all seats in booking */}
