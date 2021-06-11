@@ -12,13 +12,13 @@ const NavbarComponent = () => {
   return (
     <Navbar collapseOnSelect expand="sm" variant="dark">
       <Navbar.Brand >
-        <Link to="/">
+        <Nav.Link eventKey="0" as={Link} to="/" className={`${styles.logoContainer}`}>
           <img
             className={styles.logo}
             src="../assets/whitepopcorn.svg"
             alt="popcorn"
           />
-        </Link>
+        </Nav.Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className={`${styles.myNav} w-100 pb-3 pb-sm-0`} id="responsive-navbar-nav">

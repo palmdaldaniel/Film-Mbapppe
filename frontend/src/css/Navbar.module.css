@@ -20,10 +20,10 @@
     text-decoration: none;
   }
   
-  /* .linkLogIn {
-    margin-right: 0 !important;
-  } */
-  
+  .logoContainer {
+    padding: 0 !important;
+  }
+
   .logo {
     transition: transform 0.2s;
     cursor: pointer;
