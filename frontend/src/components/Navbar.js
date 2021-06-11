@@ -11,56 +11,46 @@ const NavbarComponent = () => {
 
   return (
     <Navbar collapseOnSelect expand="sm" variant="dark">
-        <Navbar.Brand >
-          <Link to="/">
-            <img
-              className={styles.logo}
-              src="../assets/whitepopcorn.svg"
-              alt="popcorn"
-            />
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse className={`${styles.myNav} w-100 pb-3 pb-sm-0`} id="responsive-navbar-nav">
-          <Nav className="me-auto">
-           <Nav.Link eventKey="1">
-              <Link  className={styles.link} to="/allmovies">
-                All movies
-              </Link>
+      <Navbar.Brand >
+        <Link to="/">
+          <img
+            className={styles.logo}
+            src="../assets/whitepopcorn.svg"
+            alt="popcorn"
+          />
+        </Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse className={`${styles.myNav} w-100 pb-3 pb-sm-0`} id="responsive-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link eventKey="1" as={Link} to="/allmovies" className={styles.link}>
+            All movies
            </Nav.Link>
-            <Nav.Link eventKey="2">
-              <Link className={styles.link} to="/about">
-                About
-              </Link>
+          <Nav.Link eventKey="2" as={Link} to="/about" className={styles.link}>
+            About
             </Nav.Link>
-            {
-              activeUser ? (
-                <React.Fragment>
-                  <Nav.Link eventKey="3">
-                    <Link className={styles.link} to="/profile">
-                      Profile
-                    </Link>
+          {
+            activeUser ? (
+              <React.Fragment>
+                <Nav.Link eventKey="3" as={Link} to="/profile" className={styles.link}>
+                  Profile
                   </Nav.Link>
-                  <Nav.Link eventKey="4">
-                    <Link
-                      onClick={logout}
-                      className={`${styles.link} float-end`}
-                      to="/"
-                    >
-                      Log out
-                  </Link>
+                <Nav.Link eventKey="4"
+                  as={Link}
+                  to="/"
+                  onClick={logout}
+                  className={`${styles.link} float-end`}>
+                    Log out
                   </Nav.Link>
-                </React.Fragment>
-              ) : (
-                <Nav.Link eventKey="5">
-                  <Link to="/login" className={styles.link}>
-                    Log in
-                  </Link>
-                </Nav.Link>
-              )
-            }
-          </Nav>
-        </Navbar.Collapse>
+              </React.Fragment>
+            ) : (
+              <Nav.Link eventKey="5" as={Link} to="/login" className={styles.link}>
+                Log in
+              </Nav.Link>
+            )
+          }
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
 
 

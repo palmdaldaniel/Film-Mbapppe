@@ -47,7 +47,13 @@
 .delete{
   padding: 0.5rem;
   margin: 0;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
+.delete svg path { color: #bbb; }
+.delete svg path:hover { color: rgb(251, 251, 251); }
 
 @media (min-width: 992px) {
   .card{
