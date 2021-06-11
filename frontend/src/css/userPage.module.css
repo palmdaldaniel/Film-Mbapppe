@@ -42,7 +42,6 @@
   color: gray;
   border: none;
   outline: none;
-
 }
 
 .showings {
@@ -75,6 +74,7 @@
   gap: 0.5rem;
   height: 7rem;
 }
+
 .msg{
   height: 1rem;
   line-height: 1rem;
@@ -113,7 +113,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-
   .h2{
     display: flex;
     justify-content: center;
@@ -121,16 +120,12 @@
   
 
 }
+
 @media (max-width:768px) and (min-width:600px) {
   .movieGrid {
     max-width: 50vw;
   }
-
 }
-
-
-
-
 
 @media (min-width: 768px) {
   .nameForm{
