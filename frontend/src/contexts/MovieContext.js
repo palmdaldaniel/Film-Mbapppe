@@ -49,6 +49,19 @@ const MovieContextProvider = (props) => {
         // eslint-disable-next-line
     }, [chosenPrice]);
 
+    useEffect(() => {
+
+        let currentDate = new Date()
+        // compare the value of the day to only ask the db about info the conditional is true.
+        if( chosenDate.getDay() >= currentDate.getDay()) {
+            setChosenPrice(null)
+            getShowingsByDate(dateToString(chosenDate));
+        } else {
+           setShowings([])
+        }
+    }, [chosenDate]);
+    
+    
     const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
         if (showings) {
             let filtered = showings.filter(oneShowing => oneShowing.price === price)
@@ -66,18 +79,6 @@ const MovieContextProvider = (props) => {
         return stringDate // convert date format to '2021-05-21'
     }
 
-    useEffect(() => {
-
-        let currentDate = new Date()
-        // compare the value of the day to only ask the db about info the conditional is true.
-        if( chosenDate.getDay() >= currentDate.getDay()) {
-            setChosenPrice(null)
-            getShowingsByDate(dateToString(chosenDate));
-        }
-
-      
-
-    }, [chosenDate]);
 
     // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
     useEffect(() => {

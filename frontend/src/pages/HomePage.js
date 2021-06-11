@@ -9,6 +9,11 @@ import ArrowToTop from '../components/ScrollToTop'
 const HomePage = () => {
     const { showings, filteredShowings, filteredSearch } = useContext(MovieContext);
 
+    console.log('showings', showings);
+    console.log('filteredShowings', filteredShowings);
+    console.log('filteredSearch ', filteredSearch );
+
+
     let listData;
 
     if (filteredShowings && filteredShowings.length > 0) {
@@ -48,7 +53,6 @@ const HomePage = () => {
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}
-                {filteredSearch && filteredSearch.length > 3 ? <ArrowToTop /> : ""}
         </div>
     );
 };
