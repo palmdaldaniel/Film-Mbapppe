@@ -35,7 +35,7 @@ const getShowingById = async (req, res) => {
   
 };
 const getShowingByDate = async (req, res) => {
-  
+
   Showing.find({date: req.query.date}).populate('film').sort('time').exec(async (err, result) => {
     if (err) {
       res.status(400).json({ error: "Something went wrong" });

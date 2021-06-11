@@ -9,7 +9,7 @@ import ArrowToTop from '../components/ScrollToTop'
 const HomePage = () => {
     const { showings, filteredShowings, filteredSearch } = useContext(MovieContext);
 
-    let listData
+    let listData;
 
     if (filteredShowings && filteredShowings.length > 0) {
         listData = filteredShowings

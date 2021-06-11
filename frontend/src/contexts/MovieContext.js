@@ -67,8 +67,16 @@ const MovieContextProvider = (props) => {
     }
 
     useEffect(() => {
-        setChosenPrice(null)
-        getShowingsByDate(dateToString(chosenDate));
+
+        let currentDate = new Date()
+        // compare the value of the day to only ask the db about info the conditional is true.
+        if( chosenDate.getDay() >= currentDate.getDay()) {
+            setChosenPrice(null)
+            getShowingsByDate(dateToString(chosenDate));
+        }
+
+      
+
     }, [chosenDate]);
 
     // when search field and filter buttons are clicked (filter from filtermovies.js) and (finalSearch from Search.js), we fire getMovieBySearch function and injecting an argument as req.query
