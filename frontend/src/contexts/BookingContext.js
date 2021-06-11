@@ -19,6 +19,17 @@ const BookingContextProvider = (props) => {
     "Select tickets and seats to make purchase"
   );
 
+  //for rendering bookings on Profile page
+  const [upcomingBookings, setUpcomingBookings] = useState([])
+  const [previousBookings, setPreviousBookings] = useState([])
+
+  useEffect(() => {
+    if(activeUser) {
+      getBookingsByUserId(activeUser._id)
+    }
+  }, [activeUser])
+
+
   // states for seatingmap
   const [reserved, setReserved] = useState([]);
   const [bookedPlaces, setBookedPlaces] = useState([]);
@@ -55,7 +66,6 @@ const BookingContextProvider = (props) => {
     for (const [key, value] of Object.entries(tempTickets)) {
       value.forEach((t) => temp.push(t));
     }
-
     setTickets(temp);
   };
 
@@ -78,7 +88,13 @@ const BookingContextProvider = (props) => {
         tickets: data,
       };
       // send it to post request.
-      postBooking(info);
+      postBooking(info)
+      .then((res) => {
+        //to refresh bookings on Profile page)
+        getBookingsByUserId(activeUser._id)
+      })
+
+
     }
   };
 
@@ -91,21 +107,24 @@ const BookingContextProvider = (props) => {
   };
 
   const getBookingsByUserId = async (userId) => {
-    let bookings = await fetch(
-      `api/v1/bookings/user-bookings?userId=${userId}`
-    );
+    let bookings = await fetch(`api/v1/bookings/user-bookings?userId=${userId}`);
     bookings = await bookings.json();
-    return bookings;
+    setUpcomingBookings(bookings.upcomingBookings)
+    setPreviousBookings(bookings.previousBookings)
+   
   };
 
   // delete Booking
   const deleteBooking = async (bookingId) => {
-    await fetch(`/api/v1/bookings/${bookingId}`, {
+    let result = await fetch(`/api/v1/bookings/${bookingId}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
       },
     });
+    getBookingsByUserId(activeUser._id)
+    result = await result.json();
+    return result;
   };
 
   const postBooking = async (bookingData) => {
@@ -144,7 +163,10 @@ const BookingContextProvider = (props) => {
     feedBackMessage,
     getBookingsByUserId,
     deleteBooking,
-    bookingId, 
+    bookingId,
+    upcomingBookings,
+    previousBookings,
+    getBookingsByUserId,
     currentBooking, 
     showing
   };
