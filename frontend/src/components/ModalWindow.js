@@ -16,7 +16,7 @@ function ModalWindow(props) {
 
   return (
     <>
-      <Modal show={booleanValue} onHide={() => toggleBoolean(false)} animation={false}>
+      <Modal className="d-flex justify-content-center align-items-center" show={booleanValue} onHide={() => toggleBoolean(false)} animation={false}>
         <Modal.Body>{modalText}</Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={() => handleClick()}>
