@@ -21,7 +21,7 @@ const UserPage = () => {
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
               <div className={styles.movieGrid}>
-                {upcomingBookings.length < 0 ? (
+                {upcomingBookings.length > 0 ? (
                   upcomingBookings.map((booking, i) => (
                     <BookingCard booking={booking} prev={!prev} key={i} />
                   ))
@@ -35,7 +35,7 @@ const UserPage = () => {
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
               <div className={styles.movieGrid}>
-                {previousBookings.length < 0 ? (
+                {previousBookings.length > 0 ? (
                   previousBookings.map((booking, i) => (
                     <BookingCard booking={booking} prev={prev} key={i} />
                   ))
