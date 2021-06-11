@@ -7,7 +7,6 @@ import styles from "../css/SignUp.module.css";
 import ModalWindow from './ModalWindow'
 
 const Register = () => {
-  const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
  
 
@@ -51,7 +50,6 @@ const Register = () => {
     let result = await createUser(newUser);
     if(!result.error) {
       setActiveUser(result)
-      history.push('/')
     }
     else if (result.error){
       setSignUpFail(true)
@@ -59,14 +57,13 @@ const Register = () => {
 }
 
 let modalValues = {
-  booleanValue: signUpFail,
-  toggleBoolean: setSignUpFail,
+  signUpFail: signUpFail,
+  setSignUpFail: setSignUpFail,
   modalText: 'This email is already registered'
 }
 
   return (
     <div className={styles.registercontainer}>
-      <h1 className={styles.header}>Filmvisarna</h1>
       <Container className={`${styles.containerStyle} py-0`}>
         {signUpDone ? (
           <div className="confirmationDiv">
@@ -75,7 +72,7 @@ let modalValues = {
         ) : (
           <div>
             <p className={styles.registerformtext}>Register your account</p>
-            <div className={styles.registerform}>
+            <div className={styles.registerformShowing}>
             
               <Form onSubmit={(e) => registerSubmitHandler(e)}>
                 
@@ -122,7 +119,12 @@ let modalValues = {
                       required
 
                     />
-                    
+
+                    {signUpFail && (
+
+                      <p className="error">This email is already at use.</p>
+                    )}
+
                   </Form.Group>
                 </OverlayTrigger>
                   <div className={styles.regarea}>

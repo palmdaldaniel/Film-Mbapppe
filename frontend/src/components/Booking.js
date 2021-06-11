@@ -1,11 +1,11 @@
 import styles from "../css/booking.module.css";
 import { useContext, useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 import { BookingContext } from "../contexts/BookingContext";
 
 const Booking = ({ data }) => {
-  const history = useHistory()
+  const history = useHistory();
 
   const {
     tickets,
@@ -13,12 +13,16 @@ const Booking = ({ data }) => {
     totalPrice,
     makeBooking,
     setSeniorTickets,
+    seniorTickets,
     setAdultTickets,
+    adultTickets,
     setChildrenTickets,
+    childrenTickets,
     setTotalPrice,
     setTickets,
     setReserved,
     feedBackMessage,
+    makeConfirmation
   } = useContext(BookingContext);
 
   const { price, priceChild, pricePensioner } = data;
@@ -26,14 +30,17 @@ const Booking = ({ data }) => {
   // clear values from user when it's leaving the page.
   useEffect(() => {
     return () => {
-      console.log('unmounting');
       setTickets([]);
       setTotalPrice(0);
       setReserved([]);
+      setSeniorTickets([])
+      setAdultTickets([])
+      setChildrenTickets([])
     };
   }, []);
 
   const handleAdultChange = (e) => {
+
     let adultTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -53,6 +60,7 @@ const Booking = ({ data }) => {
   };
 
   const handleChildrenChange = (e) => {
+
     let childTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -71,6 +79,8 @@ const Booking = ({ data }) => {
   };
 
   const handleSeniorChange = (e) => {
+
+
     let seniorTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),
@@ -88,15 +98,19 @@ const Booking = ({ data }) => {
     setSeniorTickets(sT);
   };
 
-const handleClick = () => {
-  history.push('/confirmation')
-  makeBooking()
-}
+  const handleClick = () => {
+    history.push("/confirmation");
+    makeBooking();
+  };
   return (
     <div className={styles.bookingcomponent}>
       <h1>Tickets</h1>
       <div className={styles.ticketContainer}>
-        <select name="adult" id="" onChange={(e) => handleAdultChange(e)}>
+        <select
+          name="adult"
+          id=""
+          onChange={(e) => handleAdultChange(e)}
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -110,11 +124,16 @@ const handleClick = () => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Adult</p>
-          <p>{price}</p>
+          <p style={{marginRight: '1vh'}}>x</p>
+          <p>{price} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
-        <select name="children" id="" onChange={(e) => handleChildrenChange(e)}>
+        <select
+          name="children"
+          id=""
+          onChange={(e) => handleChildrenChange(e)}
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -128,11 +147,16 @@ const handleClick = () => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Children</p>
-          <p>{priceChild}</p>
+          <p style={{marginRight: '1vh'}}>x</p>
+          <p>{priceChild} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
-        <select name="senior" id="" onChange={(e) => handleSeniorChange(e)}>
+        <select
+          name="senior"
+          id=""
+          onChange={(e) => handleSeniorChange(e)}
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -146,7 +170,8 @@ const handleClick = () => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Senior</p>
-          <p>{pricePensioner}</p>
+          <p style={{marginRight: '1vh'}}>x</p>
+          <p>{pricePensioner} kr</p>
         </div>
       </div>
       <div className={styles.buyTickets}>
@@ -161,7 +186,7 @@ const handleClick = () => {
         ) : (
           <button
             className={`${styles.buyButton} ${styles.active}`}
-             onClick={() => handleClick()} 
+            onClick={() => handleClick()}
           >
             Buy Tickets
           </button>
