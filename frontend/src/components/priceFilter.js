@@ -1,7 +1,8 @@
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
+
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext } from "react";
+
+import s from "../css/PriceFilter.module.css"
 
 function PriceFilter() {
     const { priceOptions, setChosenPrice } = useContext(MovieContext);
@@ -15,23 +16,23 @@ function PriceFilter() {
     if (priceOptions) { //priceOptions format [100, 150, 200]
         for (let i = 0; i < priceOptions.length; i++) {
             items.push(
-                <Dropdown.Item key={i} onClick={() => handleClick(priceOptions[i])}>
+                <option key={i} onClick={() => handleClick(priceOptions[i])}>
                     {`${priceOptions[i]}`}
-                </Dropdown.Item>,
+                </option>,
             );
         }
 
         items.unshift(
-            <Dropdown.Item key={'all'} onClick={() => handleClick('all')}>
-                {`All`}
-            </Dropdown.Item>,
+            <option key={'all'} onClick={() => handleClick('all')}>
+                {`Price`}
+            </option>,
         );
     }
 
     return (
-        <DropdownButton style={{ display: 'inline-block' }} id="dropdown-basic-button" title="Price">
+        <select className={s.input} title="Price">
             {items}
-        </DropdownButton>
+        </select>
     )
 }
 
