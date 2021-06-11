@@ -11,6 +11,8 @@
   background: rgb(29, 29, 29);
   color:#FFF;
   padding: 10px;
+  position: relative;
+
 }
 
 .card *{
@@ -19,7 +21,7 @@
 
 .top{
   color: #FFF;
-  border: 2px dashed rgba(219, 219, 219, 0.5);
+  /* border: 2px dashed rgba(219, 219, 219, 0.5); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +29,7 @@
 
 .bottom{
   padding: 10px;
-  border: 2px dashed rgba(219, 219, 219, 0.5);
+  /* border: 2px dashed rgba(219, 219, 219, 0.5); */
   border-top: none;
   flex-basis: 90%;
   display: flex;
@@ -49,8 +51,9 @@
   margin: 0;
   border: none;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 13px;
+  right: 10px;
+  background-color: transparent;
 }
 .delete svg path { color: #bbb; }
 .delete svg path:hover { color: rgb(251, 251, 251); }
