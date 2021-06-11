@@ -59,8 +59,8 @@ const Register = () => {
 }
 
 let modalValues = {
-  signUpFail: signUpFail,
-  setSignUpFail: setSignUpFail,
+  booleanValue: signUpFail,
+  toggleBoolean: setSignUpFail,
   modalText: 'This email is already registered'
 }
 
@@ -122,12 +122,7 @@ let modalValues = {
                       required
 
                     />
-
-                    {signUpFail && (
-
-                      <p className="error">This email is already at use.</p>
-                    )}
-
+                    
                   </Form.Group>
                 </OverlayTrigger>
                   <div className={styles.regarea}>
