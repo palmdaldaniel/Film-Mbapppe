@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { MovieContext } from "../contexts/MovieContext";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
-import { useEffect, useState } from "react";
 import NotFound from "../components/Notfound";
 import Pagination from '../components/Pagination'
 import Filtermovies from '../components/Filtermovies'

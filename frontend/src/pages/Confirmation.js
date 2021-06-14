@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import { BookingContext } from '../contexts/BookingContext';
 import s from "../css/Confirmation.module.css";

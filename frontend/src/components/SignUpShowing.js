@@ -1,5 +1,4 @@
 import { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container, Form, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
@@ -10,7 +9,7 @@ const Register = () => {
   const { createUser, setActiveUser } = useContext(UserContext);
  
 
-  const [signUpDone, setSignUpDone] = useState(false);
+  const [signUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -119,8 +118,6 @@ let modalValues = {
                       required
                       onChange={handlePasswordChange}
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
-                      required
-
                     />
 
                     {signUpFail && (

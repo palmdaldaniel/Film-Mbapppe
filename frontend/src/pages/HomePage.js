@@ -5,7 +5,6 @@ import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
 import CarouselComponent from '../components/Carousel'
 import ArrowToTop from '../components/ScrollToTop'
-import s from "../css/Homepage.module.css"
 
 const HomePage = () => {
     const { showings, filteredShowings, filteredSearch } = useContext(MovieContext);

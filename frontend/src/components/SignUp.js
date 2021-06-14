@@ -11,7 +11,7 @@ const Register = () => {
   const { createUser, setActiveUser } = useContext(UserContext);
 
 
-  const [signUpDone, setSignUpDone] = useState(false);
+  const [signUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -122,7 +122,6 @@ const Register = () => {
                     required
                     onChange={handlePasswordChange}
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"
-                    required
                   />
                 </Form.Group>
 
