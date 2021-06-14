@@ -16,16 +16,22 @@ const MovieContextProvider = (props) => {
     const [chosenPrice, setChosenPrice] = useState(null); //format 100
     const [filteredShowings, setFilteredShowings] = useState(null);
     const [inputValue, setInputValue] = useState("");
-
+ 
     //for pagination
     const [pageTotal, setPageTotal] = useState(null)
     const [currentPage, setCurrentPage] = useState(1)
+
+    const [priceValue, setPriceValue] = useState("")
 
     const countPageTotal = async (amountOfDoc) => {//function fires when we get result of getMovieBySearch. AmountOfDoc - how many movies match the request with the filter
         let pageTotal = Math.ceil(amountOfDoc / 9) //9 because we dont want more than 9 cards on the page
         setPageTotal(pageTotal)
     }
 
+    //when date changes, price field goes back to say Price
+    useEffect(() => {
+        setPriceValue(""); 
+    }, [chosenDate])
 
     useEffect(() => {
         getAllMovies();
@@ -138,7 +144,9 @@ const MovieContextProvider = (props) => {
         setInputValue,
         pageTotal,
         currentPage,
-        setCurrentPage
+        setCurrentPage, 
+        priceValue,
+        setPriceValue
     }
 
     return (

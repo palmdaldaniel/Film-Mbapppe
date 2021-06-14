@@ -74,64 +74,9 @@ code {
   color: #000 !important;
 }
 
-
-/* Styling for PriceFilter */
-
-#dropdown-basic-button {
-  font-weight: 300 !important;
-  background: none !important;
-  border: none;
-  font-size: 20px;
-  border-bottom: 1px solid white;
-  font-weight: 700;
-  border-radius: 0;
-  outline: none;
-  padding: 0 0 1px 0;
-  width: 160px;
-  margin: 20px 0;
-}
-
-#dropdown-basic-button:focus {
-  outline: none !important;
-  box-shadow: none;
-}
-
-.dropdown-toggle::after {
-  content: none !important;
-}
-.dropdown-menu {
-  background: rgb(41, 41, 41) !important;
-  
-}
-.dropdown-item {
-  color: #fff !important;
-}
-.dropdown-item:hover {
-  color: #08233d !important;
-}
-.dropdown-item:active {
-  background-color: #fff !important;
-}
-
-input {
-  display: block;
-  border: 0; 
-  outline: 0;
-  background: transparent;
-  border-bottom: 1px solid white;
-  font-size: 1.1rem;
-  color: white;
-}
-
-@media (min-width: 576px) { 
-  #dropdown-basic-button {
-    margin: 0  0 1px 70px;
-  }
-}
-
 /* Styling for carousel */
 
- .carousel-caption {
+.carousel-caption {
   width: 30%;
   margin: 0 auto;
   background-color: transparent !important;
