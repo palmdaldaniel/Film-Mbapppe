@@ -26,7 +26,6 @@ const MovieContextProvider = (props) => {
         setPageTotal(pageTotal)
     }
 
-
     useEffect(() => {
         getAllMovies();
         // eslint-disable-next-line
