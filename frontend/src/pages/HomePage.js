@@ -4,15 +4,9 @@ import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
 import CarouselComponent from '../components/Carousel'
-import ArrowToTop from '../components/ScrollToTop'
 
 const HomePage = () => {
-    const { showings, filteredShowings, filteredSearch } = useContext(MovieContext);
-
-    console.log('showings', showings);
-    console.log('filteredShowings', filteredShowings);
-    console.log('filteredSearch ', filteredSearch );
-
+    const { showings, filteredShowings } = useContext(MovieContext);
 
     let listData;
 
