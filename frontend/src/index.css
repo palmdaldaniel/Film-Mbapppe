@@ -114,6 +114,13 @@ code {
   justify-content: center !important;
 }
 
+
+@media (max-width: 500px) {
+  .modal {
+    max-width: 90% !important;
+  }
+}
+
 /* Styling for navbar */
 .navbar-dark .navbar-toggler {
   border: none !important;
