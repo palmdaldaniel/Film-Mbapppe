@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const Encrypt = require("../Encrypt");
+const utils = require("../core/utilities");
 
 
 
@@ -29,13 +30,21 @@ const getUserById = async (req, res) => {
   });
 };
 
+
+
+
 //create user
-
-
-
 const createUser = async (req, res) => {
+
+  
   // destructure req.body object
-  const { email } = req.body;
+  const { email, password  } = req.body;
+  
+  // check if password is strong
+  const passwordIsStrong = utils.passwordValidator(password);
+
+  // check if email is valid
+  const validateEmail= utils.emailValidator(email);
 
   let userExists = await User.exists({ email: email });
 
@@ -44,11 +53,22 @@ const createUser = async (req, res) => {
       .status(400)
       .json({ error: "An user with that email already exists" });
   }
+  
+ else if (!validateEmail) {
+  res.status(404).json({ failed: "Email is not valid" });
+  return;
 
+} else if (!passwordIsStrong) {
+  res.status(404).json({ failed: "Password is not valid" });
+  return;
+
+} else {
   let user = await User.create(req.body);
   user.password = undefined;
   req.session.user = user;
   res.json(user);
+};
+
 };
 
 

@@ -14,14 +14,29 @@ function ModalWindow(props) {
     }
   }
 
+  const renderButton = () => {
+    if (deleteBooking) {
+      return <div>
+        <Button variant="danger" onClick={() => handleClick()} className='mr-3'>
+          Yes
+        </Button>
+        <Button variant="primary" onClick={() => toggleBoolean(false)}>
+          No
+        </Button>
+      </div>
+    } else {
+      return <Button variant="danger" onClick={() => toggleBoolean(false)}>
+       Close
+      </Button>
+    }
+  }
+
   return (
     <>
       <Modal className="d-flex justify-content-center align-items-center" show={booleanValue} onHide={() => toggleBoolean(false)} animation={false}>
         <Modal.Body>{modalText}</Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={() => handleClick()}>
-            Close
-            </Button>
+          {renderButton()}
         </Modal.Footer>
       </Modal>
     </>
