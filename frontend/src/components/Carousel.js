@@ -1,12 +1,20 @@
 import Carousel from "react-bootstrap/Carousel";
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import styles from '../css/Carousel.Module.css'
 import { useHistory } from "react-router-dom";
 import useViewport from './UseViewport'
 
 
 function CarouselComponent() {
+
+    const carouselRef = useRef();
+    console.log(`carouselRef`, carouselRef)
+
+    const nodeRef = useRef(null);
+    console.log(`nodeRef`, nodeRef)
+
+
     const { everyMovies } = useContext(MovieContext);
     const history = useHistory();
     
@@ -20,11 +28,11 @@ function CarouselComponent() {
     };
 
     return (
-        <Carousel fade indicators={false} > 
+        <Carousel fade indicators={false} noderef={nodeRef}> 
             {everyMovies && everyMovies.map((oneMovie, i) => (
-                <Carousel.Item key={i}>
+                <Carousel.Item key={i} ref={nodeRef}>
                     {width < breakpoint ?
-                    (<div className={`${styles.imageBox} d-flex justify-content-center`} onClick={()=>handleClick(oneMovie._id)}>
+                    (<div  className={`${styles.imageBox} d-flex justify-content-center`} onClick={()=>handleClick(oneMovie._id)}>
                         <img className='img-fluid' src={oneMovie.Poster} alt="Movie poster" />
                     </div>) :
                     (<div className={styles.bannerBox} style={{backgroundImage: `url(${oneMovie.Banner})`}}>
