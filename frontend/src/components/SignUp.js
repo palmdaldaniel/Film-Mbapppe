@@ -9,7 +9,7 @@ import ModalWindow from './ModalWindow'
 const Register = () => {
   const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
- 
+
 
   const [signUpDone, setSignUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
@@ -17,18 +17,20 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-  const renderTooltip = (props) => (
+   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      <ul className={styles.rules}>
-        <li>5-7 letters       </li>
+      <div className={styles.rules}>
+        <ul >
+        <li>At least 4 characters long    </li>
         <li>1 lowercase letter</li>
         <li>1 uppercase letter</li>
         <li>1 number          </li>
         <li>1 special character</li>
-      </ul>
+      </ul></div>
+      
     </Tooltip>
   );
-
+ 
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -49,20 +51,20 @@ const Register = () => {
       name
     };
     let result = await createUser(newUser);
-    if(!result.error) {
+    if (!result.error) {
       setActiveUser(result)
       history.push('/')
     }
-    else if (result.error){
+    else if (result.error) {
       setSignUpFail(true)
     }
-}
+  }
 
-let modalValues = {
-  booleanValue: signUpFail,
-  toggleBoolean: setSignUpFail,
-  modalText: 'This email is already registered'
-}
+  let modalValues = {
+    booleanValue: signUpFail,
+    toggleBoolean: setSignUpFail,
+    modalText: 'This email is already registered'
+  }
 
   return (
     <div className={styles.registercontainer}>
@@ -76,71 +78,70 @@ let modalValues = {
           <div>
             <p className={styles.registerformtext}>Register your account</p>
             <div className={styles.registerform}>
-            
+
               <Form onSubmit={(e) => registerSubmitHandler(e)}>
+
+                <Form.Group controlId="formBasicUsername">
+                  <Form.Control
+                    className={styles.inputField}
+                    size="lg"
+                    htmlFor="handleName"
+                    type="name"
+                    placeholder="Username"
+                    required
+                    onChange={handleNameChange}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Control
+                    className={styles.inputField}
+                    size="lg"
+                    htmlFor="handleEmail"
+                    type="email"
+                    placeholder="E-mail"
+                    required
+                    onChange={handleEmailChange}
+                  />
+                </Form.Group>
                 
-                  <Form.Group controlId="formBasicUsername">
-                    <Form.Control
-                      className={styles.inputField}
-                      size="lg"
-                      htmlFor="handleName"
-                      type="name"
-                      placeholder="Username"
-                      required
-                      onChange={handleNameChange}
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      className={styles.inputField}
-                      size="lg"
-                      htmlFor="handleEmail"
-                      type="email"
-                      placeholder="E-mail"
-                      required
-                      onChange={handleEmailChange}
-                    />
-                  </Form.Group>
-
                   <OverlayTrigger
-                  trigger="click"
+                  trigger="focus"
                   placement="top"
                   overlay={renderTooltip}
-                  variant="secondary">
+                  variant="secondary"> 
 
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Control
-                      className={styles.inputField}
-                      size="lg"
-                      htmlFor="handlePassword"
-                      type="password"
-                      placeholder="Password"
-                      required
-                      onChange={handlePasswordChange}
-                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
-                      required
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Control
+                    className={styles.inputField}
+                    size="lg"
+                    htmlFor="handlePassword"
+                    type="password"
+                    placeholder="Password"
+                    required
+                    onChange={handlePasswordChange}
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"
+                    required
+                  />
+                </Form.Group>
 
-                    />
-                    
-                  </Form.Group>
-                </OverlayTrigger>
-                  <div className={styles.regarea}>
+                </OverlayTrigger> 
+                <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}
                     variant="danger"
                     type="submit"
-                    
+
                   >
                     Register
                   </Button>
-                  </div>
-                
+                </div>
+
               </Form>
-              
-              {}{" "}
+
+              { }{" "}
             </div>
-            <ModalWindow modalValues={modalValues}/>
+            <ModalWindow modalValues={modalValues} />
           </div>
         )}
       </Container>
