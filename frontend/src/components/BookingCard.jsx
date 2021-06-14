@@ -17,7 +17,7 @@ const BookingCard = ({ booking, prev }) => {
   let modalValues = {
     booleanValue: showModal,
     toggleBoolean: setShowModal,
-    modalText: 'The booking has been deleted',
+    modalText: 'Are you sure you want to delete this booking?',
     deleteBooking: deleteBooking
   }
 
