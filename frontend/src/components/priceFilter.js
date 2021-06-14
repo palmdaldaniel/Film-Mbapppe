@@ -1,16 +1,17 @@
 
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import s from "../css/PriceFilter.module.css"
 
 function PriceFilter() {
-    const { priceOptions, setChosenPrice} = useContext(MovieContext);
+    const { priceOptions, setChosenPrice, priceValue, setPriceValue } = useContext(MovieContext);
 
     let items = [];//here we'll keep items that are going to be in the dropdown menu 
 
     const handleClick = (e) => {
         setChosenPrice(parseInt(e.target.value))
+        setPriceValue(e.target.value)
     }
 
     if (priceOptions) { //priceOptions format [100, 150, 200]
@@ -21,16 +22,11 @@ function PriceFilter() {
                 </option>,
             );
         }
-
-        items.unshift(
-            <option key={'all'} onClick={() => handleClick('all')}>
-                {`Price`}
-            </option>,
-        );
     }
 
     return (
-        <select className={s.input} onChange={handleClick}>
+        <select className={s.input} value={priceValue} onChange={handleClick}>
+            <option value=""> Price </option>
             {items}
         </select>
     )
