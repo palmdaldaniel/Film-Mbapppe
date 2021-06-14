@@ -9,6 +9,8 @@ import useViewport from './UseViewport'
 function CarouselComponent() {
     const { everyMovies } = useContext(MovieContext);
     const history = useHistory();
+    // const nodeRef = React.useRef(null);
+    const noderef = useRef(null); 
     
     //for conditional rendering depending on the screen size.
     //good article https://blog.logrocket.com/developing-responsive-layouts-with-react-hooks/
@@ -20,7 +22,7 @@ function CarouselComponent() {
     };
 
     return (
-        <Carousel fade indicators={false} > 
+        <Carousel fade indicators={false} nodeRef={noderef}> 
             {everyMovies && everyMovies.map((oneMovie, i) => (
                 <Carousel.Item key={i}>
                     {width < breakpoint ?

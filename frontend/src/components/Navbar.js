@@ -6,11 +6,22 @@ import { UserContext } from "../contexts/UserContext";
 import styles from "../css/Navbar.module.css";
 import { Navbar, Nav } from 'react-bootstrap'
 
-const NavbarComponent = () => {
+const NavbarComponent = ({ open, setOpen }) => {
+  console.log(`open`, open)
   const { logout, activeUser } = useContext(UserContext);
 
+  if(!open) {
+    let elem = document.querySelector('.navbar-collapse')
+    let elem2 = document.querySelector('.navbar-toggler')
+    if(elem && elem2) {
+      elem.classList.remove('show')
+      elem2.classList.add('collapsed')
+    }
+    setOpen(false)
+  }
+
   return (
-    <Navbar collapseOnSelect expand="sm" variant="dark">
+    <Navbar collapseOnSelect expand="sm" variant="dark" onClick={() => setOpen(!open)}>
       <Navbar.Brand >
         <Nav.Link eventKey="0" as={Link} to="/" className={`${styles.logoContainer}`}>
           <img
