@@ -23,7 +23,7 @@ const UserPage = () => {
               <div className={styles.movieGrid}>
                 {upcomingBookings.length > 0 ? (
                   upcomingBookings.map((booking, i) => (
-                    <BookingCard booking={booking} prev={!prev} key={i} />
+                    <BookingCard booking={booking} prev={!prev} key={i}  />
                   ))
                 ) : (
                   <h5 className={styles.noMoviesMsg}>
