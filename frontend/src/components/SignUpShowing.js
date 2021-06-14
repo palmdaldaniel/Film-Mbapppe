@@ -18,13 +18,15 @@ const Register = () => {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      <ul className={styles.rules}>
-        <li>5-7 letters       </li>
+      <div className={styles.rules}>
+        <ul >
+        <li>At least 4 characters long    </li>
         <li>1 lowercase letter</li>
         <li>1 uppercase letter</li>
         <li>1 number          </li>
         <li>1 special character</li>
-      </ul>
+      </ul></div>
+      
     </Tooltip>
   );
 
@@ -101,7 +103,7 @@ let modalValues = {
                   </Form.Group>
 
                   <OverlayTrigger
-                  trigger="click"
+                  trigger="focus"
                   placement="top"
                   overlay={renderTooltip}
                   variant="secondary">
