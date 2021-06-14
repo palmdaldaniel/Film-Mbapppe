@@ -21,7 +21,8 @@ const Register = () => {
     <Tooltip id="button-tooltip" {...props}>
       <div className={styles.rules}>
         <ul >
-        <li>At least 4 characters long    </li>
+        Requirements
+        <li>At least 5 characters long    </li>
         <li>1 lowercase letter</li>
         <li>1 uppercase letter</li>
         <li>1 number          </li>
