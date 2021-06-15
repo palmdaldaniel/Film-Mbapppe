@@ -10,7 +10,7 @@ const bookingSchema = new Schema({
             price: { type: Number },
             seatingNumber: { type: Number },
             rowNumber: { type: Number },
-            type: {type: String}
+            type: { type: String }
         }
     ]
 });
