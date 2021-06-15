@@ -44,17 +44,25 @@ mongoose
 
   // ACL setup, we add our middleware before our routehandlers.
 app.use((req, res, next) => {
-
+  let isAdmin = req.session.user && req.session.user.role === "ADMIN"
+  let errorMsg = {
+    error:
+      "You need a logged in user with the correct role in order to request all available users",
+  }
+ 
   let reqPath = req.path.endsWith("/") ? req.path.replace(/\/$/, "") : req.path;
 
-  if (reqPath === "/api/v1/users" && req.method === "GET") {
-    if (req.session.user && req.session.user.role === "ADMIN") {
+  if (reqPath === "/api/v1/users" && req.method === "GET") { //Protection for the route with getAllUsers
+    if (isAdmin) {
       return next();
     } else {
-      return res.status(403).json({
-        error:
-          "You need a logged in user with the correct role in order to request all available users",
-      });
+      return res.status(403).json(errorMsg);
+    }
+  } else if (reqPath.includes("user-bookings") && req.method === "GET") {//Protection for the route with getBookingsByUserId
+    if (isAdmin || req.session.user._id === req.query.userId) {
+      return next();
+    } else {
+      return res.status(403).json(errorMsg);
     }
   }
 
