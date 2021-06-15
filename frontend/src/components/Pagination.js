@@ -23,7 +23,7 @@ const PaginationComponent = (props) => {
             <br />
         </div>
     );
-    
+
     return (
         <div>
             {paginationBasic}

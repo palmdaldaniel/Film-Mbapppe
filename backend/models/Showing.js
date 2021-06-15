@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
 const showingSchema = new Schema({
-  
   saloon: {
     type: Schema.Types.ObjectId,
     ref: "Saloon",
@@ -21,13 +19,12 @@ const showingSchema = new Schema({
   time: {
     type: String,
     required: true
-  }, 
+  },
   price: {
-    type: Number, 
+    type: Number,
     required: true
   }
 });
-
 
 const Showing = mongoose.model("Showing", showingSchema);
 

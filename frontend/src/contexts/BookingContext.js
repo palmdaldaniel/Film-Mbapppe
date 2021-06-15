@@ -72,7 +72,7 @@ const BookingContextProvider = (props) => {
 
   const makeBooking = () => {
     if (tickets.length !== reserved.length || tickets.length === 0) {
-      console.log("both need to match");
+      // console.log("both need to match");
     } else {
       // merge reserved seats with selected amount of tickets.
       const data = tickets.map((ticket, i) => {

@@ -25,23 +25,23 @@ const NavbarComponent = () => {
         <Nav className="me-auto">
           <Nav.Link eventKey="1" as={Link} to="/allmovies" className={styles.link}>
             All movies
-           </Nav.Link>
+          </Nav.Link>
           <Nav.Link eventKey="2" as={Link} to="/about" className={styles.link}>
             About
-            </Nav.Link>
+          </Nav.Link>
           {
             activeUser ? (
               <React.Fragment>
                 <Nav.Link eventKey="3" as={Link} to="/profile" className={styles.link}>
                   Profile
-                  </Nav.Link>
+                </Nav.Link>
                 <Nav.Link eventKey="4"
                   as={Link}
                   to="/"
                   onClick={logout}
                   className={`${styles.link} float-end`}>
-                    Log out
-                  </Nav.Link>
+                  Log out
+                </Nav.Link>
               </React.Fragment>
             ) : (
               <Nav.Link eventKey="5" as={Link} to="/login" className={styles.link}>
@@ -52,8 +52,6 @@ const NavbarComponent = () => {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
-
   );
 };
 

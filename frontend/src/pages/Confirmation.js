@@ -8,19 +8,19 @@ const Confirmation = () => {
   const { currentBooking, showing } = useContext(BookingContext);
 
   //get from local storage on reload
-  let bookingToRender = currentBooking ? currentBooking : JSON.parse(localStorage.getItem('currentBooking')); 
+  let bookingToRender = currentBooking ? currentBooking : JSON.parse(localStorage.getItem('currentBooking'));
   let showingToRender = showing ? showing : JSON.parse(localStorage.getItem('showing'))
 
   const handleClick = () => {
     history.push("/");
-    localStorage.clear(); 
+    localStorage.clear();
   }
 
   useEffect(() => {
-    return() => {
-      localStorage.clear(); 
+    return () => {
+      localStorage.clear();
     }
-  }, []); 
+  }, []);
 
   //get sum of each type of ticket
   let adultTixSum = 0;
@@ -61,10 +61,10 @@ const Confirmation = () => {
   }
 
   let info = "";
-  if ( bookingToRender && showingToRender) {
+  if (bookingToRender && showingToRender) {
     info = (
       <>
-      <h1 className={s.confirmMessage}>Booking Confirmed!</h1>
+        <h1 className={s.confirmMessage}>Booking Confirmed!</h1>
         <div className={s.confirmationContainer}>
           <div>
             <strong className={s.title}>{showingToRender.film.Title}</strong>
@@ -77,7 +77,7 @@ const Confirmation = () => {
             <span>{showingToRender.date}</span>
             <span>{showingToRender.time}</span>
           </div>
-          
+
 
           <div className={s.rowAndSeat}>
             {bookingToRender.tickets.map((cbTicket, i) => (
