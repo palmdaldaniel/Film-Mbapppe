@@ -1,37 +1,34 @@
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
+
 import { MovieContext } from "../contexts/MovieContext";
 import { useContext } from "react";
 
+import s from "../css/PriceFilter.module.css"
+
 function PriceFilter() {
-    const { priceOptions, setChosenPrice } = useContext(MovieContext);
+    const { priceOptions, setChosenPrice, priceValue, setPriceValue } = useContext(MovieContext);
 
     let items = [];//here we'll keep items that are going to be in the dropdown menu 
 
-    const handleClick = (priceOpt) => {
-        setChosenPrice(priceOpt)
+    const handleClick = (e) => {
+        setChosenPrice(parseInt(e.target.value))
+        setPriceValue(e.target.value)
     }
 
     if (priceOptions) { //priceOptions format [100, 150, 200]
         for (let i = 0; i < priceOptions.length; i++) {
             items.push(
-                <Dropdown.Item key={i} onClick={() => handleClick(priceOptions[i])}>
+                <option key={i} value={priceOptions[i]} >
                     {`${priceOptions[i]}`}
-                </Dropdown.Item>,
+                </option>,
             );
         }
-
-        items.unshift(
-            <Dropdown.Item key={'all'} onClick={() => handleClick('all')}>
-                {`All`}
-            </Dropdown.Item>,
-        );
     }
 
     return (
-        <DropdownButton style={{ display: 'inline-block' }} id="dropdown-basic-button" title="Price">
+        <select className={s.input} value={priceValue} onChange={handleClick}>
+            <option value=""> Price </option>
             {items}
-        </DropdownButton>
+        </select>
     )
 }
 

@@ -55,7 +55,7 @@ const UserContextProvider = (props) => {
         return;
       }
       if (!newPassword.match(RegExp(
-        "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$/gm"))) {
+        "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"))) {
           setMessage("Need a stronger password");
           setTimeout(() => {
             setMessage(null);
@@ -136,7 +136,7 @@ const UserContextProvider = (props) => {
       body: JSON.stringify(newUser),
     });
     result = await result.json();
-
+    setIsAuth(true); 
 
     return result;
   };

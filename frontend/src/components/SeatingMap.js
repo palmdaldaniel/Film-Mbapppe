@@ -9,6 +9,7 @@ const SeatingMap = ({ saloon }) => {
   useEffect(() => {
     // create seats on component load
     makeSeatingMap(saloon.seatsPerRow);
+    // eslint-disable-next-line
   }, []);
 
   // function wich creates the actual data for the rows
