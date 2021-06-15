@@ -121,7 +121,7 @@ const Register = () => {
                     placeholder="Password"
                     required
                     onChange={handlePasswordChange}
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"
                   />
                 </Form.Group>
 
