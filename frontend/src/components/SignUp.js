@@ -11,16 +11,6 @@ const Register = () => {
   const { createUser, setActiveUser } = useContext(UserContext);
   const location = useLocation();
 
-  if (location.pathname === "/login") {
-    console.log(location.pathname);
-    console.log("Siging up in register page");
-  }
-  if (location.pathname !== "/login") {
-    console.log(location.pathname);
-    console.log("Siging up in showing page");
-  }
-
-
   const [signUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
