@@ -11,7 +11,7 @@ const testRoutes = require("./routes/testRoutes");
 const saloonRoutes = require("./routes/saloonRoutes");
 const movieRoutes = require("./routes/movieRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
-const showingRoutes = require("./routes/showingRoutes"); 
+const showingRoutes = require("./routes/showingRoutes");
 
 // Server Setup
 const app = express();
@@ -21,7 +21,7 @@ app.use(express.json());
 // Session Setup
 app.use(
   session({
-    secret: "The Phantom Menace", 
+    secret: "The Phantom Menace",
     resave: false,
     saveUninitialized: true,
     cookie: { secure: "auto" },
@@ -36,10 +36,10 @@ mongoose
     useFindAndModify: false,
   })
   .then(() => {
-    console.log("MongoDB Connected...");
+    // console.log("MongoDB Connected...");
   })
   .catch((err) => {
-    console.log(err);
+    // console.log(err);
   });
 
 // Routes setup
@@ -53,8 +53,8 @@ app.use("/api/v1/showings", showingRoutes);
 // Start Server
 app.listen(port, (err) => {
   if (err) {
-    console.error("The server could not start.");
-    console.log(err);
+    // console.error("The server could not start.");
+    // console.log(err);
   }
-  console.log(`Listening on port ${port}`);
+  // console.log(`Listening on port ${port}`);
 });
