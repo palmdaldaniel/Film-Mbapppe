@@ -48,7 +48,7 @@ code {
 .react-datepicker-popper * {
   font-size: 16px;
   font-weight: 100 !important;
-  background: rgb(41, 41, 41);
+  background: #000;
   color: #fff !important;
 }
 .react-datepicker__month-container {
@@ -72,6 +72,10 @@ code {
 
 .page-link {
   color: #000 !important;
+}
+[class*='disabled'] {
+  color: rgb(102, 100, 100) !important;
+  cursor: not-allowed !important;
 }
 
 /* Styling for carousel */
