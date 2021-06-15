@@ -62,8 +62,8 @@ const getBookingsByUserId = async (req, res) => {
 
             bookings.map(oneBooking => {
                 let currentDate = new Date()
-                let showingDate = new Date(oneBooking.showingId.date)
-
+                let showingDate = new Date(`${oneBooking.showingId.date} ${oneBooking.showingId.time}`)
+                console.log(`${oneBooking.showingId.date} ${oneBooking.showingId.time}`)
                 if (showingDate.valueOf() > currentDate.valueOf()) {
                     upcomingBookings.push(oneBooking)
                 } else {

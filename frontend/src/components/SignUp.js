@@ -16,11 +16,28 @@ const Register = () => {
   const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
 
-  const [signUpDone, setSignUpDone] = useState(false);
+
+  const [signUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+
+   const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      <div className={styles.rules}>
+        <ul >
+        Requirements
+        <li>At least 5 characters long    </li>
+        <li>1 lowercase letter</li>
+        <li>1 uppercase letter</li>
+        <li>1 number          </li>
+        <li>1 special character</li>
+      </ul></div>
+
+    </Tooltip>
+  );
+
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -42,18 +59,19 @@ const Register = () => {
     };
     let result = await createUser(newUser);
     if (!result.error) {
-      setActiveUser(result);
-      history.push("/");
-    } else if (result.error) {
-      setSignUpFail(true);
+      setActiveUser(result)
+      history.push('/')
     }
-  };
+    else if (result.error) {
+      setSignUpFail(true)
+    }
+  }
 
   let modalValues = {
-    signUpFail: signUpFail,
-    setSignUpFail: setSignUpFail,
-    modalText: "This email is already registered",
-  };
+    booleanValue: signUpFail,
+    toggleBoolean: setSignUpFail,
+    modalText: 'This email is already registered'
+  }
 
   return (
     <div className={styles.registercontainer}>
@@ -67,7 +85,9 @@ const Register = () => {
           <div>
             <p className={styles.registerformtext}>Register your account</p>
             <div className={styles.registerform}>
+
               <Form onSubmit={(e) => registerSubmitHandler(e)}>
+
                 <Form.Group controlId="formBasicUsername">
                   <Form.Control
                     className={styles.inputField}
@@ -91,28 +111,28 @@ const Register = () => {
                     onChange={handleEmailChange}
                   />
                 </Form.Group>
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Control
-                      className={styles.inputField}
-                      size="lg"
-                      htmlFor="handlePassword"
-                      type="password"
-                      placeholder="Password"
-                      required
-                      onChange={handlePasswordChange}
-                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"
-                    />
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Control
+                    className={styles.inputField}
+                    size="lg"
+                    htmlFor="handlePassword"
+                    type="password"
+                    placeholder="Password"
+                    required
+                    onChange={handlePasswordChange}
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"
+                  />
 
-                    <ul className={styles.rules}>
-                      <li>5-15 letters, atleast 1 lower & upper -case </li>
-                      <li>1 number and 1 special character</li>
-                    </ul>
+                  <ul className={styles.rules}>
+                    <li>5-15 letters, atleast 1 lower & upper -case </li>
+                    <li>1 number and 1 special character</li>
+                  </ul>
 
-                    {signUpFail && (
-                      <p className="error">This email is already at use.</p>
-                    )}
-                  </Form.Group>
-             {/*    </OverlayTrigger> */}
+                  {signUpFail && (
+                    <p className="error">This email is already at use.</p>
+                  )}
+                </Form.Group>
+                {/*    </OverlayTrigger> */}
                 <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}
@@ -123,13 +143,14 @@ const Register = () => {
                   </Button>
                 </div>
               </Form>
-              {}{" "}
+            { }{" "}
             </div>
-            <ModalWindow modalValues={modalValues} />
-          </div>
-        )}
-      </Container>
+      <ModalWindow modalValues={modalValues} />
     </div>
+  )
+}
+      </Container >
+    </div >
   );
 };
 

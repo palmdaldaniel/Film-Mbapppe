@@ -21,8 +21,8 @@ const ShowingPage = (props) => {
 
   useEffect(() => {
     getShowingsById(showingId);
-    // eslint-disable-next-line
     getAllBookedSeatsForShowing(showingId)
+    // eslint-disable-next-line
   }, []);
 
   /*   useEffect(() => {
@@ -37,7 +37,11 @@ const ShowingPage = (props) => {
       <div className={styles.showingLine}>
         <div>
           {activeUser ? (
-            <div className={styles.showing_info}>Date: {showing?.date}   |    Time: {showing?.time}     |      Saloon: {showing?.saloon.name}</div>
+            <div className={styles.showing_info}>
+              <span className={styles.renderInfo}>{showing?.date} </span>
+              <span className={styles.renderInfo}>{showing?.time} </span>
+              <span className={styles.renderInfo}>{showing?.saloon.name}</span>
+              </div>
           ) : (
 
             <div className={styles.displayNone}></div>
