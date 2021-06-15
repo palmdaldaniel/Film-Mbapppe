@@ -42,10 +42,10 @@ function App() {
                 <AllMovies />
               </Route>
               <Route exact path="/movie-info/:movieId" component={MovieInfoPage} />
-              <Route exact path="/notfound" component={NotFoundPage} />
+{/*               <Route exact path="/notfound" component={NotFoundPage} /> */}
               {/* <Route exact path="/confirmation" component={Confirmation} />  */}
               <ProtectedRoute exact path="/confirmation" component={Confirmation} /> 
-              <Route render={() => <NotFoundPage />} />
+              <Route render={() => <NotFoundPage /> } />
               <Footer />
             </BrowserRouter>
           </BookingContextProvider>
