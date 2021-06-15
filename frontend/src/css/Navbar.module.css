@@ -10,21 +10,20 @@
   }
   
   .link {
-    color: white;
+    color: white !important;
     font-size: 1.1rem;
     margin: 0 1rem;
   }
   
   .link:hover {
-    color: gray;
-    border-bottom: 2px solid black;
+    color: gray !important;
     text-decoration: none;
   }
   
-  /* .linkLogIn {
-    margin-right: 0 !important;
-  } */
-  
+  .logoContainer {
+    padding: 0 !important;
+  }
+
   .logo {
     transition: transform 0.2s;
     cursor: pointer;

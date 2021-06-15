@@ -128,12 +128,9 @@
 
 
 .rules {
-  list-style: none;
-  font-size: 10px;
-  margin-top: 15px;
-  padding-left: 0;
+  width: 260px;
+  margin-left: -40px;
   text-align: left;
   display: inline-block;
   line-height: 20px;
 }
-

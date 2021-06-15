@@ -35,7 +35,7 @@
 
 .bookingInfo >*:nth-child(2){
   position: absolute;
-  right: 2rem;
+  right: 3rem;
 }
 
 .ticketContainer select {
@@ -145,7 +145,32 @@
 }
 
 .showing_info {
+  font-size: 2vw;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
+}
+
+.renderInfo {
+  margin-right: 2vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .showing_info {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .showing_info {
+    font-size: 17px;
+  }
+
+  .showingLine {
+    border-top: 2px solid #ffffff;
+    margin-left: 20px; 
+    margin-right: 20px;
+  }
+
+  
 }

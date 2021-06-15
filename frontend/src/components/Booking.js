@@ -1,5 +1,5 @@
 import styles from "../css/booking.module.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { BookingContext } from "../contexts/BookingContext";
@@ -13,11 +13,8 @@ const Booking = ({ data }) => {
     totalPrice,
     makeBooking,
     setSeniorTickets,
-    seniorTickets,
     setAdultTickets,
-    adultTickets,
     setChildrenTickets,
-    childrenTickets,
     setTotalPrice,
     setTickets,
     setReserved,
@@ -36,6 +33,7 @@ const Booking = ({ data }) => {
       setAdultTickets([])
       setChildrenTickets([])
     };
+    // eslint-disable-next-line
   }, []);
 
   const handleAdultChange = (e) => {
@@ -123,8 +121,8 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Adult</p>
-          <p style={{marginRight: '1vh'}}>x</p>
-          <p>{price}</p>
+          <p style={{ marginRight: '1vh' }}>x</p>
+          <p>{price} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
@@ -146,8 +144,8 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Children</p>
-          <p style={{marginRight: '1vh'}}>x</p>
-          <p>{priceChild}</p>
+          <p style={{ marginRight: '1vh' }}>x</p>
+          <p>{priceChild} kr</p>
         </div>
       </div>
       <div className={styles.ticketContainer}>
@@ -169,8 +167,8 @@ const Booking = ({ data }) => {
         </select>
         <div className={styles.bookingInfo}>
           <p>Senior</p>
-          <p style={{marginRight: '1vh'}}>x</p>
-          <p>{pricePensioner}</p>
+          <p style={{ marginRight: '1vh' }}>x</p>
+          <p>{pricePensioner} kr</p>
         </div>
       </div>
       <div className={styles.buyTickets}>

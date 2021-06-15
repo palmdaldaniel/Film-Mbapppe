@@ -1,30 +1,16 @@
-import { useContext, useState, useEffect } from 'react';
-import { UserContext } from '../contexts/UserContext';
-import { BookingContext } from '../contexts/BookingContext';
-
-import styles from '../css/userPage.module.css'
-import UserInfo from '../components/UserInfo';
-import BookingCard from '../components/BookingCard';
+import { useContext, useState } from "react";
+import { UserContext } from "../contexts/UserContext";
+import { BookingContext } from "../contexts/BookingContext";
+import styles from "../css/userPage.module.css";
+import UserInfo from "../components/UserInfo";
+import BookingCard from "../components/BookingCard";
 
 const UserPage = () => {
   const { activeUser } = useContext(UserContext);
-  const { getBookingsByUserId } = useContext(BookingContext);
-
-  const [upcomingBookings, setUpcomingBookings] = useState([])
-  const [previousBookings, setPreviousBookings] = useState([])
+  const { previousBookings, upcomingBookings } = useContext(BookingContext);
 
   //Used for booking card trashcan rendering
   const prev = useState(true);
-
-  const gettingBookings = async (userId) => {
-    let bookings = await getBookingsByUserId(userId)
-    setUpcomingBookings(bookings.upcomingBookings)
-    setPreviousBookings(bookings.previousBookings)
-  }
-
-  useEffect(() => {
-    gettingBookings(activeUser._id)
-  }, [getBookingsByUserId, activeUser])
 
   return (
     <div className={styles.container}>
@@ -35,23 +21,29 @@ const UserPage = () => {
             <div className={styles.upcoming}>
               <h2 className={styles.h2}>Upcoming movies</h2>
               <div className={styles.movieGrid}>
-                {upcomingBookings
-                  ? (upcomingBookings.map((booking, i) => (<BookingCard
-                    booking={booking}
-                    prev={!prev}
-                    key={i} />)))
-                  : (<h3>No upcoming bookings..</h3>)}
+                {upcomingBookings.length > 0 ? (
+                  upcomingBookings.map((booking, i) => (
+                    <BookingCard booking={booking} prev={!prev} key={i}  />
+                  ))
+                ) : (
+                  <h5 className={styles.noMoviesMsg}>
+                    No upcoming bookings...
+                  </h5>
+                )}
               </div>
             </div>
             <div className={styles.previous}>
               <h2 className={styles.h2}>Previous movies</h2>
               <div className={styles.movieGrid}>
-                {previousBookings
-                  ? (previousBookings.map((booking, i) => (<BookingCard
-                    booking={booking}
-                    prev={prev}
-                    key={i} />)))
-                  : (<h3>No upcoming bookings..</h3>)}
+                {previousBookings.length > 0 ? (
+                  previousBookings.map((booking, i) => (
+                    <BookingCard booking={booking} prev={prev} key={i} />
+                  ))
+                ) : (
+                  <h5 className={styles.noMoviesMsg}>
+                    No previous bookings...
+                  </h5>
+                )}
               </div>
             </div>
           </div>
@@ -59,6 +51,6 @@ const UserPage = () => {
       )}
     </div>
   );
-}
+};
 
 export default UserPage;
