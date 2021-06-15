@@ -26,7 +26,7 @@ function ModalWindow(props) {
       </div>
     } else {
       return <Button variant="danger" onClick={() => toggleBoolean(false)}>
-       Close
+        Close
       </Button>
     }
   }

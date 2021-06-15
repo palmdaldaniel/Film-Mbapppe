@@ -2,7 +2,6 @@ import Card from 'react-bootstrap/Card';
 import styles from "../css/MovieCard.Module.css";
 import { useHistory } from "react-router-dom";
 
-
 function MovieCard(props) {
     const history = useHistory();
     const { movie } = props;
