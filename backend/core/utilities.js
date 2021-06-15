@@ -6,7 +6,7 @@ const passwordValidator = (password) => {
   // (?=.*[!@#$%^&*])	The string must contain at least one special character, but we are escaping reserved RegEx characters to avoid conflict
   // (?=.{4,})	The string must be 4 characters or longer
   const strongPasword = new RegExp(
-    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"
   );
 
   passwordIsValid = strongPasword.test(password);
