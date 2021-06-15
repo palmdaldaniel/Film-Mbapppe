@@ -11,9 +11,4 @@ router.get('/:userId', userController.getUserById)
 router.get('', userController.getAllUsers)
 router.post("/register", userController.createUser);
 
-
-
-
-
-
 module.exports = router;
