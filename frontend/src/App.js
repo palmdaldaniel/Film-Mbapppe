@@ -45,6 +45,7 @@ function App() {
               <Route exact path="/notfound" component={NotFoundPage} />
               {/* <Route exact path="/confirmation" component={Confirmation} />  */}
               <ProtectedRoute exact path="/confirmation" component={Confirmation} /> 
+              <Route render={() => <NotFoundPage />} />
               <Footer />
             </BrowserRouter>
           </BookingContextProvider>
