@@ -14,6 +14,7 @@ const DatePickerComponent = () => {
             selected={chosenDate}
             minDate={new Date()}
             onChange={date => setChosenDate(date)}
+            showDisabledMonthNavigation
         />
     );
 };
