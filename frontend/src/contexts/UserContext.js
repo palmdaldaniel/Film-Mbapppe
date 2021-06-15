@@ -55,7 +55,7 @@ const UserContextProvider = (props) => {
         return;
       }
       if (!newPassword.match(RegExp(
-        "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,}$"))) {
+        "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{4,}$"))) {
           setMessage("Need a stronger password");
           setTimeout(() => {
             setMessage(null);
