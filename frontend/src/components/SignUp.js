@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation  } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container, Form, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
@@ -9,6 +9,16 @@ import ModalWindow from './ModalWindow'
 const Register = () => {
   const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
+  const location = useLocation();
+
+  if (location.pathname === "/login") {
+    console.log(location.pathname);
+    console.log("Siging up in register page");
+  }
+  if (location.pathname !== "/login") {
+    console.log(location.pathname);
+    console.log("Siging up in showing page");
+  }
 
 
   const [signUpDone] = useState(false);
@@ -52,9 +62,12 @@ const Register = () => {
       name
     };
     let result = await createUser(newUser);
-    if (!result.error) {
+    if (!result.error && location.pathname === "/login") {
       setActiveUser(result)
       history.push('/')
+    }
+    if (!result.error && location.pathname !== "/login") {
+      setActiveUser(result)
     }
     else if (result.error) {
       setSignUpFail(true)
@@ -121,7 +134,7 @@ const Register = () => {
                     placeholder="Password"
                     required
                     onChange={handlePasswordChange}
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
                   />
                 </Form.Group>
 
