@@ -117,7 +117,6 @@ const MovieContextProvider = (props) => {
     }
     
     const getMovieBySearch = async (finalSearch, page) => {
-        // console.log(`page`, page)
         let s = await fetch(`/api/v1/movies/filter/?search=${finalSearch}&page=${page}`, {
             method: "Post", 
             headers: {

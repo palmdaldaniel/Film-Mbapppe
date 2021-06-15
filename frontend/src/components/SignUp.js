@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container, Form, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
@@ -9,7 +9,7 @@ import ModalWindow from './ModalWindow'
 const Register = () => {
   const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
-
+  const location = useLocation();
 
   const [signUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
@@ -17,21 +17,21 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
 
-   const renderTooltip = (props) => (
+  const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       <div className={styles.rules}>
         <ul >
-        Requirements
-        <li>At least 4 characters long    </li>
-        <li>1 lowercase letter</li>
-        <li>1 uppercase letter</li>
-        <li>1 number          </li>
-        <li>1 special character</li>
-      </ul></div>
-      
+          Requirements
+          <li>At least 4 characters long    </li>
+          <li>1 lowercase letter</li>
+          <li>1 uppercase letter</li>
+          <li>1 number          </li>
+          <li>1 special character</li>
+        </ul></div>
+
     </Tooltip>
   );
- 
+
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -52,9 +52,12 @@ const Register = () => {
       name
     };
     let result = await createUser(newUser);
-    if (!result.error) {
+    if (!result.error && location.pathname === "/login") {
       setActiveUser(result)
       history.push('/')
+    }
+    if (!result.error && location.pathname !== "/login") {
+      setActiveUser(result)
     }
     else if (result.error) {
       setSignUpFail(true)
@@ -105,27 +108,27 @@ const Register = () => {
                     onChange={handleEmailChange}
                   />
                 </Form.Group>
-                
-                  <OverlayTrigger
+
+                <OverlayTrigger
                   trigger="focus"
                   placement="top"
                   overlay={renderTooltip}
-                  variant="secondary"> 
+                  variant="secondary">
 
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Control
-                    className={styles.inputField}
-                    size="lg"
-                    htmlFor="handlePassword"
-                    type="password"
-                    placeholder="Password"
-                    required
-                    onChange={handlePasswordChange}
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"
-                  />
-                </Form.Group>
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Control
+                      className={styles.inputField}
+                      size="lg"
+                      htmlFor="handlePassword"
+                      type="password"
+                      placeholder="Password"
+                      required
+                      onChange={handlePasswordChange}
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
+                    />
+                  </Form.Group>
 
-                </OverlayTrigger> 
+                </OverlayTrigger>
                 <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}

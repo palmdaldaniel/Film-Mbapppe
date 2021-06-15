@@ -4,8 +4,6 @@ import DatePickerComponent from '../components/DatePicker'
 import ShowingCard from "../components/ShowingCard";
 import PriceFilter from '../components/priceFilter'
 import CarouselComponent from '../components/Carousel'
-import ArrowToTop from '../components/ScrollToTop'
-import s from "../css/Homepage.module.css"
 
 const HomePage = () => {
     const { showings, filteredShowings } = useContext(MovieContext);
@@ -17,7 +15,7 @@ const HomePage = () => {
     } else {
         listData = showings
     }
-    
+
     let content = ''
 
     if (listData) {

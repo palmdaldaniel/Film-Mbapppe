@@ -6,7 +6,7 @@ import Booking from '../components/Booking';
 import styles from "../css/booking.module.css";
 import { UserContext } from "../contexts/UserContext";
 import LoginFormShowing from "../components/LoginFormShowing";
-import SignUpShowing from "../components/SignUpShowing";
+import SignUp from "../components/SignUp";
 import { BookingContext } from "../contexts/BookingContext";
 
 const ShowingPage = (props) => {
@@ -41,7 +41,7 @@ const ShowingPage = (props) => {
               <span className={styles.renderInfo}>{showing?.date} </span>
               <span className={styles.renderInfo}>{showing?.time} </span>
               <span className={styles.renderInfo}>{showing?.saloon.name}</span>
-              </div>
+            </div>
           ) : (
 
             <div className={styles.displayNone}></div>
@@ -58,7 +58,7 @@ const ShowingPage = (props) => {
           </div>
         ) : (
           <div className={styles.formContainer}>
-            {showLogin ? <LoginFormShowing /> : <SignUpShowing />}
+            {showLogin ? <LoginFormShowing /> : <SignUp />}
             <p className={styles.toggleText} onClick={toggle}>{showLogin ? "Are you not a member yet? " : "Back to login"}</p>
           </div>
         )}

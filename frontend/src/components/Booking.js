@@ -76,8 +76,6 @@ const Booking = ({ data }) => {
   };
 
   const handleSeniorChange = (e) => {
-
-
     let seniorTickets = {
       type: e.target.name,
       quantity: parseInt(e.target.value),

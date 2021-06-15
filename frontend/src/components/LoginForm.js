@@ -19,7 +19,6 @@ export default function Login() {
         setPassword(e.target.value);
     };
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         let loginInfo = {
@@ -29,15 +28,14 @@ export default function Login() {
         let result = await loginUser(loginInfo);
         if (!result.error) {
             history.push("/");
-          } else {
+        } else {
             setError(result.error);
-          }
-        };
+        }
+    };
 
-       
     return (
         <div className={styles.container}>
-             <h1 className={styles.header}>Filmvisarna</h1>
+            <h1 className={styles.header}>Filmvisarna</h1>
             <p className={styles.loginformtext}>Welcome back</p>
             <div className={styles.loginform}>
                 <Form
@@ -55,12 +53,11 @@ export default function Login() {
                     <Container className={`${styles.buttonContainer} text-center`}>
                         <Button className={styles.singInButton} variant="danger" type="submit">
                             SIGN IN
-                    </Button>
+                        </Button>
                     </Container>
-               
+
                 </Form>
             </div>
         </div>
-
     )
 }
