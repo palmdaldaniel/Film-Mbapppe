@@ -33,7 +33,7 @@ const BookingContextProvider = (props) => {
   // states for seatingmap
   const [reserved, setReserved] = useState([]);
   const [bookedPlaces, setBookedPlaces] = useState([]);
-  const [bookingId, setBookingId] = useState([]);
+  const [bookingId] = useState([]);
 
   // state for purchased bookings
   const [currentBooking, setCurrentBooking] = useState(null);
@@ -53,6 +53,7 @@ const BookingContextProvider = (props) => {
   // every time a user puts interacts with bookingcomponent makeTickets will fire
   useEffect(() => {
     makeTickets();
+    // eslint-disable-next-line
   }, [seniorTickets, adultTickets, childrenTickets]);
 
   const makeTickets = () => {
@@ -166,7 +167,6 @@ const BookingContextProvider = (props) => {
     bookingId,
     upcomingBookings,
     previousBookings,
-    getBookingsByUserId,
     currentBooking, 
     showing
   };

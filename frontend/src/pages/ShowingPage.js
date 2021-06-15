@@ -21,8 +21,8 @@ const ShowingPage = (props) => {
 
   useEffect(() => {
     getShowingsById(showingId);
-    // eslint-disable-next-line
     getAllBookedSeatsForShowing(showingId)
+    // eslint-disable-next-line
   }, []);
 
   /*   useEffect(() => {

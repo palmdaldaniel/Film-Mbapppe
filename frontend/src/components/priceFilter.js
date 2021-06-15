@@ -1,6 +1,6 @@
 
 import { MovieContext } from "../contexts/MovieContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import s from "../css/PriceFilter.module.css"
 
