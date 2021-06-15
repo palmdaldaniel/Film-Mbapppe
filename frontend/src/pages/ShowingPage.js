@@ -41,7 +41,7 @@ const ShowingPage = (props) => {
               <span className={styles.renderInfo}>{showing?.date} </span>
               <span className={styles.renderInfo}>{showing?.time} </span>
               <span className={styles.renderInfo}>{showing?.saloon.name}</span>
-              </div>
+            </div>
           ) : (
 
             <div className={styles.displayNone}></div>
