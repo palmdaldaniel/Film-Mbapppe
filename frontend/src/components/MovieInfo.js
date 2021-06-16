@@ -11,8 +11,6 @@ const MovieInfo = (props) => {
     film = props.movie
   }
 
-  // console.log(film);
-
   let content = "";
   if (film) {
     content = (
@@ -23,7 +21,7 @@ const MovieInfo = (props) => {
 
           <div className={styles.posterAndText}>
             <div className={styles.posterContainer}>
-            <img className={styles.poster} src={film.Poster} alt="movie poster" />
+              <img className={styles.poster} src={film.Poster} alt="movie poster" />
             </div>
             <div className={styles.descContainer}>
               <p><span className={styles.bold}>Runtime:</span>  {film.Runtime}</p>

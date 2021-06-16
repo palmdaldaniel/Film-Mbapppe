@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { Container, Form, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
@@ -9,9 +9,9 @@ import ModalWindow from './ModalWindow'
 const Register = () => {
   const history = useHistory();
   const { createUser, setActiveUser } = useContext(UserContext);
- 
+  const location = useLocation();
 
-  const [signUpDone, setSignUpDone] = useState(false);
+  const [signUpDone] = useState(false);
   const [signUpFail, setSignUpFail] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -19,13 +19,16 @@ const Register = () => {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      <ul className={styles.rules}>
-        <li>5-7 letters       </li>
-        <li>1 lowercase letter</li>
-        <li>1 uppercase letter</li>
-        <li>1 number          </li>
-        <li>1 special character</li>
-      </ul>
+      <div className={styles.rules}>
+        <ul >
+          Requirements
+          <li>At least 4 characters long    </li>
+          <li>1 lowercase letter</li>
+          <li>1 uppercase letter</li>
+          <li>1 number          </li>
+          <li>1 special character</li>
+        </ul></div>
+
     </Tooltip>
   );
 
@@ -49,20 +52,23 @@ const Register = () => {
       name
     };
     let result = await createUser(newUser);
-    if(!result.error) {
+    if (!result.error && location.pathname === "/login") {
       setActiveUser(result)
       history.push('/')
     }
-    else if (result.error){
+    if (!result.error && location.pathname !== "/login") {
+      setActiveUser(result)
+    }
+    else if (result.error) {
       setSignUpFail(true)
     }
-}
+  }
 
-let modalValues = {
-  signUpFail: signUpFail,
-  setSignUpFail: setSignUpFail,
-  modalText: 'This email is already registered'
-}
+  let modalValues = {
+    booleanValue: signUpFail,
+    toggleBoolean: setSignUpFail,
+    modalText: 'This email is already registered'
+  }
 
   return (
     <div className={styles.registercontainer}>
@@ -76,35 +82,35 @@ let modalValues = {
           <div>
             <p className={styles.registerformtext}>Register your account</p>
             <div className={styles.registerform}>
-            
+
               <Form onSubmit={(e) => registerSubmitHandler(e)}>
-                
-                  <Form.Group controlId="formBasicUsername">
-                    <Form.Control
-                      className={styles.inputField}
-                      size="lg"
-                      htmlFor="handleName"
-                      type="name"
-                      placeholder="Username"
-                      required
-                      onChange={handleNameChange}
-                    />
-                  </Form.Group>
 
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                      className={styles.inputField}
-                      size="lg"
-                      htmlFor="handleEmail"
-                      type="email"
-                      placeholder="E-mail"
-                      required
-                      onChange={handleEmailChange}
-                    />
-                  </Form.Group>
+                <Form.Group controlId="formBasicUsername">
+                  <Form.Control
+                    className={styles.inputField}
+                    size="lg"
+                    htmlFor="handleName"
+                    type="name"
+                    placeholder="Username"
+                    required
+                    onChange={handleNameChange}
+                  />
+                </Form.Group>
 
-                  <OverlayTrigger
-                  trigger="click"
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Control
+                    className={styles.inputField}
+                    size="lg"
+                    htmlFor="handleEmail"
+                    type="email"
+                    placeholder="E-mail"
+                    required
+                    onChange={handleEmailChange}
+                  />
+                </Form.Group>
+
+                <OverlayTrigger
+                  trigger="focus"
                   placement="top"
                   overlay={renderTooltip}
                   variant="secondary">
@@ -118,34 +124,28 @@ let modalValues = {
                       placeholder="Password"
                       required
                       onChange={handlePasswordChange}
-                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{5,7}$"
-                      required
-
+                      //IMPORTANT (?=.*\d) only needs one backslash in html attribute but (?=.*\\d) two backslashes in Javascript
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$"
                     />
-
-                    {signUpFail && (
-
-                      <p className="error">This email is already at use.</p>
-                    )}
-
                   </Form.Group>
+
                 </OverlayTrigger>
-                  <div className={styles.regarea}>
+                <div className={styles.regarea}>
                   <Button
                     className={styles.registerButton}
                     variant="danger"
                     type="submit"
-                    
+
                   >
                     Register
                   </Button>
-                  </div>
-                
+                </div>
+
               </Form>
-              
-              {}{" "}
+
+              { }{" "}
             </div>
-            <ModalWindow modalValues={modalValues}/>
+            <ModalWindow modalValues={modalValues} />
           </div>
         )}
       </Container>

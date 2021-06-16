@@ -8,14 +8,14 @@ import CarouselComponent from '../components/Carousel'
 const HomePage = () => {
     const { showings, filteredShowings } = useContext(MovieContext);
 
-    let listData
+    let listData;
 
     if (filteredShowings && filteredShowings.length > 0) {
         listData = filteredShowings
     } else {
         listData = showings
     }
-    
+
     let content = ''
 
     if (listData) {
@@ -43,7 +43,6 @@ const HomePage = () => {
 
     return (
         <div >
-
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}

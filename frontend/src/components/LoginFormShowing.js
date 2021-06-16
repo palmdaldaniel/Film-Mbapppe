@@ -2,14 +2,12 @@ import { useState, useContext } from "react"
 import styles from "../css/login.module.css"
 import { Alert, Container, Form, Button } from "react-bootstrap"
 import { UserContext } from "../contexts/UserContext";
-import { useHistory } from "react-router-dom";
 
 export default function Login() {
     const { loginUser } = useContext(UserContext); //added 
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
-    const history = useHistory();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -27,7 +25,6 @@ export default function Login() {
         };
         let result = await loginUser(loginInfo);
         if (!result.error) {
-            history.push("/");
         } else {
             setError(result.error);
         }
@@ -35,9 +32,8 @@ export default function Login() {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.header}>Filmvisarna</h1>
-            <p className={styles.loginformtext}>Welcome back</p>
-            <div className={styles.loginform}>
+            <h1 className={styles.loginformtext}>Login to book your tickets!</h1>
+            <div className={styles.loginformShowing}>
                 <Form
                     onSubmit={(e) => {
                         handleSubmit(e);
@@ -55,9 +51,10 @@ export default function Login() {
                             SIGN IN
                         </Button>
                     </Container>
-
                 </Form>
             </div>
         </div>
     )
 }
+
+

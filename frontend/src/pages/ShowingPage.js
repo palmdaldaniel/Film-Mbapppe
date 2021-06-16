@@ -4,25 +4,58 @@ import SeatingMap from "../components/SeatingMap";
 import { MovieContext } from "../contexts/MovieContext";
 import Booking from '../components/Booking';
 import styles from "../css/booking.module.css";
+import { UserContext } from "../contexts/UserContext";
+import LoginFormShowing from "../components/LoginFormShowing";
+import SignUp from "../components/SignUp";
+import { BookingContext } from "../contexts/BookingContext";
 
 const ShowingPage = (props) => {
   const { showingId } = props.match.params;
 
   const { getShowingsById, showing } = useContext(MovieContext);
+  const { activeUser, showLogin, setShowLogin } = useContext(UserContext);
+  const toggle = () => {
+    setShowLogin(!showLogin)
+  }
+  const { getAllBookedSeatsForShowing } = useContext(BookingContext);
 
   useEffect(() => {
     getShowingsById(showingId);
+    getAllBookedSeatsForShowing(showingId)
     // eslint-disable-next-line
   }, []);
 
   return (
     <div>
       <MovieInfo showing={showing} />
-      <div className={styles.booking_wrapper}>
-        <Booking />
-        {showing && <SeatingMap saloon={showing.saloon} />}
+      <div className={styles.showingLine}>
+        <div>
+          {activeUser ? (
+            <div className={styles.showing_info}>
+              <span className={styles.renderInfo}>{showing?.date} </span>
+              <span className={styles.renderInfo}>{showing?.time} </span>
+              <span className={styles.renderInfo}>{showing?.saloon.name}</span>
+            </div>
+          ) : (
+
+            <div className={styles.displayNone}></div>
+
+          )}
+        </div>
       </div>
 
+      {
+        activeUser ? (
+          <div className={styles.booking_wrapper}>
+            {showing && <Booking data={showing} />}
+            {showing && <SeatingMap saloon={showing.saloon} />}
+          </div>
+        ) : (
+          <div className={styles.formContainer}>
+            {showLogin ? <LoginFormShowing /> : <SignUp />}
+            <p className={styles.toggleText} onClick={toggle}>{showLogin ? "Are you not a member yet? " : "Back to login"}</p>
+          </div>
+        )}
     </div>
   );
 };

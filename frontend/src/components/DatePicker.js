@@ -12,7 +12,9 @@ const DatePickerComponent = () => {
         <DatePicker
             dateFormat="yyyy-MM-dd"
             selected={chosenDate}
+            minDate={new Date()}
             onChange={date => setChosenDate(date)}
+            showDisabledMonthNavigation
         />
     );
 };

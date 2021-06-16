@@ -23,6 +23,7 @@
 }
 
 .bookingInfo {
+  position: relative;
   width: 85%;
   background-color: inherit;
   display: flex;
@@ -30,6 +31,11 @@
   text-align: center;
   margin-top: 20px;
   margin-left: 10px;
+}
+
+.bookingInfo >*:nth-child(2){
+  position: absolute;
+  right: 3rem;
 }
 
 .ticketContainer select {
@@ -72,8 +78,29 @@
   border-radius: 5px;
 }
 
-.buyButton:hover {
-  background-color: #444647;
+
+.active {
+  background: #4387FC;
+  border: 2px solid #4387FC;
+}
+
+.active:hover {
+  background: #3c80f5;
+}
+
+.feedBack {
+  display: flex;
+  height: 48px;
+  background: #5b5f63 !important;
+  border: 2px solid #5b5f63;
+  border-radius: 5px;
+}
+
+
+.feedBack p {
+  font-size: 10px;
+  margin: auto;
+  color: white;
 }
 
 @media (min-width: 992px) {
@@ -87,4 +114,63 @@
     margin-left: auto;
     margin-right: 1rem;
   }
+}
+
+.showingLine {
+  border-top: 2px solid #ffffff;
+  margin-left: 100px; 
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+
+.toggleText {
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: underline;
+  justify-content: center;
+}
+
+
+.formContainer {
+  margin-top: 20px;
+}
+
+.showingLine {
+  border-top: 2px solid #ffffff;
+  margin-left: 100px; 
+  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.showing_info {
+  font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.renderInfo {
+  margin-right: 2vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .showing_info {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .showing_info {
+    font-size: 17px;
+  }
+
+  .showingLine {
+    border-top: 2px solid #ffffff;
+    margin-left: 20px; 
+    margin-right: 20px;
+  }
+
+  
 }

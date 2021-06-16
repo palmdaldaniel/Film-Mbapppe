@@ -15,7 +15,7 @@ const getAllSaloons = async (req, res) => {
 
 
 const getSaloonById = async (req, res) => {
-    Saloon.findById(req.params.saloonId).exec((err, saloon) => {
+  Saloon.findById(req.params.saloonId).exec((err, saloon) => {
     if (err) {
       res.status(400).json({ error: "Something went wrong" });
       return;
@@ -31,14 +31,15 @@ const getSaloonById = async (req, res) => {
     let saloonWithMap = {
       ...saloon.toObject(),
       // replace the old data in seatsPerRow with new one.  
-     seatsPerRow: utils.createSeatingMap(saloon.seatsPerRow) 
-    } 
+      seatsPerRow: utils.createSeatingMap(saloon.seatsPerRow)
+    }
 
     // send up the new data to frontend
-  res.json(saloonWithMap);
+    res.json(saloonWithMap);
   });
 };
 
+//Created this for testing
 const editSaloon = async (req, res) => {
   let saloon;
   Saloon.findById(req.params.saloonId).exec(async (err, result) => {
@@ -62,6 +63,7 @@ const editSaloon = async (req, res) => {
   res.send("Ok");
 };
 
+//Created this for testing
 const removeSaloon = async (req, res) => {
   try {
     let exists = await Saloon.exists({ _id: req.params.saloonId });

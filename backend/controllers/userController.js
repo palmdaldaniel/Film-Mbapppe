@@ -1,7 +1,6 @@
 const User = require("../models/User");
 const Encrypt = require("../Encrypt");
-
-
+const utils = require("../core/utilities");
 
 const getAllUsers = async (req, res) => {
   let users = await User.find().exec();
@@ -29,35 +28,58 @@ const getUserById = async (req, res) => {
   });
 };
 
+
 //create user
-
-
-
 const createUser = async (req, res) => {
   // destructure req.body object
-  const { email } = req.body;
+  const { email, password } = req.body;
+
+  // check if password is strong
+  const passwordIsStrong = utils.passwordValidator(password);
+
+  // check if email is valid
+  const validateEmail = utils.emailValidator(email);
 
   let userExists = await User.exists({ email: email });
 
   if (userExists) {
     return res
       .status(400)
-      .json({ error: "An user with that email already exists" });
+      .json({ error: "A user with that email already exists" });
   }
 
-  let user = await User.create(req.body);
-  user.password = undefined;
-  req.session.user = user;
-  res.json(user);
+  else if (!validateEmail) {
+    res.status(404).json({ failed: "Email is not valid" });
+    return;
+
+  } else if (!passwordIsStrong) {
+    res.status(404).json({ failed: "Password is not valid" });
+    return;
+
+  } else {
+    let user = await User.create(req.body);
+    user.password = undefined;
+    req.session.user = user;
+    res.json(user);
+  };
+
 };
 
 
 // Edit User
 const editUser = async (req, res) => {
   let user;
+  let name = req.body.name;
+  let password = req.body.password;
+  if (password) {
+    password = Encrypt.encrypt(password);
+    user = await User.findByIdAndUpdate(req.params.userId, { password: password }, { new: true }).exec();
+    user.password = undefined;
+  }
+  if (name) {
+    user = await User.findByIdAndUpdate(req.params.userId, { name: name }, { new: true }).exec();
+  }
 
-  user = await User.findByIdAndUpdate(req.params.userId, { name: req.body.name }, {new: true}).exec();
-  user.password = undefined;
   req.session.user = user;
   res.send(user);
 }
@@ -82,7 +104,7 @@ const loginUser = async (req, res) => {
 
       // set users pw to undefined
       user.password = undefined;
-      return res.json({ message: "Login successfull", loggedInUser: user });
+      return res.json(user);
     }
     return res.status(401).json({ error: "Wrong email or password" });
   }
