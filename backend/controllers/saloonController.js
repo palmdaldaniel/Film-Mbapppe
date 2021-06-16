@@ -39,6 +39,7 @@ const getSaloonById = async (req, res) => {
   });
 };
 
+//Created this for testing
 const editSaloon = async (req, res) => {
   let saloon;
   Saloon.findById(req.params.saloonId).exec(async (err, result) => {
@@ -62,6 +63,7 @@ const editSaloon = async (req, res) => {
   res.send("Ok");
 };
 
+//Created this for testing
 const removeSaloon = async (req, res) => {
   try {
     let exists = await Saloon.exists({ _id: req.params.saloonId });

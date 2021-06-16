@@ -28,6 +28,7 @@ const Confirmation = () => {
   let seniorTixSum = 0;
   if (bookingToRender && showingToRender) {
     bookingToRender.tickets.forEach((cbTicket) => {
+      console.log("bookingtorender", bookingToRender);
       if (cbTicket.type === "adult") {
         adultTixSum += 1;
       }

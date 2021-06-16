@@ -1,6 +1,5 @@
 import styles from "../css/AboutPage.module.css";
 import "../css/AboutPage.module.css";
-//import chair from "/Users/blerta/Film-Mbapppe/frontend/src/red.jpeg";
 
 const AboutPage = () => {
   return (

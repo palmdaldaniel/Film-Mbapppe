@@ -10,12 +10,9 @@ const UserContextProvider = (props) => {
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState(null);
   const [loginResult, setLoginResult] = useState(null);
-  const [isUser, setIsUser] = useState(false);
 
   // for Protected route
   const [isAuth, setIsAuth] = useState(false);
-
-
 
   useEffect(() => {
     whoami();
@@ -34,8 +31,6 @@ const UserContextProvider = (props) => {
     return user;
   };
 
-
-
   const editUser = async (e) => {
     e.preventDefault();
     let newPassword = e.target[1].value;
@@ -48,7 +43,7 @@ const UserContextProvider = (props) => {
       body = { name: newName }
     } else {
       if (newPassword.length < 5) {
-        setMessage("Password too short! You need at least 5 characters");
+        setMessage("Password too short! You need at least 4 characters");
         setTimeout(() => {
           setMessage(null);
         }, 4000);
@@ -56,7 +51,7 @@ const UserContextProvider = (props) => {
       }
       if (!newPassword.match(RegExp(
         "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"))) {
-          setMessage("Password is to weak. You need: 1 lowercase, 1 uppercase, 1 number, 1 special character.");
+          setMessage("Password is too weak. You need: 1 lowercase, 1 uppercase, 1 number, 1 special character.");
           setTimeout(() => {
             setMessage(null);
           }, 9000);
@@ -168,8 +163,6 @@ const UserContextProvider = (props) => {
     message,
     setLoginResult,
     loginResult,
-    isUser,
-    setIsUser,
     isAuth
   };
 
