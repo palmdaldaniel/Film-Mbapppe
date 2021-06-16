@@ -25,6 +25,13 @@ const Filtermovies = ({ movies }) => {
     makeValues(movies);
   }, [movies]);
 
+  //When user leaves page after filtering, all filter fields and filter result reset to default
+  useEffect(() => {
+    return()=> {
+        handleReset()
+    }
+  }, [])
+
   const makeValues = (movies) => {
     // create values for label genre
     const genres = [...new Set(movies.map((value) => value.Genre).flat())]
