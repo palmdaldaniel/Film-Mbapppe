@@ -28,15 +28,7 @@ const Filtermovies = ({ movies }) => {
   //When user leaves page after filtering, all filter fields and filter result reset to default
   useEffect(() => {
     return()=> {
-        setInputValue("");
-        setFinalSearch("");
-        setFilter({});
-        setGenreValue("");
-        setYearValue("");
-        setRatingValue("");
-        setRuntimeValue("");
-        setDirectorValue("");
-        setLanguageValue("");
+        handleReset()
     }
   }, [])
 
