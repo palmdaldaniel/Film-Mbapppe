@@ -42,6 +42,26 @@ mongoose
     // console.log(err);
   });
 
+  // ACL setup, we add our middleware before our routehandlers.
+app.use((req, res, next) => {
+
+  let reqPath = req.path.endsWith("/") ? req.path.replace(/\/$/, "") : req.path;
+
+  if (reqPath === "/api/v1/users" && req.method === "GET") {
+    if (req.session.user && req.session.user.role === "ADMIN") {
+      return next();
+    } else {
+      return res.status(403).json({
+        error:
+          "You need a logged in user with the correct role in order to request all available users",
+      });
+    }
+  }
+
+  // next passes the request along to the next middleware or routehandler.
+  next();
+});
+
 // Routes setup
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/test", testRoutes);
