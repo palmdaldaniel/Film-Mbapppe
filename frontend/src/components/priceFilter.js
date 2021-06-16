@@ -5,13 +5,12 @@ import { useContext } from "react";
 import s from "../css/PriceFilter.module.css"
 
 function PriceFilter() {
-    const { priceOptions, setChosenPrice, priceValue, setPriceValue } = useContext(MovieContext);
+    const { priceOptions, priceValue, setPriceValue } = useContext(MovieContext);
 
     let items = [];//here we'll keep items that are going to be in the dropdown menu 
 
     const handleClick = (e) => {
-        setChosenPrice(parseInt(e.target.value))
-        setPriceValue(e.target.value)
+        setPriceValue(parseInt(e.target.value))
     }
 
     if (priceOptions) { //priceOptions format [100, 150, 200]
