@@ -26,9 +26,9 @@ const BookingCard = ({ booking, prev }) => {
       <div className={styles.top}>
         <h3 className={styles.title}>{booking.showingId.film.Title}</h3>
         {prev === false
-          ? <button className={styles.delete} onClick={handleClick}>
+          ? <div className={styles.delete} onClick={handleClick}>
               <FontAwesomeIcon icon={faTrashAlt} />
-            </button>
+            </div>
           : <p></p>}
       </div>
       <div className={styles.bottom}>
