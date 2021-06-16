@@ -48,18 +48,18 @@ const UserContextProvider = (props) => {
       body = { name: newName }
     } else {
       if (newPassword.length < 5) {
-        setMessage("Password too short!");
+        setMessage("Password too short! You need at least 5 characters");
         setTimeout(() => {
           setMessage(null);
-        }, 2000);
+        }, 4000);
         return;
       }
       if (!newPassword.match(RegExp(
         "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"))) {
-          setMessage("Need a stronger password");
+          setMessage("Password is to weak. You need: 1 lowercase, 1 uppercase, 1 number, 1 special character.");
           setTimeout(() => {
             setMessage(null);
-          }, 2000);
+          }, 9000);
           return;
       }
     };
