@@ -87,14 +87,13 @@ const BookingContextProvider = (props) => {
         userId: activeUser._id,
         tickets: data,
       };
+
       // send it to post request.
       postBooking(info)
       .then((res) => {
         //to refresh bookings on Profile page)
         getBookingsByUserId(activeUser._id)
       })
-
-
     }
   };
 
