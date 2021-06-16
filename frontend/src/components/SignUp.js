@@ -124,8 +124,8 @@ const Register = () => {
                       placeholder="Password"
                       required
                       onChange={handlePasswordChange}
+                      //IMPORTANT (?=.*\d) only needs one backslash in html attribute but (?=.*\\d) two backslashes in Javascript
                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$"
-                      // pattern="^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{4,}$"
                     />
                   </Form.Group>
 
