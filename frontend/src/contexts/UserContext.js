@@ -48,7 +48,7 @@ const UserContextProvider = (props) => {
         setMessage("You need at least 4 characters, 1 lowercase, 1 uppercase, 1 number, 1 special character");
         setTimeout(() => {
           setMessage(null);
-        }, 4000);
+        }, 9000);
         return;
       }
     };
