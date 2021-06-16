@@ -25,6 +25,7 @@ const Filtermovies = ({ movies }) => {
     makeValues(movies);
   }, [movies]);
 
+  //When user leaves page after filtering, all filter fields and filter result reset to default
   useEffect(() => {
     return()=> {
         setInputValue("");
