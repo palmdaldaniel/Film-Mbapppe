@@ -4,7 +4,7 @@
 }
 
 .card{
-  width: auto;
+  max-width: 270px;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,6 @@
   color:#FFF;
   padding: 10px;
   position: relative;
-
 }
 
 .card *{
@@ -21,7 +20,6 @@
 
 .top{
   color: #FFF;
-  /* border: 2px dashed rgba(219, 219, 219, 0.5); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +27,6 @@
 
 .bottom{
   padding: 10px;
-  /* border: 2px dashed rgba(219, 219, 219, 0.5); */
   border-top: none;
   flex-basis: 90%;
   display: flex;
@@ -40,15 +37,16 @@
 }
 
 .title{
-  width: 100%;
+  width: 80%;
   padding: 5px;
   flex-basis: 100%;
   color: #FFF;
+  margin-right: 30px;
 }
 
 .delete{
+  cursor: pointer;
   padding: 0.5rem;
-  margin: 0;
   border: none;
   position: absolute;
   top: 13px;
@@ -60,13 +58,15 @@
 
 @media (min-width: 992px) {
   .card{
-    flex-basis: 25%;
   }
 }
 
 @media only screen and (max-width: 600px) {
 
-
+  .card {
+   margin-right: auto;
+   margin-left: auto;
+  }
 
 
 }
