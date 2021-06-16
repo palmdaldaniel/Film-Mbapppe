@@ -25,6 +25,20 @@ const Filtermovies = ({ movies }) => {
     makeValues(movies);
   }, [movies]);
 
+  useEffect(() => {
+    return()=> {
+        setInputValue("");
+        setFinalSearch("");
+        setFilter({});
+        setGenreValue("");
+        setYearValue("");
+        setRatingValue("");
+        setRuntimeValue("");
+        setDirectorValue("");
+        setLanguageValue("");
+    }
+  }, [])
+
   const makeValues = (movies) => {
     // create values for label genre
     const genres = [...new Set(movies.map((value) => value.Genre).flat())]
