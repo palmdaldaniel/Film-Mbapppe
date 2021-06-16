@@ -22,6 +22,15 @@ const BookingContextProvider = (props) => {
   //for rendering bookings on Profile page
   const [upcomingBookings, setUpcomingBookings] = useState([])
   const [previousBookings, setPreviousBookings] = useState([])
+  
+  // states for seatingmap
+  const [reserved, setReserved] = useState([]);
+  const [bookedPlaces, setBookedPlaces] = useState([]);
+  const [bookingId] = useState([]); 
+
+  // state for purchased bookings
+  const [currentBooking, setCurrentBooking] = useState(null);
+
 
   useEffect(() => {
     if(activeUser) {
@@ -29,14 +38,6 @@ const BookingContextProvider = (props) => {
     }
   }, [activeUser])
 
-
-  // states for seatingmap
-  const [reserved, setReserved] = useState([]);
-  const [bookedPlaces, setBookedPlaces] = useState([]);
-  const [bookingId] = useState([]);
-
-  // state for purchased bookings
-  const [currentBooking, setCurrentBooking] = useState(null);
 
   // logic for making tickets
 
@@ -71,9 +72,7 @@ const BookingContextProvider = (props) => {
   };
 
   const makeBooking = () => {
-    if (tickets.length !== reserved.length || tickets.length === 0) {
-      // console.log("both need to match");
-    } else {
+    if (tickets.length === reserved.length || tickets.length === 0) {
       // merge reserved seats with selected amount of tickets.
       const data = tickets.map((ticket, i) => {
         return {
