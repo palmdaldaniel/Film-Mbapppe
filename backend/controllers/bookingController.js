@@ -7,7 +7,6 @@ const createBooking = async (req, res) => {
         tickets: req.body.tickets
     });
 
-    //res.send(booking); 
     res.send(booking);
 }
 
@@ -30,6 +29,7 @@ const getBookingById = async (req, res) => {
         res.json(booking);
     });
 }
+
 const getBookingsByUserId = async (req, res) => {
 
     Booking.find({ userId: req.query.userId })

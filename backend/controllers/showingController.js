@@ -34,6 +34,7 @@ const getShowingById = async (req, res) => {
   });
   
 };
+
 const getShowingByDate = async (req, res) => {
 
   Showing.find({date: req.query.date}).populate('film').sort('time').exec(async (err, result) => {

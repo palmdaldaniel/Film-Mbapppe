@@ -43,7 +43,6 @@ const HomePage = () => {
 
     return (
         <div >
-
             {listData ? (content)
                 :
                 (<h2>No showings!</h2>)}

@@ -56,6 +56,7 @@ const BookingContextProvider = (props) => {
     // eslint-disable-next-line
   }, [seniorTickets, adultTickets, childrenTickets]);
 
+
   const makeTickets = () => {
     let temp = [];
     let tempTickets = {
@@ -69,6 +70,7 @@ const BookingContextProvider = (props) => {
     }
     setTickets(temp);
   };
+
 
   const makeBooking = () => {
     if (tickets.length !== reserved.length || tickets.length === 0) {
@@ -94,8 +96,6 @@ const BookingContextProvider = (props) => {
         //to refresh bookings on Profile page)
         getBookingsByUserId(activeUser._id)
       })
-
-
     }
   };
 

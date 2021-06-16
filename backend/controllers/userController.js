@@ -45,7 +45,7 @@ const createUser = async (req, res) => {
   if (userExists) {
     return res
       .status(400)
-      .json({ error: "An user with that email already exists" });
+      .json({ error: "A user with that email already exists" });
   }
 
   else if (!validateEmail) {
