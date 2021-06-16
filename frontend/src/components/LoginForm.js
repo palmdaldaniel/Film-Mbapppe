@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 import styles from "../css/login.module.css"
 import { Alert, Container, Form, Button } from "react-bootstrap"
 import { UserContext } from "../contexts/UserContext";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 export default function Login() {
     const { loginUser } = useContext(UserContext); //added 
@@ -10,6 +10,7 @@ export default function Login() {
     const [error, setError] = useState(null);
     const [email, setEmail] = useState("");
     const history = useHistory();
+    const location = useLocation();
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -26,9 +27,13 @@ export default function Login() {
             password,
         };
         let result = await loginUser(loginInfo);
-        if (!result.error) {
+        if (!result.error && location.pathname === "/login") {
             history.push("/");
-        } else {
+            console.log("In login");
+        }
+        if (!result.error && location.pathname !== "/login") {
+            console.log("In showing");
+        } else if (result.error) {
             setError(result.error);
         }
     };

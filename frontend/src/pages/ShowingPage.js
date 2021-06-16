@@ -5,7 +5,7 @@ import { MovieContext } from "../contexts/MovieContext";
 import Booking from '../components/Booking';
 import styles from "../css/booking.module.css";
 import { UserContext } from "../contexts/UserContext";
-import LoginFormShowing from "../components/LoginFormShowing";
+import LoginForm from "../components/LoginForm";
 import SignUp from "../components/SignUp";
 import { BookingContext } from "../contexts/BookingContext";
 
@@ -58,7 +58,7 @@ const ShowingPage = (props) => {
           </div>
         ) : (
           <div className={styles.formContainer}>
-            {showLogin ? <LoginFormShowing /> : <SignUp />}
+            {showLogin ? <LoginForm /> : <SignUp />}
             <p className={styles.toggleText} onClick={toggle}>{showLogin ? "Are you not a member yet? " : "Back to login"}</p>
           </div>
         )}
