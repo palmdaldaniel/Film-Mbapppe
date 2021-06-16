@@ -42,20 +42,14 @@ const UserContextProvider = (props) => {
     if (newPassword === "") {
       body = { name: newName }
     } else {
-      if (newPassword.length < 5) {
-        setMessage("Password too short! You need at least 4 characters");
+      if (newPassword.length < 4 || !newPassword.match(RegExp(
+        //IMPORTANT (?=.*\d) only needs one backslash in html attribute but (?=.*\\d) two backslashes in Javascript
+       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])(?=.{4,})"))) {
+        setMessage("You need at least 4 characters, 1 lowercase, 1 uppercase, 1 number, 1 special character");
         setTimeout(() => {
           setMessage(null);
-        }, 4000);
+        }, 9000);
         return;
-      }
-      if (!newPassword.match(RegExp(
-        "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{4,})"))) {
-          setMessage("Password is too weak. You need: 1 lowercase, 1 uppercase, 1 number, 1 special character.");
-          setTimeout(() => {
-            setMessage(null);
-          }, 9000);
-          return;
       }
     };
 
