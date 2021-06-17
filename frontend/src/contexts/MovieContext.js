@@ -49,15 +49,9 @@ const MovieContextProvider = (props) => {
     }, [priceValue]);
 
     useEffect(() => {
-        let currentDate = new Date()
-        // compare the value of the day to only ask the db about info the conditional is true.
-        if (chosenDate.getDay() >= currentDate.getDay()) {
-            setPriceValue("")
-            getShowingsByDate(dateToString(chosenDate));
-        } else {
-            setShowings([])
-        }
-    }, [chosenDate]);
+        setPriceValue("")
+        getShowingsByDate(dateToString(chosenDate));
+    }, [chosenDate])
 
 
     const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
