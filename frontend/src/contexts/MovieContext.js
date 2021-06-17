@@ -44,7 +44,11 @@ const MovieContextProvider = (props) => {
     }, [showings]);
 
     useEffect(() => {//if some price was chosen, call function for filtrering 
-        filterShowingsByPrice(priceValue)
+        if (priceValue !== NaN) {
+            filterShowingsByPrice(priceValue)
+        } else {
+            setPriceValue("")
+        }
         // eslint-disable-next-line
     }, [priceValue]);
 
