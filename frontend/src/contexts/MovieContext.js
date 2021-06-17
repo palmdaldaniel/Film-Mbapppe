@@ -44,7 +44,7 @@ const MovieContextProvider = (props) => {
     }, [showings]);
 
     useEffect(() => {//if some price was chosen, call function for filtrering 
-        if (priceValue !== NaN) {
+        if (!isNaN(priceValue)) {
             filterShowingsByPrice(priceValue)
         } else {
             setPriceValue("")
