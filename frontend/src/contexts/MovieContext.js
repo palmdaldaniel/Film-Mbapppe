@@ -56,7 +56,7 @@ const MovieContextProvider = (props) => {
 
     const filterShowingsByPrice = (price) => {//filtering by price happens here, on frontend
         if (showings) {
-            let filtered = showings.filter(oneShowing => oneShowing.price === price)
+            let filtered = showings.filter(oneShowing => oneShowing.price == price)
             setFilteredShowings(filtered)//put result with filtered showings to the state
         }
     }
