@@ -1,4 +1,4 @@
-# Mbappee - Cinema booking system for Filmvisarna AB
+# Mbappe - Cinema booking system for Filmvisarna AB
 
 ## Introduction
 This application is a school project built with React, Node.js and MongoDb. It was created by danielpalmdal, kydkit, Sagva, jakob-sandberg, JHernehult, Toska30.
