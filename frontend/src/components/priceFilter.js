@@ -10,7 +10,7 @@ function PriceFilter() {
     let items = [];//here we'll keep items that are going to be in the dropdown menu 
 
     const handleClick = (e) => {
-        setPriceValue(parseInt(e.target.value))
+        setPriceValue(e.target.value)
     }
 
     if (priceOptions) { //priceOptions format [100, 150, 200]
