@@ -10,8 +10,8 @@ The core functionalities were to facilitate a responsive website where you can b
 
 ### Technologies 
 The project is built in:
-React ^17.0.2
-Node ^ 14.15.4,  
+React ^17.0.2,
+Node ^ 14.15.4
 
 
 Libraries used:
