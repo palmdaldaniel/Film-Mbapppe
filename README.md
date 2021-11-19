@@ -1,7 +1,7 @@
 # Mbappe - Cinema booking system for Filmvisarna AB
 
 ## Introduction
-This application is a school project built with React, Node.js and MongoDb. It was created by danielpalmdal, kydkit, Sagva, jakob-sandberg, JHernehult, Toska30.
+This application is a school project built with React, Node.js and MongoDb. It was created by palmdaldaniel, kydkit, Sagva, jakob-sandberg, JHernehult, Toska30.
 
 ### Goal and requirements
 The main goal of the application was to create and build a full stack booking system for a cinema. The application was created from a list of strict requirements and user stories. Product owner expected a fully functional booking system, with the exception of integrating payment solutions.
